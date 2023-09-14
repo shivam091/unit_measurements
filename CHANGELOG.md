@@ -1,3 +1,11 @@
+## [1.2.0](https://github.com/shivam091/unit_measurements/compare/v1.1.0...v1.2.0) - 2023-08-15
+
+### What's new
+
+- Added support to specify unit value as an `array` of number and unit. viz.,
+
+----------
+
 ## [1.1.0](https://github.com/shivam091/unit_measurements/compare/v1.0.0...v1.1.0) - 2023-08-14
 
 ### What's new

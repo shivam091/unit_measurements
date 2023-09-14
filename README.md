@@ -399,6 +399,9 @@ UnitMeasurements::Time = UnitMeasurements.build do
   # You can also specify conversion string if it's converted against a unit other
   # than the unit group's base unit.
   unit :h, value: "60 min", aliases: [:hour, :hours]
+
+  # You can also specify unit value as an array.
+  unit :d, value: [24, :h], aliases: [:day, :days]
 end
 ```
 
