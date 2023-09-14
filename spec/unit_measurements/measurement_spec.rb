@@ -15,11 +15,11 @@ RSpec.describe UnitMeasurements::Measurement do
 
   describe "#initialize" do
     it "raises an error for blank quantity" do
-      expect { Length.new(nil, :m) }.to raise_error(ArgumentError, "Quantity cannot be blank.")
+      expect { Length.new(nil, :m) }.to raise_error(UnitMeasurements::BaseError, "Quantity cannot be blank.")
     end
 
     it "raises an error for blank unit" do
-      expect { Length.new(1, nil) }.to raise_error(ArgumentError, "Unit cannot be blank.")
+      expect { Length.new(1, nil) }.to raise_error(UnitMeasurements::BaseError, "Unit cannot be blank.")
     end
 
     it "sets attributes correctly" do

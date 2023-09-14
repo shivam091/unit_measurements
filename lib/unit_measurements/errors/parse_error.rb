@@ -3,7 +3,7 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
-  class ParseError < StandardError
+  class ParseError < BaseError
     attr_reader :string
 
     def initialize(string)

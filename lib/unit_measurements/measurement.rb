@@ -10,8 +10,8 @@ module UnitMeasurements
     attr_reader :quantity, :unit
 
     def initialize(quantity, unit)
-      raise ArgumentError, "Quantity cannot be blank." if quantity.blank?
-      raise ArgumentError, "Unit cannot be blank." if unit.blank?
+      raise BaseError, "Quantity cannot be blank." if quantity.blank?
+      raise BaseError, "Unit cannot be blank." if unit.blank?
 
       @quantity = convert_quantity(quantity)
       @unit = unit_from_unit_or_name!(unit)

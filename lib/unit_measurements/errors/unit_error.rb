@@ -3,7 +3,7 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
-  class UnitError < StandardError
+  class UnitError < BaseError
     attr_reader :unit
 
     def initialize(unit)
