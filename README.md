@@ -219,6 +219,20 @@ UnitMeasurements::Weight.parse("2e⁻² kg to g")
 
 Supported special characters for exponents are `⁰`, `¹`, `²`, `³`, `⁴`, `⁵`, `⁶`, `⁷`, `⁸`, `⁹`, `⁺`, `⁻`.
 
+**Formatting measurement:**
+
+If you want to format measurement to certain format, you can use `#format` method.
+If format is not specified, it defaults to `"%.2<value>f %<unit>s"`.
+
+```ruby
+UnitMeasurements::Weight.parse("2 kg").to(:st).format
+#=> "0.31 st"
+UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f %<unit>s")
+#=> "0.3149 st"
+UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f")
+#=> "0.3149"
+```
+
 **Extract the unit and the quantity from measurement:**
 
 ```ruby

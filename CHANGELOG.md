@@ -1,3 +1,11 @@
+## [1.1.0](https://github.com/shivam091/unit_measurements/compare/v1.0.0...v1.1.0) - 2023-08-14
+
+### What's new
+
+- Added `#format` method to format quantity of the measurement.
+
+----------
+
 ## [1.0.0](https://github.com/shivam091/unit_measurements/compare/v0.1.0...v1.0.0) - 2023-09-14
 
 ### What's new
