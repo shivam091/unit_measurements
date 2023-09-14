@@ -1,6 +1,19 @@
+## [1.0.0](https://github.com/shivam091/unit_measurements/compare/v0.1.0...v1.0.0) - 2023-09-14
+
+### What's new
+
+- Added support to build unit groups.
+- Added unit group for `length` units.
+- Added unit group for `weight` units.
+- Added support to build `si` units.
+- Added support to parse `Complex`, `Rational`, `Scientific` numbers, and `ratios`.
+- Added support to convert quantity between two units using `#convert_to`, `#convert_to!`, and `#parse` methods.
+
+----------
+
 ## [0.1.0] - 2023-09-13
 
-- Initial release
+### Initial release
 
 -----------
 
