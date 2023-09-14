@@ -2,6 +2,5 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-module UnitMeasurements
-  VERSION = "1.0.0"
-end
+require_relative "length"
+require_relative "weight"
