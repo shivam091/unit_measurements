@@ -28,6 +28,7 @@ require "unit_measurements/unit_group"
 require "unit_measurements/normalizer"
 require "unit_measurements/parser"
 require "unit_measurements/formatter"
+require "unit_measurements/comparison"
 require "unit_measurements/measurement"
 
 require "unit_measurements/errors/unit_error"
