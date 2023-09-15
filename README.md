@@ -303,6 +303,25 @@ UnitMeasurements::Weight.unit_or_alias?(:gramme)
 #=> true
 ```
 
+### Comparisons
+
+You have ability to compare the measurements with the same or different units within the same unit group.
+For example, comparing weight with weight will work, comparing a weight with a area would fail.
+Allowed comparisons are `==`, `!=`, `>`, `>=`, `<`, and `<=`.
+
+```ruby
+UnitMeasurements::Weight.new(1, "kg") == UnitMeasurements::Weight.new(1, :kg)
+#=> true
+UnitMeasurements::Weight.parse("1 kg") == UnitMeasurements::Weight.parse("1000 g")
+#=> true
+UnitMeasurements::Weight.parse("1 kg") != UnitMeasurements::Weight.parse("1 g")
+#=> true
+UnitMeasurements::Weight.parse("1 kg") <= UnitMeasurements::Weight.parse("0.5 kg")
+#=> false
+UnitMeasurements::Weight.parse("1 kg") >= UnitMeasurements::Weight.parse("0.5 kg")
+#=> true
+```
+
 ## Units
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.

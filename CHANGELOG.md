@@ -1,8 +1,16 @@
+## [1.3.0](https://github.com/shivam091/unit_measurements/compare/v1.2.0...v1.3.0) - 2023-08-16
+
+### What's new
+
+- Added ability to compare two measurements of the same unit group.
+
+----------
+
 ## [1.2.0](https://github.com/shivam091/unit_measurements/compare/v1.1.0...v1.2.0) - 2023-08-15
 
 ### What's new
 
-- Added support to specify unit value as an `array` of number and unit. viz.,
+- Added support to specify unit value as an `array` of number and unit.
 
 ----------
 
