@@ -38,13 +38,11 @@ module UnitMeasurements
     end
 
     def conversion_factor
-      if value.is_a?(String)
-        measurement_value, measurement_unit = Parser.parse(value)
-        conversion_factor = unit_group.unit_for!(measurement_unit).conversion_factor
-        conversion_factor * measurement_value
-      else
-        value
-      end
+      return value if value.is_a?(Numeric)
+
+      measurement_value, measurement_unit = parse_value(value)
+      conversion_factor = unit_group.unit_for!(measurement_unit).conversion_factor
+      conversion_factor * measurement_value
     end
 
     private
@@ -75,5 +73,17 @@ module UnitMeasurements
       ["R",  %w(ronna),     1e+27],
       ["Q",  %w(quetta),    1e+30]
     ].map(&:freeze).freeze
+
+    def parse_value(tokens)
+      case tokens
+      when String
+        tokens = Parser.parse(value)
+      when Array
+        raise BaseError, "Cannot parse [number, unit] formatted tokens from #{tokens}." unless tokens.size == 2
+      else
+        raise BaseError, "Value of the unit must be defined as string or array, but received #{tokens}"
+      end
+      [tokens[0].to_r, tokens[1].freeze]
+    end
   end
 end

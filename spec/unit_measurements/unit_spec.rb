@@ -8,7 +8,7 @@ RSpec.describe UnitMeasurements::Unit do
   subject(:unit) do
     described_class.new(
       :unit_name,
-      value: 1,
+      value: "2.5 m",
       aliases: [:alias1, :alias2],
       unit_group: nil
     )
@@ -17,7 +17,7 @@ RSpec.describe UnitMeasurements::Unit do
   describe "#initialize" do
     it "sets attributes correctly" do
       expect(unit.name).to eq("unit_name")
-      expect(unit.value).to eq(1)
+      expect(unit.value).to eq("2.5 m")
       expect(unit.aliases).to eq(Set.new(["alias1", "alias2"]))
       expect(unit.unit_group).to be_nil
     end
@@ -51,6 +51,36 @@ RSpec.describe UnitMeasurements::Unit do
   describe "#inspect" do
     it "returns a formatted string representation" do
       expect(unit.inspect).to eq("#<UnitMeasurements::Unit: unit_name (alias1, alias2)>")
+    end
+  end
+
+  describe "#parse_value" do
+    it "parses a valid string into [number, unit]" do
+      result = unit.send(:parse_value, "2.5 m")
+      expect(result).to eq([Rational(5, 2), "m".freeze])
+    end
+
+    it "parses a valid array into [number, unit]" do
+      result = unit.send(:parse_value, [2.5, :m])
+      expect(result).to eq([Rational(5, 2), :m.freeze])
+    end
+
+    it "raises an error for an array with more than two elements" do
+      expect {
+        unit.send(:parse_value, [2.5, :m, :cm])
+      }.to raise_error(UnitMeasurements::BaseError, "Cannot parse [number, unit] formatted tokens from [2.5, :m, :cm].")
+    end
+
+    it "raises an error for an array with fewer than two elements" do
+      expect {
+        unit.send(:parse_value, [2.5])
+      }.to raise_error(UnitMeasurements::BaseError, "Cannot parse [number, unit] formatted tokens from [2.5].")
+    end
+
+    it "raises an error when invalid element" do
+      expect {
+        unit.send(:parse_value, :m)
+      }.to raise_error(UnitMeasurements::BaseError, "Value of the unit must be defined as string or array, but received m")
     end
   end
 end
