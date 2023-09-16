@@ -5,6 +5,8 @@
 module UnitMeasurements
   class Measurement
     include Formatter
+    include Comparison
+
     CONVERSION_STRING_REGEXP = /(.+?)\s?(?:\s+(?:in|to|as)\s+(.+)|\z)/i.freeze
 
     attr_reader :quantity, :unit
