@@ -4,6 +4,6 @@
 
 RSpec.describe UnitMeasurements do
   it "has a valid version number" do
-    expect(UnitMeasurements::VERSION).to eq("1.5.0")
+    expect(UnitMeasurements::VERSION).to eq("1.6.0")
   end
 end
