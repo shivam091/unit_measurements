@@ -322,6 +322,29 @@ UnitMeasurements::Weight.parse("1 kg") >= UnitMeasurements::Weight.parse("0.5 kg
 #=> true
 ```
 
+### Arithmetic
+
+You have the ability to perform arithmetic operations on measurements with the same or
+different units within the same unit group. You can perform arithmetic operations on
+measurement by either other compatible measurement or number.
+
+**Methods:**
+1. `#+` - Adds the other measurement quantity or number to the measurement.
+2. `#-` - Subtracts the other measurement quantity or number from the measurement.
+3. `#*` - Multiplies the measurement quantity by other measurement quantity or number.
+4. `#/` - Divides the measurement quantity by other measurement quantity or number.
+
+```ruby
+UnitMeasurements::Weight.new(1, :kg) + UnitMeasurements::Weight.new(1, :g)
+#=> 1.001 kg
+UnitMeasurements::Weight.new(2, :kg) - 1
+#=> 1 kg
+UnitMeasurements::Weight.new(2, :kg) * 2
+#=> 4 kg
+UnitMeasurements::Weight.new(4, :kg) / UnitMeasurements::Weight.new(2, :kg)
+#=> 2 kg
+```
+
 ## Units
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.

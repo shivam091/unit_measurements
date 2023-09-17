@@ -1,3 +1,11 @@
+## [1.4.0](https://github.com/shivam091/unit_measurements/compare/v1.3.0...v1.4.0) - 2023-08-17
+
+### What's new
+
+- Added ability to perform `arithmetic` operations of measurements.
+
+----------
+
 ## [1.3.0](https://github.com/shivam091/unit_measurements/compare/v1.2.0...v1.3.0) - 2023-08-16
 
 ### What's new
