@@ -7,6 +7,8 @@ module UnitMeasurements
     include Formatter
     include Comparison
     include Arithmetic
+    include Conversion
+    include Math
 
     CONVERSION_STRING_REGEXP = /(.+?)\s?(?:\s+(?:in|to|as)\s+(.+)|\z)/i.freeze
 
@@ -44,7 +46,16 @@ module UnitMeasurements
     end
 
     def to_s
-      "#{humanized_quantity} #{unit.to_s}"
+      "#{quantity} #{unit}"
+    end
+
+    def quantity
+      case @quantity
+      when Rational
+        @quantity.denominator == 1 ? @quantity.numerator : @quantity
+      else
+        @quantity
+      end
     end
 
     class << self
@@ -91,16 +102,6 @@ module UnitMeasurements
 
     def unit_from_unit_or_name!(value)
       value.is_a?(Unit) ? value : self.class.unit_group.unit_for!(value)
-    end
-
-    def humanized_quantity
-      case quantity
-      when Complex
-        quantity
-      when Numeric
-        num = quantity.to_r
-        num.denominator == 1 ? num.numerator.to_s : num.to_f.to_s
-      end
     end
   end
 end
