@@ -7,8 +7,6 @@ module UnitMeasurements
     include Formatter
     include Comparison
     include Arithmetic
-    include Conversion
-    include Math
 
     CONVERSION_STRING_REGEXP = /(.+?)\s?(?:\s+(?:in|to|as)\s+(.+)|\z)/i.freeze
 
