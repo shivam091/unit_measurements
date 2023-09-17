@@ -1,3 +1,11 @@
+## [1.5.0](https://github.com/shivam091/unit_measurements/compare/v1.4.0...v1.5.0) - 2023-08-18
+
+## What's fixed
+
+- Fixed precision in `Measurement#quantity` method
+
+----------
+
 ## [1.4.0](https://github.com/shivam091/unit_measurements/compare/v1.3.0...v1.4.0) - 2023-08-17
 
 ### What's new

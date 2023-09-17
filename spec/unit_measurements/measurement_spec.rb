@@ -117,7 +117,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(4.3e12)
         expect(measurement.unit).to eq(m)
 
-        expect(measurement.inspect).to eq("4300000000000 m")
+        expect(measurement.inspect).to eq("4300000000000.0 m")
       end
 
       it "parses fractions" do
@@ -267,7 +267,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(1)
         expect(measurement.unit).to eq(m)
 
-        expect(measurement.inspect).to eq("1 m")
+        expect(measurement.inspect).to eq("1.0 m")
       end
 
       it "parses ratios" do
@@ -299,7 +299,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(0.43e15)
         expect(measurement.unit).to eq(cm)
 
-        expect(measurement.inspect).to eq("430000000000000 cm")
+        expect(measurement.inspect).to eq("430000000000000.0 cm")
       end
 
       it "parses fractions" do
@@ -315,7 +315,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(25)
         expect(measurement.unit).to eq(cm)
 
-        expect(measurement.inspect).to eq("25 cm")
+        expect(measurement.inspect).to eq("25.0 cm")
       end
 
       it "parses fractions with special characters" do
@@ -337,7 +337,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(0.34e3)
         expect(measurement.unit).to eq(cm)
 
-        expect(measurement.inspect).to eq("340 cm")
+        expect(measurement.inspect).to eq("340.0 cm")
       end
 
       it "parses mixed fractions with special characters" do
@@ -401,7 +401,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(0.21e3)
         expect(measurement.unit).to eq(cm)
 
-        expect(measurement.inspect).to eq("210 cm")
+        expect(measurement.inspect).to eq("210.0 cm")
       end
 
       it "parses complexes" do
@@ -417,7 +417,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(0.1e3)
         expect(measurement.unit).to eq(cm)
 
-        expect(measurement.inspect).to eq("100 cm")
+        expect(measurement.inspect).to eq("100.0 cm")
       end
 
       it "parses ratios" do
