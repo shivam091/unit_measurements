@@ -79,14 +79,14 @@ You can use `#convert_to` as:
 
 ```ruby
 UnitMeasurements::Weight.new(1, :kg).convert_to(:g)
-#=> 1000 g
+#=> 1000.0 g
 ```
 
 If you want to modify measurement object itself, you can use `#convert_to!` method as:
 
 ```ruby
 UnitMeasurements::Weight.new(1, :kg).convert_to!(:g)
-#=> 1000 g
+#=> 1000.0 g
 ```
 
 You can also chain call of `#convert_to` and `#convert_to!` methods as:
@@ -100,18 +100,18 @@ UnitMeasurements::Weight.new(1, :kg).convert_to(:g).convert_to(:t).convert_to!(:
 
 ```ruby
 UnitMeasurements::Weight.parse("1 kg")
-#=> 1 kg
+#=> 1.0 kg
 ```
 
 **Parse string that mentions quantity, source unit, and target unit:**
 
 ```ruby
 UnitMeasurements::Weight.parse("1 kg to g")
-#=> 1000 g
+#=> 1000.0 g
 UnitMeasurements::Weight.parse("1 kg as g")
-#=> 1000 g
+#=> 1000.0 g
 UnitMeasurements::Weight.parse("1 kg in g")
-#=> 1000 g
+#=> 1000.0 g
 ```
 
 **Parse rational numbers, source unit, and (or) target unit:**
@@ -144,58 +144,58 @@ UnitMeasurements::Weight.parse("2+3i kg to g")
 
 ```ruby
 UnitMeasurements::Weight.new(BigDecimal(2), :kg).convert_to(:g)
-#=> 2000 g
+#=> 2000.0 g
 UnitMeasurements::Weight.new(0.2e1, :kg).convert_to(:g)
-#=> 2000 g
+#=> 2000.0 g
 UnitMeasurements::Weight.parse("0.2e1 kg").convert_to(:g)
-#=> 2000 g
+#=> 2000.0 g
 UnitMeasurements::Weight.parse("0.2e1 kg to g")
-#=> 2000 g
+#=> 2000.0 g
 ```
 
 **Parse ratios, source unit, and (or) target unit:**
 
 ```ruby
 UnitMeasurements::Weight.new("1:2", :kg).convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("1:2 kg").convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("1:2 kg to g")
-#=> 500 g
+#=> 500.0 g
 ```
 
 **Parse fractional notations, source unit, and (or) target unit:**
 
 ```ruby
 UnitMeasurements::Weight.new("1/2", :kg).convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("1/2 kg").convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("1/2 kg to g")
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.new("½", :kg).convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("½ kg").convert_to(:g)
-#=> 500 g
+#=> 500.0 g
 UnitMeasurements::Weight.parse("½ kg to g")
-#=> 500 g
+#=> 500.0 g
 ```
 
 **Parse mixed fractional notations, source unit, and (or) target unit:**
 
 ```ruby
 UnitMeasurements::Weight.new("2 1/2", :kg).convert_to(:g)
-#=> 2500 g
+#=> 2500.0 g
 UnitMeasurements::Weight.parse("2 1/2 kg").convert_to(:g)
-#=> 2500 g
+#=> 2500.0 g
 UnitMeasurements::Weight.parse("2 1/2 kg to g")
-#=> 2500 g
+#=> 2500.0 g
 UnitMeasurements::Weight.new("2 ½", :kg).convert_to(:g)
-#=> 2500 g
+#=> 2500.0 g
 UnitMeasurements::Weight.parse("2 ½ kg").convert_to(:g)
-#=> 2500 g
+#=> 2500.0 g
 UnitMeasurements::Weight.parse("2 ½ kg to g")
-#=> 2500 g
+#=> 2500.0 g
 ```
 
 Supported special characters for fractional notations are `¼`, `½`, `¾`, `⅓`, `⅔`, `⅕`, `⅖`, `⅗`, `⅘`, `⅙`, `⅚`, `⅐`, `⅛`, `⅜`, `⅝`, `⅞`, `⅑`, `⅒`, `↉`, `⁄`.
@@ -204,17 +204,17 @@ Supported special characters for fractional notations are `¼`, `½`, `¾`, `⅓
 
 ```ruby
 UnitMeasurements::Weight.new("2e+2", :kg).convert_to(:g)
-#=> 200000 g
+#=> 200000.0 g
 UnitMeasurements::Weight.parse("2e² kg").convert_to(:g)
-#=> 200000 g
+#=> 200000.0 g
 UnitMeasurements::Weight.parse("2e+2 kg to g")
-#=> 200000 g
+#=> 200000.0 g
 UnitMeasurements::Weight.new("2e⁺²", :kg).convert_to(:g)
-#=> 200000 g
+#=> 200000.0 g
 UnitMeasurements::Weight.parse("2e⁺2 kg").convert_to(:g)
-#=> 200000 g
+#=> 200000.0 g
 UnitMeasurements::Weight.parse("2e⁻² kg to g")
-#=> 20 g
+#=> 20.0 g
 ```
 
 Supported special characters for exponents are `⁰`, `¹`, `²`, `³`, `⁴`, `⁵`, `⁶`, `⁷`, `⁸`, `⁹`, `⁺`, `⁻`.
@@ -236,9 +236,9 @@ UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f")
 **Extract the unit and the quantity from measurement:**
 
 ```ruby
-weight = UnitMeasurements::Weight.new(1.0, :kg)
+weight = UnitMeasurements::Weight.new(1, :kg)
 weight.quantity
-#=> 0.1e1
+#=> 1
 weight.unit
 #=> #<UnitMeasurements::Unit: kg (kilogram, kilogramme, kilogrammes, kilograms)>
 ```
@@ -324,8 +324,8 @@ UnitMeasurements::Weight.parse("1 kg") >= UnitMeasurements::Weight.parse("0.5 kg
 
 ### Arithmetic
 
-You have the ability to perform arithmetic operations on measurements with the same or
-different units within the same unit group. You can perform arithmetic operations on
+You have ability to perform arithmetic operations on measurements with the same or
+different units within a same unit group. You can perform arithmetic operations on
 measurement by either other compatible measurement or number.
 
 **Methods:**
