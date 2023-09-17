@@ -345,6 +345,27 @@ UnitMeasurements::Weight.new(4, :kg) / UnitMeasurements::Weight.new(2, :kg)
 #=> 2 kg
 ```
 
+### Math
+
+You can perform mathematical operations on the measurements.
+
+**Methods:**
+1. `#round` - Rounds quantity of the measurement. If `ndigits` is not specified, quantity is rounded to `Integer`.
+2. `#abs` - Returns absolute value of the measurement quantity.
+3. `#floor` - Rounds quantity of the measurement to next lower integer.
+4. `#ceil` - Rounds quantity of the measurement to next higher integer.
+
+```ruby
+UnitMeasurements::Weight.new(1, :g).convert_to(:st).round(4)
+#=> 0.0002 st
+UnitMeasurements::Length.new(-17.625, :m).abs
+#=> 17.625 m
+UnitMeasurements::Length.new(17.625, :m).floor
+#=> 17 m
+UnitMeasurements::Length.new(17.625, :m).ceil
+#=> 18 m
+```
+
 ## Units
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.
