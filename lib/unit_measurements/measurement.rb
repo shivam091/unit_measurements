@@ -4,9 +4,10 @@
 
 module UnitMeasurements
   class Measurement
-    include Formatter
-    include Comparison
     include Arithmetic
+    include Comparison
+    include Formatter
+    include Math
 
     CONVERSION_STRING_REGEXP = /(.+?)\s?(?:\s+(?:in|to|as)\s+(.+)|\z)/i.freeze
 
