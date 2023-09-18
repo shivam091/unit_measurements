@@ -68,6 +68,7 @@ module UnitMeasurements
 
     def arithmetic_operation(other, operator)
       other, _ = coerce(other)
+
       self.class.new(self.quantity.public_send(operator, other.convert_to(self.unit).quantity), self.unit)
     end
   end
