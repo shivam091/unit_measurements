@@ -5,7 +5,7 @@ bundled units before converting your measurements.
 
 **Notes:**
 1. Base unit for each unit group is highlighted.
-2. Unit numbers suffixed with `*` support all [SI prefixes](README.md#si-units-support).
+2. Unit names suffixed with `*` support all [SI prefixes](README.md#si-units-support).
 
 Below are the units which are bundled in the unit_measurements.
 
@@ -13,9 +13,9 @@ Below are the units which are bundled in the unit_measurements.
 
 These units are defined in `UnitMeasurements::Length`.
 
-| # | Symbol | Aliases |
+| # | Name | Aliases |
 |:--|:--|:--|
-| **1\*** | **m** | **meter, metre, meters, metres** |
+| **1** | **m\*** | **meter, metre, meters, metres** |
 | 2 | in | ", inch, inches |
 | 3 | ft | ', foot, feet |
 | 4 | yd | yard, yards |
@@ -25,8 +25,8 @@ These units are defined in `UnitMeasurements::Length`.
 
 These units are defined in `UnitMeasurements::Weight`.
 
-| # | Symbol | Aliases |
+| # | Name | Aliases |
 |--|--|--|
-| **1\*** | **g** | **gram, grams, gramme, grammes** |
+| **1** | **g\*** | **gram, grams, gramme, grammes** |
 | 2 | q | quintal, quintals |
 | 3 | t | tonne, tonnes, metric tonne, metric tonnes |
