@@ -22,6 +22,7 @@ module UnitMeasurements
     # @return [String]
     def format(format = nil)
       kwargs = {quantity: quantity, unit: unit.to_s}
+
       (format || DEFAULT_FORMAT) % kwargs
     end
   end

@@ -8,6 +8,7 @@ module UnitMeasurements
 
     def initialize(unit)
       @unit = unit
+
       super("Invalid unit: '#{unit}'.")
     end
   end

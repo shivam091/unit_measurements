@@ -26,6 +26,7 @@ module UnitMeasurements
       return self if target_unit == unit
 
       conversion_factor = (unit.conversion_factor / target_unit.conversion_factor)
+
       self.class.new((quantity * conversion_factor), target_unit)
     end
     alias_method :to, :convert_to
@@ -33,6 +34,7 @@ module UnitMeasurements
     def convert_to!(target_unit)
       measurement = convert_to(target_unit)
       @quantity, @unit = measurement.quantity, measurement.unit
+
       self
     end
     alias_method :to!, :convert_to!
@@ -70,6 +72,7 @@ module UnitMeasurements
       def parse(input)
         input = Normalizer.normalize(input)
         source, target = input.match(CONVERSION_STRING_REGEXP)&.captures
+
         target ? _parse(source).convert_to(target) : _parse(source)
       end
 
@@ -77,6 +80,7 @@ module UnitMeasurements
 
       def _parse(string)
         quantity, unit = Parser.parse(string)
+
         new(quantity, unit)
       end
     end
@@ -92,6 +96,7 @@ module UnitMeasurements
       when String
         quantity = Normalizer.normalize(quantity)
         quantity, _ = Parser.parse(quantity)
+
         quantity
       else
         quantity

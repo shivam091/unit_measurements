@@ -8,6 +8,7 @@ module UnitMeasurements
 
     def initialize(string)
       @string = string
+
       super("Unable to parse: '#{string}'.")
     end
   end
