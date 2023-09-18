@@ -307,7 +307,6 @@ UnitMeasurements::Weight.unit_or_alias?(:gramme)
 
 You have ability to compare the measurements with the same or different units within the same unit group.
 For example, comparing weight with weight will work, comparing a weight with a area would fail.
-Allowed comparisons are `==`, `!=`, `>`, `>=`, `<`, and `<=`.
 
 ```ruby
 UnitMeasurements::Weight.new(1, "kg") == UnitMeasurements::Weight.new(1, :kg)
@@ -320,6 +319,10 @@ UnitMeasurements::Weight.parse("1 kg") <= UnitMeasurements::Weight.parse("0.5 kg
 #=> false
 UnitMeasurements::Weight.parse("1 kg") >= UnitMeasurements::Weight.parse("0.5 kg")
 #=> true
+UnitMeasurements::Length.new(1, :ft).between?(UnitMeasurements::Length.new(12, :in), UnitMeasurements::Length.new(24, :in))
+#=> true
+UnitMeasurements::Length.new(1, :ft).clamp(UnitMeasurements::Length.new(13, :in), UnitMeasurements::Length.new(24, :in))
+#=> 13 in
 ```
 
 ### Arithmetic

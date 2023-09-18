@@ -37,17 +37,20 @@ module UnitMeasurements
         end
         si_units << build_unit("#{short_prefix}#{name}", value: "#{multiplier} #{name}", aliases: si_aliases)
       end
+
       si_units
     end
 
     def build_unit(name, value:, aliases:)
       unit = Unit.new(name, value: value, aliases: aliases)
       check_for_duplicate_unit_names!(unit)
+
       unit
     end
 
     def check_for_duplicate_unit_names!(unit)
       names = @units.flat_map(&:names)
+
       if names.any? { |name| unit.names.include?(name) }
         raise UnitAlreadyDefinedError.new(unit.name)
       end

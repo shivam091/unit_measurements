@@ -1,8 +1,16 @@
+## [1.5.1](https://github.com/shivam091/unit_measurements/compare/v1.5.0...v1.5.1) - 2023-08-18
+
+### What's updated
+
+- Added extra blank line between method code and last code statement (considered as return).
+
+----------
+
 ## [1.5.0](https://github.com/shivam091/unit_measurements/compare/v1.4.0...v1.5.0) - 2023-08-18
 
-## What's fixed
+### What's fixed
 
-- Fixed precision in `Measurement#quantity` method
+- Fixed precision in `Measurement#quantity` method.
 
 ----------
 

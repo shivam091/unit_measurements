@@ -8,6 +8,7 @@ module UnitMeasurements
 
     def initialize(unit)
       @unit = unit
+
       super("Unit already defined: '#{unit}'.")
     end
   end
