@@ -8,7 +8,7 @@ RSpec.describe UnitMeasurements::Math do
   describe "#round" do
     let(:measurement) { UnitMeasurements::Length.new(17.625, :m) }
 
-    it "rounds quantity to nearest rational" do
+    it "rounds quantity to nearest integer" do
       expect(measurement.round.quantity).to eq(18)
       expect(measurement.round.quantity).to be_a(Integer)
     end
@@ -23,7 +23,7 @@ RSpec.describe UnitMeasurements::Math do
     let(:measurement) { UnitMeasurements::Length.new(-17.625, :m) }
 
     it "returns absolute value of the quantity." do
-      expect(measurement.abs.quantity).to eq(0.17625e2)
+      expect(measurement.abs.quantity).to eq(17.625)
     end
   end
 
