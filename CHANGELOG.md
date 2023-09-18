@@ -1,3 +1,12 @@
+## [1.7.0](https://github.com/shivam091/unit_measurements/compare/v1.6.0...v1.7.0) - 2023-08-20
+
+## What's new
+
+- Added support to convert the measurements to other numeric types viz.,
+  `Integer`, `BigDecimal`, `Rational`, `Complex`, and `Float`.
+
+----------
+
 ## [1.6.0](https://github.com/shivam091/unit_measurements/compare/v1.5.1...v1.6.0) - 2023-08-19
 
 ## What's new
