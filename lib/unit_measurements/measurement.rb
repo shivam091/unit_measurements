@@ -6,6 +6,7 @@ module UnitMeasurements
   class Measurement
     include Arithmetic
     include Comparison
+    include Conversion
     include Formatter
     include Math
 
