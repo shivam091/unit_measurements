@@ -369,6 +369,24 @@ UnitMeasurements::Length.new(17.625, :m).ceil
 #=> 18 m
 ```
 
+### Conversions
+
+You can convert measurement quantity directly to other numeric types viz.
+`Integer`, `BigDecimal`, `Rational`, `Complex`, and `Float`.
+
+```ruby
+UnitMeasurements::Weight.new(2.25567, :kg).to_i
+#=> 2 kg
+UnitMeasurements::Weight.new(2.25567, :kg).to_f
+#=> 2.25567 kg
+UnitMeasurements::Weight.new(2.25567, :kg).to_r
+#=> 225567/100000 kg
+UnitMeasurements::Weight.new(2.25567, :kg).to_d
+#=> 2.25567 kg
+UnitMeasurements::Weight.new(2.25567, :kg).to_c
+#=> 2.25567+0i kg
+```
+
 ## Units
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.
