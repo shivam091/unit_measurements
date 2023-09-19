@@ -30,3 +30,21 @@ These units are defined in `UnitMeasurements::Weight`.
 | **1** | **g\*** | **gram, grams, gramme, grammes** |
 | 2 | q | quintal, quintals |
 | 3 | t | tonne, tonnes, metric tonne, metric tonnes |
+
+## 3. Time
+
+These units are defined in `UnitMeasurements::Time`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **s\*** | **sec, second, seconds** |
+| 2 | h | hr, hour, hours |
+| 3 | d | day, days |
+| 4 | wk | week, weeks |
+| 5 | fn | 4tnite, fortnight, fortnights |
+| 6 | mo | month, months |
+| 7 | yr | y, year, years |
+| 8 | min | minute, minutes |
+| 9 | qtr | quarter, quarters |
+| 10 | dec | decade, decades |
+| 11 | cent | century, centuries |

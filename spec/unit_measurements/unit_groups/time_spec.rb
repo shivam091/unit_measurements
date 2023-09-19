@@ -29,7 +29,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(1.90258543400074e-6)
+      expect(subject.convert_to(:yr).quantity).to eq(1.90258751902588e-6)
     end
 
     it "converts to min" do
@@ -41,11 +41,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(1.90258543400074e-7)
+      expect(subject.convert_to(:dec).quantity).to eq(1.90258751902588e-7)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(1.90258543400074e-8)
+      expect(subject.convert_to(:cent).quantity).to eq(1.90258751902588e-8)
     end
   end
 
@@ -73,7 +73,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.000114155126040045)
+      expect(subject.convert_to(:yr).quantity).to eq(1.14155251141553e-4)
     end
 
     it "converts to min" do
@@ -85,11 +85,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(1.14155126040045e-5)
+      expect(subject.convert_to(:dec).quantity).to eq(1.14155251141553e-5)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(1.14155126040045e-6)
+      expect(subject.convert_to(:cent).quantity).to eq(1.14155251141553e-6)
     end
   end
 
@@ -117,7 +117,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.00273972302496107)
+      expect(subject.convert_to(:yr).quantity).to eq(0.00273972602739726)
     end
 
     it "converts to min" do
@@ -129,11 +129,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(0.000273972302496107)
+      expect(subject.convert_to(:dec).quantity).to eq(0.000273972602739726)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(2.73972302496107e-5)
+      expect(subject.convert_to(:cent).quantity).to eq(2.73972602739726e-5)
     end
   end
 
@@ -161,7 +161,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.0191780611747275)
+      expect(subject.convert_to(:yr).quantity).to eq(0.0191780821917808)
     end
 
     it "converts to min" do
@@ -173,11 +173,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(0.00191780611747275)
+      expect(subject.convert_to(:dec).quantity).to eq(0.00191780821917808)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(0.000191780611747275)
+      expect(subject.convert_to(:cent).quantity).to eq(0.000191780821917808)
     end
   end
 
@@ -205,7 +205,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.038356122349455)
+      expect(subject.convert_to(:yr).quantity).to eq(0.0383561643835616)
     end
 
     it "converts to min" do
@@ -217,11 +217,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(0.0038356122349455)
+      expect(subject.convert_to(:dec).quantity).to eq(0.00383561643835616)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(0.00038356122349455)
+      expect(subject.convert_to(:cent).quantity).to eq(0.000383561643835616)
     end
   end
 
@@ -249,7 +249,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.0833333333333333)
+      expect(subject.convert_to(:yr).quantity).to eq(0.0833334246575342)
     end
 
     it "converts to min" do
@@ -261,11 +261,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(0.00833333333333333)
+      expect(subject.convert_to(:dec).quantity).to eq(0.00833334246575342)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(0.000833333333333333)
+      expect(subject.convert_to(:cent).quantity).to eq(0.000833334246575342)
     end
   end
 
@@ -273,35 +273,35 @@ RSpec.describe UnitMeasurements::Time do
     subject { described_class.new(1, :yr) }
 
     it "converts to s" do
-      expect(subject.convert_to(:s).quantity).to eq(3.153603456e+7)
+      expect(subject.convert_to(:s).quantity).to eq(3.1536e+7)
     end
 
     it "converts to h" do
-      expect(subject.convert_to(:h).quantity).to eq(8760.0096)
+      expect(subject.convert_to(:h).quantity).to eq(8760)
     end
 
     it "converts to d" do
-      expect(subject.convert_to(:d).quantity).to eq(365.0004)
+      expect(subject.convert_to(:d).quantity).to eq(365)
     end
 
     it "converts to wk" do
-      expect(subject.convert_to(:wk).quantity).to eq(52.1429142857143)
+      expect(subject.convert_to(:wk).quantity).to eq(52.1428571428571)
     end
 
     it "converts to fn" do
-      expect(subject.convert_to(:fn).quantity).to eq(26.0714571428571)
+      expect(subject.convert_to(:fn).quantity).to eq(26.0714285714286)
     end
 
     it "converts to mo" do
-      expect(subject.convert_to(:mo).quantity).to eq(12)
+      expect(subject.convert_to(:mo).quantity).to eq(11.9999868493295)
     end
 
     it "converts to min" do
-      expect(subject.convert_to(:min).quantity).to eq(5.25600576e+5)
+      expect(subject.convert_to(:min).quantity).to eq(525600)
     end
 
     it "converts to qtr" do
-      expect(subject.convert_to(:qtr).quantity).to eq(4)
+      expect(subject.convert_to(:qtr).quantity).to eq(3.99999561644316)
     end
 
     it "converts to dec" do
@@ -341,7 +341,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(1.90258543400074e-6)
+      expect(subject.convert_to(:yr).quantity).to eq(1.90258751902588e-6)
     end
 
     it "converts to qtr" do
@@ -349,11 +349,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(1.90258543400074e-7)
+      expect(subject.convert_to(:dec).quantity).to eq(1.90258751902588e-7)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(1.90258543400074e-8)
+      expect(subject.convert_to(:cent).quantity).to eq(1.90258751902588e-8)
     end
   end
 
@@ -385,7 +385,7 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to yr" do
-      expect(subject.convert_to(:yr).quantity).to eq(0.25)
+      expect(subject.convert_to(:yr).quantity).to eq(0.250000273972603)
     end
 
     it "converts to min" do
@@ -393,11 +393,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to dec" do
-      expect(subject.convert_to(:dec).quantity).to eq(0.025)
+      expect(subject.convert_to(:dec).quantity).to eq(0.0250000273972603)
     end
 
     it "converts to cent" do
-      expect(subject.convert_to(:cent).quantity).to eq(0.0025)
+      expect(subject.convert_to(:cent).quantity).to eq(0.00250000273972603)
     end
   end
 
@@ -405,27 +405,27 @@ RSpec.describe UnitMeasurements::Time do
     subject { described_class.new(1, :dec) }
 
     it "converts to s" do
-      expect(subject.convert_to(:s).quantity).to eq(3.153603456e+8)
+      expect(subject.convert_to(:s).quantity).to eq(3.1536e+8)
     end
 
     it "converts to h" do
-      expect(subject.convert_to(:h).quantity).to eq(8.7600096e+4)
+      expect(subject.convert_to(:h).quantity).to eq(87600)
     end
 
     it "converts to d" do
-      expect(subject.convert_to(:d).quantity).to eq(3650.004)
+      expect(subject.convert_to(:d).quantity).to eq(3650)
     end
 
     it "converts to wk" do
-      expect(subject.convert_to(:wk).quantity).to eq(521.429142857143)
+      expect(subject.convert_to(:wk).quantity).to eq(521.428571428571)
     end
 
     it "converts to fn" do
-      expect(subject.convert_to(:fn).quantity).to eq(260.714571428571)
+      expect(subject.convert_to(:fn).quantity).to eq(260.714285714286)
     end
 
     it "converts to mo" do
-      expect(subject.convert_to(:mo).quantity).to eq(120)
+      expect(subject.convert_to(:mo).quantity).to eq(119.999868493295)
     end
 
     it "converts to yr" do
@@ -433,11 +433,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to min" do
-      expect(subject.convert_to(:min).quantity).to eq(5.25600576e+6)
+      expect(subject.convert_to(:min).quantity).to eq(5.256e+6)
     end
 
     it "converts to qtr" do
-      expect(subject.convert_to(:qtr).quantity).to eq(40)
+      expect(subject.convert_to(:qtr).quantity).to eq(39.9999561644316)
     end
 
     it "converts to cent" do
@@ -449,27 +449,27 @@ RSpec.describe UnitMeasurements::Time do
     subject { described_class.new(1, :cent) }
 
     it "converts to s" do
-      expect(subject.convert_to(:s).quantity).to eq(3.153603456e+9)
+      expect(subject.convert_to(:s).quantity).to eq(3.1536e+9)
     end
 
     it "converts to h" do
-      expect(subject.convert_to(:h).quantity).to eq(8.7600096e+5)
+      expect(subject.convert_to(:h).quantity).to eq(876000)
     end
 
     it "converts to d" do
-      expect(subject.convert_to(:d).quantity).to eq(36500.04)
+      expect(subject.convert_to(:d).quantity).to eq(36500)
     end
 
     it "converts to wk" do
-      expect(subject.convert_to(:wk).quantity).to eq(5214.29142857143)
+      expect(subject.convert_to(:wk).quantity).to eq(5214.28571428571)
     end
 
     it "converts to fn" do
-      expect(subject.convert_to(:fn).quantity).to eq(2607.14571428571)
+      expect(subject.convert_to(:fn).quantity).to eq(2607.14285714286)
     end
 
     it "converts to mo" do
-      expect(subject.convert_to(:mo).quantity).to eq(1200)
+      expect(subject.convert_to(:mo).quantity).to eq(1199.99868493295)
     end
 
     it "converts to yr" do
@@ -477,11 +477,11 @@ RSpec.describe UnitMeasurements::Time do
     end
 
     it "converts to min" do
-      expect(subject.convert_to(:min).quantity).to eq(5.25600576e+7)
+      expect(subject.convert_to(:min).quantity).to eq(5.256e+7)
     end
 
     it "converts to qtr" do
-      expect(subject.convert_to(:qtr).quantity).to eq(400)
+      expect(subject.convert_to(:qtr).quantity).to eq(399.999561644316)
     end
 
     it "converts to dec" do
