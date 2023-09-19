@@ -4,3 +4,4 @@
 
 require_relative "length"
 require_relative "weight"
+require_relative "time"
