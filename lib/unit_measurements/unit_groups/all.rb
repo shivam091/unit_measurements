@@ -5,6 +5,7 @@
 # Fundamental SI units
 
 require_relative "amount_of_substance"
+require_relative "electric_current"
 require_relative "length"
 require_relative "temperature"
 require_relative "time"
