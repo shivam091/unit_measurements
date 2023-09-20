@@ -1,4 +1,14 @@
-## [2.1.0](https://github.com/shivam091/unit_measurements/compare/v1.7.0...v2.1.0) - 2023-08-21
+## [2.2.0](https://github.com/shivam091/unit_measurements/compare/v2.1.0...v2.2.0) - 2023-08-21
+
+### What's new
+
+- Added unit group for `electric current` units.
+- Added unit group for `luminous intensity` units.
+- Added unit group for `temperature` units.
+
+----------
+
+## [2.1.0](https://github.com/shivam091/unit_measurements/compare/v1.7.0...v2.1.0) - 2023-08-20
 
 ### What's new
 
