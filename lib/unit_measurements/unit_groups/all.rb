@@ -15,3 +15,4 @@ require_relative "weight"
 ## Derived units
 
 require_relative "area"
+require_relative "volume"
