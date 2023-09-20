@@ -53,7 +53,36 @@ These units are defined in `UnitMeasurements::Time`.
 
 These units are defined in `UnitMeasurements::AmountOfSubstance`.
 
-| # | Symbol | Aliases |
+| # | Name | Aliases |
 |:--|:--|:--|
 | **1** | **mol\*** | **mole, moles** |
 | 2 | NA | avogadro constant |
+
+## 5. Electric current
+
+These units are defined in `UnitMeasurements::ElectricCurrent`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **A\*** | **amp, ampere, amperes** |
+| 2 | abA | abampere, abamperes |
+| 3 | Bi | biot, biots |
+| 4 | statA | statampere, statamperes |
+
+## 6. Luminous intensity
+
+These units are defined in `UnitMeasurements::LuminousIntensity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **cd\*** | **candela, candelas** |
+| 2 | hk | hefnerkerze |
+
+## 7. Temperature
+
+These units are defined in `UnitMeasurements::Temperature`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **K\*** | **kelvin, kelvins** |
+| 2 | °R | R, °Ra, Ra, rankine |
