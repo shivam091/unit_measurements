@@ -86,3 +86,33 @@ These units are defined in `UnitMeasurements::Temperature`.
 |:--|:--|:--|
 | **1** | **K\*** | **kelvin, kelvins** |
 | 2 | °R | R, °Ra, Ra, rankine |
+
+## 8. Area
+
+These units are defined in `UnitMeasurements::Area`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **m²** | **m^2, sq m, square meter, square meters, square metre, square metres** |
+| 2 | km² | km^2, sq km, square kilometer, square kilometers, square kilometre, square kilometres |
+| 3 | in² | in^2, sq in, square inch, square inches |
+| 4 | ft² | ft^2, sq ft, square foot, square feet |
+| 5 | yd² | yd^2, sq yd, square yard, square yards |
+| 6 | mi² | mi^2, sq mi, square mile, square miles |
+
+## 9. Volume
+
+These units are defined in `UnitMeasurements::Volume`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **l\*** | **liter, litre, liters, litres** |
+| 2 | m³ | m^3, cu m, cubic meter, cubic meters, cubic metre, cubic metres |
+| 3 | mm³ | mm^3, cu mm, cubic millimeter, cubic millimeters, cubic millimetre, cubic millimetres |
+| 4 | cm³ | cm^3, cu cm, cubic centimeter, cubic centimeters, cubic centimetre, cubic centimetres |
+| 5 | dm³ | dm^3, cu dm, cubic decimeter, cubic decimeters, cubic decimetre, cubic decimetres |
+| 6 | km³ | km^3, cu km, cubic kilometer, cubic kilometers, cubic kilometre, cubic kilometres |
+| 7 | in³ | in^3, cu in, cubic inch, cubic inches |
+| 8 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
+| 9 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
+| 10 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
