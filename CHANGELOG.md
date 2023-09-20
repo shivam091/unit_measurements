@@ -1,3 +1,12 @@
+## [2.1.0](https://github.com/shivam091/unit_measurements/compare/v1.7.0...v2.1.0) - 2023-08-21
+
+### What's new
+
+- Added unit group for `time` units.
+- Added unit group for `amount of substance` units.
+
+----------
+
 ## [1.7.0](https://github.com/shivam091/unit_measurements/compare/v1.6.0...v1.7.0) - 2023-08-20
 
 ### What's new
@@ -76,10 +85,10 @@
 
 ----------
 
-## [0.1.0] - 2023-09-13
+## 0.1.0 - 2023-09-13
 
 ### Initial release
 
 -----------
 
-## [Unreleased]
+### Unreleased
