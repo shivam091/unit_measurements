@@ -12,7 +12,8 @@ require_relative "temperature"
 require_relative "time"
 require_relative "weight"
 
-## Derived units
+## Other units
 
 require_relative "area"
 require_relative "volume"
+require_relative "density"
