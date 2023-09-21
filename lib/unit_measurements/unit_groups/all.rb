@@ -19,4 +19,5 @@ require_relative "volume"
 require_relative "density"
 
 ## Other units
+require_relative "sound_level"
 require_relative "quantity"
