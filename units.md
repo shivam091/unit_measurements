@@ -116,3 +116,27 @@ These units are defined in `UnitMeasurements::Volume`.
 | 8 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
 | 9 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
 | 10 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
+
+## 10. Density
+
+These units are defined in `UnitMeasurements::Density`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **g/m³** | **g/m^3, g·m⁻³, gram per cubic meter, grams per cubic meter, gramme per cubic metre, grammes per cubic metre** |
+| 2 | kg/m³ | kg/m^3, kg·m⁻³, kilogram per cubic meter, kilograms per cubic meter, kilogramme per cubic metre, kilogrammes per cubic metre |
+| 3 | g/l | g·l⁻¹, gram per liter, grams per liter, gramme per litre, grammes per litre |
+| 4 | g/ml | g·ml⁻¹, gram per milliliter, grams per milliliter, gramme per millilitre, grammes per millilitre |
+| 5 | kg/l | kg·l⁻¹, kilogram per liter, kilograms per liter, kilogramme per litre, kilogrammes per litre |
+
+## 11. Quantity
+
+These units are defined in `UnitMeasurements::Quantity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **pc** | **pcs, piece, pieces** |
+| 2 | pr | pair, pairs |
+| 3 | gr | gross, grosses |
+| 4 | dz | doz, dozen, dozens |
+| 5 | gg | great gross, great grosses, grand gross, grand grosses, dozen gross, dozen grosses |

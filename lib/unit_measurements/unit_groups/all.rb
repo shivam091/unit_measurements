@@ -16,3 +16,7 @@ require_relative "weight"
 
 require_relative "area"
 require_relative "volume"
+require_relative "density"
+
+## Other units
+require_relative "quantity"
