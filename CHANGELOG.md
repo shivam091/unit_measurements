@@ -1,3 +1,11 @@
+## [2.6.1](https://github.com/shivam091/unit_measurements/compare/v2.6.0...v2.6.1) - 2023-08-24
+
+### What's changed
+
+- Replaced `Symbol` by `String` in unit names and symbols.
+
+----------
+
 ## [2.6.0](https://github.com/shivam091/unit_measurements/compare/v2.5.0...v2.6.0) - 2023-08-24
 
 ### What's new
