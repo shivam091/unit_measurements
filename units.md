@@ -140,3 +140,28 @@ These units are defined in `UnitMeasurements::Quantity`.
 | 3 | gr | gross, grosses |
 | 4 | dz | doz, dozen, dozens |
 | 5 | gg | great gross, great grosses, grand gross, grand grosses, dozen gross, dozen grosses |
+
+## 12. Sound level
+
+These units are defined in `UnitMeasurements::SoundLevel`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **B\*** | **bel, bels** |
+| 2 | Np | neper, nepers |
+
+## 13. Plane angle
+
+These units are defined in `UnitMeasurements::PlaneAngle`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **rad\*** | **radian, radians** |
+| 2 | deg | °, degree, degrees |
+| 3 | gon | ᵍ, grad, gradian, gradians |
+| 4 | cir | circle, circles |
+| 5 | mil | mils |
+| 6 | rev | revolution, revolutions |
+| 7 | brad | b°, bdeg, binary degree, binary radian, binary degrees, binary radians |
+| 8 | arcmin | ′, amin, arcminute, arcminutes |
+| 9 | arcsec | ″, asec, arcsecond, arcseconds |

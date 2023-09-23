@@ -1,3 +1,12 @@
+## [2.5.0](https://github.com/shivam091/unit_measurements/compare/v2.4.0...v2.5.0) - 2023-08-23
+
+### What's new
+
+- Added unit group for `sound level` units.
+- Added unit group for `plane angle` units.
+
+----------
+
 ## [2.4.0](https://github.com/shivam091/unit_measurements/compare/v2.3.0...v2.4.0) - 2023-08-23
 
 ### What's new
