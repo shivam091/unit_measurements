@@ -1,3 +1,12 @@
+## [2.6.0](https://github.com/shivam091/unit_measurements/compare/v2.5.0...v2.6.0) - 2023-08-24
+
+### What's new
+
+- Added unit group for `force` units.
+- Added unit group for `solid angle` units.
+
+----------
+
 ## [2.5.0](https://github.com/shivam091/unit_measurements/compare/v2.4.0...v2.5.0) - 2023-08-23
 
 ### What's new

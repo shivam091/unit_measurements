@@ -165,3 +165,29 @@ These units are defined in `UnitMeasurements::PlaneAngle`.
 | 7 | brad | b°, bdeg, binary degree, binary radian, binary degrees, binary radians |
 | 8 | arcmin | ′, amin, arcminute, arcminutes |
 | 9 | arcsec | ″, asec, arcsecond, arcseconds |
+
+## 14. Solid angle
+
+These units are defined in `UnitMeasurements::SolidAngle`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **sr\*** | **steradian, steradians** |
+| 2 | sp | spat, spats |
+| 3 | deg² | (°)², sq °, square degree, square degrees |
+| 4 | arcmin² | (′)², sq ′, square arcminute, square arcminutes |
+| 5 | arcsec² | (″)², sq ″, square arcsecond, square arcseconds |
+
+## 15. Force
+
+These units are defined in `UnitMeasurements::Force`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| **1** | **N\*** | **newton, newtons** |
+| 2 | tf | tonne-force |
+| 3 | dyn | dyne, dynes |
+| 4 | kgf | kilogram-force, kilogramme-force |
+| 5 | ozf | ounce-force |
+| 6 | lbf | pound-force |
+| 7 | pdl | poundal, poundals |
