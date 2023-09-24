@@ -9,7 +9,7 @@ module UnitMeasurements
     # @param [Numeric or Measurement] other
     #
     # @example
-    #   UnitMeasurements::Weight.new(1, :kg) + UnitMeasurements::Weight.new(1, :g)
+    #   UnitMeasurements::Weight.new(1, "kg") + UnitMeasurements::Weight.new(1, "g")
     #   => 1.001 kg
     #
     # @return [Measurement]
@@ -22,7 +22,7 @@ module UnitMeasurements
     # @param [Numeric or Measurement] other
     #
     # @example
-    #   UnitMeasurements::Weight.new(2, :kg) - 1
+    #   UnitMeasurements::Weight.new(2, "kg") - 1
     #   => 1 kg
     #
     # @return [Measurement]
@@ -35,7 +35,7 @@ module UnitMeasurements
     # @param [Numeric or Measurement] other
     #
     # @example
-    #   UnitMeasurements::Weight.new(2, :kg) * 2
+    #   UnitMeasurements::Weight.new(2, "kg") * 2
     #   => 4 kg
     #
     # @return [Measurement]
@@ -48,7 +48,7 @@ module UnitMeasurements
     # @param [Numeric or Measurement] other
     #
     # @example
-    #   UnitMeasurements::Weight.new(4, :kg) / UnitMeasurements::Weight.new(2, :kg)
+    #   UnitMeasurements::Weight.new(4, "kg") / UnitMeasurements::Weight.new(2, "kg")
     #   => 2 kg
     #
     # @return [Measurement]
