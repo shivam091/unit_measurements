@@ -6,7 +6,7 @@
 
 RSpec.describe UnitMeasurements::UnitGroup do
   let(:g) { UnitMeasurements::Unit.new(:g, value: 1, aliases: [:gram]) }
-  let(:kg) { UnitMeasurements::Unit.new(:kg, value: 1000, aliases: [:kilogram]) }
+  let(:kg) { UnitMeasurements::Unit.new(:kg, value: "1000 kg", aliases: [:kilogram]) }
   let(:units) { [g, kg] }
 
   subject(:unit_group) { described_class.new(units) }

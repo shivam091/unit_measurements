@@ -32,6 +32,8 @@ module UnitMeasurements
       self.class.new((quantity * conversion_factor), target_unit)
     end
     alias_method :to, :convert_to
+    alias_method :in, :convert_to
+    alias_method :as, :convert_to
 
     def convert_to!(target_unit)
       measurement = convert_to(target_unit)
@@ -40,6 +42,8 @@ module UnitMeasurements
       self
     end
     alias_method :to!, :convert_to!
+    alias_method :in!, :convert_to!
+    alias_method :as!, :convert_to!
 
     def inspect(dump: false)
       return super() if dump
@@ -64,7 +68,7 @@ module UnitMeasurements
       extend Forwardable
 
       def unit_group
-        raise "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`."
+        raise BaseError, "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`."
       end
 
       def_delegators :unit_group, :units, :unit_names, :unit_with_name_and_aliases,
@@ -76,6 +80,10 @@ module UnitMeasurements
         source, target = input.match(CONVERSION_STRING_REGEXP)&.captures
 
         target ? _parse(source).convert_to(target) : _parse(source)
+      end
+
+      def name
+        to_s.split("::").last.underscore.humanize.downcase
       end
 
       private

@@ -6,7 +6,7 @@
 
 RSpec.describe UnitMeasurements::Measurement do
   Length = UnitMeasurements.build do
-    base :m, aliases: [:meter]
+    unit :m, aliases: [:meter]
     unit :cm, value: 0.01, aliases: [:centimeter]
   end
   let(:length) { Length.new(1, :m) }
@@ -95,6 +95,12 @@ RSpec.describe UnitMeasurements::Measurement do
   describe "#to_s" do
     it "returns a string representation" do
       expect(length.to_s).to eq("1 m")
+    end
+  end
+
+  describe ".name" do
+    it "returns humanized name of the unit group" do
+      expect(UnitMeasurements::Length.name).to eq("length")
     end
   end
 

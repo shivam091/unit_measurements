@@ -7,50 +7,41 @@
 RSpec.describe UnitMeasurements::UnitGroupBuilder do
   subject { described_class.new }
 
-  describe "#base" do
-    it "adds a base unit to the list of units" do
-      subject.base(:m, aliases: [:meter])
-      units = subject.units
-
-      expect(units.size).to eq(1)
-      expect(units[0].name).to eq("m")
-      expect(units[0].aliases).to eq(Set.new(["meter"]))
-    end
-
-    it "sets value 1 to base unit" do
-      subject.base(:m, aliases: [:meter])
-      units = subject.units
-
-      expect(units[0].value).to eq(1)
-    end
-  end
-
   describe "#unit" do
+    context "when value is not specified" do
+      it "sets value 1 to the unit" do
+        subject.unit(:m, aliases: [:meter])
+        units = subject.units
+
+        expect(units[0].value).to eq(1)
+      end
+    end
+
     context "when adding the unit with unique name" do
       it "adds a unit to the list of units" do
-        subject.unit(:cm, value: 0.01, aliases: [:centimeter, :centimeters])
+        subject.unit(:cm, value: "0.01 m", aliases: [:centimeter, :centimeters])
         units = subject.units
 
         expect(units.size).to eq(1)
         expect(units[0].name).to eq("cm")
-        expect(units[0].value).to eq(0.01)
+        expect(units[0].value).to eq("0.01 m")
         expect(units[0].aliases).to eq(Set.new(["centimeter", "centimeters"]))
       end
     end
 
     context "when adding unit with duplicate name" do
       it "raises an error" do
-        subject.unit(:cm, value: 0.01, aliases: [:centimeter, :centimeters])
+        subject.unit(:cm, value: "0.01 m", aliases: [:centimeter, :centimeters])
 
         expect {
-          subject.unit(:cm, value: 0.01, aliases: [:centimeter])
+          subject.unit(:cm, value: "0.01 m", aliases: [:centimeter])
         }.to raise_error(UnitMeasurements::UnitAlreadyDefinedError, "Unit already defined: 'cm'.")
       end
     end
   end
 
   describe "#si_unit" do
-    it "adds a base unit along with all SI prefixes" do
+    it "adds the unit along with all SI prefixes" do
       subject.si_unit(:m, aliases: [:meter, :meters])
       units = subject.units
       unit_group = subject.build
@@ -62,8 +53,8 @@ RSpec.describe UnitMeasurements::UnitGroupBuilder do
 
   describe "#build" do
     it "creates a unit group with the defined units" do
-      subject.base(:m, aliases: [:meter])
-      subject.unit(:cm, value: 0.01, aliases: [:centimeter, :centimeters])
+      subject.unit(:m, aliases: [:meter])
+      subject.unit(:cm, value: "0.01 m", aliases: [:centimeter, :centimeters])
 
       unit_group = subject.build
 

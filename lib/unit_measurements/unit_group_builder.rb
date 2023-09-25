@@ -10,10 +10,6 @@ module UnitMeasurements
       @units = []
     end
 
-    def base(name, aliases: [])
-      @units << build_unit(name, value: 1.0, aliases: aliases)
-    end
-
     def unit(name, value: 1.0, aliases: [])
       @units << build_unit(name, value: value, aliases: aliases)
     end
