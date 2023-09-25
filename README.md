@@ -72,8 +72,9 @@ UnitMeasurements::Weight.new(1, :kg)
 **Converting to other units:**
 
 This gem allows you to convert among units of same unit group.
-You can convert measurement to other unit using `#convert_to` (aliased as `#to`)
-or `#convert_to!` (aliased as `#to!`) methods.
+You can convert measurement to other unit using `#convert_to`
+(aliased as `#to`, `#in`, and `as`) or `#convert_to!`
+(aliased as `#to!`, `#in!`, and `as!`) methods.
 
 You can use `#convert_to` as:
 

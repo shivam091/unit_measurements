@@ -68,7 +68,7 @@ module UnitMeasurements
       extend Forwardable
 
       def unit_group
-        raise "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`."
+        raise BaseError, "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`."
       end
 
       def_delegators :unit_group, :units, :unit_names, :unit_with_name_and_aliases,
