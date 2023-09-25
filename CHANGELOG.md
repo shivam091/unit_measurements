@@ -1,3 +1,19 @@
+## [3.0.0](https://github.com/shivam091/unit_measurements/compare/v2.6.2...v3.0.0) - 2023-08-25
+
+### What's new
+
+- Added method `Measurement.name` to get humanized name of the unit group.
+- Raised `BaseError` in `Measurement.unit_group`.
+- Added aliases `in`, `as`, `in!`, `as` for `convert_to` and `convert_to!` methods.
+
+### What's changed
+
+- Moved LICENSE to markdown file.
+- Replaced `$LOAD_PATH` by shorthand `$:`
+- Replaced `base` method by `unit`.
+
+----------
+
 ## [2.6.2](https://github.com/shivam091/unit_measurements/compare/v2.6.1...v2.6.2) - 2023-08-25
 
 ### What's changed
