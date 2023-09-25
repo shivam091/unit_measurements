@@ -3,7 +3,7 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Quantity = UnitMeasurements.build do
-  base :pc, aliases: [:pcs, :piece, :pieces]
+  unit :pc, aliases: [:pcs, :piece, :pieces]
 
   unit :pr, value: "2 pc", aliases: [:pair, :pairs]
   unit :dz, value: "6 pr", aliases: [:doz, :dozen, :dozens]

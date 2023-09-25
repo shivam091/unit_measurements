@@ -6,7 +6,7 @@
 
 RSpec.describe UnitMeasurements::Measurement do
   Length = UnitMeasurements.build do
-    base :m, aliases: [:meter]
+    unit :m, aliases: [:meter]
     unit :cm, value: 0.01, aliases: [:centimeter]
   end
   let(:length) { Length.new(1, :m) }
