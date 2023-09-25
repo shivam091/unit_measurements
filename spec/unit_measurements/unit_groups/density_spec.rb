@@ -6,102 +6,102 @@
 
 RSpec.describe UnitMeasurements::Density do
   describe "g/m³" do
-    subject { described_class.new(5, "g/m³") }
+    subject { described_class.new(5, :"g/m³") }
 
     it "converts to kg/m³" do
-      expect(subject.convert_to("kg/m³").quantity).to eq(0.005)
+      expect(subject.convert_to(:"kg/m³").quantity).to eq(0.005)
     end
 
     it "converts to g/l" do
-      expect(subject.convert_to("g/l").quantity).to eq(0.005)
+      expect(subject.convert_to(:"g/l").quantity).to eq(0.005)
     end
 
     it "converts to g/ml" do
-      expect(subject.convert_to("g/ml").quantity).to eq(5e-6)
+      expect(subject.convert_to(:"g/ml").quantity).to eq(5e-6)
     end
 
     it "converts to kg/l" do
-      expect(subject.convert_to("kg/l").quantity).to eq(5e-6)
+      expect(subject.convert_to(:"kg/l").quantity).to eq(5e-6)
     end
   end
 
   describe "kg/m³" do
-    subject { described_class.new(5, "kg/m³") }
+    subject { described_class.new(5, :"kg/m³") }
 
     it "converts to g/m³" do
-      expect(subject.convert_to("g/m³").quantity).to eq(5000)
+      expect(subject.convert_to(:"g/m³").quantity).to eq(5000)
     end
 
     it "converts to g/l" do
-      expect(subject.convert_to("g/l").quantity).to eq(5)
+      expect(subject.convert_to(:"g/l").quantity).to eq(5)
     end
 
     it "converts to g/ml" do
-      expect(subject.convert_to("g/ml").quantity).to eq(0.005)
+      expect(subject.convert_to(:"g/ml").quantity).to eq(0.005)
     end
 
     it "converts to kg/l" do
-      expect(subject.convert_to("kg/l").quantity).to eq(0.005)
+      expect(subject.convert_to(:"kg/l").quantity).to eq(0.005)
     end
   end
 
   describe "g/l" do
-    subject { described_class.new(5, "g/l") }
+    subject { described_class.new(5, :"g/l") }
 
     it "converts to g/m³" do
-      expect(subject.convert_to("g/m³").quantity).to eq(5000)
+      expect(subject.convert_to(:"g/m³").quantity).to eq(5000)
     end
 
     it "converts to kg/m³" do
-      expect(subject.convert_to("kg/m³").quantity).to eq(5)
+      expect(subject.convert_to(:"kg/m³").quantity).to eq(5)
     end
 
     it "converts to g/ml" do
-      expect(subject.convert_to("g/ml").quantity).to eq(0.005)
+      expect(subject.convert_to(:"g/ml").quantity).to eq(0.005)
     end
 
     it "converts to kg/l" do
-      expect(subject.convert_to("kg/l").quantity).to eq(0.005)
+      expect(subject.convert_to(:"kg/l").quantity).to eq(0.005)
     end
   end
 
   describe "g/ml" do
-    subject { described_class.new(5, "g/ml") }
+    subject { described_class.new(5, :"g/ml") }
 
     it "converts to g/m³" do
-      expect(subject.convert_to("g/m³").quantity).to eq(5e+6)
+      expect(subject.convert_to(:"g/m³").quantity).to eq(5e+6)
     end
 
     it "converts to kg/m³" do
-      expect(subject.convert_to("kg/m³").quantity).to eq(5000)
+      expect(subject.convert_to(:"kg/m³").quantity).to eq(5000)
     end
 
     it "converts to g/l" do
-      expect(subject.convert_to("g/l").quantity).to eq(5000)
+      expect(subject.convert_to(:"g/l").quantity).to eq(5000)
     end
 
     it "converts to kg/l" do
-      expect(subject.convert_to("kg/l").quantity).to eq(5)
+      expect(subject.convert_to(:"kg/l").quantity).to eq(5)
     end
   end
 
   describe "kg/l" do
-    subject { described_class.new(5, "kg/l") }
+    subject { described_class.new(5, :"kg/l") }
 
     it "converts to g/m³" do
-      expect(subject.convert_to("g/m³").quantity).to eq(5e+6)
+      expect(subject.convert_to(:"g/m³").quantity).to eq(5e+6)
     end
 
     it "converts to kg/m³" do
-      expect(subject.convert_to("kg/m³").quantity).to eq(5000)
+      expect(subject.convert_to(:"kg/m³").quantity).to eq(5000)
     end
 
     it "converts to g/l" do
-      expect(subject.convert_to("g/l").quantity).to eq(5000)
+      expect(subject.convert_to(:"g/l").quantity).to eq(5000)
     end
 
     it "converts to g/ml" do
-      expect(subject.convert_to("g/ml").quantity).to eq(5)
+      expect(subject.convert_to(:"g/ml").quantity).to eq(5)
     end
   end
 end

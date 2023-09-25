@@ -7,7 +7,7 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Integer+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_i
+    #   UnitMeasurements::Weight.new(2.25567, :kg).to_i
     #   => 2 kg
     #
     # @return [Measurement]
@@ -18,7 +18,7 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Float+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_f
+    #   UnitMeasurements::Weight.new(2.25567, :kg).to_f
     #   => 2.25567 kg
     #
     # @return [Measurement]
@@ -29,7 +29,7 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Rational+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_r
+    #   UnitMeasurements::Weight.new(2.25567, :kg).to_r
     #   => 225567/100000 kg
     #
     # @return [Measurement]
@@ -40,7 +40,7 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Complex+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_c
+    #   UnitMeasurements::Weight.new(2.25567, :kg).to_c
     #   => 2.25567+0i kg
     #
     # @return [Measurement]
@@ -51,7 +51,7 @@ module UnitMeasurements
     # Converts quantity of the measurement to +BigDecimal+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_d
+    #   UnitMeasurements::Weight.new(2.25567, :kg).to_d
     #   => 2.25567 kg
     #
     # @return [Measurement]
