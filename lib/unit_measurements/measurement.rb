@@ -32,6 +32,8 @@ module UnitMeasurements
       self.class.new((quantity * conversion_factor), target_unit)
     end
     alias_method :to, :convert_to
+    alias_method :in, :convert_to
+    alias_method :as, :convert_to
 
     def convert_to!(target_unit)
       measurement = convert_to(target_unit)
@@ -40,6 +42,8 @@ module UnitMeasurements
       self
     end
     alias_method :to!, :convert_to!
+    alias_method :in!, :convert_to!
+    alias_method :as!, :convert_to!
 
     def inspect(dump: false)
       return super() if dump
