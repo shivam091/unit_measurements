@@ -244,6 +244,13 @@ weight.unit
 #=> #<UnitMeasurements::Unit: kg (kilogram, kilogramme, kilogrammes, kilograms)>
 ```
 
+**See humanized name of the unit group:**
+
+```ruby
+UnitMeasurements::Weight.name
+#=> weight
+```
+
 **See all units of the unit group:**
 
 ```ruby

@@ -98,6 +98,12 @@ RSpec.describe UnitMeasurements::Measurement do
     end
   end
 
+  describe ".name" do
+    it "returns humanized name of the unit group" do
+      expect(UnitMeasurements::Length.name).to eq("length")
+    end
+  end
+
   describe ".parse" do
     context "when only quantity and source unit is provided" do
       it "parses scientific notations" do
