@@ -12,9 +12,9 @@ module UnitMeasurements
     # formatting the measurement
     #
     # @example
-    #   UnitMeasurements::Weight.parse("2 kg").to("st").format
+    #   UnitMeasurements::Weight.parse("2 kg").to(:st).format
     #   => "0.31 st"
-    #   UnitMeasurements::Weight.parse("2 kg").to("st").format("%.4<quantity>f %<unit>s")
+    #   UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f %<unit>s")
     #   => "0.3149 st"
     #
     # @param [String] format
