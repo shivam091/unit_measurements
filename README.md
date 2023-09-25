@@ -467,30 +467,22 @@ gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/
 ### Building new unit groups
 
 This library provides simpler way to build your own unit groups. To build new unit group,
-use `UnitMeasurements.build` in order to define base units and conversion units within it:
+use `UnitMeasurements.build` in order to define units within it:
 
-If you build unit using `base` method, base unit automatically gets set for the unit group.
+If the unit is supporting [si prefixes](#si-units-support), you can use `si_unit` method to build it.
+If you build unit using `si_unit`, the unit will be added along with all SI prefixes for it.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
-  # Add a base unit to the group.
-  base :s, aliases: [:second, :seconds]
+  unit :s, aliases: [:second, :seconds]
 
-  # Add other units to the group, along with their conversion multipliers against
-  # base unit.
-  unit :min, value: 60.0, aliases: [:minute, :minutes]
-
-  # You can also specify conversion string if it's converted against a unit other
-  # than the unit group's base unit.
-  unit :h, value: "60 min", aliases: [:hour, :hours]
+  # Add units to the group, along with their conversion multipliers.
+  unit :min, value: "60 s", aliases: [:hour, :hours]
 
   # You can also specify unit value as an array.
-  unit :d, value: [24, :h], aliases: [:day, :days]
+  unit :h, value: [60, :min], aliases: [:day, :days]
 end
 ```
-
-If the unit is supporting [si prefixes](#si-units-support), you can use `si_unit` method to build it.
-If you build unit using `si_unit`, Base unit is automatically added to the group along with all SI prefixes for it.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
@@ -501,7 +493,7 @@ UnitMeasurements::Time = UnitMeasurements.build do
 end
 ```
 
-All units allow aliases, as long as they are unique. Unit symbol can be used to
+All units allow aliases, as long as they are unique. Unit names can be used to
 define the unit as long as it is unique. All unit names are case sensitive.
 
 ### Namespaces
