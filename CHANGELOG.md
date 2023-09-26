@@ -1,3 +1,12 @@
+## [3.1.0](https://github.com/shivam091/unit_measurements/compare/v3.0.0...v3.1.0) - 2023-08-26
+
+### What's new
+
+- Added unit group for `voltage` units.
+- Added unit group for `velocity` units.
+
+----------
+
 ## [3.0.0](https://github.com/shivam091/unit_measurements/compare/v2.6.2...v3.0.0) - 2023-08-25
 
 ### What's new

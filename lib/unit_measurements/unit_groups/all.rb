@@ -18,8 +18,11 @@ require_relative "area"
 require_relative "volume"
 require_relative "density"
 require_relative "force"
+require_relative "voltage"
+require_relative "velocity"
 
 ## Other units
+
 require_relative "sound_level"
 require_relative "plane_angle"
 require_relative "solid_angle"
