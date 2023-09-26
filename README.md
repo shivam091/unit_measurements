@@ -7,7 +7,7 @@ A library that encapsulate measurements and their units in Ruby.
 [![Gem Downloads](https://img.shields.io/gem/dt/unit_measurements.svg)](http://rubygems.org/gems/unit_measurements)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/maintainability)](https://codeclimate.com/github/shivam091/unit_measurements/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/test_coverage)](https://codeclimate.com/github/shivam091/unit_measurements/test_coverage)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE.md)
 
 **Harshal V. Ladhe, M.Sc. Computer Science.**
 
