@@ -190,3 +190,32 @@ These units are defined in `UnitMeasurements::Force`.
 | 5 | ozf | ounce-force |
 | 6 | lbf | pound-force |
 | 7 | pdl | poundal, poundals |
+
+## 16. Voltage
+
+These units are defined in `UnitMeasurements::Voltage`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | V\* | volt, volts |
+| 2 | abV | abvolt, abvolts |
+| 3 | statV | statvolt, statvolts |
+| 4 | W/A | W·A⁻¹, watt per ampere, watts per ampere |
+| 5 | J/C | J·C⁻¹, joule per coulomb, joules per coulomb |
+
+## 17. Velocity
+
+These units are defined in `UnitMeasurements::Velocity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | m/s | m·s⁻¹, meter per second, meters per second, metre per second, metres per second |
+| 2 | m/min | m·min⁻¹, meter per minute, meters per minute, metre per minute, metres per minute |
+| 3 | m/h | m·h⁻¹, meter per hour, meters per hour, metre per hour, metres per hour |
+| 4 | Kn | kt, knot, knots |
+| 5 | in/s | in·s⁻¹, inch per second, inches per second |
+| 6 | in/min | in·min⁻¹, inch per minute, inches per minute |
+| 7 | in/h | in·h⁻¹, inch per hour, inches per hour |
+| 8 | ft/s | ft·s⁻¹, foot per second, feet per second |
+| 9 | ft/min | ft·min⁻¹, foot per minute, feet per minute |
+| 10 | ft/h | ft·h⁻¹, foot per hour, feet per hour |
