@@ -3,5 +3,5 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
-  VERSION = "3.0.0"
+  VERSION = "3.1.0"
 end
