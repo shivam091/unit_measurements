@@ -1,3 +1,12 @@
+## [3.2.0](https://github.com/shivam091/unit_measurements/compare/v3.1.0...v3.2.0) - 2023-08-27
+
+### What's new
+
+- Added unit group for `acceleration` units.
+- Added unit group for `angular acceleration` units.
+
+----------
+
 ## [3.1.0](https://github.com/shivam091/unit_measurements/compare/v3.0.0...v3.1.0) - 2023-08-26
 
 ### What's new
