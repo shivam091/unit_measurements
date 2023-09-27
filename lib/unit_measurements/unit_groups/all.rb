@@ -20,6 +20,7 @@ require_relative "density"
 require_relative "force"
 require_relative "voltage"
 require_relative "velocity"
+require_relative "acceleration"
 
 ## Other units
 
