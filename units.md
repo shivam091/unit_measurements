@@ -197,7 +197,7 @@ These units are defined in `UnitMeasurements::Voltage`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| 1 | V\* | volt, volts |
+| 1 | V* | volt, volts |
 | 2 | abV | abvolt, abvolts |
 | 3 | statV | statvolt, statvolts |
 | 4 | W/A | W·A⁻¹, watt per ampere, watts per ampere |
@@ -219,3 +219,24 @@ These units are defined in `UnitMeasurements::Velocity`.
 | 8 | ft/s | ft·s⁻¹, foot per second, feet per second |
 | 9 | ft/min | ft·min⁻¹, foot per minute, feet per minute |
 | 10 | ft/h | ft·h⁻¹, foot per hour, feet per hour |
+
+## 18. Acceleration
+
+These units are defined in `UnitMeasurements::Acceleration`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | m/s² | m/s^2, m·s⁻², meter per second squared, meters per second squared, metre per second squared, metres per second squared |
+| 2 | in/s² | in/s^2, in·s⁻², inch per second squared, inches per second squared |
+| 3 | ft/s² | ft/s^2, ft·s⁻², foot per second squared, feet per second squared |
+| 4 | Kn/s | knot per second, knots per second |
+
+## 19. Angular acceleration
+
+These units are defined in `UnitMeasurements::AngularAcceleration`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | rad/s² | rad/s^2, rad·s⁻², radian per second squared, radians per second squared |
+| 2 | deg/s² | deg/s^2, °/s², deg·s⁻², degree per second squared, degrees per second squared |
+| 3 | gon/s² | gon/s^2, ᵍ/s², gon·s⁻², gradian per second squared, gradians per second squared |
