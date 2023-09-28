@@ -3,8 +3,12 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Weight = UnitMeasurements.build do
-  si_unit :g, aliases: [:gram, :grams, :gramme, :grammes]
+  system :metric do
+    primitive :kg
 
-  unit :q, value: "100 kg", aliases: [:quintal, :quintals]
-  unit :t, value: "10 q", aliases: [:tonne, :tonnes, :"metric tonne", :"metric tonnes"]
+    si_unit :g, aliases: [:gram, :grams, :gramme, :grammes]
+
+    unit :q, value: "100 kg", aliases: [:quintal, :quintals]
+    unit :t, value: "1000 kg", aliases: [:tonne, :tonnes, :"metric tonne", :"metric tonnes"]
+  end
 end

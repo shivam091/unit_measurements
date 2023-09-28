@@ -3,7 +3,12 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Time = UnitMeasurements.build do
-  si_unit :s, aliases: [:sec, :second, :seconds]
+  system :metric do
+    primitive :s
+
+    si_unit :s, aliases: [:sec, :second, :seconds]
+    unit :min, value: "60 s", aliases: [:minute, :minutes]
+  end
 
   unit :h, value: "60 min", aliases: [:hr, :hour, :hours]
   unit :d, value: "24 h", aliases: [:day, :days]
@@ -11,7 +16,6 @@ UnitMeasurements::Time = UnitMeasurements.build do
   unit :fn, value: "2 wk", aliases: [:"4tnite", :fortnight, :fortnights]
   unit :mo, value: "30.4167 d", aliases: [:month, :months]
   unit :yr, value: "365 d", aliases: [:y, :year, :years]
-  unit :min, value: "60 s", aliases: [:minute, :minutes]
   unit :qtr, value: "3 mo", aliases: [:quarter, :quarters]
   unit :dec, value: "10 y", aliases: [:decade, :decades]
   unit :cent, value: "10 dec", aliases: [:century, :centuries]

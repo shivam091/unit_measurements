@@ -3,11 +3,19 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Voltage = UnitMeasurements.build do
-  si_unit :V, aliases: [:volt, :volts]
+  system :metric do
+    primitive :V
 
-  unit :abV, value: "1e-8 V", aliases: [:abvolt, :abvolts]
-  unit :statV, value: "299.792458 V", aliases: [:statvolt, :statvolts]
+    si_unit :V, aliases: [:volt, :volts]
 
-  unit :"W/A", value: "1 V", aliases: [:"W·A⁻¹", :"watt per ampere", :"watts per ampere"]
-  unit :"J/C", value: "1 V", aliases: [:"J·C⁻¹", :"joule per coulomb", :"joules per coulomb"]
+    unit :"W/A", value: "1 V", aliases: [:"W·A⁻¹", :"watt per ampere", :"watts per ampere"]
+    unit :"J/C", value: "1 V", aliases: [:"J·C⁻¹", :"joule per coulomb", :"joules per coulomb"]
+  end
+
+  system :centimetre_gram_second do
+    primitive :statV
+
+    unit :abV, value: "1e-8 V", aliases: [:abvolt, :abvolts]
+    unit :statV, value: "299.792458 V", aliases: [:statvolt, :statvolts]
+  end
 end

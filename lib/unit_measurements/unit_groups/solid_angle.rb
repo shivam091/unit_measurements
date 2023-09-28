@@ -3,7 +3,11 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::SolidAngle = UnitMeasurements.build do
-  si_unit :sr, aliases: [:steradian, :steradians]
+  system :metric do
+    primitive :sr
+
+    si_unit :sr, aliases: [:steradian, :steradians]
+  end
 
   unit :sp, value: [(4 * Math::PI), :sr], aliases: [:spat, :spats] # (4 * π) sr
   unit :deg², value: [((Math::PI / 180) ** 2), :sr], aliases: [:"(°)²", :"sq °", :"square degree", :"square degrees"] # (π / 180)² sr
