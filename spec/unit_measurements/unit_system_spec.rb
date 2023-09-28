@@ -46,4 +46,23 @@ RSpec.describe UnitMeasurements::UnitSystem do
       }.to raise_error(UnitMeasurements::UnitError, "Invalid unit: 'kg'.")
     end
   end
+
+  describe "#primitive?" do
+    before do
+      unit_system.add_unit(g)
+      unit_system.set_primitive(g)
+    end
+
+    context "when string is passed" do
+      it "checks if the unit is primitive" do
+        expect(unit_system.primitive?("g")).to be_truthy
+      end
+    end
+
+    context "when unit instance is passed" do
+      it "checks if the unit is primitive" do
+        expect(unit_system.primitive?(g)).to be_truthy
+      end
+    end
+  end
 end

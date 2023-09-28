@@ -21,5 +21,9 @@ module UnitMeasurements
     def set_primitive(primitive)
       @primitive = unit_for!(primitive)
     end
+
+    def primitive?(unit)
+      @primitive.to_s == (unit.is_a?(Unit) ? unit.name : unit)
+    end
   end
 end
