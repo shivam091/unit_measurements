@@ -12,5 +12,9 @@ module UnitMeasurements
       @units = units.map { |unit| unit.with(unit_group: self) }
       @systems = systems
     end
+
+    def system_for(system_name)
+      @systems.find { |system| system.name.to_s == system_name.to_s }
+    end
   end
 end

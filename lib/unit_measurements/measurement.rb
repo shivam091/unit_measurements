@@ -73,7 +73,7 @@ module UnitMeasurements
 
       def_delegators :unit_group, :units, :unit_names, :unit_with_name_and_aliases,
                      :unit_names_with_aliases, :unit_for, :unit_for!, :defined?,
-                     :unit_or_alias?, :[], :systems
+                     :unit_or_alias?, :[], :systems, :system_for
 
       def parse(input)
         input = Normalizer.normalize(input)

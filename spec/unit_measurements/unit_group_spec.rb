@@ -7,10 +7,9 @@
 RSpec.describe UnitMeasurements::UnitGroup do
   let(:g) { UnitMeasurements::Unit.new(:g, value: 1, aliases: [:gram]) }
   let(:kg) { UnitMeasurements::Unit.new(:kg, value: "1000 kg", aliases: [:kilogram]) }
-  let(:units) { [g, kg] }
   let(:unit_system) { UnitMeasurements::UnitSystem.new(:metric) }
 
-  subject(:unit_group) { described_class.new(units, unit_system) }
+  subject(:unit_group) { described_class.new([g, kg], [unit_system]) }
 
   describe "#initialize" do
     it "sets attributes correctly" do
@@ -79,6 +78,16 @@ RSpec.describe UnitMeasurements::UnitGroup do
       expect(unit_group.unit_or_alias?(:g)).to be_truthy
       expect(unit_group.unit_or_alias?(:mg)).to be_falsy
       expect(unit_group.unit_or_alias?(:gram)).to be_truthy
+    end
+  end
+
+  describe "#system_for" do
+    it "finds the system within the unit group" do
+      expect(unit_group.system_for(:metric)).not_to be_nil
+    end
+
+    it "returns nil if the unit name is not found" do
+      expect(unit_group.system_for(:imperial)).to be_nil
     end
   end
 end
