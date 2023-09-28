@@ -231,7 +231,26 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | 3 | ft/s² | ft/s^2, ft·s⁻², foot per second squared, feet per second squared |
 | 4 | Kn/s | knot per second, knots per second |
 
-## 19. Angular acceleration
+## 19. Angular velocity
+
+These units are defined in `UnitMeasurements::AngularVelocity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | rad/s | rad·s⁻¹, radian per second, radians per second |
+| 2 | rad/min | rad·min⁻¹, radian per minute, radians per minute |
+| 3 | rad/h | rad·h⁻¹, radian per hour, radians per hour |
+| 4 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
+| 5 | deg/min | °/min, deg·min⁻¹, degree per minute, degrees per minute |
+| 6 | deg/h | °/h, deg·h⁻¹, degree per hour, degrees per hour |
+| 7 | rev/s | rev·s⁻¹, revolution per second, revolutions per second |
+| 8 | rev/min | rev·min⁻¹, revolution per minute, revolutions per minute |
+| 9 | rev/h | rev·h⁻¹, revolution per hour, revolutions per hour |
+| 10 | gon/s | ᵍ/s, gon·s⁻¹, gradian per second, gradians per second |
+| 11 | gon/min | ᵍ/min, gon·min⁻¹, gradian per minute, gradians per minute |
+| 12 | gon/h | ᵍ/h, gon·h⁻¹, gradian per hour, gradians per hour |
+
+## 20. Angular acceleration
 
 These units are defined in `UnitMeasurements::AngularAcceleration`.
 
@@ -240,3 +259,15 @@ These units are defined in `UnitMeasurements::AngularAcceleration`.
 | 1 | rad/s² | rad/s^2, rad·s⁻², radian per second squared, radians per second squared |
 | 2 | deg/s² | deg/s^2, °/s², deg·s⁻², degree per second squared, degrees per second squared |
 | 3 | gon/s² | gon/s^2, ᵍ/s², gon·s⁻², gradian per second squared, gradians per second squared |
+
+## 21. Electric charge
+
+These units are defined in `UnitMeasurements::ElectricCharge`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | C* | coulomb, coulombs |
+| 2 | abC | abcoulomb, abcoulombs |
+| 3 | statC | statcoulomb, statcoulombs |
+| 4 | Fr | franklin, franklins |
+| 5 | Fd | faraday, faradays |
