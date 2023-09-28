@@ -4,10 +4,11 @@
 
 module UnitMeasurements
   class UnitGroup
-    attr_reader :units
+    attr_reader :units, :systems
 
-    def initialize(units)
+    def initialize(units, systems)
       @units = units.map { |unit| unit.with(unit_group: self) }
+      @systems = systems
     end
 
     def unit_for(name)

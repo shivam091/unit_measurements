@@ -7,7 +7,7 @@ module UnitMeasurements
     attr_reader :units
 
     def initialize
-      @units = []
+      @units, @systems = [], []
     end
 
     def unit(name, value: 1.0, aliases: [])
@@ -19,7 +19,14 @@ module UnitMeasurements
     end
 
     def build
-      UnitGroup.new(@units)
+      UnitGroup.new(@units, @systems)
+    end
+
+    def system(system_name, &block)
+      @current_system = find_or_create_system(system_name)
+      instance_eval(&block) if block_given?
+    ensure
+      @current_system = nil
     end
 
     private
@@ -40,6 +47,7 @@ module UnitMeasurements
     def build_unit(name, value:, aliases:)
       unit = Unit.new(name, value: value, aliases: aliases)
       check_for_duplicate_unit_names!(unit)
+      add_unit_to_system(unit)
 
       unit
     end
@@ -50,6 +58,23 @@ module UnitMeasurements
       if names.any? { |name| unit.names.include?(name) }
         raise UnitAlreadyDefinedError.new(unit.name)
       end
+    end
+
+    def find_system(name)
+      @systems.find { |system| system.name.to_s == name.to_s }
+    end
+
+    def find_or_create_system(system_name)
+      system = find_system(system_name)
+      unless system
+        system = UnitSystem.new(system_name)
+        @systems << system
+      end
+      system
+    end
+
+    def add_unit_to_system(unit)
+      @current_system.add_unit(unit) if @current_system
     end
   end
 end
