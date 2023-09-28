@@ -1,3 +1,18 @@
+## [3.4.0](https://github.com/shivam091/unit_measurements/compare/v3.3.0...v3.4.0) - 2023-08-29
+
+### What's new
+
+- Added ability to group units by `unit system`.
+- Added ability to set `primitive` unit for each unit system.
+- Added method `primitive?` to check whether the unit is primitive or not.
+- Added method `system_for` to find unit system by name.
+
+### What's changed
+
+- Grouped units in system and set primitive unit for those systems.
+
+----------
+
 ## [3.3.0](https://github.com/shivam091/unit_measurements/compare/v3.2.0...v3.3.0) - 2023-08-28
 
 ### What's new

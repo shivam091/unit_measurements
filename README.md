@@ -9,7 +9,7 @@ A library that encapsulate measurements and their units in Ruby.
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/test_coverage)](https://codeclimate.com/github/shivam091/unit_measurements/test_coverage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE.md)
 
-**Harshal V. Ladhe, M.Sc. Computer Science.**
+**Harshal V. Ladhe, Master of Computer Science.**
 
 ## Introduction
 
@@ -251,28 +251,51 @@ UnitMeasurements::Weight.name
 #=> weight
 ```
 
-**See all units of the unit group:**
+**See all unit systems defined in the unit group:**
+
+```ruby
+UnitMeasurements::Length.systems
+#=> [#<UnitMeasurements::UnitSystem:0x00007fa1a46d11c0 @name=:metric, @primitive=#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, @units=[]>]
+```
+
+**Finding unit system within the unit group:**
+
+```ruby
+UnitMeasurements::Length.system_for(:imperial)
+#=> #<UnitMeasurements::UnitSystem:0x00007f87a348e680
+#     @name=:imperial,
+#     @primitive=#<UnitMeasurements::Unit: in (", inch, inches)>,
+#     @units=[#<UnitMeasurements::Unit: in (", inch, inches)>, #<UnitMeasurements::Unit: ft (', feet, foot)>, ...]>
+```
+
+**See all units of the unit group/unit system:**
 
 ```ruby
 UnitMeasurements::Weight.units
 #=> [#<UnitMeasurements::Unit: g (gram, gramme, grammes, grams)>, ..., ...]
+UnitMeasurements::Length.system_for(:imperial).units
+#=> [#<UnitMeasurements::Unit: in (", inch, inches)>, #<UnitMeasurements::Unit: ft (', feet, foot)>, ...]
 ```
 
-**See names of all valid units of the unit group:**
+**See names of all valid units of the unit group/unit system:**
 
 ```ruby
 UnitMeasurements::Weight.unit_names
 #=> ["g", "kg", "lb", "oz", ...]
+UnitMeasurements::Length.system_for(:imperial).unit_names
+#=> ["ft", "in", "mi", "yd"]
 ```
 
-**See all valid units of the unit group along with their aliases:**
+**See all valid units of the unit group/unit system along with their aliases:**
 
 ```ruby
 UnitMeasurements::Weight.unit_names_with_aliases
 #=> ["g", "gram", "gramme", "grammes", "grams", "kg", "kilogram", "kilogramme", "kilogrammes", "kilograms", "lb", "ounce", "ounces", "oz", "pound", "pounds", ...]
+UnitMeasurements::Length.system_for(:imperial).unit_names_with_aliases
+#=> ["feet", "foot", "ft", "in", "inch", "inches", "mi", "mile", "miles", "yard", "yards", "yd"]
 ```
 
-**Finding units within the unit group:**
+**Finding units within the unit group/unit system:**
 
 You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) to find units within
 the unit group. `#unit_for!` method returns error if a unit is not present in the
@@ -287,27 +310,42 @@ UnitMeasurements::Weight.unit_for!(:g)
 #=> #<UnitMeasurements::Unit: g (gram, gramme, grammes, grams)>
 UnitMeasurements::Weight.unit_for!(:z)
 #=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
+
+UnitMeasurements::Length.system_for(:imperial).unit_for(:in)
+#=> #<UnitMeasurements::Unit: in (", inch, inches)>
+UnitMeasurements::Length.system_for(:imperial).unit_for(:m)
+#=> nil
+UnitMeasurements::Length.system_for(:imperial).unit_for!(:in)
+#=> #<UnitMeasurements::Unit: in (", inch, inches)>
+UnitMeasurements::Length.system_for(:imperial).unit_for!(:m)
+#=> Invalid unit: 'm'. (UnitMeasurements::UnitError)
 ```
 
-**Finding whether the unit is defined within the unit group:**
+**Finding whether the unit is defined within the unit group/unit system:**
 
 ```ruby
 UnitMeasurements::Weight.defined?(:g)
 #=> true
-UnitMeasurements::Weight.defined?(:kg)
-#=> true
 UnitMeasurements::Weight.defined?(:gramme)
+#=> false
+
+UnitMeasurements::Length.system_for(:metric).defined?(:m)
+#=> true
+UnitMeasurements::Length.system_for(:metric).defined?(:in)
 #=> false
 ```
 
-**Check if the unit is a valid unit or alias within the unit group:**
+**Check if the unit is a valid unit or alias within the unit group/unit system:**
 
 ```ruby
 UnitMeasurements::Weight.unit_or_alias?(:g)
 #=> true
-UnitMeasurements::Weight.unit_or_alias?(:kg)
-#=> true
 UnitMeasurements::Weight.unit_or_alias?(:gramme)
+#=> true
+
+UnitMeasurements::Length.system_for(:metric).unit_or_alias?(:m)
+#=> true
+UnitMeasurements::Length.system_for(:metric).unit_or_alias?(:metre)
 #=> true
 ```
 
@@ -338,6 +376,7 @@ UnitMeasurements::Length.new(1, :ft).clamp(UnitMeasurements::Length.new(13, :in)
 You have ability to perform arithmetic operations on measurements with the same or
 different units within a same unit group. You can perform arithmetic operations on
 measurement by either other compatible measurement or number.
+In cases of different units, the left hand side takes precedence:
 
 **Methods:**
 1. `#+` - Adds the other measurement quantity or number to the measurement.
@@ -480,24 +519,24 @@ use `UnitMeasurements.build` in order to define units within it:
 If the unit is supporting [si prefixes](#si-units-support), you can use `si_unit` method to build it.
 If you build unit using `si_unit`, the unit will be added along with all SI prefixes for it.
 
-```ruby
-UnitMeasurements::Time = UnitMeasurements.build do
-  unit :s, aliases: [:second, :seconds]
-
-  # Add units to the group, along with their conversion multipliers.
-  unit :min, value: "60 s", aliases: [:hour, :hours]
-
-  # You can also specify unit value as an array.
-  unit :h, value: [60, :min], aliases: [:day, :days]
-end
-```
+For convenience, you also have ability to group units by the unit system and set primitive unit for each unit system using `system` and `primitive` methods.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
-  # Add a SI unit to the unit group
-  si_unit :s, aliases: [:second, :seconds]
+  # Group units by the unit system name.
+  system :metric do
+    # Set primitive unit for the unit system.
+    primitive :s
 
-  unit :min, value: "60 s", aliases: [:minute, :minutes]
+    # Add a SI unit to the unit group
+    si_unit :s, aliases: [:second, :seconds]
+
+    # Add units to the group, along with their conversion multipliers.
+    unit :min, value: "60 s", aliases: [:hour, :hours]
+
+    # You can also specify unit value as an array.
+    unit :h, value: [60, :min], aliases: [:day, :days]
+  end
 end
 ```
 
