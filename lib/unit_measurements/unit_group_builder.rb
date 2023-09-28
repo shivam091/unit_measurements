@@ -25,8 +25,13 @@ module UnitMeasurements
     def system(system_name, &block)
       @current_system = find_or_create_system(system_name)
       instance_eval(&block) if block_given?
+      @current_system.set_primitive(@current_primitive) if @current_primitive
     ensure
-      @current_system = nil
+      @current_primitive, @current_system = nil, nil
+    end
+
+    def primitive(primitive)
+      @current_primitive = primitive
     end
 
     private
