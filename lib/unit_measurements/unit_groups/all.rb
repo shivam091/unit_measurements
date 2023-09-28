@@ -17,12 +17,13 @@ require_relative "weight"
 require_relative "area"
 require_relative "volume"
 require_relative "density"
-require_relative "force"
-require_relative "voltage"
 require_relative "velocity"
 require_relative "acceleration"
 require_relative "angular_velocity"
 require_relative "angular_acceleration"
+require_relative "force"
+require_relative "voltage"
+require_relative "electric_charge"
 
 ## Other units
 
