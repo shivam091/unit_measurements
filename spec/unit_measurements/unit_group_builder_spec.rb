@@ -52,7 +52,7 @@ RSpec.describe UnitMeasurements::UnitGroupBuilder do
   end
 
   describe "#build" do
-    it "creates a unit group with the defined units" do
+    it "creates a unit group with the defined units & systems" do
       subject.unit(:m, aliases: [:meter])
       subject.unit(:cm, value: "0.01 m", aliases: [:centimeter, :centimeters])
 
