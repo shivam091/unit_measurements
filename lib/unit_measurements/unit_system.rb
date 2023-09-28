@@ -4,6 +4,8 @@
 
 module UnitMeasurements
   class UnitSystem
+    include UnitMethods
+
     attr_reader :name, :primitive, :units
 
     def initialize(name)
@@ -17,7 +19,7 @@ module UnitMeasurements
     end
 
     def set_primitive(primitive)
-      @primitive = primitive
+      @primitive = unit_for!(primitive)
     end
   end
 end
