@@ -1,3 +1,12 @@
+## [3.8.0](https://github.com/shivam091/unit_measurements/compare/v3.7.0...v3.8.0) - 2023-10-02
+
+### What's new
+
+- Added unit group for `magnetic field` units.
+- Added unit group for `inductance` units.
+
+----------
+
 ## [3.7.0](https://github.com/shivam091/unit_measurements/compare/v3.6.0...v3.7.0) - 2023-10-01
 
 ### What's new
