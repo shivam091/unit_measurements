@@ -1,4 +1,16 @@
-## [3.4.0](https://github.com/shivam091/unit_measurements/compare/v3.3.0...v3.4.0) - 2023-08-29
+## [3.4.1](https://github.com/shivam091/unit_measurements/compare/v3.4.0...v3.4.1) - 2023-08-29
+
+### What's changed
+
+- Updated usage examples in readme.
+
+### What's removed
+
+- Removed overridden `Measurement.name` method.
+
+----------
+
+## [3.4.0](https://github.com/shivam091/unit_measurements/compare/v3.3.0...v3.4.0) - 2023-08-28
 
 ### What's new
 

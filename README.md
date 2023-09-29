@@ -24,10 +24,10 @@ The `unit_measurements` gem is designed to simplify the handling of units for sc
 
 ## Advantages
 
-1. Provides easy conversion between units.
-2. Built in support for various [unit groups](units.md).
-3. Lightweight and easily extensible to include other units and conversions.
-4. Can convert `complex`, `rational`, `fractions`, `exponents`, `scientific notations`, and `ratios`.
+1. It provides easy conversion between units.
+2. It is lightweight and easily extensible to include other units and conversions.
+2. It has built in support for various [unit groups](units.md).
+4. It can convert `complex`, `fractional`, `mixed fractional`, `scientific` numbers, and `ratios`.
 
 ## Disclaimer
 
@@ -57,168 +57,122 @@ Or otherwise simply install it yourself as:
 
 ## Usage
 
-The **`UnitMeasurements::Measurement`** class is responsible for conversion of quantity to various compatble units.
-
-Measurements can't be initialized or converted to other units directly with the `UnitMeasurements::Measurement` class,
-but rather with the unit group classes viz., `UnitMeasurements::Weight`, `UnitMeasurements::Length`, etc.
+The **`UnitMeasurements::Measurement`** class is responsible for conversion of quantity to various compatible units
+but it can't be directly initialized or converted to other units, but rather it is done with the unit group classes
+viz., `UnitMeasurements::Weight`, `UnitMeasurements::Length`, etc.
 
 **Initialize a measurement:**
 
 ```ruby
-UnitMeasurements::Weight.new(1, :kg)
-#=> 1 kg
+UnitMeasurements::Length.new(1, :km)
+#=> 1 km
 ```
 
 **Converting to other units:**
 
-This gem allows you to convert among units of same unit group.
-You can convert measurement to other unit using `#convert_to`
-(aliased as `#to`, `#in`, and `as`) or `#convert_to!`
-(aliased as `#to!`, `#in!`, and `as!`) methods.
+This gem allows you to convert among units of same unit group. You can convert measurement to other unit using `#convert_to`
+(aliased as `#to`, `#in`, and `#as`) or `#convert_to!` (aliased as `#to!`, `#in!`, and `#as!`) methods.
 
 You can use `#convert_to` as:
 
 ```ruby
-UnitMeasurements::Weight.new(1, :kg).convert_to(:g)
-#=> 1000.0 g
+UnitMeasurements::Length.new(1, :km).convert_to(:m)
+#=> 1000.0 m
 ```
 
 If you want to modify measurement object itself, you can use `#convert_to!` method as:
 
 ```ruby
-UnitMeasurements::Weight.new(1, :kg).convert_to!(:g)
-#=> 1000.0 g
+UnitMeasurements::Length.new(1, :km).convert_to!(:m)
+#=> 1000.0 m
 ```
 
 You can also chain call of `#convert_to` and `#convert_to!` methods as:
 
 ```ruby
-UnitMeasurements::Weight.new(1, :kg).convert_to(:g).convert_to(:t).convert_to!(:q)
-#=> 0.01 q
+UnitMeasurements::Length.new(100, :m).convert_to(:ft).convert_to!(:in)
+#=> 3937.00787401574071916010498688 in
 ```
 
 **Parse string without having to split out the quantity and source unit:**
 
 ```ruby
-UnitMeasurements::Weight.parse("1 kg")
-#=> 1.0 kg
+UnitMeasurements::Length.parse("1 km")
+#=> 1.0 km
 ```
 
 **Parse string that mentions quantity, source unit, and target unit:**
 
-```ruby
-UnitMeasurements::Weight.parse("1 kg to g")
-#=> 1000.0 g
-UnitMeasurements::Weight.parse("1 kg as g")
-#=> 1000.0 g
-UnitMeasurements::Weight.parse("1 kg in g")
-#=> 1000.0 g
-```
-
-**Parse rational numbers, source unit, and (or) target unit:**
+A source unit can be separated from the target unit using the `in`, `to`, or `as` operators.
 
 ```ruby
-UnitMeasurements::Weight.new(Rational(2, 3), :kg).convert_to(:g)
-#=> 666.666666666667 g
-UnitMeasurements::Weight.new("2/3", :kg).convert_to(:g)
-#=> 666.666666666667 g
-UnitMeasurements::Weight.parse("2/3 kg").convert_to(:g)
-#=> 666.666666666667 g
-UnitMeasurements::Weight.parse("2/3 kg to g")
-#=> 666.666666666667 g
-```
-
-**Parse complex numbers, source unit, and (or) target unit:**
-
-```ruby
-UnitMeasurements::Weight.new(Complex(2, 3), :kg).convert_to(:g)
-#=> 2000.0+3000.0i g
-UnitMeasurements::Weight.new("2+3i", :kg).convert_to(:g)
-#=> 2000.0+3000.0i g
-UnitMeasurements::Weight.parse("2+3i kg").convert_to(:g)
-#=> 2000.0+3000.0i g
-UnitMeasurements::Weight.parse("2+3i kg to g")
-#=> 2000.0+3000.0i g
+UnitMeasurements::Length.parse("1 km to m")
+#=> 1000.0 m
 ```
 
 **Parse scientific numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Weight.new(BigDecimal(2), :kg).convert_to(:g)
-#=> 2000.0 g
-UnitMeasurements::Weight.new(0.2e1, :kg).convert_to(:g)
-#=> 2000.0 g
-UnitMeasurements::Weight.parse("0.2e1 kg").convert_to(:g)
-#=> 2000.0 g
-UnitMeasurements::Weight.parse("0.2e1 kg to g")
-#=> 2000.0 g
+UnitMeasurements::Length.new(BigDecimal(2), :km).convert_to(:m)
+#=> 20000.0 m
+UnitMeasurements::Length.new("2e+2", :km).convert_to(:m)
+#=> 200000.0 m
+UnitMeasurements::Length.parse("2e² km").convert_to(:m)
+#=> 200000.0 m
+UnitMeasurements::Length.parse("2e+2 km to m")
+#=> 200000.0 m
+UnitMeasurements::Length.parse("2e⁻² km to m")
+#=> 20.0 m
 ```
 
-**Parse ratios, source unit, and (or) target unit:**
+Supported special characters for exponents are `⁰`, `¹`, `²`, `³`, `⁴`, `⁵`, `⁶`, `⁷`, `⁸`, `⁹`, `⁺`, `⁻`.
+
+**Parse complex numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Weight.new("1:2", :kg).convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("1:2 kg").convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("1:2 kg to g")
-#=> 500.0 g
+UnitMeasurements::Length.new(Complex(2, 3), :km).convert_to(:m)
+#=> 2000.0+3000.0i m
+UnitMeasurements::Length.new("2+3i", :km).convert_to(:m)
+#=> 2000.0+3000.0i m
+UnitMeasurements::Length.parse("2+3i km").convert_to(:m)
+#=> 2000.0+3000.0i m
+UnitMeasurements::Length.parse("2+3i km to m")
+#=> 2000.0+3000.0i m
 ```
 
-**Parse fractional notations, source unit, and (or) target unit:**
+**Parse fractional/mixed fractional numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Weight.new("1/2", :kg).convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("1/2 kg").convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("1/2 kg to g")
-#=> 500.0 g
-UnitMeasurements::Weight.new("½", :kg).convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("½ kg").convert_to(:g)
-#=> 500.0 g
-UnitMeasurements::Weight.parse("½ kg to g")
-#=> 500.0 g
-```
-
-**Parse mixed fractional notations, source unit, and (or) target unit:**
-
-```ruby
-UnitMeasurements::Weight.new("2 1/2", :kg).convert_to(:g)
-#=> 2500.0 g
-UnitMeasurements::Weight.parse("2 1/2 kg").convert_to(:g)
-#=> 2500.0 g
-UnitMeasurements::Weight.parse("2 1/2 kg to g")
-#=> 2500.0 g
-UnitMeasurements::Weight.new("2 ½", :kg).convert_to(:g)
-#=> 2500.0 g
-UnitMeasurements::Weight.parse("2 ½ kg").convert_to(:g)
-#=> 2500.0 g
-UnitMeasurements::Weight.parse("2 ½ kg to g")
-#=> 2500.0 g
+UnitMeasurements::Length.new(Rational(2, 3), :km).convert_to(:m)
+#=> 666.666666666667 m
+UnitMeasurements::Length.new("2/3", :km).convert_to(:m)
+#=> 666.666666666667 m
+UnitMeasurements::Length.new("½", :km).convert_to(:m)
+#=> 500.0 m
+UnitMeasurements::Length.parse("2 ½ km").convert_to(:m)
+#=> 2500.0 m
+UnitMeasurements::Length.parse("2/3 km").convert_to(:m)
+#=> 666.666666666667 m
+UnitMeasurements::Length.parse("2/3 km to m")
+#=> 666.666666666667 m
+UnitMeasurements::Length.parse("2 1/2 km").convert_to(:m)
+#=> 2500.0 m
+UnitMeasurements::Length.parse("2 ½ km to m")
+#=> 2500.0 m
 ```
 
 Supported special characters for fractional notations are `¼`, `½`, `¾`, `⅓`, `⅔`, `⅕`, `⅖`, `⅗`, `⅘`, `⅙`, `⅚`, `⅐`, `⅛`, `⅜`, `⅝`, `⅞`, `⅑`, `⅒`, `↉`, `⁄`.
 
-**Parse exponents, source unit, and (or) target unit:**
+**Parse ratios, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Weight.new("2e+2", :kg).convert_to(:g)
-#=> 200000.0 g
-UnitMeasurements::Weight.parse("2e² kg").convert_to(:g)
-#=> 200000.0 g
-UnitMeasurements::Weight.parse("2e+2 kg to g")
-#=> 200000.0 g
-UnitMeasurements::Weight.new("2e⁺²", :kg).convert_to(:g)
-#=> 200000.0 g
-UnitMeasurements::Weight.parse("2e⁺2 kg").convert_to(:g)
-#=> 200000.0 g
-UnitMeasurements::Weight.parse("2e⁻² kg to g")
-#=> 20.0 g
+UnitMeasurements::Length.new("1:2", :km).convert_to(:m)
+#=> 500.0 m
+UnitMeasurements::Length.parse("1:2 km").convert_to(:m)
+#=> 500.0 m
+UnitMeasurements::Length.parse("1:2 km to m")
+#=> 500.0 m
 ```
-
-Supported special characters for exponents are `⁰`, `¹`, `²`, `³`, `⁴`, `⁵`, `⁶`, `⁷`, `⁸`, `⁹`, `⁺`, `⁻`.
 
 **Formatting measurement:**
 
@@ -226,36 +180,29 @@ If you want to format measurement to certain format, you can use `#format` metho
 If format is not specified, it defaults to `"%.2<value>f %<unit>s"`.
 
 ```ruby
-UnitMeasurements::Weight.parse("2 kg").to(:st).format
-#=> "0.31 st"
-UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f %<unit>s")
-#=> "0.3149 st"
-UnitMeasurements::Weight.parse("2 kg").to(:st).format("%.4<quantity>f")
-#=> "0.3149"
+UnitMeasurements::Length.new(100, :m).to(:in).format
+#=> "3937.01 in"
+UnitMeasurements::Length.new(100, :m).to(:in).format("%.4<quantity>f %<unit>s")
+#=> "3937.0079 in"
+UnitMeasurements::Length.new(100, :m).to(:in).format("%.4<quantity>f")
+#=> "3937.0079"
 ```
 
 **Extract the unit and the quantity from measurement:**
 
 ```ruby
-weight = UnitMeasurements::Weight.new(1, :kg)
-weight.quantity
+length = UnitMeasurements::Length.new(1, :km)
+length.quantity
 #=> 1
-weight.unit
-#=> #<UnitMeasurements::Unit: kg (kilogram, kilogramme, kilogrammes, kilograms)>
-```
-
-**See humanized name of the unit group:**
-
-```ruby
-UnitMeasurements::Weight.name
-#=> weight
+length.unit
+#=> #<UnitMeasurements::Unit: km (kilometer, kilometers, kilometre, kilometres)>
 ```
 
 **See all unit systems defined in the unit group:**
 
 ```ruby
 UnitMeasurements::Length.systems
-#=> [#<UnitMeasurements::UnitSystem:0x00007fa1a46d11c0 @name=:metric, @primitive=#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, @units=[]>]
+#=> [#<UnitMeasurements::UnitSystem:0x00007fa1a46d11c0 @name=:metric, @primitive=#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, @units=[]>, ...]
 ```
 
 **Finding unit system within the unit group:**
@@ -268,31 +215,28 @@ UnitMeasurements::Length.system_for(:imperial)
 #     @units=[#<UnitMeasurements::Unit: in (", inch, inches)>, #<UnitMeasurements::Unit: ft (', feet, foot)>, ...]>
 ```
 
+**_Note: The `UnitMeasurements::UnitGroup` and `UnitMeasurements::UnitSystem` instances share the same set of methods for unit handling.
+You can use these methods interchangeably between the two classes._**
+
 **See all units of the unit group/unit system:**
 
 ```ruby
-UnitMeasurements::Weight.units
-#=> [#<UnitMeasurements::Unit: g (gram, gramme, grammes, grams)>, ..., ...]
-UnitMeasurements::Length.system_for(:imperial).units
-#=> [#<UnitMeasurements::Unit: in (", inch, inches)>, #<UnitMeasurements::Unit: ft (', feet, foot)>, ...]
+UnitMeasurements::Length.units
+#=> [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, ..., ...]
 ```
 
 **See names of all valid units of the unit group/unit system:**
 
 ```ruby
-UnitMeasurements::Weight.unit_names
-#=> ["g", "kg", "lb", "oz", ...]
-UnitMeasurements::Length.system_for(:imperial).unit_names
-#=> ["ft", "in", "mi", "yd"]
+UnitMeasurements::Length.unit_names
+#=> ["m", "km", "mi", "ft", "in", "yd", ...]
 ```
 
 **See all valid units of the unit group/unit system along with their aliases:**
 
 ```ruby
-UnitMeasurements::Weight.unit_names_with_aliases
-#=> ["g", "gram", "gramme", "grammes", "grams", "kg", "kilogram", "kilogramme", "kilogrammes", "kilograms", "lb", "ounce", "ounces", "oz", "pound", "pounds", ...]
-UnitMeasurements::Length.system_for(:imperial).unit_names_with_aliases
-#=> ["feet", "foot", "ft", "in", "inch", "inches", "mi", "mile", "miles", "yard", "yards", "yd"]
+UnitMeasurements::Length.unit_names_with_aliases
+#=> ["g", "meter", "metre", "meters", "metres", "km", "kilometer", "kilometre", "kilometers", "kilometres", "in", "inch", "inches", "yd", "yard", "yards", ...]
 ```
 
 **Finding units within the unit group/unit system:**
@@ -302,50 +246,31 @@ the unit group. `#unit_for!` method returns error if a unit is not present in th
 unit group.
 
 ```ruby
-UnitMeasurements::Weight.unit_for(:g)
-#=> #<UnitMeasurements::Unit: g (gram, gramme, grammes, grams)>
-UnitMeasurements::Weight.unit_for(:z)
+UnitMeasurements::Length.unit_for(:m)
+#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
+UnitMeasurements::Length.unit_for(:z)
 #=> nil
-UnitMeasurements::Weight.unit_for!(:g)
-#=> #<UnitMeasurements::Unit: g (gram, gramme, grammes, grams)>
-UnitMeasurements::Weight.unit_for!(:z)
+UnitMeasurements::Length.unit_for!(:m)
+#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
+UnitMeasurements::Length.unit_for!(:z)
 #=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
-
-UnitMeasurements::Length.system_for(:imperial).unit_for(:in)
-#=> #<UnitMeasurements::Unit: in (", inch, inches)>
-UnitMeasurements::Length.system_for(:imperial).unit_for(:m)
-#=> nil
-UnitMeasurements::Length.system_for(:imperial).unit_for!(:in)
-#=> #<UnitMeasurements::Unit: in (", inch, inches)>
-UnitMeasurements::Length.system_for(:imperial).unit_for!(:m)
-#=> Invalid unit: 'm'. (UnitMeasurements::UnitError)
 ```
 
 **Finding whether the unit is defined within the unit group/unit system:**
 
 ```ruby
-UnitMeasurements::Weight.defined?(:g)
+UnitMeasurements::Length.defined?(:m)
 #=> true
-UnitMeasurements::Weight.defined?(:gramme)
-#=> false
-
-UnitMeasurements::Length.system_for(:metric).defined?(:m)
-#=> true
-UnitMeasurements::Length.system_for(:metric).defined?(:in)
+UnitMeasurements::Length.defined?(:metre)
 #=> false
 ```
 
 **Check if the unit is a valid unit or alias within the unit group/unit system:**
 
 ```ruby
-UnitMeasurements::Weight.unit_or_alias?(:g)
+UnitMeasurements::Length.unit_or_alias?(:m)
 #=> true
-UnitMeasurements::Weight.unit_or_alias?(:gramme)
-#=> true
-
-UnitMeasurements::Length.system_for(:metric).unit_or_alias?(:m)
-#=> true
-UnitMeasurements::Length.system_for(:metric).unit_or_alias?(:metre)
+UnitMeasurements::Length.unit_or_alias?(:metre)
 #=> true
 ```
 
@@ -353,29 +278,22 @@ UnitMeasurements::Length.system_for(:metric).unit_or_alias?(:metre)
 
 You have ability to compare the measurements with the same or different units within the same unit group.
 For example, comparing weight with weight will work, comparing a weight with a area would fail.
+Supported comparisons and methods are `==`, `!=`, `<`, `>`, `<=`, `>=`, `between?`, and `clamp`.
 
 ```ruby
-UnitMeasurements::Weight.new(1, "kg") == UnitMeasurements::Weight.new(1, :kg)
+UnitMeasurements::Length.new(1, "km") == UnitMeasurements::Length.new(1, :km)
 #=> true
-UnitMeasurements::Weight.parse("1 kg") == UnitMeasurements::Weight.parse("1000 g")
-#=> true
-UnitMeasurements::Weight.parse("1 kg") != UnitMeasurements::Weight.parse("1 g")
-#=> true
-UnitMeasurements::Weight.parse("1 kg") <= UnitMeasurements::Weight.parse("0.5 kg")
+UnitMeasurements::Length.parse("1 km") <= UnitMeasurements::Length.parse("0.5 km")
 #=> false
-UnitMeasurements::Weight.parse("1 kg") >= UnitMeasurements::Weight.parse("0.5 kg")
-#=> true
 UnitMeasurements::Length.new(1, :ft).between?(UnitMeasurements::Length.new(12, :in), UnitMeasurements::Length.new(24, :in))
 #=> true
-UnitMeasurements::Length.new(1, :ft).clamp(UnitMeasurements::Length.new(13, :in), UnitMeasurements::Length.new(24, :in))
-#=> 13 in
 ```
 
 ### Arithmetic
 
 You have ability to perform arithmetic operations on measurements with the same or
 different units within a same unit group. You can perform arithmetic operations on
-measurement by either other compatible measurement or number.
+measurement by either other measurement with compatible unit or number.
 In cases of different units, the left hand side takes precedence:
 
 **Methods:**
@@ -385,14 +303,14 @@ In cases of different units, the left hand side takes precedence:
 4. `#/` - Divides the measurement quantity by other measurement quantity or number.
 
 ```ruby
-UnitMeasurements::Weight.new(1, :kg) + UnitMeasurements::Weight.new(1, :g)
-#=> 1.001 kg
-UnitMeasurements::Weight.new(2, :kg) - 1
-#=> 1 kg
-UnitMeasurements::Weight.new(2, :kg) * 2
-#=> 4 kg
-UnitMeasurements::Weight.new(4, :kg) / UnitMeasurements::Weight.new(2, :kg)
-#=> 2 kg
+UnitMeasurements::Length.new(1, :km) + UnitMeasurements::Length.new(1, :m)
+#=> 1.001 km
+UnitMeasurements::Length.new(2, :km) - 1
+#=> 1 km
+UnitMeasurements::Length.new(2, :km) * 2
+#=> 4 km
+UnitMeasurements::Length.new(4, :km) / UnitMeasurements::Length.new(2, :km)
+#=> 2 km
 ```
 
 ### Math
@@ -406,8 +324,8 @@ You can perform mathematical operations on the measurements.
 4. `#ceil` - Rounds quantity of the measurement to next higher integer.
 
 ```ruby
-UnitMeasurements::Weight.new(1, :g).convert_to(:st).round(4)
-#=> 0.0002 st
+UnitMeasurements::Length.new(1, :m).to(:in).round(4)
+#=> 39.3701 in
 UnitMeasurements::Length.new(-17.625, :m).abs
 #=> 17.625 m
 UnitMeasurements::Length.new(17.625, :m).floor
@@ -422,16 +340,16 @@ You can convert measurement quantity directly to other numeric types viz.
 `Integer`, `BigDecimal`, `Rational`, `Complex`, and `Float`.
 
 ```ruby
-UnitMeasurements::Weight.new(2.25567, :kg).to_i
-#=> 2 kg
-UnitMeasurements::Weight.new(2.25567, :kg).to_f
-#=> 2.25567 kg
-UnitMeasurements::Weight.new(2.25567, :kg).to_r
-#=> 225567/100000 kg
-UnitMeasurements::Weight.new(2.25567, :kg).to_d
-#=> 2.25567 kg
-UnitMeasurements::Weight.new(2.25567, :kg).to_c
-#=> 2.25567+0i kg
+UnitMeasurements::Length.new(2.25567, :km).to_i
+#=> 2 km
+UnitMeasurements::Length.new(2.25567, :km).to_f
+#=> 2.25567 km
+UnitMeasurements::Length.new(2.25567, :km).to_r
+#=> 225567/100000 km
+UnitMeasurements::Length.new(2.25567, :km).to_d
+#=> 2.25567 km
+UnitMeasurements::Length.new(2.25567, :km).to_c
+#=> 2.25567+0i km
 ```
 
 ## Units
@@ -501,8 +419,6 @@ gem "unit_measurements", require: "unit_measurements/base"
 require "unit_measurements/base"
 
 require "unit_measurements/unit_groups/length"
-require "unit_measurements/unit_groups/weight"
-require "unit_measurements/unit_groups/volume"
 ```
 
 or
@@ -514,10 +430,7 @@ gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/
 ### Building new unit groups
 
 This library provides simpler way to build your own unit groups. To build new unit group,
-use `UnitMeasurements.build` in order to define units within it:
-
-If the unit is supporting [si prefixes](#si-units-support), you can use `si_unit` method to build it.
-If you build unit using `si_unit`, the unit will be added along with all SI prefixes for it.
+use `UnitMeasurements.build` method in order to define units and unit systems within it:
 
 For convenience, you also have ability to group units by the unit system and set primitive unit for each unit system using `system` and `primitive` methods.
 
@@ -528,7 +441,7 @@ UnitMeasurements::Time = UnitMeasurements.build do
     # Set primitive unit for the unit system.
     primitive :s
 
-    # Add a SI unit to the unit group
+    # Add a SI unit to the unit group.
     si_unit :s, aliases: [:second, :seconds]
 
     # Add units to the group, along with their conversion multipliers.
@@ -540,7 +453,7 @@ UnitMeasurements::Time = UnitMeasurements.build do
 end
 ```
 
-All units allow aliases, as long as they are unique. Unit names can be used to
+All units allow aliases, as long as they are unique. Unit name can be used to
 define the unit as long as it is unique. All unit names are case sensitive.
 
 ### Namespaces
