@@ -82,10 +82,6 @@ module UnitMeasurements
         target ? _parse(source).convert_to(target) : _parse(source)
       end
 
-      def name
-        to_s.split("::").last.underscore.humanize.downcase
-      end
-
       private
 
       def _parse(string)
