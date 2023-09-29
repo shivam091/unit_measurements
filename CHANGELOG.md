@@ -1,4 +1,13 @@
-## [3.5.0](https://github.com/shivam091/unit_measurements/compare/v3.4.1...v3.5.0) - 2023-08-30
+## [3.6.0](https://github.com/shivam091/unit_measurements/compare/v3.5.0...v3.6.0) - 2023-10-01
+
+### What's new
+
+- Added unit group for `resistance` units.
+- Added unit group for `conductance` units.
+
+----------
+
+## [3.5.0](https://github.com/shivam091/unit_measurements/compare/v3.4.1...v3.5.0) - 2023-09-30
 
 ### What's new
 
@@ -7,7 +16,7 @@
 
 ----------
 
-## [3.4.1](https://github.com/shivam091/unit_measurements/compare/v3.4.0...v3.4.1) - 2023-08-29
+## [3.4.1](https://github.com/shivam091/unit_measurements/compare/v3.4.0...v3.4.1) - 2023-09-29
 
 ### What's changed
 
@@ -19,7 +28,7 @@
 
 ----------
 
-## [3.4.0](https://github.com/shivam091/unit_measurements/compare/v3.3.0...v3.4.0) - 2023-08-28
+## [3.4.0](https://github.com/shivam091/unit_measurements/compare/v3.3.0...v3.4.0) - 2023-09-28
 
 ### What's new
 
@@ -34,7 +43,7 @@
 
 ----------
 
-## [3.3.0](https://github.com/shivam091/unit_measurements/compare/v3.2.0...v3.3.0) - 2023-08-28
+## [3.3.0](https://github.com/shivam091/unit_measurements/compare/v3.2.0...v3.3.0) - 2023-09-28
 
 ### What's new
 
@@ -43,7 +52,7 @@
 
 ----------
 
-## [3.2.0](https://github.com/shivam091/unit_measurements/compare/v3.1.0...v3.2.0) - 2023-08-27
+## [3.2.0](https://github.com/shivam091/unit_measurements/compare/v3.1.0...v3.2.0) - 2023-09-27
 
 ### What's new
 
@@ -52,7 +61,7 @@
 
 ----------
 
-## [3.1.0](https://github.com/shivam091/unit_measurements/compare/v3.0.0...v3.1.0) - 2023-08-26
+## [3.1.0](https://github.com/shivam091/unit_measurements/compare/v3.0.0...v3.1.0) - 2023-09-26
 
 ### What's new
 
@@ -61,7 +70,7 @@
 
 ----------
 
-## [3.0.0](https://github.com/shivam091/unit_measurements/compare/v2.6.2...v3.0.0) - 2023-08-25
+## [3.0.0](https://github.com/shivam091/unit_measurements/compare/v2.6.2...v3.0.0) - 2023-09-25
 
 ### What's new
 
@@ -77,7 +86,7 @@
 
 ----------
 
-## [2.6.2](https://github.com/shivam091/unit_measurements/compare/v2.6.1...v2.6.2) - 2023-08-25
+## [2.6.2](https://github.com/shivam091/unit_measurements/compare/v2.6.1...v2.6.2) - 2023-09-25
 
 ### What's changed
 
@@ -85,7 +94,7 @@
 
 ----------
 
-## [2.6.1](https://github.com/shivam091/unit_measurements/compare/v2.6.0...v2.6.1) - 2023-08-24
+## [2.6.1](https://github.com/shivam091/unit_measurements/compare/v2.6.0...v2.6.1) - 2023-09-24
 
 ### What's changed
 
@@ -93,7 +102,7 @@
 
 ----------
 
-## [2.6.0](https://github.com/shivam091/unit_measurements/compare/v2.5.0...v2.6.0) - 2023-08-24
+## [2.6.0](https://github.com/shivam091/unit_measurements/compare/v2.5.0...v2.6.0) - 2023-09-24
 
 ### What's new
 
@@ -102,7 +111,7 @@
 
 ----------
 
-## [2.5.0](https://github.com/shivam091/unit_measurements/compare/v2.4.0...v2.5.0) - 2023-08-23
+## [2.5.0](https://github.com/shivam091/unit_measurements/compare/v2.4.0...v2.5.0) - 2023-09-23
 
 ### What's new
 
@@ -111,7 +120,7 @@
 
 ----------
 
-## [2.4.0](https://github.com/shivam091/unit_measurements/compare/v2.3.0...v2.4.0) - 2023-08-23
+## [2.4.0](https://github.com/shivam091/unit_measurements/compare/v2.3.0...v2.4.0) - 2023-09-23
 
 ### What's new
 
@@ -120,7 +129,7 @@
 
 ----------
 
-## [2.3.0](https://github.com/shivam091/unit_measurements/compare/v2.2.0...v2.3.0) - 2023-08-22
+## [2.3.0](https://github.com/shivam091/unit_measurements/compare/v2.2.0...v2.3.0) - 2023-09-22
 
 ### What's new
 
@@ -129,7 +138,7 @@
 
 ----------
 
-## [2.2.0](https://github.com/shivam091/unit_measurements/compare/v2.1.0...v2.2.0) - 2023-08-21
+## [2.2.0](https://github.com/shivam091/unit_measurements/compare/v2.1.0...v2.2.0) - 2023-09-21
 
 ### What's new
 
@@ -139,7 +148,7 @@
 
 ----------
 
-## [2.1.0](https://github.com/shivam091/unit_measurements/compare/v1.7.0...v2.1.0) - 2023-08-20
+## [2.1.0](https://github.com/shivam091/unit_measurements/compare/v1.7.0...v2.1.0) - 2023-09-20
 
 ### What's new
 
@@ -148,7 +157,7 @@
 
 ----------
 
-## [1.7.0](https://github.com/shivam091/unit_measurements/compare/v1.6.0...v1.7.0) - 2023-08-20
+## [1.7.0](https://github.com/shivam091/unit_measurements/compare/v1.6.0...v1.7.0) - 2023-09-20
 
 ### What's new
 
@@ -157,7 +166,7 @@
 
 ----------
 
-## [1.6.0](https://github.com/shivam091/unit_measurements/compare/v1.5.1...v1.6.0) - 2023-08-19
+## [1.6.0](https://github.com/shivam091/unit_measurements/compare/v1.5.1...v1.6.0) - 2023-09-19
 
 ### What's new
 
@@ -165,7 +174,7 @@
 
 ----------
 
-## [1.5.1](https://github.com/shivam091/unit_measurements/compare/v1.5.0...v1.5.1) - 2023-08-18
+## [1.5.1](https://github.com/shivam091/unit_measurements/compare/v1.5.0...v1.5.1) - 2023-09-18
 
 ### What's updated
 
@@ -173,7 +182,7 @@
 
 ----------
 
-## [1.5.0](https://github.com/shivam091/unit_measurements/compare/v1.4.0...v1.5.0) - 2023-08-18
+## [1.5.0](https://github.com/shivam091/unit_measurements/compare/v1.4.0...v1.5.0) - 2023-09-18
 
 ### What's fixed
 
@@ -181,7 +190,7 @@
 
 ----------
 
-## [1.4.0](https://github.com/shivam091/unit_measurements/compare/v1.3.0...v1.4.0) - 2023-08-17
+## [1.4.0](https://github.com/shivam091/unit_measurements/compare/v1.3.0...v1.4.0) - 2023-09-17
 
 ### What's new
 
@@ -189,7 +198,7 @@
 
 ----------
 
-## [1.3.0](https://github.com/shivam091/unit_measurements/compare/v1.2.0...v1.3.0) - 2023-08-16
+## [1.3.0](https://github.com/shivam091/unit_measurements/compare/v1.2.0...v1.3.0) - 2023-09-16
 
 ### What's new
 
@@ -197,7 +206,7 @@
 
 ----------
 
-## [1.2.0](https://github.com/shivam091/unit_measurements/compare/v1.1.0...v1.2.0) - 2023-08-15
+## [1.2.0](https://github.com/shivam091/unit_measurements/compare/v1.1.0...v1.2.0) - 2023-09-15
 
 ### What's new
 
@@ -205,7 +214,7 @@
 
 ----------
 
-## [1.1.0](https://github.com/shivam091/unit_measurements/compare/v1.0.0...v1.1.0) - 2023-08-14
+## [1.1.0](https://github.com/shivam091/unit_measurements/compare/v1.0.0...v1.1.0) - 2023-09-14
 
 ### What's new
 
