@@ -28,6 +28,7 @@ require_relative "capacitance"
 require_relative "elastance"
 require_relative "resistance"
 require_relative "conductance"
+require_relative "magnetic_flux"
 
 ## Other units
 
