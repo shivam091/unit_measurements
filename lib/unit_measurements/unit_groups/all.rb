@@ -24,6 +24,8 @@ require_relative "angular_acceleration"
 require_relative "force"
 require_relative "voltage"
 require_relative "electric_charge"
+require_relative "capacitance"
+require_relative "elastance"
 
 ## Other units
 

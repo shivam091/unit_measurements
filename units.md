@@ -271,3 +271,23 @@ These units are defined in `UnitMeasurements::ElectricCharge`.
 | 3 | statC | statcoulomb, statcoulombs |
 | 4 | Fr | franklin, franklins |
 | 5 | Fd | faraday, faradays |
+
+## 22. Capacitance
+
+These units are defined in `UnitMeasurements::Capacitance`.
+
+| # | Symbol | Aliases |
+|:--|:--|:--|
+| 1 | F* | farad, farads |
+| 2 | abF | abfarad, abfarads |
+| 3 | statF | statfarad, statfarads |
+| 4 | C/V | C·V⁻¹, coulomb/volt, coulombs/volt, coulomb per volt, coulombs per volt |
+
+## 23. Elastance
+
+These units are defined in `UnitMeasurements::Elastance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | D* | F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads |
+| 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |

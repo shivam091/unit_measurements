@@ -1,3 +1,12 @@
+## [3.5.0](https://github.com/shivam091/unit_measurements/compare/v3.4.1...v3.5.0) - 2023-08-30
+
+### What's new
+
+- Added unit group for `capacitance` units.
+- Added unit group for `elastance` units.
+
+----------
+
 ## [3.4.1](https://github.com/shivam091/unit_measurements/compare/v3.4.0...v3.4.1) - 2023-08-29
 
 ### What's changed
