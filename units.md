@@ -314,3 +314,23 @@ These units are defined in `UnitMeasurements::Conductance`.
 | 2 | abS | ab℧, absiemens, abmho, abmhos |
 | 3 | statS | stat℧, statsiemens, statmho, statmhos |
 | 3 | A/V | A·V⁻¹, amp./volt, amps./volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
+
+## 26. Magnetic flux
+
+These units are defined in `UnitMeasurements::MagneticFlux`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | Wb* | weber, webers |
+| 2 | Mx | maxwell, maxwells |
+| 3 | T·m² | T*m^2, tesla-square meter, tesla-square metre |
+| 4 | G·cm² | G*cm^2, gauss-square centimeter, gauss-square centimetre |
+
+## 27. Magnetic induction
+
+These units are defined in `UnitMeasurements::MagneticInduction`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | T* | tesla, teslas |
+| 2 | G | Gs, gauss, gausses |
