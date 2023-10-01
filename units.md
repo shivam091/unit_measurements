@@ -291,3 +291,26 @@ These units are defined in `UnitMeasurements::Elastance`.
 |:--|:--|:--|
 | 1 | D* | F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads |
 | 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
+
+## 24. Resistance
+
+These units are defined in `UnitMeasurements::Resistance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | Ω* | ω, ohm, ohms, reciprocal siemens |
+| 2 | abΩ | abω, abohm, abohms |
+| 3 | statΩ | statω, statohm, statohms |
+| 4 | S | siemens, mho, mhos |
+| 5 | V/A | V·A⁻¹, volt/amp., volts/amp., volt/ampere, volts/ampere, volt per ampere, volts per ampere |
+
+## 25. Conductance
+
+These units are defined in `UnitMeasurements::Conductance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | S* | ℧, Ω⁻¹, siemens, mho, mhos |
+| 2 | abS | ab℧, absiemens, abmho, abmhos |
+| 3 | statS | stat℧, statsiemens, statmho, statmhos |
+| 3 | A/V | A·V⁻¹, amp./volt, amps./volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
