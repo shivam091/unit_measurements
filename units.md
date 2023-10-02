@@ -334,3 +334,23 @@ These units are defined in `UnitMeasurements::MagneticInduction`.
 |:--|:--|:--|
 | 1 | T* | tesla, teslas |
 | 2 | G | Gs, gauss, gausses |
+
+## 28. Magnetic field
+
+These units are defined in `UnitMeasurements::MagneticField`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | Oe* | oersted, oersteds |
+| 2 | A/m | A·m⁻¹, ampere/meter, ampere/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
+
+## 29. Inductance
+
+These units are defined in `UnitMeasurements::Inductance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | H* | henry, henries |
+| 2 | abH | abhenry, abhenries |
+| 3 | statH | stathenry, stathenries |
+| 4 | Wb/A | Wb·A⁻¹, weber per ampere, webers per ampere |

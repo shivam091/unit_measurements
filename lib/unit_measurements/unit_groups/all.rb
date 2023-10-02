@@ -30,6 +30,8 @@ require_relative "resistance"
 require_relative "conductance"
 require_relative "magnetic_flux"
 require_relative "magnetic_induction"
+require_relative "magnetic_field"
+require_relative "inductance"
 
 ## Other units
 
