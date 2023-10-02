@@ -6,20 +6,22 @@ require "set"
 
 module UnitMeasurements
   class Unit
-    attr_reader :name, :value, :aliases, :unit_group
+    attr_reader :name, :value, :aliases, :system, :unit_group
 
-    def initialize(name, value:, aliases:, unit_group: nil)
+    def initialize(name, value:, aliases:, system:, unit_group: nil)
       @name = name.to_s.freeze
       @value = value
       @aliases = Set.new(aliases.sort.map(&:to_s).map(&:freeze)).freeze
+      @system = system
       @unit_group = unit_group
     end
 
-    def with(name: nil, value: nil, aliases: nil, unit_group: nil)
+    def with(name: nil, value: nil, aliases: nil, system: nil, unit_group: nil)
       self.class.new(
         (name || self.name),
         value: (value || self.value),
         aliases: (aliases || self.aliases),
+        system: (system || self.system),
         unit_group: (unit_group || self.unit_group)
       )
     end

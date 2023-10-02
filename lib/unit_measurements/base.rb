@@ -24,8 +24,6 @@ end
 
 require "unit_measurements/unit_group_builder"
 require "unit_measurements/unit"
-require "unit_measurements/unit_methods"
-require "unit_measurements/unit_system"
 require "unit_measurements/unit_group"
 require "unit_measurements/arithmetic"
 require "unit_measurements/comparison"
