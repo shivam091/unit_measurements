@@ -30,6 +30,8 @@ module UnitMeasurements
     end
 
     def primitive(primitive)
+      raise PrimitiveUnitAlreadySetError if @primitive
+
       @primitive = primitive
     end
 

@@ -35,5 +35,6 @@ require "unit_measurements/formatter"
 require "unit_measurements/measurement"
 
 require "unit_measurements/errors/unit_error"
-require "unit_measurements/errors/unit_already_defined_error"
 require "unit_measurements/errors/parse_error"
+require "unit_measurements/errors/unit_already_defined_error"
+require "unit_measurements/errors/primitive_unit_already_set_error"

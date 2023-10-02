@@ -7,6 +7,21 @@
 RSpec.describe UnitMeasurements::UnitGroupBuilder do
   subject { described_class.new }
 
+  describe "#primitive" do
+    it "sets the primitive unit" do
+      subject.primitive(:m)
+      expect(subject.instance_variable_get(:@primitive)).to eq(:m)
+    end
+
+    it "raises an error if primitive unit is set more than once" do
+      subject.primitive :m
+
+      expect {
+        subject.primitive :m
+      }.to raise_error(UnitMeasurements::PrimitiveUnitAlreadySetError, "The primitive unit is already set for the unit group.")
+    end
+  end
+
   describe "#unit" do
     context "when value is not specified" do
       it "sets value 1 to the unit" do
