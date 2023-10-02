@@ -4,10 +4,11 @@
 
 module UnitMeasurements
   class UnitGroup
-    attr_reader :units
+    attr_reader :primitive, :units
 
-    def initialize(units)
+    def initialize(primitive, units)
       @units = units.map { |unit| unit.with(unit_group: self) }
+      @primitive = unit_for!(primitive) if primitive
     end
 
     def unit_for(name)
@@ -17,6 +18,7 @@ module UnitMeasurements
     def unit_for!(name)
       unit = unit_for(name)
       raise UnitError, name unless unit
+
       unit
     end
     alias_method :[], :unit_for!
@@ -41,6 +43,7 @@ module UnitMeasurements
 
     def defined?(name)
       unit = unit_for(name)
+
       unit ? unit.name == name.to_s : false
     end
 

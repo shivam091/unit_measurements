@@ -19,7 +19,7 @@ module UnitMeasurements
     end
 
     def build
-      UnitGroup.new(@units)
+      UnitGroup.new(@primitive, @units)
     end
 
     def system(system_name, &block)
@@ -30,7 +30,7 @@ module UnitMeasurements
     end
 
     def primitive(primitive)
-      @current_primitive = primitive
+      @primitive = primitive
     end
 
     private

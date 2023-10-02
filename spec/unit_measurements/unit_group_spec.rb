@@ -8,7 +8,7 @@ RSpec.describe UnitMeasurements::UnitGroup do
   let(:g) { UnitMeasurements::Unit.new(:g, value: 1, aliases: [:gram], system: :metric) }
   let(:kg) { UnitMeasurements::Unit.new(:kg, value: "1000 kg", aliases: [:kilogram], system: :metric) }
 
-  subject(:unit_group) { described_class.new([g, kg]) }
+  subject(:unit_group) { described_class.new(:g, [g, kg]) }
 
   describe "#initialize" do
     it "sets attributes correctly" do
