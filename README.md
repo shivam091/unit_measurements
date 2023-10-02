@@ -198,48 +198,35 @@ length.unit
 #=> #<UnitMeasurements::Unit: km (kilometer, kilometers, kilometre, kilometres)>
 ```
 
-**See all unit systems defined in the unit group:**
+**See primitive unit of the unit group:**
 
 ```ruby
-UnitMeasurements::Length.systems
-#=> [#<UnitMeasurements::UnitSystem:0x00007fa1a46d11c0 @name=:metric, @primitive=#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, @units=[]>, ...]
+UnitMeasurements::Length.primitive
+#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
 ```
 
-**Finding unit system within the unit group:**
-
-```ruby
-UnitMeasurements::Length.system_for(:imperial)
-#=> #<UnitMeasurements::UnitSystem:0x00007f87a348e680
-#     @name=:imperial,
-#     @primitive=#<UnitMeasurements::Unit: in (", inch, inches)>,
-#     @units=[#<UnitMeasurements::Unit: in (", inch, inches)>, #<UnitMeasurements::Unit: ft (', feet, foot)>, ...]>
-```
-
-**_Note: The `UnitMeasurements::UnitGroup` and `UnitMeasurements::UnitSystem` instances share the same set of methods for unit handling.
-You can use these methods interchangeably between the two classes._**
-
-**See all units of the unit group/unit system:**
+**See all units of the unit group:**
 
 ```ruby
 UnitMeasurements::Length.units
 #=> [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, ..., ...]
 ```
 
-**See names of all valid units of the unit group/unit system:**
+**See names of all valid units of the unit group:**
 
 ```ruby
 UnitMeasurements::Length.unit_names
 #=> ["m", "km", "mi", "ft", "in", "yd", ...]
 ```
 
-**See all valid units of the unit group/unit system along with their aliases:**
+**See all valid units of the unit group along with their aliases:**
 
 ```ruby
 UnitMeasurements::Length.unit_names_with_aliases
 #=> ["g", "meter", "metre", "meters", "metres", "km", "kilometer", "kilometre", "kilometers", "kilometres", "in", "inch", "inches", "yd", "yard", "yards", ...]
 ```
 
-**Finding units within the unit group/unit system:**
+**Finding units within the unit group:**
 
 You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) to find units within
 the unit group. `#unit_for!` method returns error if a unit is not present in the
@@ -256,7 +243,7 @@ UnitMeasurements::Length.unit_for!(:z)
 #=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
 ```
 
-**Finding whether the unit is defined within the unit group/unit system:**
+**Finding whether the unit is defined within the unit group:**
 
 ```ruby
 UnitMeasurements::Length.defined?(:m)
@@ -265,7 +252,7 @@ UnitMeasurements::Length.defined?(:metre)
 #=> false
 ```
 
-**Check if the unit is a valid unit or alias within the unit group/unit system:**
+**Check if the unit is a valid unit or alias within the unit group:**
 
 ```ruby
 UnitMeasurements::Length.unit_or_alias?(:m)
@@ -277,7 +264,7 @@ UnitMeasurements::Length.unit_or_alias?(:metre)
 ### Comparisons
 
 You have ability to compare the measurements with the same or different units within the same unit group.
-For example, comparing weight with weight will work, comparing a weight with a area would fail.
+For example, comparing length with length will work, comparing a length with a area would fail.
 Supported comparisons and methods are `==`, `!=`, `<`, `>`, `<=`, `>=`, `between?`, and `clamp`.
 
 ```ruby
@@ -430,17 +417,18 @@ gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/
 ### Building new unit groups
 
 This library provides simpler way to build your own unit groups. To build new unit group,
-use `UnitMeasurements.build` method in order to define units and unit systems within it:
+use `UnitMeasurements.build` method in order to define units within it:
 
-For convenience, you also have ability to group units by the unit system and set primitive unit for each unit system using `system` and `primitive` methods.
+For convenience, you also have ability to group units by the unit system using `system` method
+and set primitive unit for each unit group using `primitive` method.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
-  # Group units by the unit system name.
-  system :metric do
-    # Set primitive unit for the unit system.
-    primitive :s
+  # Set primitive unit for the unit group.
+  primitive :s
 
+  # Group units by the unit system.
+  system :metric do
     # Add a SI unit to the unit group.
     si_unit :s, aliases: [:second, :seconds]
 
