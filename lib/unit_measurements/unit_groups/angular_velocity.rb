@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::AngularVelocity = UnitMeasurements.build do
-  system :metric do
-    primitive :"rad/s"
+  primitive :"rad/s"
 
+  system :metric do
     unit :"rad/s", aliases: [:"rad·s⁻¹", :"radian per second", :"radians per second"]
     unit :"rad/min", value: "1/60 rad/s", aliases: [:"rad·min⁻¹", :"radian per minute", :"radians per minute"]
     unit :"rad/h", value: "1/60 rad/min", aliases: [:"rad·h⁻¹", :"radian per hour", :"radians per hour"]

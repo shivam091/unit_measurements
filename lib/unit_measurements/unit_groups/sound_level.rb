@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::SoundLevel = UnitMeasurements.build do
-  system :metric do
-    primitive :dB
+  primitive :dB
 
+  system :metric do
     si_unit :B, aliases: [:bel, :bels]
   end
 

@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::AngularAcceleration = UnitMeasurements.build do
-  system :metric do
-    primitive :"rad/s²"
+  primitive :"rad/s²"
 
+  system :metric do
     si_unit :"rad/s²", aliases: [:"rad/s^2", :"rad·s⁻²", :"radian per second squared", :"radians per second squared"]
     unit :"gon/s²", value: [(Math::PI / 200), :"rad/s²"], aliases: [:"gon/s^2", :"ᵍ/s²", :"gon·s⁻²", :"gradian per second squared", :"gradians per second squared"]
   end

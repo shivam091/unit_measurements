@@ -3,10 +3,11 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::PlaneAngle = UnitMeasurements.build do
-  system :metric do
-    primitive :rad
+  primitive :rad
 
+  system :metric do
     si_unit :rad, aliases: [:radian, :radians]
+
     unit :gon, value: [(Math::PI / 200), :rad], aliases: [:ᵍ, :grad, :gradian, :gradians] # (π / 200) rad
   end
 

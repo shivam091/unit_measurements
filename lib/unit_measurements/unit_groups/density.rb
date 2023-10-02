@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Density = UnitMeasurements.build do
-  system :metric do
-    primitive :"g/m³"
+  primitive :"kg/m³"
 
+  system :metric do
     unit :"g/m³", aliases: [:"g/m^3", :"g·m⁻³", :"gram per cubic meter", :"grams per cubic meter", :"gramme per cubic metre", :"grammes per cubic metre"]
 
     unit :"g/l", value: "1 kg/m³", aliases: [:"g·l⁻¹", :"gram per liter", :"grams per liter", :"gramme per litre", :"grammes per litre"]

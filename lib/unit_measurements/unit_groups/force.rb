@@ -3,10 +3,11 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Force = UnitMeasurements.build do
-  system :metric do
-    primitive :N
+  primitive :N
 
+  system :metric do
     si_unit :N, aliases: [:newton, :newtons]
+
     unit :kgf, value: "9.80665 N", aliases: [:"kilogram-force", :"kilogramme-force"]
   end
 
@@ -18,15 +19,12 @@ UnitMeasurements::Force = UnitMeasurements.build do
     unit :tf, value: "8896.443230521 N", aliases: [:"tonne-force"]
   end
 
-  system :avoirdupois do
-    unit :ozf, value: "0.27801385095378125 N", aliases: [:"ounce-force"]
-  end
-
   system :english_engineering do
     unit :lbf, value: "4.4482216152605 N", aliases: [:"pound-force"]
   end
 
   system :foot_pound_second do
     unit :pdl, value: "0.138254954376 N", aliases: [:poundal, :poundals]
+    unit :ozf, value: "0.27801385095378125 N", aliases: [:"ounce-force"]
   end
 end

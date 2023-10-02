@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Temperature = UnitMeasurements.build do
-  system :metric do
-    primitive :K
+  primitive :K
 
+  system :metric do
     si_unit :K, aliases: [:kelvin, :kelvins]
   end
 

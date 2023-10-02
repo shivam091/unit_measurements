@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::LuminousIntensity = UnitMeasurements.build do
-  system :metric do
-    primitive :cd
+  primitive :cd
 
+  system :metric do
     si_unit :cd, aliases: [:candela, :candelas]
   end
 

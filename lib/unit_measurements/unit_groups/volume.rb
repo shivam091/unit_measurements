@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Volume = UnitMeasurements.build do
-  system :metric do
-    primitive :m³
+  primitive :m³
 
+  system :metric do
     si_unit :l, aliases: [:liter, :litre, :liters, :litres]
 
     unit :m³, value: "1000 l", aliases: [:"m^3", :"cu m", :"cubic meter", :"cubic meters", :"cubic metre", :"cubic metres"]
@@ -16,8 +16,6 @@ UnitMeasurements::Volume = UnitMeasurements.build do
   end
 
   system :imperial do
-    primitive :in³
-
     unit :in³, value: "16.387064 ml", aliases: [:"in^3", :"cu in", :"cubic inch", :"cubic inches"]
     unit :ft³, value: "1728 in³", aliases: [:"ft^3", :"cu ft", :"cubic foot", :"cubic feet"]
     unit :yd³, value: "27 ft³", aliases: [:"yd^3", :"cu yd", :"cubic yard", :"cubic yards"]

@@ -3,16 +3,14 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Area = UnitMeasurements.build do
-  system :metric do
-    primitive :m²
+  primitive :m²
 
+  system :metric do
     unit :m², aliases: [:"m^2", :"sq m", :"square meter", :"square meters", :"square metre", :"square metres"]
     unit :km², value: "1e+6 m²", aliases: [:"km^2", :"sq km", :"square kilometer", :"square kilometers", :"square kilometre", :"square kilometres"]
   end
 
   system :imperial do
-    primitive :in²
-
     unit :in², value: "0.00064516 m²", aliases: [:"in^2", :"sq in", :"square inch", :"square inches"]
     unit :ft², value: "144 in²", aliases: [:"ft^2", :"sq ft", :"square foot", :"square feet"]
     unit :yd², value: "9 ft²", aliases: [:"yd^2", :"sq yd", :"square yard", :"square yards"]

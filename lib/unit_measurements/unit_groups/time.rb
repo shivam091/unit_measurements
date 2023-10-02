@@ -3,10 +3,11 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Time = UnitMeasurements.build do
-  system :metric do
-    primitive :s
+  primitive :s
 
+  system :metric do
     si_unit :s, aliases: [:sec, :second, :seconds]
+
     unit :min, value: "60 s", aliases: [:minute, :minutes]
   end
 

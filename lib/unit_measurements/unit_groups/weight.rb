@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Weight = UnitMeasurements.build do
-  system :metric do
-    primitive :kg
+  primitive :kg
 
+  system :metric do
     si_unit :g, aliases: [:gram, :grams, :gramme, :grammes]
 
     unit :q, value: "100 kg", aliases: [:quintal, :quintals]

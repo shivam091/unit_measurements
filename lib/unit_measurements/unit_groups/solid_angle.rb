@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::SolidAngle = UnitMeasurements.build do
-  system :metric do
-    primitive :sr
+  primitive :sr
 
+  system :metric do
     si_unit :sr, aliases: [:steradian, :steradians]
   end
 

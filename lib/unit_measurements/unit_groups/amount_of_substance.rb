@@ -3,9 +3,9 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::AmountOfSubstance = UnitMeasurements.build do
-  system :cgs do
-    primitive :mol
+  primitive :mol
 
+  system :metric do
     si_unit :mol, aliases: [:mole, :moles]
   end
 

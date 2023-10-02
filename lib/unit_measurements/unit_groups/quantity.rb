@@ -3,6 +3,8 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::Quantity = UnitMeasurements.build do
+  primitive :pc
+
   unit :pc, aliases: [:pcs, :piece, :pieces]
 
   unit :pr, value: "2 pc", aliases: [:pair, :pairs]
