@@ -343,10 +343,10 @@ UnitMeasurements::Length.new(2.25567, "km").to_c
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.
 
-### SI units support
+### Support for SI decimal prefixes
 
-There is support for SI units through the use of `si_unit` method.
-Units declared through it will have automatic support for all SI prefixes:
+There is support for SI decimal prefixes through the use of `si_unit` method.
+Units declared through it will have automatic support for all decimal prefixes:
 
 | Multiplying Factor                        | SI Prefix  | Scientific Notation |
 | ----------------------------------------- | ---------- | ------------------- |
@@ -430,13 +430,13 @@ UnitMeasurements::Time = UnitMeasurements.build do
   # Group units by the unit system.
   system :metric do
     # Add a SI unit to the unit group.
-    si_unit "s", aliases: %w[second seconds]
+    si_unit "s", aliases: ["second", "seconds"]
 
     # Add units to the group, along with their conversion multipliers.
-    unit "min", value: "60 s", aliases: %w[hour hours]
+    unit "min", value: "60 s", aliases: ["hour", "hours"]
 
     # You can also specify unit value as an array.
-    unit :h, value: [60, "min"], aliases: %w[day days]
+    unit :h, value: [60, "min"], aliases: ["day", "days"]
   end
 end
 ```
