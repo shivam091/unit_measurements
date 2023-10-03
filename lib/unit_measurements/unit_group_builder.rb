@@ -40,7 +40,7 @@ module UnitMeasurements
     def build_si_units(name, value:, aliases:)
       si_units = [build_unit(name, value: value, aliases: aliases)]
 
-      Unit::SI_PREFIXES.each do |short_prefix, long_prefix, multiplier|
+      Unit::SI_DECIMAL_PREFIXES.each do |short_prefix, long_prefix, multiplier|
         si_aliases = long_prefix.product(aliases.to_a).flat_map do |prefix, unit|
           aliases.map { |alias_unit| prefix + alias_unit.to_s }
         end

@@ -49,7 +49,7 @@ module UnitMeasurements
 
     private
 
-    SI_PREFIXES = [
+    SI_DECIMAL_PREFIXES = [
       ["q",  %w(quecto),    1e-30],
       ["r",  %w(ronto),     1e-27],
       ["y",  %w(yocto),     1e-24],
