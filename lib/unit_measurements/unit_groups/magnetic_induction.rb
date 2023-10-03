@@ -3,13 +3,13 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::MagneticInduction = UnitMeasurements.build do
-  primitive :T
+  primitive "T"
 
   system :metric do
-    si_unit :T, aliases: [:tesla, :teslas]
+    si_unit "T", aliases: ["tesla", "teslas"]
   end
 
   system :centimetre_gram_second do
-    unit :G, value: "1e-4 T", aliases: [:Gs, :gauss, :gausses]
+    unit "G", value: "1e-4 T", aliases: ["Gs", "gauss", "gausses"]
   end
 end
