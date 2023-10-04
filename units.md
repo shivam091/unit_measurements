@@ -191,19 +191,7 @@ These units are defined in `UnitMeasurements::Force`.
 | 6 | lbf | pound-force |
 | 7 | pdl | poundal, poundals |
 
-## 16. Voltage
-
-These units are defined in `UnitMeasurements::Voltage`.
-
-| # | Name | Aliases |
-|:--|:--|:--|
-| _1_ | _V*_ | _volt, volts_ |
-| 2 | abV | abvolt, abvolts |
-| 3 | statV | statvolt, statvolts |
-| 4 | W/A | W·A⁻¹, watt per ampere, watts per ampere |
-| 5 | J/C | J·C⁻¹, joule per coulomb, joules per coulomb |
-
-## 17. Velocity
+## 16. Velocity
 
 These units are defined in `UnitMeasurements::Velocity`.
 
@@ -220,7 +208,7 @@ These units are defined in `UnitMeasurements::Velocity`.
 | 9 | ft/min | ft·min⁻¹, foot per minute, feet per minute |
 | 10 | ft/h | ft·h⁻¹, foot per hour, feet per hour |
 
-## 18. Acceleration
+## 17. Acceleration
 
 These units are defined in `UnitMeasurements::Acceleration`.
 
@@ -231,7 +219,7 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | 3 | ft/s² | ft/s^2, ft·s⁻², foot per second squared, feet per second squared |
 | 4 | Kn/s | knot per second, knots per second |
 
-## 19. Angular velocity
+## 18. Angular velocity
 
 These units are defined in `UnitMeasurements::AngularVelocity`.
 
@@ -250,7 +238,7 @@ These units are defined in `UnitMeasurements::AngularVelocity`.
 | 11 | gon/min | ᵍ/min, gon·min⁻¹, gradian per minute, gradians per minute |
 | 12 | gon/h | ᵍ/h, gon·h⁻¹, gradian per hour, gradians per hour |
 
-## 20. Angular acceleration
+## 19. Angular acceleration
 
 These units are defined in `UnitMeasurements::AngularAcceleration`.
 
@@ -259,6 +247,18 @@ These units are defined in `UnitMeasurements::AngularAcceleration`.
 | _1_ | _rad/s²_ | _rad/s^2, rad·s⁻², radian per second squared, radians per second squared_ |
 | 2 | deg/s² | deg/s^2, °/s², deg·s⁻², degree per second squared, degrees per second squared |
 | 3 | gon/s² | gon/s^2, ᵍ/s², gon·s⁻², gradian per second squared, gradians per second squared |
+
+## 20. Electric potential
+
+These units are defined in `UnitMeasurements::ElectricPotential`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _V*_ | _volt, volts_ |
+| 2 | abV | abvolt, abvolts |
+| 3 | statV | statvolt, statvolts |
+| 4 | W/A | W·A⁻¹, watt per ampere, watts per ampere |
+| 5 | J/C | J·C⁻¹, joule per coulomb, joules per coulomb |
 
 ## 21. Electric charge
 
@@ -272,9 +272,9 @@ These units are defined in `UnitMeasurements::ElectricCharge`.
 | 4 | Fr | franklin, franklins |
 | 5 | Fd | faraday, faradays |
 
-## 22. Capacitance
+## 22. Electrical capacitance
 
-These units are defined in `UnitMeasurements::Capacitance`.
+These units are defined in `UnitMeasurements::ElectricalCapacitance`.
 
 | # | Symbol | Aliases |
 |:--|:--|:--|
@@ -283,18 +283,18 @@ These units are defined in `UnitMeasurements::Capacitance`.
 | 3 | statF | statfarad, statfarads |
 | 4 | C/V | C·V⁻¹, coulomb/volt, coulombs/volt, coulomb per volt, coulombs per volt |
 
-## 23. Elastance
+## 23. Electrical elastance
 
-These units are defined in `UnitMeasurements::Elastance`.
+These units are defined in `UnitMeasurements::ElectricalElastance`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _D*_ | _F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads_ |
 | 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
 
-## 24. Resistance
+## 24. Electrical resistance
 
-These units are defined in `UnitMeasurements::Resistance`.
+These units are defined in `UnitMeasurements::ElectricalResistance`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
@@ -302,20 +302,31 @@ These units are defined in `UnitMeasurements::Resistance`.
 | 2 | abΩ | abω, abohm, abohms |
 | 3 | statΩ | statω, statohm, statohms |
 | 4 | S | siemens, mho, mhos |
-| 5 | V/A | V·A⁻¹, volt/amp., volts/amp., volt/ampere, volts/ampere, volt per ampere, volts per ampere |
+| 5 | V/A | V·A⁻¹, volt/amp, volts/amp, volt/ampere, volts/ampere, volt per ampere, volts per ampere |
 
-## 25. Conductance
+## 25. Electric conductance
 
-These units are defined in `UnitMeasurements::Conductance`.
+These units are defined in `UnitMeasurements::ElectricConductance`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _S*_ | _℧, Ω⁻¹, siemens, mho, mhos_ |
 | 2 | abS | ab℧, absiemens, abmho, abmhos |
 | 3 | statS | stat℧, statsiemens, statmho, statmhos |
-| 3 | A/V | A·V⁻¹, amp./volt, amps./volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
+| 3 | A/V | A·V⁻¹, amp/volt, amps/volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
 
-## 26. Magnetic flux
+## 26. Electrical inductance
+
+These units are defined in `UnitMeasurements::ElectricalInductance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _H*_ | _henry, henries_ |
+| 2 | abH | abhenry, abhenries |
+| 3 | statH | stathenry, stathenries |
+| 4 | Wb/A | Wb·A⁻¹, weber per ampere, webers per ampere |
+
+## 27. Magnetic flux
 
 These units are defined in `UnitMeasurements::MagneticFlux`.
 
@@ -326,7 +337,7 @@ These units are defined in `UnitMeasurements::MagneticFlux`.
 | 3 | T·m² | T*m^2, tesla-square meter, tesla-square metre |
 | 4 | G·cm² | G*cm^2, gauss-square centimeter, gauss-square centimetre |
 
-## 27. Magnetic induction
+## 28. Magnetic induction
 
 These units are defined in `UnitMeasurements::MagneticInduction`.
 
@@ -335,22 +346,11 @@ These units are defined in `UnitMeasurements::MagneticInduction`.
 | _1_ | _T*_ | _tesla, teslas_ |
 | 2 | G | Gs, gauss, gausses |
 
-## 28. Magnetic field
+## 29. Magnetic field
 
 These units are defined in `UnitMeasurements::MagneticField`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _Oe*_ | _oersted, oersteds_ |
-| 2 | A/m | A·m⁻¹, ampere/meter, ampere/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
-
-## 29. Inductance
-
-These units are defined in `UnitMeasurements::Inductance`.
-
-| # | Name | Aliases |
-|:--|:--|:--|
-| _1_ | _H*_ | _henry, henries_ |
-| 2 | abH | abhenry, abhenries |
-| 3 | statH | stathenry, stathenries |
-| 4 | Wb/A | Wb·A⁻¹, weber per ampere, webers per ampere |
+| 2 | A/m | A·m⁻¹, ampere/meter, ampere/metre, amperes/meter, amperes/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |

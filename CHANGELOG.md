@@ -6,6 +6,15 @@
 - Added support to set `system` in `Unit` metadata.
 - Added `UnitMeasurements::PrimitiveUnitAlreadySetError` error if `primitive` unit is defined more than one time in the unit group.
 
+### What's changed
+
+- Renamed `Voltage` unit group class to `ElectricPotential`.
+- Renamed `Conductance` unit group class to `ElectricConductance`.
+- Renamed `Resistance` unit group class to `ElectricalResistance`.
+- Renamed `Elastance` unit group class to `ElectricalElastance`.
+- Renamed `Capacitance` unit group class to `ElectricalCapacitance`.
+- Renamed `Inductance` unit group class to `ElectricalInductance`.
+
 ### What's removed
 
 - Removed support to build `UnitSystem` instances for each system within the unit group.
