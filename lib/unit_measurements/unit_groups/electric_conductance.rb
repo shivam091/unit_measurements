@@ -2,7 +2,7 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-UnitMeasurements::Conductance = UnitMeasurements.build do
+UnitMeasurements::ElectricConductance = UnitMeasurements.build do
   primitive "S"
 
   system :metric do
