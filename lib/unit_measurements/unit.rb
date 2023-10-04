@@ -11,7 +11,7 @@ module UnitMeasurements
     def initialize(name, value:, aliases:, system:, unit_group: nil)
       @name = name.to_s.freeze
       @value = value
-      @aliases = Set.new(aliases.sort.map(&:to_s).map(&:freeze)).freeze
+      @aliases = Set.new(aliases.map(&:to_s).sort.map(&:freeze)).freeze
       @system = system
       @unit_group = unit_group
     end
@@ -44,6 +44,7 @@ module UnitMeasurements
 
       measurement_value, measurement_unit = parse_value(value)
       conversion_factor = unit_group.unit_for!(measurement_unit).conversion_factor
+
       conversion_factor * measurement_value
     end
 

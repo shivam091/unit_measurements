@@ -6,7 +6,8 @@ module UnitMeasurements
   module Comparison
     include Comparable
 
-    # Compares the quantities of two measurements within the same unit group.
+    # Implements +Comparable+ methods on the quantities of two measurements of
+    # the same unit group.
     #
     # @example
     #   UnitMeasurements::Weight.new(1, "kg") == UnitMeasurements::Weight.new(1, :kg)

@@ -31,9 +31,7 @@ module UnitMeasurements
 
       self.class.new((quantity * conversion_factor), target_unit)
     end
-    alias_method :to, :convert_to
-    alias_method :in, :convert_to
-    alias_method :as, :convert_to
+    [:to, :in, :as].each { |method_alias| alias_method method_alias, :convert_to }
 
     def convert_to!(target_unit)
       measurement = convert_to(target_unit)
@@ -41,14 +39,10 @@ module UnitMeasurements
 
       self
     end
-    alias_method :to!, :convert_to!
-    alias_method :in!, :convert_to!
-    alias_method :as!, :convert_to!
+    [:to!, :in!, :as!].each { |method_alias| alias_method method_alias, :convert_to! }
 
     def inspect(dump: false)
-      return super() if dump
-
-      to_s
+      dump ? super() : to_s
     end
 
     def to_s
@@ -71,9 +65,9 @@ module UnitMeasurements
         raise BaseError, "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`."
       end
 
-      def_delegators :unit_group, :units, :unit_names, :unit_with_name_and_aliases,
+      def_delegators :unit_group, :primitive, :units, :unit_names, :unit_with_name_and_aliases,
                      :unit_names_with_aliases, :unit_for, :unit_for!, :defined?,
-                     :unit_or_alias?, :[], :primitive
+                     :unit_or_alias?, :[]
 
       def parse(input)
         input = Normalizer.normalize(input)

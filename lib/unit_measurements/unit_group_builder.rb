@@ -61,7 +61,7 @@ module UnitMeasurements
       names = @units.flat_map(&:names)
 
       if names.any? { |name| unit.names.include?(name) }
-        raise UnitAlreadyDefinedError.new(unit.name)
+        raise UnitAlreadyDefinedError, unit.name
       end
     end
   end

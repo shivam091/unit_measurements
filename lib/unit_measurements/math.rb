@@ -5,7 +5,7 @@
 module UnitMeasurements
   module Math
     # Rounds quantity of the measurement. If `ndigits` is not specified,
-    # quantity is rounded to `Integer`.
+    # quantity is rounded to +Integer+.
     #
     # @example
     #   UnitMeasurements::Weight.new(1, "g").convert_to("st").round(4)
