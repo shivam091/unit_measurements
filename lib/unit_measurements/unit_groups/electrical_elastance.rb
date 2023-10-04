@@ -2,7 +2,7 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-UnitMeasurements::Elastance = UnitMeasurements.build do
+UnitMeasurements::ElectricalElastance = UnitMeasurements.build do
   primitive "D"
 
   system :metric do
