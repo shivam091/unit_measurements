@@ -3,11 +3,11 @@
 # -*- warn_indent: true -*-
 
 UnitMeasurements::LuminousIntensity = UnitMeasurements.build do
-  system :metric do
-    primitive :cd
+  primitive "cd"
 
-    si_unit :cd, aliases: [:candela, :candelas]
+  system :metric do
+    si_unit "cd", aliases: ["candela", "candelas"]
   end
 
-  unit :hk, value: "0.92 cd", aliases: [:hefnerkerze]
+  unit "hk", value: "0.92 cd", aliases: ["hefnerkerze"]
 end

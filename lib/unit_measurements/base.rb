@@ -24,8 +24,6 @@ end
 
 require "unit_measurements/unit_group_builder"
 require "unit_measurements/unit"
-require "unit_measurements/unit_methods"
-require "unit_measurements/unit_system"
 require "unit_measurements/unit_group"
 require "unit_measurements/arithmetic"
 require "unit_measurements/comparison"
@@ -37,5 +35,6 @@ require "unit_measurements/formatter"
 require "unit_measurements/measurement"
 
 require "unit_measurements/errors/unit_error"
-require "unit_measurements/errors/unit_already_defined_error"
 require "unit_measurements/errors/parse_error"
+require "unit_measurements/errors/unit_already_defined_error"
+require "unit_measurements/errors/primitive_unit_already_set_error"

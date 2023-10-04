@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/conductance_spec.rb
+# spec/unit_measurements/unit_groups/electric_conductance_spec.rb
 
-RSpec.describe UnitMeasurements::Conductance do
+RSpec.describe UnitMeasurements::ElectricConductance do
   describe "S" do
     subject { described_class.new(10, "S") }
 

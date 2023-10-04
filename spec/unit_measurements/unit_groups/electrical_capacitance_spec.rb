@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/capacitance_spec.rb
+# spec/unit_measurements/unit_groups/electrical_capacitance_spec.rb
 
-RSpec.describe UnitMeasurements::Capacitance do
+RSpec.describe UnitMeasurements::ElectricalCapacitance do
   describe "F" do
     subject { described_class.new(10, "F") }
 

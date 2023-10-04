@@ -10,6 +10,7 @@ RSpec.describe UnitMeasurements::Unit do
       :unit_name,
       value: "2.5 m",
       aliases: [:alias1, :alias2],
+      system: :metric,
       unit_group: nil
     )
   end

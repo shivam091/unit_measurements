@@ -8,14 +8,18 @@ RSpec.describe UnitMeasurements::Math do
   describe "#round" do
     let(:measurement) { UnitMeasurements::Length.new(17.625, :m) }
 
-    it "rounds quantity to nearest integer" do
-      expect(measurement.round.quantity).to eq(18)
-      expect(measurement.round.quantity).to be_a(Integer)
+    context "when parameter ndigits is not specified" do
+      it "rounds quantity to nearest integer" do
+        expect(measurement.round.quantity).to eq(18)
+        expect(measurement.round.quantity).to be_a(Integer)
+      end
     end
 
-    it "rounds quantity to nearest big decimal" do
-      expect(measurement.round(2).quantity).to eq(17.63)
-      expect(measurement.round(2).quantity).to be_a(BigDecimal)
+    context "when parameter ndigits is specified" do
+      it "rounds quantity to nearest big decimal" do
+        expect(measurement.round(2).quantity).to eq(17.63)
+        expect(measurement.round(2).quantity).to be_a(BigDecimal)
+      end
     end
   end
 

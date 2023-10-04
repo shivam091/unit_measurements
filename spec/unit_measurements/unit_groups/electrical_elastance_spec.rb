@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/elastance_spec.rb
+# spec/unit_measurements/unit_groups/electrical_elastance_spec.rb
 
-RSpec.describe UnitMeasurements::Elastance do
+RSpec.describe UnitMeasurements::ElectricalElastance do
   describe "D" do
     subject { described_class.new(10, "D") }
 

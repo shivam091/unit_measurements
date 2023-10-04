@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/voltage_spec.rb
+# spec/unit_measurements/unit_groups/electric_potential_spec.rb
 
-RSpec.describe UnitMeasurements::Voltage do
+RSpec.describe UnitMeasurements::ElectricPotential do
   describe "V" do
     subject { described_class.new(2, "V") }
 

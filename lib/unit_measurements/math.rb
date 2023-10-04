@@ -5,10 +5,10 @@
 module UnitMeasurements
   module Math
     # Rounds quantity of the measurement. If `ndigits` is not specified,
-    # quantity is rounded to `Integer`.
+    # quantity is rounded to +Integer+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(1, :g).convert_to(:st).round(4)
+    #   UnitMeasurements::Weight.new(1, "g").convert_to("st").round(4)
     #   => 0.0002 st
     #
     # @param [Integer] ndigits
@@ -21,7 +21,7 @@ module UnitMeasurements
     # Returns absolute value of the measurement quantity.
     #
     # @example
-    #   UnitMeasurements::Length.new(-17.625, :m).abs
+    #   UnitMeasurements::Length.new(-17.625, "m").abs
     #   => 17.625 m
     #
     # @return [Measurement]
@@ -32,7 +32,7 @@ module UnitMeasurements
     # Rounds quantity of the measurement to next lower integer.
     #
     # @example
-    #   UnitMeasurements::Length.new(17.625, :m).floor
+    #   UnitMeasurements::Length.new(17.625, "m").floor
     #   => 17 m
     #
     # @return [Measurement]
@@ -43,7 +43,7 @@ module UnitMeasurements
     # Rounds quantity of the measurement to next higher integer.
     #
     # @example
-    #   UnitMeasurements::Length.new(17.625, :m).ceil
+    #   UnitMeasurements::Length.new(17.625, "m").ceil
     #   => 18 m
     #
     # @return [Measurement]

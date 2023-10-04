@@ -1,4 +1,28 @@
-## [3.8.0](https://github.com/shivam091/unit_measurements/compare/v3.7.0...v3.8.0) - 2023-10-02
+## [4.0.0](https://github.com/shivam091/unit_measurements/compare/v3.8.0...v4.0.0) - 2023-10-04
+
+### What's new
+
+- Added support to set `primitive` unit for each unit group.
+- Added support to set `system` in `Unit` metadata.
+- Added `UnitMeasurements::PrimitiveUnitAlreadySetError` error if `primitive` unit is defined more than one time in the unit group.
+
+### What's changed
+
+- Renamed `Voltage` unit group class to `ElectricPotential`.
+- Renamed `Conductance` unit group class to `ElectricConductance`.
+- Renamed `Resistance` unit group class to `ElectricalResistance`.
+- Renamed `Elastance` unit group class to `ElectricalElastance`.
+- Renamed `Capacitance` unit group class to `ElectricalCapacitance`.
+- Renamed `Inductance` unit group class to `ElectricalInductance`.
+
+### What's removed
+
+- Removed support to build `UnitSystem` instances for each system within the unit group.
+- Removed support to set `primitive` unit for each unit system within the unit group.
+
+----------
+
+## [3.8.0](https://github.com/shivam091/unit_measurements/compare/v3.7.0...v3.8.0) - 2023-10-03
 
 ### What's new
 
@@ -7,7 +31,7 @@
 
 ----------
 
-## [3.7.0](https://github.com/shivam091/unit_measurements/compare/v3.6.0...v3.7.0) - 2023-10-01
+## [3.7.0](https://github.com/shivam091/unit_measurements/compare/v3.6.0...v3.7.0) - 2023-10-02
 
 ### What's new
 
