@@ -2,7 +2,7 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-UnitMeasurements::Voltage = UnitMeasurements.build do
+UnitMeasurements::ElectricPotential = UnitMeasurements.build do
   primitive "V"
 
   system :metric do
