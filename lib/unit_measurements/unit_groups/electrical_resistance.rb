@@ -9,7 +9,7 @@ UnitMeasurements::ElectricalResistance = UnitMeasurements.build do
     si_unit "Ω", aliases: ["ω", "ohm", "ohms", "reciprocal siemens"]
 
     unit "S", value: "1 Ω", aliases: ["siemens", "mho", "mhos"]
-    unit "V/A", value: "1 Ω", aliases: ["V·A⁻¹", "volt/amp.", "volts/amp.", "volt/ampere", "volts/ampere", "volt per ampere", "volts per ampere"]
+    unit "V/A", value: "1 Ω", aliases: ["V·A⁻¹", "volt/amp", "volts/amp", "volt/ampere", "volts/ampere", "volt per ampere", "volts per ampere"]
   end
 
   system :centimetre_gram_second do

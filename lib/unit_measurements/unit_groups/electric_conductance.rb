@@ -8,7 +8,7 @@ UnitMeasurements::ElectricConductance = UnitMeasurements.build do
   system :metric do
     si_unit "S", aliases: ["℧", "Ω⁻¹", "siemens", "mho", "mhos"]
 
-    unit "A/V", value: "1 S", aliases: ["A·V⁻¹", "amp./volt", "amps./volt", "ampere/volt", "amperes/volt", "ampere per volt", "amperes per volt"]
+    unit "A/V", value: "1 S", aliases: ["A·V⁻¹", "amp/volt", "amps/volt", "ampere/volt", "amperes/volt", "ampere per volt", "amperes per volt"]
   end
 
   system :centimetre_gram_second do
