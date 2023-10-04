@@ -2,7 +2,7 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-UnitMeasurements::Capacitance = UnitMeasurements.build do
+UnitMeasurements::ElectricalCapacitance = UnitMeasurements.build do
   primitive "F"
 
   system :metric do
