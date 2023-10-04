@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/resistance_spec.rb
+# spec/unit_measurements/unit_groups/electrical_resistance_spec.rb
 
-RSpec.describe UnitMeasurements::Resistance do
+RSpec.describe UnitMeasurements::ElectricalResistance do
   describe "Ω" do
     subject { described_class.new(10, "Ω") }
 

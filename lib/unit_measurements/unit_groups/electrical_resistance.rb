@@ -2,7 +2,7 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-UnitMeasurements::Resistance = UnitMeasurements.build do
+UnitMeasurements::ElectricalResistance = UnitMeasurements.build do
   primitive "Ω"
 
   system :metric do
