@@ -2,9 +2,9 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-# spec/unit_measurements/unit_groups/inductance_spec.rb
+# spec/unit_measurements/unit_groups/electrical_inductance_spec.rb
 
-RSpec.describe UnitMeasurements::Inductance do
+RSpec.describe UnitMeasurements::ElectricalInductance do
   describe "H" do
     subject { described_class.new(10, "H") }
 

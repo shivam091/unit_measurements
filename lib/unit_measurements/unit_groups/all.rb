@@ -28,10 +28,10 @@ require_relative "electric_conductance"
 require_relative "electrical_capacitance"
 require_relative "electrical_elastance"
 require_relative "electrical_resistance"
+require_relative "electrical_inductance"
 require_relative "magnetic_flux"
 require_relative "magnetic_induction"
 require_relative "magnetic_field"
-require_relative "inductance"
 
 ## Other units
 
