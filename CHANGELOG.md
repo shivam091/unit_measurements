@@ -1,3 +1,13 @@
+## [4.1.0](https://github.com/shivam091/unit_measurements/compare/v4.0.0...v4.1.0) - 2023-10-05
+
+### What's new
+
+- Added unit group for `catalytic activity` units.
+- Added unit group for `electric dipole moment` units.
+- Added unit group for `electric quadrupole moment` units.
+
+----------
+
 ## [4.0.0](https://github.com/shivam091/unit_measurements/compare/v3.8.0...v4.0.0) - 2023-10-04
 
 ### What's new

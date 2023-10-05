@@ -354,3 +354,31 @@ These units are defined in `UnitMeasurements::MagneticField`.
 |:--|:--|:--|
 | _1_ | _Oe*_ | _oersted, oersteds_ |
 | 2 | A/m | A·m⁻¹, ampere/meter, ampere/metre, amperes/meter, amperes/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
+
+## 30. Catalytic activity
+
+These units are defined in `UnitMeasurements::CatalyticActivity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _kat*_ | _katal, katals_ |
+| 2 | U | unit, units, enzUnit |
+
+## 31. Electric dipole moment
+
+These units are defined in `UnitMeasurements::ElectricDipoleMoment`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _C⋅m*_ | _C*m, coulomb-meter, coulomb-metre_ |
+| 2 | D | debye, debyes |
+
+## 31. Electric quadrupole moment
+
+These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _C·m²*_ | _C*m^2, coulomb square meter, coulomb square metre_ |
+| 2 | statC·cm² | statC*m^2, statcoulomb square meter, statcoulomb square metre |
+| 3 | B | buckingham, buckinghams |
