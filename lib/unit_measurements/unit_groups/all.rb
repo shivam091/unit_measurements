@@ -32,6 +32,7 @@ require_relative "electrical_inductance"
 require_relative "magnetic_flux"
 require_relative "magnetic_induction"
 require_relative "magnetic_field"
+require_relative "catalytic_activity"
 
 ## Other units
 
