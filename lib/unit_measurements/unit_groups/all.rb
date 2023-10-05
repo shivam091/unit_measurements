@@ -25,6 +25,8 @@ require_relative "force"
 require_relative "electric_potential"
 require_relative "electric_charge"
 require_relative "electric_conductance"
+require_relative "electric_dipole_moment"
+require_relative "electric_quadrupole_moment"
 require_relative "electrical_capacitance"
 require_relative "electrical_elastance"
 require_relative "electrical_resistance"
@@ -32,6 +34,7 @@ require_relative "electrical_inductance"
 require_relative "magnetic_flux"
 require_relative "magnetic_induction"
 require_relative "magnetic_field"
+require_relative "catalytic_activity"
 
 ## Other units
 
