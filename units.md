@@ -373,7 +373,7 @@ These units are defined in `UnitMeasurements::ElectricDipoleMoment`.
 | _1_ | _C⋅m*_ | _C*m, coulomb-meter, coulomb-metre_ |
 | 2 | D | debye, debyes |
 
-## 31. Electric quadrupole moment
+## 32. Electric quadrupole moment
 
 These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
 
@@ -382,3 +382,32 @@ These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
 | _1_ | _C·m²*_ | _C*m^2, coulomb square meter, coulomb square metre_ |
 | 2 | statC·cm² | statC*m^2, statcoulomb square meter, statcoulomb square metre |
 | 3 | B | buckingham, buckinghams |
+
+## 33. Pressure
+
+These units are defined in `UnitMeasurements::Pressure`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Pa*_ | _pascal, pascals_ |
+| 2 | bar | bars |
+| 3 | Ba | barye, baryes |
+| 4 | pz | pièze |
+| 5 | at | technical atmosphere, technical atmospheres |
+| 6 | atm | atmosphere, atmospheres |
+| 7 | Torr | torr |
+
+## 34. Torque
+
+These units are defined in `UnitMeasurements::Torque`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _N·m*_ | _N*m, newton meter, newton metre_ |
+| 2 | kgf·m | kgf*m, Kilogram-force meter, kilogramme-force metre |
+| 3 | dyn·cm | dyn*cm, dyne centimeter, dyne centimetre |
+| 4 | pdl⋅ft | pdl*ft, poundal foot, foot-poundal |
+| 5 | ozf·in | oz⋅in, ozf\*in, oz\*in, ounce-force inch, ounce-inch |
+| 6 | ozf·ft | oz⋅ft, ozf\*ft, oz\*ft, ounce-force foot, ounce-foot |
+| 7 | lbf⋅in | lb⋅in, lbf\*in, lb\*in, pound-force inch, pound-inch |
+| 8 | lbf⋅ft | lb⋅ft, lbf\*ft, lb\*ft, pound-force foot, pound-foot |
