@@ -35,6 +35,8 @@ require_relative "magnetic_flux"
 require_relative "magnetic_induction"
 require_relative "magnetic_field"
 require_relative "catalytic_activity"
+require_relative "pressure"
+require_relative "torque"
 
 ## Other units
 
