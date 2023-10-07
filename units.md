@@ -4,7 +4,7 @@ As there are lots of units bundled with `unit_measurements`, we recommend you to
 bundled units before converting your measurements.
 
 **Notes:**
-1. Unit names suffixed with `*` support all [SI prefixes](README.md#si-units-support).
+1. Unit names suffixed with `*` support all [SI prefixes](README.md#support-for-si-decimal-prefixes).
 2. Primitive unit of the unit group is in _emphasis typeface_.
 
 ## 1. Length/Distance

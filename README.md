@@ -424,10 +424,10 @@ and set primitive unit for each unit group using `primitive` method.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
-  # Set primitive unit for the unit group.
+  # Set primitive unit for the unit group (optional).
   primitive "s"
 
-  # Group units by the unit system.
+  # Group units by the unit system (optional).
   system :metric do
     # Add a SI unit to the unit group.
     si_unit "s", aliases: ["second", "seconds"]
