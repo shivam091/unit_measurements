@@ -1,3 +1,12 @@
+## [4.3.0](https://github.com/shivam091/unit_measurements/compare/v4.2.0...v4.3.0) - 2023-10-07
+
+### What's new
+
+- Added unit group for `luminous flux` units.
+- Added unit group for `illuminance` units.
+
+----------
+
 ## [4.2.0](https://github.com/shivam091/unit_measurements/compare/v4.1.0...v4.2.0) - 2023-10-06
 
 ### What's new
