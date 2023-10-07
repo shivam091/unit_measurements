@@ -4,7 +4,7 @@ As there are lots of units bundled with `unit_measurements`, we recommend you to
 bundled units before converting your measurements.
 
 **Notes:**
-1. Unit names suffixed with `*` support all [SI prefixes](README.md#si-units-support).
+1. Unit names suffixed with `*` support all [SI prefixes](README.md#support-for-si-decimal-prefixes).
 2. Primitive unit of the unit group is in _emphasis typeface_.
 
 ## 1. Length/Distance
@@ -411,3 +411,22 @@ These units are defined in `UnitMeasurements::Torque`.
 | 6 | ozf·ft | oz⋅ft, ozf\*ft, oz\*ft, ounce-force foot, ounce-foot |
 | 7 | lbf⋅in | lb⋅in, lbf\*in, lb\*in, pound-force inch, pound-inch |
 | 8 | lbf⋅ft | lb⋅ft, lbf\*ft, lb\*ft, pound-force foot, pound-foot |
+
+## 35. Luminous flux
+
+These units are defined in `UnitMeasurements::LuminousFlux`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _lm*_ | _lumen, lumens_ |
+
+## 36. Illuminance
+
+These units are defined in `UnitMeasurements::Illuminance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _lx*_ | _lux, lm/m², lm/m^2, lm·m⁻², lumen per square metre, lumen per square meter_ |
+| 2 | ph | phot, phots, lm/cm², lm/cm^2, lm·cm⁻², lumen per square centimetre, lumen per square centimeter |
+| 3 | fc | footcandle, lm/ft², lm/ft^2, lm·ft⁻², lumen per square foot |
+| 4 | nx | nox |
