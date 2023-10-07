@@ -37,6 +37,7 @@ require_relative "magnetic_field"
 require_relative "catalytic_activity"
 require_relative "pressure"
 require_relative "torque"
+require_relative "luminous_flux"
 
 ## Other units
 
