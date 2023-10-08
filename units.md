@@ -430,3 +430,27 @@ These units are defined in `UnitMeasurements::Illuminance`.
 | 2 | ph | phot, phots, lm/cm², lm/cm^2, lm·cm⁻², lumen per square centimetre, lumen per square centimeter |
 | 3 | fc | footcandle, lm/ft², lm/ft^2, lm·ft⁻², lumen per square foot |
 | 4 | nx | nox |
+
+## 37. Luminance
+
+These units are defined in `UnitMeasurements::Luminance`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _cd/m²_ | _cd/m^2, cd·m⁻², candela per square metre, candelas per square metre, candela per square meter, candelas per square meter_ |
+| 2 | cd/in² | cd/in^2, cd·in⁻², candela per square inch, candelas per square inch |
+| 3 | cd/ft² | cd/ft^2, cd·ft⁻², candela per square foot, candelas per square foot |
+| 4 | fL | ft-L, foot lambert, foot-lambert |
+| 5 | L | lambert, lamberts |
+| 6 | sb | stlib |
+
+## 38. Frequency
+
+These units are defined in `UnitMeasurements::Frequency`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Hz*_ | _hertz, hertzes_ |
+| 2 | rad/s | rad·s⁻¹, radian per second, radians per second |
+| 3 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
+| 4 | rev/s | rps, rev·s⁻¹, revolution per second, revolutions per second |
