@@ -39,6 +39,7 @@ require_relative "pressure"
 require_relative "torque"
 require_relative "luminous_flux"
 require_relative "illuminance"
+require_relative "luminance"
 
 ## Other units
 
