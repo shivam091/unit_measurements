@@ -1,3 +1,12 @@
+## [4.4.0](https://github.com/shivam091/unit_measurements/compare/v4.3.0...v4.4.0) - 2023-10-08
+
+### What's new
+
+- Added unit group for `luminance` units.
+- Added unit group for `frequency` units.
+
+----------
+
 ## [4.3.0](https://github.com/shivam091/unit_measurements/compare/v4.2.0...v4.3.0) - 2023-10-07
 
 ### What's new
