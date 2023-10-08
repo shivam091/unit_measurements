@@ -40,6 +40,7 @@ require_relative "torque"
 require_relative "luminous_flux"
 require_relative "illuminance"
 require_relative "luminance"
+require_relative "frequency"
 
 ## Other units
 
