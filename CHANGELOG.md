@@ -1,3 +1,12 @@
+## [4.7.0](https://github.com/shivam091/unit_measurements/compare/v4.6.0...v4.7.0) - 2023-10-11
+
+### What's new
+
+- Added unit group for `magnetomotive force` units.
+- Added unit group for `radioactivity` units.
+
+----------
+
 ## [4.6.0](https://github.com/shivam091/unit_measurements/compare/v4.5.0...v4.6.0) - 2023-10-10
 
 ### What's new
