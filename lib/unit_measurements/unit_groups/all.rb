@@ -45,6 +45,7 @@ require_relative "power"
 require_relative "energy"
 require_relative "dynamic_viscosity"
 require_relative "kinetic_viscosity"
+require_relative "magnetomotive_force"
 
 ## Other units
 
