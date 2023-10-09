@@ -41,6 +41,8 @@ require_relative "luminous_flux"
 require_relative "illuminance"
 require_relative "luminance"
 require_relative "frequency"
+require_relative "power"
+require_relative "energy"
 
 ## Other units
 

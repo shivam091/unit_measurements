@@ -1,3 +1,12 @@
+## [4.5.0](https://github.com/shivam091/unit_measurements/compare/v4.4.0...v4.5.0) - 2023-10-09
+
+### What's new
+
+- Added unit group for `energy` units.
+- Added unit group for `power` units.
+
+----------
+
 ## [4.4.0](https://github.com/shivam091/unit_measurements/compare/v4.3.0...v4.4.0) - 2023-10-08
 
 ### What's new
