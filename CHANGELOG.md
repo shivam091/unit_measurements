@@ -1,3 +1,12 @@
+## [4.8.0](https://github.com/shivam091/unit_measurements/compare/v4.7.0...v4.8.0) - 2023-10-11
+
+### What's new
+
+- Added unit group for `radiation exposure` units.
+- Added unit group for `radiation absorbed dose` units.
+
+----------
+
 ## [4.7.0](https://github.com/shivam091/unit_measurements/compare/v4.6.0...v4.7.0) - 2023-10-11
 
 ### What's new

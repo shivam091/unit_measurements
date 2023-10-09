@@ -5,7 +5,7 @@ bundled units before converting your measurements.
 
 **Notes:**
 1. Unit names suffixed with `*` support all [SI prefixes](README.md#support-for-si-decimal-prefixes).
-2. Primitive unit of the unit group is in _emphasis typeface_.
+2. Primitive unit of the unit group is in _emphasised typeface_.
 
 ## 1. Length/Distance
 
@@ -525,3 +525,22 @@ These units are defined in `UnitMeasurements::Radioactivity`.
 | _1_ | _Bq*_ | _becquerel, becquerels_ |
 | 2 | Ci | curie, curies |
 | 3 | Rd | rutherford, rutherfords |
+
+## 45. Radiation exposure
+
+These units are defined in `UnitMeasurements::RadiationExposure`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _C/kg*_ | _coulomb per kilogram, coulomb per kilogramme, coulombs per kilogram, coulombs per kilogramme_ |
+| 2 | R | röntgen, roentgen, roentgens |
+
+## 46. Radiation absorbed dose
+
+These units are defined in `UnitMeasurements::RadiationAbsorbedDose`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Gy*_ | _gray, grays_ |
+| 2 | erg/g | erg per gram, erg per gramme, ergs per gram, ergs per gramme |
+| 3 | rad | radiation absorbed dose |
