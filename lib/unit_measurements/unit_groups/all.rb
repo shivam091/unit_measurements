@@ -46,6 +46,7 @@ require_relative "energy"
 require_relative "dynamic_viscosity"
 require_relative "kinetic_viscosity"
 require_relative "magnetomotive_force"
+require_relative "radioactivity"
 
 ## Other units
 
