@@ -43,6 +43,7 @@ require_relative "luminance"
 require_relative "frequency"
 require_relative "power"
 require_relative "energy"
+require_relative "dynamic_viscosity"
 
 ## Other units
 
