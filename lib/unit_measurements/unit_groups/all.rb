@@ -44,6 +44,7 @@ require_relative "frequency"
 require_relative "power"
 require_relative "energy"
 require_relative "dynamic_viscosity"
+require_relative "kinetic_viscosity"
 
 ## Other units
 
