@@ -454,3 +454,30 @@ These units are defined in `UnitMeasurements::Frequency`.
 | 2 | rad/s | rad·s⁻¹, radian per second, radians per second |
 | 3 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
 | 4 | rev/s | rps, rev·s⁻¹, revolution per second, revolutions per second |
+
+## 39. Power
+
+These units are defined in `UnitMeasurements::Power`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _W*_ | _watt, watts_ |
+| 2 | hp (M) | PS, metric horsepower |
+| 3 | hp | hp (I), horsepower |
+| 4 | erg/s | erg·s⁻¹, erg per second, ergs per second |
+| 5 | cal/s | cal·s⁻¹, calorie per second, calories per second |
+
+## 40. Energy
+
+These units are defined in `UnitMeasurements::Energy`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _J*_ | _joule, joules_ |
+| 2 | cal | calorie, calories |
+| 3 | eV | electronvolt, electron volt, electron-volt |
+| 4 | erg | ergs |
+| 5 | Btu | btu, btus, british thermal unit, british thermal units |
+| 6 | thm | therm, therms |
+| 7 | quad | quads |
+| 8 | foe | bethe |
