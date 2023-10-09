@@ -481,3 +481,28 @@ These units are defined in `UnitMeasurements::Energy`.
 | 6 | thm | therm, therms |
 | 7 | quad | quads |
 | 8 | foe | bethe |
+
+## 41. Dynamic viscosity
+
+These units are defined in `UnitMeasurements::DynamicViscosity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Pa⋅s*_ | _Pa*s, pascal second_ |
+| 2 | P | dyne·s/cm², dyne*s/cm^2, poise |
+| 3 | lb/(ft⋅s) | lb/(ft*s), pound per foot second |
+| 4 | lb/(ft⋅h) | lb/(ft*h), pound per foot hour |
+| 5 | (lbf⋅s)/ft² | (lb⋅s)/ft², (lbf\*s)/ft^2, (lb\*s)/ft^2, pound-force second per square foot |
+| 6 | (lbf⋅s)/in² | (lb⋅s)/in², (lbf\*s)/in^2, (lb\*s)/in^2, pound-force second per square inch |
+| 7 | Pl | poiseuille |
+
+## 42. Kinetic viscosity
+
+These units are defined in `UnitMeasurements::KineticViscosity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _m²/s_ | _m^2/s, square metre per second, square meter per second, square metres per second, square meters per second_ |
+| 2 | St | strokes |
+| 3 | ft²/s | ft^2/s, square foot per second, square feet per second |
+| 4 | in²/s | in^2/s, square inch per second, square inches per second |
