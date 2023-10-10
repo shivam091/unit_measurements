@@ -50,6 +50,7 @@ require_relative "radioactivity"
 require_relative "radiation_exposure"
 require_relative "radiation_absorbed_dose"
 require_relative "radiation_equivalent_dose"
+require_relative "information_entropy"
 
 ## Other units
 
