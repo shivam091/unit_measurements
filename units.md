@@ -506,3 +506,22 @@ These units are defined in `UnitMeasurements::KineticViscosity`.
 | 2 | St | strokes |
 | 3 | ft²/s | ft^2/s, square foot per second, square feet per second |
 | 4 | in²/s | in^2/s, square inch per second, square inches per second |
+
+## 43. Magnetomotive force
+
+These units are defined in `UnitMeasurements::MagnetomotiveForce`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _A⋅t_ | _A*t, ampere-turn_ |
+| 2 | Gb | Gi, gilbert, gilberts |
+
+## 44. Radioactivity
+
+These units are defined in `UnitMeasurements::Radioactivity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Bq*_ | _becquerel, becquerels_ |
+| 2 | Ci | curie, curies |
+| 3 | Rd | rutherford, rutherfords |
