@@ -4,6 +4,7 @@
 
 - Added unit group for `radiation exposure` units.
 - Added unit group for `radiation absorbed dose` units.
+- Added unit group for `radiation equivalent dose` units.
 
 ----------
 

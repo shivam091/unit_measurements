@@ -544,3 +544,12 @@ These units are defined in `UnitMeasurements::RadiationAbsorbedDose`.
 | _1_ | _Gy*_ | _gray, grays_ |
 | 2 | erg/g | erg per gram, erg per gramme, ergs per gram, ergs per gramme |
 | 3 | rad | radiation absorbed dose |
+
+## 47. Radiation equivalent dose
+
+These units are defined in `UnitMeasurements::RadiationEquivalentDose`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _Sv*_ | _sievert, sieverts_ |
+| 2 | rem | röntgen equivalent man, roentgen equivalent man |
