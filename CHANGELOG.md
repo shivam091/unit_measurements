@@ -1,4 +1,12 @@
-## [4.8.0](https://github.com/shivam091/unit_measurements/compare/v4.7.0...v4.8.0) - 2023-10-11
+## [4.9.0](https://github.com/shivam091/unit_measurements/compare/v4.8.0...v4.9.0) - 2023-10-13
+
+### What's new
+
+- Added units group for `information entropy` units.
+
+----------
+
+## [4.8.0](https://github.com/shivam091/unit_measurements/compare/v4.7.0...v4.8.0) - 2023-10-12
 
 ### What's new
 
