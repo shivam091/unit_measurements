@@ -27,7 +27,7 @@ jobs:
   deploy_yard:
     environment:
       name: github-pages
-      url: ${{ secrets.PAGE_URL }}
+      url: https://shivam091.github.io/unit_measurements
     runs-on: ubuntu-latest
     name: Build and deploy YARD
     steps:
