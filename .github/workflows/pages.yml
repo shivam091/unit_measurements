@@ -27,7 +27,7 @@ jobs:
   deploy_yard:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ secrets.PAGE_URL }}
     runs-on: ubuntu-latest
     name: Build and deploy YARD
     steps:
