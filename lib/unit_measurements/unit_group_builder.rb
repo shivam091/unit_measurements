@@ -24,7 +24,7 @@ module UnitMeasurements
     end
 
     # Builds a set of +SI units+ and adds them to the list of units. This method
-    # also generates SI units with various prefixes (e.g., kilometer, millimeter).
+    # also generates unit defined using +name+.
     #
     # @param [String] name The name of the unit.
     # @param [Numeric or String] value The value of the unit.

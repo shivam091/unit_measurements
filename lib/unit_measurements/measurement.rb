@@ -64,7 +64,9 @@ module UnitMeasurements
 
       self.class.new((quantity * conversion_factor), target_unit)
     end
-    [:to, :in, :as].each { |method_alias| alias_method method_alias, :convert_to }
+    alias_method :to, :convert_to
+    alias_method :in, :convert_to
+    alias_method :as, :convert_to
 
     # Converts the measurement to a +target_unit+ and updates the current instance.
     #
@@ -81,7 +83,9 @@ module UnitMeasurements
 
       self
     end
-    [:to!, :in!, :as!].each { |method_alias| alias_method method_alias, :convert_to! }
+    alias_method :to!, :convert_to!
+    alias_method :in!, :convert_to!
+    alias_method :as!, :convert_to!
 
     # Returns a string representation of the +Measurement+.
     #
