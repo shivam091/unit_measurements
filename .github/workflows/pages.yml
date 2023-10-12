@@ -1,35 +1,24 @@
-name: Deploy API docs to GitHub Pages
+name: Publish Documentation
 on:
   push:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/pages.yml"
-      - ".yardopts"
-      - "lib/**"
-      - "**.gemspec"
-      - "Gemfile"
-      - "**.md"
-      - "**.txt"
-    # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
+    branches:
+      - main
 jobs:
-  deploy_yard:
-    environment:
-      name: github-pages
-      url: https://shivam091.github.io/unit_measurements
+  build:
     runs-on: ubuntu-latest
-    name: Build and deploy YARD
     steps:
-      - uses: kachick/deploy-yard-to-pages@v1.3.0
-        id: deployment
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set Up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+      - name: Install Dependencies
+        run: gem install yard
+      - name: Generate Documentation
+        run: yardoc
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc
