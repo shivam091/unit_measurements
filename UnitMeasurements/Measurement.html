@@ -297,6 +297,8 @@
     
 
     
+      (also: #to, #in, #as)
+    
   </span>
   
   
@@ -320,6 +322,8 @@
       <a href="#convert_to!-instance_method" title="#convert_to! (instance method)">#<strong>convert_to!</strong>(target_unit)  &#x21d2; Measurement </a>
     
 
+    
+      (also: #to!, #in!, #as!)
     
   </span>
   
@@ -769,15 +773,15 @@
       <pre class="lines">
 
 
-135
-136
-137
-138
 139
-140</pre>
+140
+141
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Normalizer.html" title="UnitMeasurements::Normalizer (class)">Normalizer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_normalize'><span class='object_link'><a href="Normalizer.html#normalize-class_method" title="UnitMeasurements::Normalizer.normalize (method)">normalize</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
@@ -834,12 +838,12 @@
       <pre class="lines">
 
 
-120
-121
-122</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit_group'>unit_group</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="BaseError.html" title="UnitMeasurements::BaseError (class)">BaseError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`.</span><span class='tstring_end'>&quot;</span></span>
@@ -861,6 +865,10 @@
     #<strong>convert_to</strong>(target_unit)  &#x21d2; <tt><span class='object_link'><a href="" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt> 
   
 
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='to-instance_method'>to</span>, <span id='in-instance_method'>in</span>, <span id='as-instance_method'>as</span></span>
+    </span>
   
 
   
@@ -962,6 +970,10 @@
   
 
   
+    <span class="aliases">Also known as:
+    <span class="names"><span id='to!-instance_method'>to!</span>, <span id='in!-instance_method'>in!</span>, <span id='as!-instance_method'>as!</span></span>
+    </span>
+  
 
   
 </h3><div class="docstring">
@@ -1028,15 +1040,15 @@
       <pre class="lines">
 
 
-78
-79
 80
 81
 82
-83</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert_to!'>convert_to!</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_measurement'>measurement</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='rparen'>)</span>
@@ -1115,12 +1127,12 @@
       <pre class="lines">
 
 
-91
-92
-93</pre>
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='label'>dump:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dump'>dump</span> <span class='op'>?</span> <span class='kw'>super</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_to_s'>to_s</span>
@@ -1174,12 +1186,12 @@
       <pre class="lines">
 
 
-98
-99
-100</pre>
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_quantity'>quantity</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_unit'>unit</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1194,7 +1206,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Oct 12 14:41:17 2023 by
+  Generated on Thu Oct 12 14:47:37 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
