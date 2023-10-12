@@ -3,5 +3,6 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
+  # Current stable version.
   VERSION = "4.9.0"
 end

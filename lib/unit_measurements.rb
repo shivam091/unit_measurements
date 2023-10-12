@@ -3,6 +3,7 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
+  # This is the base class for custom errors in the +UnitMeasurements+ module.
   class BaseError < StandardError; end
 end
 

@@ -3,14 +3,17 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
+  # The +UnitMeasurements::Conversion+ module defines methods for converting the
+  # quantity of a measurement to various numeric types. These methods allow for
+  # flexibility in handling measurements in different numeric formats.
   module Conversion
     # Converts quantity of the measurement to +Integer+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_i
-    #   => 2 kg
+    #   UnitMeasurements::Length.new(2.25567, "km").to_i
+    #   => 2 km
     #
-    # @return [Measurement]
+    # @return [Measurement] A new +Measurement+ object with the quantity converted to an +Integer+.
     def to_i
       self.class.new(quantity.to_i, unit)
     end
@@ -18,10 +21,10 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Float+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_f
-    #   => 2.25567 kg
+    #   UnitMeasurements::Length.new(2.25567, "km").to_f
+    #   => 2.25567 km
     #
-    # @return [Measurement]
+    # @return [Measurement] A new +Measurement+ object with the quantity converted to a +Float+.
     def to_f
       self.class.new(quantity.to_f, unit)
     end
@@ -29,10 +32,10 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Rational+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_r
-    #   => 225567/100000 kg
+    #   UnitMeasurements::Length.new(2.25567, "km").to_r
+    #   => 225567/100000 km
     #
-    # @return [Measurement]
+    # @return [Measurement] A new +Measurement+ object with the quantity converted to a +Rational+.
     def to_r
       self.class.new(quantity.to_r, unit)
     end
@@ -40,10 +43,10 @@ module UnitMeasurements
     # Converts quantity of the measurement to +Complex+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_c
-    #   => 2.25567+0i kg
+    #   UnitMeasurements::Length.new(2.25567, "km").to_c
+    #   => 2.25567+0i km
     #
-    # @return [Measurement]
+    # @return [Measurement] A new +Measurement+ object with the quantity converted to a +Complex+ number.
     def to_c
       self.class.new(quantity.to_c, unit)
     end
@@ -51,10 +54,10 @@ module UnitMeasurements
     # Converts quantity of the measurement to +BigDecimal+.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2.25567, "kg").to_d
-    #   => 2.25567 kg
+    #   UnitMeasurements::Length.new(2.25567, "km").to_d
+    #   => 2.25567 km
     #
-    # @return [Measurement]
+    # @return [Measurement] A new +Measurement+ object with the quantity converted to a +BigDecimal+.
     def to_d
       self.class.new(quantity.to_d, unit)
     end
