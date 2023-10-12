@@ -1,0 +1,27 @@
+name: Publish Documentation to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+      - 4.10.0
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set Up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+      - name: Install Dependencies
+        run: gem install yard
+      - name: Generate Documentation
+        run: yardoc
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc
