@@ -2,8 +2,6 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-## Fundamental SI units
-
 require_relative "amount_of_substance"
 require_relative "electric_current"
 require_relative "length"
@@ -11,8 +9,6 @@ require_relative "luminous_intensity"
 require_relative "temperature"
 require_relative "time"
 require_relative "weight"
-
-## Derived units
 
 require_relative "area"
 require_relative "volume"
@@ -50,8 +46,7 @@ require_relative "radioactivity"
 require_relative "radiation_exposure"
 require_relative "radiation_absorbed_dose"
 require_relative "radiation_equivalent_dose"
-
-## Other units
+require_relative "information_entropy"
 
 require_relative "sound_level"
 require_relative "plane_angle"

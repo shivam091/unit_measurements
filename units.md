@@ -553,3 +553,16 @@ These units are defined in `UnitMeasurements::RadiationEquivalentDose`.
 |:--|:--|:--|
 | _1_ | _Sv*_ | _sievert, sieverts_ |
 | 2 | rem | röntgen equivalent man, roentgen equivalent man |
+
+## 48. Information entropy
+
+These units are defined in `UnitMeasurements::InformationEntropy`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | b* | bit, bits |
+| 2 | B* | byte, bytes |
+| 3 | Sh | shannon, shannons |
+| _4_ | _nat_ | _nit, nepit, natural unit of information_ |
+| 5 | nybl | nibble, nibbles, nybble, nyble |
+| 6 | Hart | hartley, ban, dit |
