@@ -23,7 +23,7 @@ module UnitMeasurements
       @units << build_unit(name, value: value, aliases: aliases)
     end
 
-    # Defines a set of +SI units+ and adds them to the list of units. This method
+    # Builds a set of +SI units+ and adds them to the list of units. This method
     # also generates SI units with various prefixes (e.g., kilometer, millimeter).
     #
     # @param [String] name The name of the unit.
@@ -65,7 +65,8 @@ module UnitMeasurements
 
     private
 
-    def build_si_units(name, value:, aliases:, include_binary_prefixes:)
+    # Builds unit along with all SI prefixes for it.
+    def build_si_units(name, value:, aliases:)
       si_units = [build_unit(name, value: value, aliases: aliases)]
 
       Unit::SI_DECIMAL_PREFIXES.each do |short_prefix, long_prefix, multiplier|
