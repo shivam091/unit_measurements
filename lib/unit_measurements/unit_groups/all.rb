@@ -47,6 +47,9 @@ require_relative "dynamic_viscosity"
 require_relative "kinetic_viscosity"
 require_relative "magnetomotive_force"
 require_relative "radioactivity"
+require_relative "radiation_exposure"
+require_relative "radiation_absorbed_dose"
+require_relative "radiation_equivalent_dose"
 
 ## Other units
 
