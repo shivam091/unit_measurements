@@ -43,12 +43,12 @@ RSpec.describe UnitMeasurements::UnitGroup do
 
   describe "#unit_name_to_unit" do
     it "returns the unit for the given name" do
-      expect(unit_group.unit_name_to_unit("g").inspect).to eq("#<UnitMeasurements::Unit: g (gram)>")
-      expect(unit_group.unit_name_to_unit("kg").inspect).to eq("#<UnitMeasurements::Unit: kg (kilogram)>")
+      expect(unit_group.send(:unit_name_to_unit, "g").inspect).to eq("#<UnitMeasurements::Unit: g (gram)>")
+      expect(unit_group.send(:unit_name_to_unit, "kg").inspect).to eq("#<UnitMeasurements::Unit: kg (kilogram)>")
     end
 
     it "returns nil if the unit name is not found" do
-      expect(unit_group.unit_name_to_unit("unknown")).to be_nil
+      expect(unit_group.send(:unit_name_to_unit, "unknown")).to be_nil
     end
   end
 

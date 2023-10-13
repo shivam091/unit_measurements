@@ -216,14 +216,14 @@ UnitMeasurements::Length.units
 
 ```ruby
 UnitMeasurements::Length.unit_names
-#=> ["m", "km", "mi", "ft", "in", "yd", ...]
+#=> ["ft", "in", "m", "mi", "yd"]
 ```
 
 **See all valid units of the unit group along with their aliases:**
 
 ```ruby
 UnitMeasurements::Length.unit_names_with_aliases
-#=> ["g", "meter", "metre", "meters", "metres", "km", "kilometer", "kilometre", "kilometers", "kilometres", "in", "inch", "inches", "yd", "yard", "yards", ...]
+#=> ["\"", "'", "feet", "foot", "ft", "in", "inch", "inches", "m", "meter", "meters", "metre", "metres", "mi", "mile", "miles", "yard", "yards", "yd"]
 ```
 
 **Finding units within the unit group:**
