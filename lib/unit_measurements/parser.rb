@@ -5,7 +5,7 @@
 module UnitMeasurements
   # The +UnitMeasurements::Parser+ module provides methods for parsing strings to
   # extract quantity and associated unit. It can handle various formats, including
-  # complex numbers, scientific notation, and rational numbers.
+  # complex numbers, scientific notation, and rational numbers for the +quantity+.
   class Parser
     # Matches any character sequence that does not consist of digits, whitespace,
     # or forward slashes.
@@ -89,7 +89,7 @@ module UnitMeasurements
       #
       # @param [String] string The input string containing a +quantity+ and an optional +unit+.
       #
-      # @return [Array<Numeric, String|NilClass>] The parsed +quantity+ and the +unit+ associated with it (or nil if no unit is present).
+      # @return [Array<Numeric, String|NilClass>] The parsed +quantity+ and the +unit+ associated with it (or nil if no unit is specified in the +string+).
       #
       # @raise [ParseError] If the string cannot be parsed.
       def parse(string)

@@ -11,7 +11,7 @@ module UnitMeasurements
     attr_reader :name
 
     # The conversion value of the unit. It can be a numeric value or a string in
-    # the form of a number followed by a unit symbol (e.g., “10 m”).
+    # the form of a number followed by a unit name (e.g., “10 m”).
     attr_reader :value
 
     # A set of alternative names for the unit.
@@ -27,7 +27,7 @@ module UnitMeasurements
     #
     # @param [String] name The name of the unit.
     # @param [String or Numeric] value The conversion value of the unit.
-    # @param [Set<String>] aliases Alternative names for the unit.
+    # @param [Array<String or Symbol>] aliases Alternative names for the unit.
     # @param [String or NilClass] system The system to which the unit belongs.
     # @param [UnitGroup or NilClass] unit_group The unit group to which the unit belongs.
     def initialize(name, value:, aliases:, system:, unit_group: nil)

@@ -22,13 +22,13 @@ module UnitMeasurements
     # * If no custom format is provided, it will use the +DEFAULT_FORMAT+.
     #
     # @example
-    #   UnitMeasurements::Weight.parse("2 kg").to("st").format
-    #   => "0.31 st"
+    #   UnitMeasurements::Length.new(1, "m").to("in").format
+    #   => "39.37 in"
     #
-    #   UnitMeasurements::Weight.parse("2 kg").to("st").format("%.4<quantity>f %<unit>s")
-    #   => "0.3149 st"
+    #   UnitMeasurements::Length.new(1, "m").to("in").format("%.4<quantity>f %<unit>s")
+    #   => "39.3701 in"
     #
-    # @param [String] format The custom format string for formatting the measurement. If not provided, +DEFAULT_FORMAT+ is used.
+    # @param [String, optional] format The custom format string for formatting the measurement. If not provided, +DEFAULT_FORMAT+ is used.
     #
     # @return [String] A formatted string representing the measurement.
     def format(format = nil)

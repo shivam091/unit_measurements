@@ -84,8 +84,7 @@ module UnitMeasurements
       # The +normalize+ method in the +UnitMeasurements::Normalizer+ module processes
       # the input string to replace special symbols with their equivalent representations,
       # such as converting superscript numbers to regular numbers, special fraction
-      # symbols to their numeric fractions, and ratios to fractional format. The
-      # method returns the normalized string.
+      # symbols to their numeric fractions, and ratios to fractional format.
       #
       # @example
       #   UnitMeasurements::Normalizer.normalize("¾")

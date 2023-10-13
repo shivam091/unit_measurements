@@ -18,13 +18,14 @@ jobs:
         ruby:
           - "3.2.2"
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true
-    - name: Run test cases
-      run: bundle exec rake
-    - name: Publish code coverage
-      uses: paambaati/codeclimate-action@v5.0.0
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Run test cases
+        run: bundle exec rake
+      - name: Publish code coverage
+        uses: paambaati/codeclimate-action@v5.0.0

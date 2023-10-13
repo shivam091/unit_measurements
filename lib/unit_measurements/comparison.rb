@@ -5,7 +5,7 @@
 module UnitMeasurements
   # The +UnitMeasurements::Comparison+ module is included in measurement classes
   # to enable comparison operations (e.g., less than, equal to, greater than, etc.)
-  # between two measurements of same unit group.
+  # between two measurements of the same unit group.
   module Comparison
     include Comparable
 

@@ -4,7 +4,7 @@
 
 module UnitMeasurements
   # The +UnitMeasurements::Arithmetic+ module provides methods for performing
-  # arithmetic operations (addition, subtraction, multiplication, and division, etc)
+  # arithmetic operations (addition, subtraction, multiplication, division, etc)
   # on measurement objects of the same unit group.
   module Arithmetic
     # Adds the quantity of the other measurement or a numeric value to the quantity of the current measurement.
@@ -51,7 +51,7 @@ module UnitMeasurements
     # @param [Numeric or Measurement] other The value to be divided by. It can be a numeric value or another measurement.
     #
     # @example
-    #   UnitMeasurements::Length.new(4, "km") / UnitMeasurements::Weight.new(2, "km")
+    #   UnitMeasurements::Length.new(4, "km") / UnitMeasurements::Length.new(2, "km")
     #   => 2 km
     #
     # @return [Measurement] A new +Measurement+ instance with the divided quantity.

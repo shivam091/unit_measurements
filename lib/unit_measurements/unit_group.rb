@@ -4,10 +4,11 @@
 
 module UnitMeasurements
   # The +UnitMeasurements::UnitGroup+ class provides a collection of units with
-  # methods to retrieve units by name, check if a unit is defined, and more.
+  # methods to retrieve units by name, check if a unit is defined, and much more.
+  #
   # It serves as a container for organizing and working with units in a unit group.
   class UnitGroup
-    # The primitive unit of the group.
+    # The primitive unit of the unit group.
     attr_reader :primitive
 
     # An array of units in the unit group.

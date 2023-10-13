@@ -5,6 +5,9 @@
 module UnitMeasurements
   # The +UnitMeasurements::UnitGroupBuilder+ class provides a flexible and configurable
   # way to define units and create unit groups with specific systems and primitive units.
+  #
+  # It provides methods like +primitive+, +system+, +si_unit+, and +unit+ to define
+  # units and their relationships within the unit group.
   class UnitGroupBuilder
     # An array to store the units defined using the builder.
     attr_reader :units
@@ -42,7 +45,7 @@ module UnitMeasurements
     # Defines the +unit system+ within the unit group and evaluates the provided
     # block in the context of the builder.
     #
-    # @param [String or Symbol] system_name The name of the system.
+    # @param [String or Symbol] system_name The name of the unit system.
     # @param block A block of code to be executed in the context of the builder.
     def system(system_name, &block)
       @system = system_name

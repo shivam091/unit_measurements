@@ -7,15 +7,15 @@ require "unit_measurements/version"
 
 module UnitMeasurements
   class << self
-    # Creates a new unit group based on the provided block of instructions.
+    # Creates a new unit group based on the provided +block+ of instructions.
     #
     # The +build+ method allows you to define and create a custom unit group with
     # specific units and their conversions. It takes a block of instructions as
     # an argument, which is evaluated by an instance of +UnitGroupBuilder+.
     #
     # Within the +block+, you can use various methods provided by +UnitGroupBuilder+
-    # to define units, specify their values, and set aliases. These methods include
-    # +primitive+, +system+, +si_unit+, and +unit+.
+    # to define units, group them into unit system, and set primitive unit of the unit group.
+    # These methods include +primitive+, +system+, +si_unit+, and +unit+.
     #
     # The resulting unit group is encapsulated in a new subclass of +Measurement+.
     # This subclass will have access to the defined units and their conversions through the +unit_group+ class attribute.
@@ -35,7 +35,7 @@ module UnitMeasurements
     #     end
     #   end
     #
-    # @param block A block of instructions for defining units within the unit group.
+    # @param block A block of instructions for defining units and their conversions within the unit group.
     #
     # @return [Class] A new subclass of +Measurement+ with the defined units and conversions.
     def build(&block)
