@@ -317,7 +317,7 @@
     
 <p>Normalizes a string containing special <code>symbols</code>, <code>exponents</code>, <code>fractions</code>, or <code>ratios</code>.</p>
 
-<p>The <code>normalize</code> method in the <code>UnitMeasurements::Normalizer</code> module processes the input string to replace special symbols with their equivalent representations, such as converting superscript numbers to regular numbers, special fraction symbols to their numeric fractions, and ratios to fractional format. The method returns the normalized string.</p>
+<p>The <code>normalize</code> method in the <code>UnitMeasurements::Normalizer</code> module processes the input string to replace special symbols with their equivalent representations, such as converting superscript numbers to regular numbers, special fraction symbols to their numeric fractions, and ratios to fractional format.</p>
 
 
   </div>
@@ -381,6 +381,7 @@ UnitMeasurements::Normalizer.normalize(&quot;1:2&quot;)
       <pre class="lines">
 
 
+99
 100
 101
 102
@@ -394,11 +395,10 @@ UnitMeasurements::Normalizer.normalize(&quot;1:2&quot;)
 110
 111
 112
-113
-114</pre>
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/normalizer.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/normalizer.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_str'>str</span><span class='op'>|</span>
@@ -425,7 +425,7 @@ UnitMeasurements::Normalizer.normalize(&quot;1:2&quot;)
 </div>
 
       <div id="footer">
-  Generated on Thu Oct 12 14:49:18 2023 by
+  Generated on Fri Oct 13 03:05:47 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

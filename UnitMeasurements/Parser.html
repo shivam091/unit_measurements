@@ -102,7 +102,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The <code>UnitMeasurements::Parser</code> module provides methods for parsing strings to extract quantity and associated unit. It can handle various formats, including complex numbers, scientific notation, and rational numbers.</p>
+<p>The <code>UnitMeasurements::Parser</code> module provides methods for parsing strings to extract quantity and associated unit. It can handle various formats, including complex numbers, scientific notation, and rational numbers for the <code>quantity</code>.</p>
 
 
   </div>
@@ -390,7 +390,7 @@ UnitMeasurements::Parser.parse(&quot;1/2 m&quot;)
       
         &mdash;
         <div class='inline'>
-<p>The parsed <code>quantity</code> and the <code>unit</code> associated with it (or nil if no unit is present).</p>
+<p>The parsed <code>quantity</code> and the <code>unit</code> associated with it (or nil if no unit is specified in the <code>string</code>).</p>
 </div>
       
     </li>
@@ -451,7 +451,7 @@ UnitMeasurements::Parser.parse(&quot;1/2 m&quot;)
 </div>
 
       <div id="footer">
-  Generated on Thu Oct 12 14:49:18 2023 by
+  Generated on Fri Oct 13 03:05:47 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

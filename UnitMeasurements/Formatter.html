@@ -204,11 +204,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format
-=&gt; &quot;0.31 st&quot;
+      <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;m&quot;).to(&quot;in&quot;).format
+=&gt; &quot;39.37 in&quot;
 
-UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot;%.4&lt;quantity&gt;f %&lt;unit&gt;s&quot;)
-=&gt; &quot;0.3149 st&quot;</code></pre>
+UnitMeasurements::Length.new(1, &quot;m&quot;).to(&quot;in&quot;).format(&quot;%.4&lt;quantity&gt;f %&lt;unit&gt;s&quot;)
+=&gt; &quot;39.3701 in&quot;</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -219,7 +219,7 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
         <span class='name'>format</span>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>optional</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -283,7 +283,7 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
 </div>
 
       <div id="footer">
-  Generated on Thu Oct 12 14:49:18 2023 by
+  Generated on Fri Oct 13 03:05:47 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
