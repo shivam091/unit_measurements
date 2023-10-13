@@ -88,18 +88,7 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>The <code>UnitMeasurements::Conversion</code> module defines methods for converting the quantity of a measurement to various numeric types. These methods allow for flexibility in handling measurements in different numeric formats.</p>
 
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
 
 
 
@@ -266,8 +255,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Length.new(2.25567, &quot;km&quot;).to_c
-=&gt; 2.25567+0i km</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Weight.new(2.25567, &quot;kg&quot;).to_c
+=&gt; 2.25567+0i kg</code></pre>
     
   </div>
 
@@ -281,11 +270,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A new <code>Measurement</code> object with the quantity converted to a <code>Complex</code> number.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -296,12 +280,12 @@
       <pre class="lines">
 
 
-50
-51
-52</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_c'>to_c</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='period'>.</span><span class='id identifier rubyid_to_c'>to_c</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
@@ -334,8 +318,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Length.new(2.25567, &quot;km&quot;).to_d
-=&gt; 2.25567 km</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Weight.new(2.25567, &quot;kg&quot;).to_d
+=&gt; 2.25567 kg</code></pre>
     
   </div>
 
@@ -349,11 +333,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A new <code>Measurement</code> object with the quantity converted to a <code>BigDecimal</code>.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -364,12 +343,12 @@
       <pre class="lines">
 
 
-61
-62
-63</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_d'>to_d</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='period'>.</span><span class='id identifier rubyid_to_d'>to_d</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
@@ -402,8 +381,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Length.new(2.25567, &quot;km&quot;).to_f
-=&gt; 2.25567 km</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Weight.new(2.25567, &quot;kg&quot;).to_f
+=&gt; 2.25567 kg</code></pre>
     
   </div>
 
@@ -417,11 +396,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A new <code>Measurement</code> object with the quantity converted to a <code>Float</code>.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -432,12 +406,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_f'>to_f</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
@@ -470,8 +444,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Length.new(2.25567, &quot;km&quot;).to_i
-=&gt; 2 km</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Weight.new(2.25567, &quot;kg&quot;).to_i
+=&gt; 2 kg</code></pre>
     
   </div>
 
@@ -485,11 +459,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A new <code>Measurement</code> object with the quantity converted to an <code>Integer</code>.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -500,12 +469,12 @@
       <pre class="lines">
 
 
-17
-18
-19</pre>
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_i'>to_i</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
@@ -538,8 +507,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Length.new(2.25567, &quot;km&quot;).to_r
-=&gt; 225567/100000 km</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Weight.new(2.25567, &quot;kg&quot;).to_r
+=&gt; 225567/100000 kg</code></pre>
     
   </div>
 
@@ -553,11 +522,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A new <code>Measurement</code> object with the quantity converted to a <code>Rational</code>.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -568,12 +532,12 @@
       <pre class="lines">
 
 
-39
-40
-41</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/conversion.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_r'>to_r</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='period'>.</span><span class='id identifier rubyid_to_r'>to_r</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
@@ -588,7 +552,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 03:05:47 2023 by
+  Generated on Fri Oct 13 06:21:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

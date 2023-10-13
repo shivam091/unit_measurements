@@ -103,18 +103,7 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>The <code>UnitMeasurements::ParseError</code> class is used to represent an error condition where the library encounters difficulty in parsing a given string. This can occur due to invalid or unexpected input formats. The <code>string</code> attribute stores the input string that caused the error, and the error message provides information about the nature of the parsing issue.</p>
 
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
 
 
 
@@ -144,7 +133,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The input string that caused the parsing error.</p>
+<p>Returns the value of attribute string.</p>
 </div></span>
   
 </li>
@@ -183,7 +172,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Initializes a new <code>ParseError</code> object.</p>
+<p>A new instance of ParseError.</p>
 </div></span>
   
 </li>
@@ -214,33 +203,13 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Initializes a new <code>ParseError</code> object.</p>
+<p>Returns a new instance of ParseError.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>string</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The input string that caused the parsing error.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 
 </div><table class="source_code">
   <tr>
@@ -248,14 +217,14 @@
       <pre class="lines">
 
 
-19
-20
-21
-22
-23</pre>
+9
+10
+11
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/parse_error.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/parse_error.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='ivar'>@string</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span>
@@ -286,7 +255,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The input string that caused the parsing error.</p>
+<p>Returns the value of attribute string.</p>
 
 
   </div>
@@ -300,12 +269,12 @@
       <pre class="lines">
 
 
-14
-15
-16</pre>
+7
+8
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/parse_error.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/parse_error.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_string'>string</span>
   <span class='ivar'>@string</span>
@@ -321,7 +290,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 03:05:47 2023 by
+  Generated on Fri Oct 13 06:21:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

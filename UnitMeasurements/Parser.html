@@ -99,18 +99,7 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>The <code>UnitMeasurements::Parser</code> module provides methods for parsing strings to extract quantity and associated unit. It can handle various formats, including complex numbers, scientific notation, and rational numbers for the <code>quantity</code>.</p>
 
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
   
     <h2>
       Constant Summary
@@ -120,162 +109,39 @@
     <dl class="constants">
       
         <dt id="UNIT_REGEX-constant" class="">UNIT_REGEX =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches any character sequence that does not consist of digits, whitespace, or forward slashes.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  (                     # Start of the capturing group
-    [^\d\s\/]           # Match any character that is not a digit, whitespace, or a forward slash
-    .*                  # Match zero or more of any character (except for a newline)
-  )                     # End of the capturing group
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([^\d\s\/].*)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="SCIENTIFIC_NUMBER-constant" class="">SCIENTIFIC_NUMBER =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches numbers in scientific notation format (e.g., <code>1.23e-4</code>).</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  (                     # Start of a capturing group (denoted by parentheses)
-    [+-]?               # Match an optional plus or minus sign (+ or -)
-    \d*                 # Match zero or more digits
-    \.?                 # Match an optional dot (.)
-    \d+                 # Match one or more digits
-    (?:                 # Start of a non-capturing group
-      [Ee]              # Match either &#39;E&#39; or &#39;e&#39;
-      [+-]?             # Match an optional plus or minus sign (+ or -)
-    )?                  # End of the non-capturing group; ? makes it optional
-    \d*                 # Match zero or more digits
-  )                     # End of the capturing group
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([+-]?\d*\.?\d+(?:[Ee][+-]?)?\d*)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="RATIONAL_NUMBER-constant" class="">RATIONAL_NUMBER =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches numbers in fractional format (e.g., <code>1/2</code>).</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  ([+-]?\d+\s+)?        # Start of the first capturing group (optional sign + one or more digits + one or more whitespaces)
-  (                     # Start of the second capturing group (the fraction part)
-    (\d+)               # Start of the third capturing group (one or more digits, the numerator)
-    \/                  # Match a forward slash - the division symbol
-    (\d+)               # Start of the fourth capturing group (one or more digits, the denominator)
-  )                     # End of the second capturing group (the fraction part)
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([+-]?\d+\s+)?((\d+)\/(\d+))</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="COMPLEX_NUMBER-constant" class="">COMPLEX_NUMBER =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches complex numbers (e.g., <code>1-2i</code>).</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>  # Pattern for Scientific number
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>  # Pattern for Scientific number
-  i                     # Match the letter &#39;i&#39; (the imaginary unit)
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>i</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="SCIENTIFIC_REGEX-constant" class="">SCIENTIFIC_REGEX =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches strings containing scientific notation numbers and unit.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  \A                    # Anchor at the start of the string
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>  # Match a scientific notation number (as defined earlier)
-  \s*                   # Match zero or more whitespace characters
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?        # Match a unit, the &#39;?&#39; makes it optional
-  \z                    # Anchor at the end of the string
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="UnitMeasurements::Parser::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="RATIONAL_REGEX-constant" class="">RATIONAL_REGEX =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches strings containing rational numbers and unit.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  \A                    # Anchor at the start of the string
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#RATIONAL_NUMBER-constant" title="UnitMeasurements::Parser::RATIONAL_NUMBER (constant)">RATIONAL_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>    # Match a rational number (as defined earlier)
-  \s*                   # Match zero or more whitespace characters
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?        # Match a unit, the &#39;?&#39; makes it optional
-  \z
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#RATIONAL_NUMBER-constant" title="UnitMeasurements::Parser::RATIONAL_NUMBER (constant)">RATIONAL_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="COMPLEX_REGEX-constant" class="">COMPLEX_REGEX =
-          <div class="docstring">
-  <div class="discussion">
-    
-<p>Matches strings containing complex numbers and unit.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
+          
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
-  \A                    # Anchor at the start of the string
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#COMPLEX_NUMBER-constant" title="UnitMeasurements::Parser::COMPLEX_NUMBER (constant)">COMPLEX_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>     # Match a complex number (as defined earlier)
-  \s*                   # Match zero or more whitespace characters
-  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?        # Match a unit, the &#39;?&#39; makes it optional
-  \z
-</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#COMPLEX_NUMBER-constant" title="UnitMeasurements::Parser::COMPLEX_NUMBER (constant)">COMPLEX_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#UNIT_REGEX-constant" title="UnitMeasurements::Parser::UNIT_REGEX (constant)">UNIT_REGEX</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>?\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
   
@@ -297,7 +163,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(string)  &#x21d2; Array&lt;Numeric, String|NilClass&gt; </a>
+      <a href="#parse-class_method" title="parse (class method)">.<strong>parse</strong>(string)  &#x21d2; Object </a>
     
 
     
@@ -311,9 +177,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Parses a string to extract a <code>quantity</code> and its associated <code>unit</code>.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -330,108 +194,29 @@
       <div class="method_details first">
   <h3 class="signature first" id="parse-class_method">
   
-    .<strong>parse</strong>(string)  &#x21d2; <tt>Array&lt;Numeric, String|NilClass&gt;</tt> 
+    .<strong>parse</strong>(string)  &#x21d2; <tt>Object</tt> 
   
 
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Parses a string to extract a <code>quantity</code> and its associated <code>unit</code>. This method first extracts a <code>quantity</code> and converts it to <code>Float</code> before returning it.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <p class="tag_title">Examples:</p>
-    
-      
-      <pre class="example code"><code>UnitMeasurements::Parser.parse(&quot;1+2i m&quot;)
-=&gt; [(1.0+2.0i), &quot;m&quot;]
-
-UnitMeasurements::Parser.parse(&quot;1/2 m&quot;)
-=&gt; [0.5, &quot;m&quot;]</code></pre>
-    
-  </div>
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>string</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The input string containing a <code>quantity</code> and an optional <code>unit</code>.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array&lt;Numeric, String|NilClass&gt;</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The parsed <code>quantity</code> and the <code>unit</code> associated with it (or nil if no unit is specified in the <code>string</code>).</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="ParseError.html" title="UnitMeasurements::ParseError (class)">ParseError</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>If the string cannot be parsed.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-95
-96
-97
-98
-99
-100
-101
-102</pre>
+18
+19
+20
+21
+22
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/parser.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/parser.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_string'>string</span>
@@ -451,7 +236,7 @@ UnitMeasurements::Parser.parse(&quot;1/2 m&quot;)
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 03:05:47 2023 by
+  Generated on Fri Oct 13 06:21:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

@@ -99,20 +99,7 @@
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    
-<p>The <code>UnitMeasurements::UnitGroupBuilder</code> class provides a flexible and configurable way to define units and create unit groups with specific systems and primitive units.</p>
 
-<p>It provides methods like <code>primitive</code>, <code>system</code>, <code>si_unit</code>, and <code>unit</code> to define units and their relationships within the unit group.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
 
 
 
@@ -142,7 +129,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>An array to store the units defined using the builder.</p>
+<p>Returns the value of attribute units.</p>
 </div></span>
   
 </li>
@@ -178,9 +165,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Constructs and returns a <code>UnitGroup</code> object based on the units defined with the builder.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -205,7 +190,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Initializes a new <code>UnitGroupBuilder</code> object.</p>
+<p>A new instance of UnitGroupBuilder.</p>
 </div></span>
   
 </li>
@@ -228,9 +213,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Sets the <code>primitive</code> unit for the unit group.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -252,9 +235,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Builds a set of <tt>SI units</tt> and adds them to the list of units.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -276,9 +257,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Defines the <tt>unit system</tt> within the unit group and evaluates the provided block in the context of the builder.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -300,9 +279,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Defines a <code>unit</code> and adds it to the list of units.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -325,7 +302,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Initializes a new <code>UnitGroupBuilder</code> object.</p>
+<p>Returns a new instance of UnitGroupBuilder.</p>
 
 
   </div>
@@ -339,12 +316,12 @@
       <pre class="lines">
 
 
-16
-17
-18</pre>
+9
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@units</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -373,7 +350,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>An array to store the units defined using the builder.</p>
+<p>Returns the value of attribute units.</p>
 
 
   </div>
@@ -387,12 +364,12 @@
       <pre class="lines">
 
 
-13
-14
-15</pre>
+7
+8
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_units'>units</span>
   <span class='ivar'>@units</span>
@@ -418,29 +395,18 @@
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Constructs and returns a <code>UnitGroup</code> object based on the units defined with the builder.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-41
-42
-43</pre>
+21
+22
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build'>build</span>
   <span class='const'><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnitGroup.html#initialize-instance_method" title="UnitMeasurements::UnitGroup#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@primitive</span><span class='comma'>,</span> <span class='ivar'>@units</span><span class='rparen'>)</span>
@@ -462,33 +428,11 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets the <code>primitive</code> unit for the unit group. It raises <code>PrimitiveUnitAlreadySetError</code> if the primitive unit has already been set.</p>
-
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>primitive</span>
-      
-      
-        <span class='type'>(<tt>String or Symbol</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The name of the primitive unit.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Raises:</p>
 <ul class="raise">
   
@@ -498,11 +442,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>If the primitive unit has already been set.</p>
-</div>
       
     </li>
   
@@ -514,14 +453,14 @@
       <pre class="lines">
 
 
-63
-64
-65
-66
-67</pre>
+32
+33
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_primitive'>primitive</span><span class='lparen'>(</span><span class='id identifier rubyid_primitive'>primitive</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></span> <span class='kw'>if</span> <span class='ivar'>@primitive</span>
@@ -542,85 +481,18 @@
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Builds a set of <tt>SI units</tt> and adds them to the list of units. This method also generates unit defined using <code>name</code>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>name</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The name of the unit.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>value</span>
-      
-      
-        <span class='type'>(<tt>Numeric or String</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>1.0</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The value of the unit.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>aliases</span>
-      
-      
-        <span class='type'>(<tt>Array&lt;String or Symbol&gt;</tt>, <tt>optional</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>[]</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>An array of aliases for the unit.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-35
-36
-37</pre>
+17
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_si_unit'>si_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@units</span> <span class='op'>+=</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
@@ -639,68 +511,21 @@
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Defines the <tt>unit system</tt> within the unit group and evaluates the provided block in the context of the builder.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>system_name</span>
-      
-      
-        <span class='type'>(<tt>String or Symbol</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The name of the unit system.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>block</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A block of code to be executed in the context of the builder.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-50
-51
-52
-53
-54
-55</pre>
+25
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_system'>system</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@system</span> <span class='op'>=</span> <span class='id identifier rubyid_system_name'>system_name</span>
@@ -722,85 +547,18 @@
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Defines a <code>unit</code> and adds it to the list of units.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>name</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The name of the unit.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>value</span>
-      
-      
-        <span class='type'>(<tt>Numeric or String</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>1.0</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The value of the unit.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>aliases</span>
-      
-      
-        <span class='type'>(<tt>Array&lt;String or Symbol&gt;</tt>, <tt>optional</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>[]</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>An array of aliases for the unit.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+13
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit'>unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@units</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
@@ -815,7 +573,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 03:05:47 2023 by
+  Generated on Fri Oct 13 06:21:56 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
