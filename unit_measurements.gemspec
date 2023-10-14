@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["documentation_uri"] = "https://shivam091.github.io/unit_measurements"
   spec.metadata["source_code_uri"] = "https://github.com/shivam091/unit_measurements"
   spec.metadata["changelog_uri"] = "https://github.com/shivam091/unit_measurements/blob/main/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "https://github.com/shivam091/unit_measurements/issues"

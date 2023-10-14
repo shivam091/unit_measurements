@@ -3,61 +3,118 @@
 # -*- warn_indent: true -*-
 
 module UnitMeasurements
+  # The +UnitMeasurements::Arithmetic+ mixin module provides methods for
+  # performing arithmetic operations (addition, subtraction, multiplication,
+  # division, etc) on measurements of the same unit group. In case the
+  # measurements represents different units, the left hand side takes precedence
+  # while performing the arithmetic operation on them.
+  #
+  # This module is included in the +Measurement+ class to allow arithmetic
+  # operations on the measurements.
+  #
+  # @see Measurement
+  # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+  # @since 1.4.0
   module Arithmetic
-    # Adds the other measurement quantity or number to the measurement.
+    # Adds the quantity of the other measurement or a numeric value to the
+    # quantity of the current measurement.
     #
-    # @param [Numeric or Measurement] other
+    # @param [Numeric|Measurement] other
+    #   The value to be added. It can be a numeric value or another measurement.
     #
     # @example
-    #   UnitMeasurements::Weight.new(1, "kg") + UnitMeasurements::Weight.new(1, "g")
-    #   => 1.001 kg
+    #   UnitMeasurements::Length.new(1, "km") + UnitMeasurements::Length.new(1, "m")
+    #   => 1.001 km
     #
-    # @return [Measurement]
+    #   UnitMeasurements::Length.new(1, "km") + 4.5
+    #   => 5.5 km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the combined quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def +(other)
       arithmetic_operation(other, :+)
     end
 
-    # Subtracts the other measurement quantity or number from the measurement.
+    # Subtracts the quantity of the other measurement or a numeric value from the
+    # quantity of the current measurement.
     #
-    # @param [Numeric or Measurement] other
+    # @param [Numeric|Measurement] other
+    #   The value to be subtracted. It can be a numeric value or another measurement.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2, "kg") - 1
-    #   => 1 kg
+    #   UnitMeasurements::Length.new(1, "km") - UnitMeasurements::Length.new(2, "in")
+    #   => 0.9999492 km
     #
-    # @return [Measurement]
+    #   UnitMeasurements::Length.new(2, "km") - 1e+2
+    #   => -98.0 km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the subtracted quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def -(other)
       arithmetic_operation(other, :-)
     end
 
-    # Multiplies the measurement quantity by other measurement quantity or number.
+    # Multiplies the quantity of the current measurement by the quantity of the
+    # other measurement or a numeric value.
     #
-    # @param [Numeric or Measurement] other
+    # @param [Numeric|Measurement] other
+    #   The value to be multiplied. It can be a numeric value or another measurement.
     #
     # @example
-    #   UnitMeasurements::Weight.new(2, "kg") * 2
-    #   => 4 kg
+    #   UnitMeasurements::Length.new(2, "km") * UnitMeasurements::Length.new(3, "in")
+    #   => 0.0001524 km
     #
-    # @return [Measurement]
+    #   UnitMeasurements::Length.new(2, "km") * 2+2i
+    #   => 4+2i km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the multiplied quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def *(other)
       arithmetic_operation(other, :*)
     end
 
-    # Divides the measurement quantity by other measurement quantity or number.
+    # Divides the quantity of the current measurement by the quantity of the other
+    # measurement or a numeric value.
     #
-    # @param [Numeric or Measurement] other
+    # @param [Numeric|Measurement] other
+    #   The value to be divided. It can be a numeric value or another measurement.
     #
     # @example
-    #   UnitMeasurements::Weight.new(4, "kg") / UnitMeasurements::Weight.new(2, "kg")
-    #   => 2 kg
+    #   UnitMeasurements::Length.new(4, "km") / UnitMeasurements::Length.new(2, "km")
+    #   => 2 km
     #
-    # @return [Measurement]
+    #   UnitMeasurements::Length.new(2, "km") / 2
+    #   => 1 km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the divided quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def /(other)
       arithmetic_operation(other, :/)
     end
 
     private
 
+    # @private
+    # Coerces a numeric value or another measurement for arithmetic operations.
+    #
+    # @param [Numeric|Measurement] other
+    #   The value to be coerced. It can be a numeric value or another measurement.
+    #
+    # @return [Array<Measurement>] An array containing the coerced values.
+    #
+    # @raise [TypeError]
+    #   If the coercion is not possible due to incompatible types.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def coerce(other)
       case other
       when Numeric    then [self.class.new(other, self.unit), self]
@@ -66,6 +123,20 @@ module UnitMeasurements
       end
     end
 
+    # @private
+    # Performs an arithmetic operation (addition, subtraction, multiplication,
+    # or division) on the current measurement and another numeric value.
+    #
+    # @param [Numeric|Measurement] other
+    #   The value to be used in the arithmetic operation. It can be a numeric value
+    #   or another measurement.
+    # @param [Symbol] operator The operator to be used for the operation.
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with the result of the arithmetic operation.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.4.0
     def arithmetic_operation(other, operator)
       other, _ = coerce(other)
 

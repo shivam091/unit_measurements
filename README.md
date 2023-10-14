@@ -9,7 +9,7 @@ A library that encapsulate measurements and their units in Ruby.
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/test_coverage)](https://codeclimate.com/github/shivam091/unit_measurements/test_coverage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE.md)
 
-**Harshal V. Ladhe, Master of Computer Science.**
+**[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)**
 
 ## Introduction
 
@@ -26,8 +26,9 @@ The `unit_measurements` gem is designed to simplify the handling of units for sc
 
 1. It provides easy conversion between units.
 2. It is lightweight and easily extensible to include other units and conversions.
-2. It has built in support for various [unit groups](units.md).
-4. It can convert `complex`, `fractional`, `mixed fractional`, `scientific` numbers, and `ratios`.
+3. It has built in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+4. It has well organized and very descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
+5. It can convert `complex`, `fractional`, `mixed fractional`, `scientific` numbers, and `ratios`.
 
 ## Disclaimer
 
@@ -113,27 +114,17 @@ UnitMeasurements::Length.parse("1 km to m")
 **Parse scientific numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.new(BigDecimal(2), "km").convert_to("m")
-#=> 20000.0 m
-UnitMeasurements::Length.new("2e+2", "km").convert_to("m")
-#=> 200000.0 m
-UnitMeasurements::Length.parse("2e² km").convert_to("m")
+UnitMeasurements::Length.parse("2e+2 km").convert_to("m")
 #=> 200000.0 m
 UnitMeasurements::Length.parse("2e+2 km to m")
 #=> 200000.0 m
-UnitMeasurements::Length.parse("2e⁻² km to m")
-#=> 20.0 m
 ```
-
-Supported special characters for exponents are `⁰`, `¹`, `²`, `³`, `⁴`, `⁵`, `⁶`, `⁷`, `⁸`, `⁹`, `⁺`, `⁻`.
+You can check supported special characters for exponents
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse complex numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.new(Complex(2, 3), "km").convert_to("m")
-#=> 2000.0+3000.0i m
-UnitMeasurements::Length.new("2+3i", "km").convert_to("m")
-#=> 2000.0+3000.0i m
 UnitMeasurements::Length.parse("2+3i km").convert_to("m")
 #=> 2000.0+3000.0i m
 UnitMeasurements::Length.parse("2+3i km to m")
@@ -143,12 +134,6 @@ UnitMeasurements::Length.parse("2+3i km to m")
 **Parse fractional/mixed fractional numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.new(Rational(2, 3), "km").convert_to("m")
-#=> 666.666666666667 m
-UnitMeasurements::Length.new("2/3", "km").convert_to("m")
-#=> 666.666666666667 m
-UnitMeasurements::Length.new("½", "km").convert_to("m")
-#=> 500.0 m
 UnitMeasurements::Length.parse("2 ½ km").convert_to("m")
 #=> 2500.0 m
 UnitMeasurements::Length.parse("2/3 km").convert_to("m")
@@ -161,7 +146,8 @@ UnitMeasurements::Length.parse("2 ½ km to m")
 #=> 2500.0 m
 ```
 
-Supported special characters for fractional notations are `¼`, `½`, `¾`, `⅓`, `⅔`, `⅕`, `⅖`, `⅗`, `⅘`, `⅙`, `⅚`, `⅐`, `⅛`, `⅜`, `⅝`, `⅞`, `⅑`, `⅒`, `↉`, `⁄`.
+You can check supported special characters for fractional notations
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse ratios, source unit, and (or) target unit:**
 
@@ -187,6 +173,9 @@ UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f %<unit>s"
 UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f")
 #=> "3937.0079"
 ```
+
+You can check more about formatting along with their examples
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Formatter.html).
 
 **Extract the unit and the quantity from measurement:**
 
@@ -216,14 +205,14 @@ UnitMeasurements::Length.units
 
 ```ruby
 UnitMeasurements::Length.unit_names
-#=> ["m", "km", "mi", "ft", "in", "yd", ...]
+#=> ["ft", "in", "m", "mi", "yd"]
 ```
 
 **See all valid units of the unit group along with their aliases:**
 
 ```ruby
 UnitMeasurements::Length.unit_names_with_aliases
-#=> ["g", "meter", "metre", "meters", "metres", "km", "kilometer", "kilometre", "kilometers", "kilometres", "in", "inch", "inches", "yd", "yard", "yards", ...]
+#=> ["\"", "'", "feet", "foot", "ft", "in", "inch", "inches", "m", "meter", "meters", "metre", "metres", "mi", "mile", "miles", "yard", "yards", "yd"]
 ```
 
 **Finding units within the unit group:**
@@ -265,61 +254,43 @@ UnitMeasurements::Length.unit_or_alias?("metre")
 
 You have ability to compare the measurements with the same or different units within the same unit group.
 For example, comparing length with length will work, comparing a length with a area would fail.
-Supported comparisons and methods are `==`, `!=`, `<`, `>`, `<=`, `>=`, `between?`, and `clamp`.
 
 ```ruby
-UnitMeasurements::Length.new(1, "km") == UnitMeasurements::Length.new(1, "km")
-#=> true
-UnitMeasurements::Length.parse("1 km") <= UnitMeasurements::Length.parse("0.5 km")
-#=> false
-UnitMeasurements::Length.new(1, "ft").between?(UnitMeasurements::Length.new(12, "in"), UnitMeasurements::Length.new(24, "in"))
+UnitMeasurements::Length.parse("1 km") != UnitMeasurements::Length.parse("1 m")
 #=> true
 ```
+
+You can check supported comparisons along with their examples
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Comparison.html).
 
 ### Arithmetic
 
 You have ability to perform arithmetic operations on measurements with the same or
 different units within a same unit group. You can perform arithmetic operations on
-measurement by either other measurement with compatible unit or number.
-In cases of different units, the left hand side takes precedence:
-
-**Methods:**
-1. `#+` - Adds the other measurement quantity or number to the measurement.
-2. `#-` - Subtracts the other measurement quantity or number from the measurement.
-3. `#*` - Multiplies the measurement quantity by other measurement quantity or number.
-4. `#/` - Divides the measurement quantity by other measurement quantity or number.
+measurement by either other measurement with compatible unit or numeric value.
+In cases of different units, the left hand side takes precedence.
 
 ```ruby
 UnitMeasurements::Length.new(1, "km") + UnitMeasurements::Length.new(1, "m")
 #=> 1.001 km
-UnitMeasurements::Length.new(2, "km") - 1
-#=> 1 km
-UnitMeasurements::Length.new(2, "km") * 2
-#=> 4 km
-UnitMeasurements::Length.new(4, "km") / UnitMeasurements::Length.new(2, "km")
-#=> 2 km
+UnitMeasurements::Length.new(2, "km") * 2+2i
+#=> 4+2i km
 ```
+
+You can check supported arithmetic operations along with their examples
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Arithmetic.html).
 
 ### Math
 
-You can perform mathematical operations on the measurements.
-
-**Methods:**
-1. `#round` - Rounds quantity of the measurement. If `ndigits` is not specified, quantity is rounded to `Integer`.
-2. `#abs` - Returns absolute value of the measurement quantity.
-3. `#floor` - Rounds quantity of the measurement to next lower integer.
-4. `#ceil` - Rounds quantity of the measurement to next higher integer.
+You can perform mathematical functions on the measurements.
 
 ```ruby
-UnitMeasurements::Length.new(1, "m").to("in").round(4)
-#=> 39.3701 in
-UnitMeasurements::Length.new(-17.625, "m").abs
-#=> 17.625 m
-UnitMeasurements::Length.new(17.625, "m").floor
-#=> 17 m
-UnitMeasurements::Length.new(17.625, "m").ceil
-#=> 18 m
+UnitMeasurements::Length.new(17.625, "m").round
+#   => 18 m
 ```
+
+You can check supported mathematical functions along with their examples
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Math.html).
 
 ### Conversions
 
@@ -329,15 +300,10 @@ You can convert measurement quantity directly to other numeric types viz.
 ```ruby
 UnitMeasurements::Length.new(2.25567, "km").to_i
 #=> 2 km
-UnitMeasurements::Length.new(2.25567, "km").to_f
-#=> 2.25567 km
-UnitMeasurements::Length.new(2.25567, "km").to_r
-#=> 225567/100000 km
-UnitMeasurements::Length.new(2.25567, "km").to_d
-#=> 2.25567 km
-UnitMeasurements::Length.new(2.25567, "km").to_c
-#=> 2.25567+0i km
 ```
+
+You can check more about them along with their examples
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Conversion.html).
 
 ## Units
 
@@ -377,7 +343,8 @@ Units declared through it will have automatic support for all decimal prefixes:
 
 ### Bundled units
 
-There are tons of units that are bundled in `unit_measurements`. You can check them out [here](units.md).
+There are tons of units that are bundled in `unit_measurements`. You can check them out
+[here](https://github.com/shivam091/unit_measurements/blob/main/units.md).
 
 ### Specifing units
 
