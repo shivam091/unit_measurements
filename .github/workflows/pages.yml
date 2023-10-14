@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - 4.10.0
 jobs:
   build:
     name: Publish Documentation to GitHub Pages ${{ matrix.ruby }}
@@ -24,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: gem install yard
       - name: Generate Documentation
-        run: yardoc
+        run: yardoc --private --exclude "unit_groups/*"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
