@@ -99,7 +99,59 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>UnitMeasurements::Normalizer</code> class defines useful methods for handling input strings that may contain non-standard representations of numbers.</p>
 
+<p>It maps special symbols of exponents and fractions to their standard counterparts. The class ensures consistent handling of input strings within the library.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
   
     <h2>
       Constant Summary
@@ -109,7 +161,50 @@
     <dl class="constants">
       
         <dt id="EXPONENTS_SYMBOLS-constant" class="">EXPONENTS_SYMBOLS =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>A mapping of superscript numbers, plus, and minus signs to their regular counterparts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
         <dd><pre class="code"><span class='lbrace'>{</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>⁰</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -127,7 +222,50 @@
 <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="FRACTIONS_SYMBOLS-constant" class="">FRACTIONS_SYMBOLS =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>A mapping of special fraction symbols to their equivalent numeric fractions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
         <dd><pre class="code"><span class='lbrace'>{</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>¼</span><span class='tstring_end'>&quot;</span></span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1/4</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -152,19 +290,169 @@
 <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="EXPONENT_REGEX-constant" class="">EXPONENT_REGEX =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches a combination of digits, optional exponent notation, and optional plus or minus sign.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([\d]+[Ee]?[+-]?)(</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#EXPONENTS_SYMBOLS-constant" title="UnitMeasurements::Normalizer::EXPONENTS_SYMBOLS (constant)">EXPONENTS_SYMBOLS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (                                     # Start of the first capturing group
+    [\d]+                               # One or more digits
+    [Ee]?                               # Match an optional &#39;E&#39; or &#39;e&#39; for scientific notation
+    [+-]?                               # Match an optional plus or minus sign
+  )                                     # End of the first capturing group
+  (                                     # Start of the second capturing group
+    </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#EXPONENTS_SYMBOLS-constant" title="UnitMeasurements::Normalizer::EXPONENTS_SYMBOLS (constant)">EXPONENTS_SYMBOLS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> # Match any of the exponent symbols defined in EXPONENTS_SYMBOLS
+  )                                     # End of the second capturing group
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="FRACTION_REGEX-constant" class="">FRACTION_REGEX =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches special fraction symbols.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#FRACTIONS_SYMBOLS-constant" title="UnitMeasurements::Normalizer::FRACTIONS_SYMBOLS (constant)">FRACTIONS_SYMBOLS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (                                     # Start of the capturing group
+    </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#FRACTIONS_SYMBOLS-constant" title="UnitMeasurements::Normalizer::FRACTIONS_SYMBOLS (constant)">FRACTIONS_SYMBOLS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'> # Match any of the fraction symbols defined in FRACTIONS_SYMBOLS
+  )                                     # End of the capturing group
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="RATIO_REGEX-constant" class="">RATIO_REGEX =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches a ratio in the format of <code>numerator:denominator</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([\d]+):([\d]+)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (                                     # Start of the first capturing group
+    [\d]+                               # One or more digits, representing the numerator
+  )                                     # End of the first capturing group
+  :                                     # Match a colon (:)
+  (                                     # Start of the second capturing group
+    [\d]+                               # One or more digits, representing the denominator
+  )                                     # End of the second capturing group
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
   
@@ -186,7 +474,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#normalize-class_method" title="normalize (class method)">.<strong>normalize</strong>(string)  &#x21d2; Object </a>
+      <a href="#normalize-class_method" title="normalize (class method)">.<strong>normalize</strong>(string)  &#x21d2; String </a>
     
 
     
@@ -200,7 +488,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Normalizes a string containing special symbols of exponents and fractions, and ratio.</p>
+</div></span>
   
 </li>
 
@@ -217,36 +507,161 @@
       <div class="method_details first">
   <h3 class="signature first" id="normalize-class_method">
   
-    .<strong>normalize</strong>(string)  &#x21d2; <tt>Object</tt> 
+    .<strong>normalize</strong>(string)  &#x21d2; <tt>String</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Normalizes a string containing special symbols of exponents and fractions, and ratio.</p>
+
+<p>The <code>normalize</code> method in the <code>UnitMeasurements::Normalizer</code> module processes the input string to replace special symbols with their equivalent representations, such as converting superscript numbers to regular numbers, special fraction symbols to their numeric fractions, and ratios to fractional format, and remove leading and trailing whitespaces from the <code>string</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Normalizing special symbol of fraction:</p>
+</div></p>
+      
+      <pre class="example code"><code>UnitMeasurements::Normalizer.normalize(&quot;¾&quot;)
+=&gt; &quot;3/4&quot;
+
+UnitMeasurements::Normalizer.normalize(&quot; 1¾ &quot;)
+=&gt; &quot;1 3/4&quot;</code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Normalizing ratio:</p>
+</div></p>
+      
+      <pre class="example code"><code>UnitMeasurements::Normalizer.normalize(&quot;1:2&quot;)
+=&gt; &quot;1/2&quot;</code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Normalizing special symbol of exponents:</p>
+</div></p>
+      
+      <pre class="example code"><code>UnitMeasurements::Normalizer.normalize(&quot;1e⁺²&quot;)
+=&gt; &quot;1e+2&quot;
+
+UnitMeasurements::Normalizer.normalize(&quot;1e⁻²&quot;)
+=&gt; &quot;1e-2&quot;</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The input string to be normalized.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The normalized version of the input string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63</pre>
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/normalizer.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/normalizer.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_str'>str</span><span class='op'>|</span>
@@ -273,7 +688,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 06:21:56 2023 by
+  Generated on Sat Oct 14 13:23:13 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

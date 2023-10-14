@@ -88,7 +88,59 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>UnitMeasurements::Formatter</code> mixin module contains methods for formatting measurements into human-readable strings. It provides the ability to customize the output format based on user-defined preferences.</p>
 
+<p>This module is included in the <code>Measurement</code> class to allow customization of the output of the measurements.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
   
     <h2>
       Constant Summary
@@ -101,13 +153,29 @@
           <div class="docstring">
   <div class="discussion">
     
-<p>The default format for formatting measurements.</p>
+<p>The default format used for formatting measurements. It is a format string containing placeholders for <code>quantity</code> and <code>unit</code>.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
         </dt>
@@ -175,7 +243,9 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Formats measurement to certain formatted string specified by <code>format</code>. If <code>format</code> is not specified, it uses <code>DEFAULT_FORMAT</code> for formatting the measurement</p>
+<p>Formats measurement to certain formatted string specified by <code>format</code>. If <code>format</code> is not specified, it uses <code>DEFAULT_FORMAT</code> for formatting the measurement.</p>
+
+<p>The format method allows for customization of the output format of a measurement. It uses format placeholders for <code>quantity</code> and <code>unit</code>. If no custom format is provided, it will use the <code>DEFAULT_FORMAT</code>.</p>
 
 
   </div>
@@ -186,10 +256,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format
-=&gt; &quot;0.31 st&quot;
-UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot;%.4&lt;quantity&gt;f %&lt;unit&gt;s&quot;)
-=&gt; &quot;0.3149 st&quot;</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;m&quot;).to(&quot;in&quot;).format
+=&gt; &quot;39.37 in&quot;
+
+UnitMeasurements::Length.new(1, &quot;m&quot;).to(&quot;in&quot;).format(&quot;%.4&lt;quantity&gt;f %&lt;unit&gt;s&quot;)
+=&gt; &quot;39.3701 in&quot;</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -200,11 +271,16 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
         <span class='name'>format</span>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>optional</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The custom format string for formatting the measurement. If not provided, <code>DEFAULT_FORMAT</code> is used.</p>
+</div>
       
     </li>
   
@@ -220,6 +296,50 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>A formatted string representing the measurement.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#DEFAULT_FORMAT-constant" title="UnitMeasurements::Formatter::DEFAULT_FORMAT (constant)">DEFAULT_FORMAT</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.1.0</p>
+</div>
+      
     </li>
   
 </ul>
@@ -230,14 +350,14 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
       <pre class="lines">
 
 
-23
-24
-25
-26
-27</pre>
+45
+46
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/formatter.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/formatter.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_kwargs'>kwargs</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>quantity:</span> <span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='label'>unit:</span> <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span>
@@ -254,7 +374,7 @@ UnitMeasurements::Weight.parse(&quot;2 kg&quot;).to(&quot;st&quot;).format(&quot
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 06:21:56 2023 by
+  Generated on Sat Oct 14 13:23:13 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

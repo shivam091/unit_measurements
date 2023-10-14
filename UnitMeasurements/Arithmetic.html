@@ -88,7 +88,59 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>UnitMeasurements::Arithmetic</code> mixin module provides methods for performing arithmetic operations (addition, subtraction, multiplication, division, etc) on measurements of the same unit group. In case the measurements represents different units, the left hand side takes precedence while performing the arithmetic operation on them.</p>
 
+<p>This module is included in the <code>Measurement</code> class to allow arithmetic operations on the measurements.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.4.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 
@@ -121,7 +173,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Multiplies the measurement quantity by other measurement quantity or number.</p>
+<p>Multiplies the quantity of the current measurement by the quantity of the other measurement or a numeric value.</p>
 </div></span>
   
 </li>
@@ -145,7 +197,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Adds the other measurement quantity or number to the measurement.</p>
+<p>Adds the quantity of the other measurement or a numeric value to the quantity of the current measurement.</p>
 </div></span>
   
 </li>
@@ -169,7 +221,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Subtracts the other measurement quantity or number from the measurement.</p>
+<p>Subtracts the quantity of the other measurement or a numeric value from the quantity of the current measurement.</p>
 </div></span>
   
 </li>
@@ -193,7 +245,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Divides the measurement quantity by other measurement quantity or number.</p>
+<p>Divides the quantity of the current measurement by the quantity of the other measurement or a numeric value.</p>
 </div></span>
   
 </li>
@@ -220,7 +272,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Multiplies the measurement quantity by other measurement quantity or number.</p>
+<p>Multiplies the quantity of the current measurement by the quantity of the other measurement or a numeric value.</p>
 
 
   </div>
@@ -231,8 +283,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.new(2, &quot;kg&quot;) * 2
-=&gt; 4 kg</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Length.new(2, &quot;km&quot;) * UnitMeasurements::Length.new(3, &quot;in&quot;)
+=&gt; 0.0001524 km
+
+UnitMeasurements::Length.new(2, &quot;km&quot;) * 2+2i
+=&gt; 4+2i km</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -243,9 +298,14 @@
         <span class='name'>other</span>
       
       
-        <span class='type'>(<tt>Numeric or <span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
+        <span class='type'>(<tt>Numeric|<span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The value to be multiplied. It can be a numeric value or another measurement.</p>
+</div>
       
     </li>
   
@@ -261,6 +321,43 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>A new <code>Measurement</code> instance with the multiplied quantity.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.4.0</p>
+</div>
+      
     </li>
   
 </ul>
@@ -271,12 +368,12 @@
       <pre class="lines">
 
 
-42
-43
-44</pre>
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='op'>*</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_arithmetic_operation'>arithmetic_operation</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='symbol'>:*</span><span class='rparen'>)</span>
@@ -298,7 +395,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Adds the other measurement quantity or number to the measurement.</p>
+<p>Adds the quantity of the other measurement or a numeric value to the quantity of the current measurement.</p>
 
 
   </div>
@@ -309,8 +406,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.new(1, &quot;kg&quot;) + UnitMeasurements::Weight.new(1, &quot;g&quot;)
-=&gt; 1.001 kg</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;km&quot;) + UnitMeasurements::Length.new(1, &quot;m&quot;)
+=&gt; 1.001 km
+
+UnitMeasurements::Length.new(1, &quot;km&quot;) + 4.5
+=&gt; 5.5 km</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -321,9 +421,14 @@
         <span class='name'>other</span>
       
       
-        <span class='type'>(<tt>Numeric or <span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
+        <span class='type'>(<tt>Numeric|<span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The value to be added. It can be a numeric value or another measurement.</p>
+</div>
       
     </li>
   
@@ -339,6 +444,43 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>A new <code>Measurement</code> instance with the combined quantity.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.4.0</p>
+</div>
+      
     </li>
   
 </ul>
@@ -349,12 +491,12 @@
       <pre class="lines">
 
 
-16
-17
-18</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='op'>+</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_arithmetic_operation'>arithmetic_operation</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='symbol'>:+</span><span class='rparen'>)</span>
@@ -376,7 +518,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Subtracts the other measurement quantity or number from the measurement.</p>
+<p>Subtracts the quantity of the other measurement or a numeric value from the quantity of the current measurement.</p>
 
 
   </div>
@@ -387,8 +529,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.new(2, &quot;kg&quot;) - 1
-=&gt; 1 kg</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;km&quot;) - UnitMeasurements::Length.new(2, &quot;in&quot;)
+=&gt; 0.9999492 km
+
+UnitMeasurements::Length.new(2, &quot;km&quot;) - 1e+2
+=&gt; -98.0 km</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -399,9 +544,14 @@
         <span class='name'>other</span>
       
       
-        <span class='type'>(<tt>Numeric or <span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
+        <span class='type'>(<tt>Numeric|<span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The value to be subtracted. It can be a numeric value or another measurement.</p>
+</div>
       
     </li>
   
@@ -417,6 +567,43 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>A new <code>Measurement</code> instance with the subtracted quantity.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.4.0</p>
+</div>
+      
     </li>
   
 </ul>
@@ -427,12 +614,12 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='op'>-</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_arithmetic_operation'>arithmetic_operation</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='symbol'>:-</span><span class='rparen'>)</span>
@@ -454,7 +641,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Divides the measurement quantity by other measurement quantity or number.</p>
+<p>Divides the quantity of the current measurement by the quantity of the other measurement or a numeric value.</p>
 
 
   </div>
@@ -465,8 +652,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>UnitMeasurements::Weight.new(4, &quot;kg&quot;) / UnitMeasurements::Weight.new(2, &quot;kg&quot;)
-=&gt; 2 kg</code></pre>
+      <pre class="example code"><code>UnitMeasurements::Length.new(4, &quot;km&quot;) / UnitMeasurements::Length.new(2, &quot;km&quot;)
+=&gt; 2 km
+
+UnitMeasurements::Length.new(2, &quot;km&quot;) / 2
+=&gt; 1 km</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -477,9 +667,14 @@
         <span class='name'>other</span>
       
       
-        <span class='type'>(<tt>Numeric or <span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
+        <span class='type'>(<tt>Numeric|<span class='object_link'><a href="Measurement.html" title="UnitMeasurements::Measurement (class)">Measurement</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The value to be divided. It can be a numeric value or another measurement.</p>
+</div>
       
     </li>
   
@@ -495,6 +690,43 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>A new <code>Measurement</code> instance with the divided quantity.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.4.0</p>
+</div>
+      
     </li>
   
 </ul>
@@ -505,12 +737,12 @@
       <pre class="lines">
 
 
-55
-56
-57</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/arithmetic.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='op'>/</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_arithmetic_operation'>arithmetic_operation</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='symbol'>:/</span><span class='rparen'>)</span>
@@ -525,7 +757,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 06:21:56 2023 by
+  Generated on Sat Oct 14 13:23:13 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

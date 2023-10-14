@@ -103,7 +103,59 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>UnitMeasurements::UnitAlreadyDefinedError</code> class is used to indicate that an attempt was made to define a unit that has already been defined within a unit group.</p>
 
+<p>The error message states that the unit is already defined and provides the name of the conflicting unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="BaseError.html" title="UnitMeasurements::BaseError (class)">BaseError</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 
@@ -133,7 +185,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute unit.</p>
+<p>The name of the unit that is already defined.</p>
 </div></span>
   
 </li>
@@ -172,7 +224,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>A new instance of UnitAlreadyDefinedError.</p>
+<p>Initializes a new <code>UnitAlreadyDefinedError</code> instance.</p>
 </div></span>
   
 </li>
@@ -203,13 +255,65 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of UnitAlreadyDefinedError.</p>
+<p>Initializes a new <code>UnitAlreadyDefinedError</code> instance.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>unit</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit that is already defined.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -217,14 +321,14 @@
       <pre class="lines">
 
 
-9
-10
-11
-12
-13</pre>
+29
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/unit_already_defined_error.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/unit_already_defined_error.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
   <span class='ivar'>@unit</span> <span class='op'>=</span> <span class='id identifier rubyid_unit'>unit</span>
@@ -255,13 +359,45 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute unit.</p>
+<p>The name of the unit that is already defined.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -269,12 +405,12 @@
       <pre class="lines">
 
 
-7
-8
-9</pre>
+21
+22
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/unit_already_defined_error.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/errors/unit_already_defined_error.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit'>unit</span>
   <span class='ivar'>@unit</span>
@@ -290,7 +426,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 06:21:56 2023 by
+  Generated on Sat Oct 14 13:23:14 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

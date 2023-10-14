@@ -99,7 +99,63 @@
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>UnitMeasurements::UnitGroupBuilder</code> class provides a flexible and configurable way to define units and create unit groups with specific systems and primitive unit.</p>
 
+<p>It provides methods like <code>primitive</code>, <code>system</code>, <code>unit</code>, and <code>si_unit</code> to define units and their conversions within the unit group.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></li>
+    
+      <li><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></li>
+    
+      <li><span class='object_link'><a href="UnitAlreadyDefinedError.html" title="UnitMeasurements::UnitAlreadyDefinedError (class)">UnitAlreadyDefinedError</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 
 
 
@@ -129,7 +185,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute units.</p>
+<p>An array to store the units defined using the builder.</p>
 </div></span>
   
 </li>
@@ -151,7 +207,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#build-instance_method" title="#build (instance method)">#<strong>build</strong>  &#x21d2; Object </a>
+      <a href="#build-instance_method" title="#build (instance method)">#<strong>build</strong>  &#x21d2; UnitGroup </a>
     
 
     
@@ -165,7 +221,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Constructs and returns a <code>UnitGroup</code> object based on the units defined using the builder.</p>
+</div></span>
   
 </li>
 
@@ -190,7 +248,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>A new instance of UnitGroupBuilder.</p>
+<p>Initializes a new <code>UnitGroupBuilder</code> instance.</p>
 </div></span>
   
 </li>
@@ -213,7 +271,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the <code>primitive</code> unit for the unit group.</p>
+</div></span>
   
 </li>
 
@@ -221,7 +281,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#si_unit-instance_method" title="#si_unit (instance method)">#<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; Object </a>
+      <a href="#si_unit-instance_method" title="#si_unit (instance method)">#<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; Array&lt;Unit&gt; </a>
     
 
     
@@ -235,7 +295,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Builds a set of <tt>SI units</tt> and adds them to the list of units.</p>
+</div></span>
   
 </li>
 
@@ -257,7 +319,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Defines the <tt>unit system</tt> within the unit group and evaluates the provided block in the context of the builder.</p>
+</div></span>
   
 </li>
 
@@ -265,7 +329,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unit-instance_method" title="#unit (instance method)">#<strong>unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; Object </a>
+      <a href="#unit-instance_method" title="#unit (instance method)">#<strong>unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; Unit </a>
     
 
     
@@ -279,7 +343,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Defines a <code>unit</code> and adds it to the list of units.</p>
+</div></span>
   
 </li>
 
@@ -302,13 +368,45 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of UnitGroupBuilder.</p>
+<p>Initializes a new <code>UnitGroupBuilder</code> instance.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -316,12 +414,12 @@
       <pre class="lines">
 
 
-9
-10
-11</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@units</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -350,13 +448,45 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute units.</p>
+<p>An array to store the units defined using the builder.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -364,12 +494,12 @@
       <pre class="lines">
 
 
-7
-8
-9</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_units'>units</span>
   <span class='ivar'>@units</span>
@@ -389,24 +519,92 @@
       <div class="method_details first">
   <h3 class="signature first" id="build-instance_method">
   
-    #<strong>build</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>build</strong>  &#x21d2; <tt><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Constructs and returns a <code>UnitGroup</code> object based on the units defined using the builder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An instance of <code>UnitGroup</code> containing units and their conversions.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitMeasurements::UnitGroup</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build'>build</span>
   <span class='const'><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnitGroup.html#initialize-instance_method" title="UnitMeasurements::UnitGroup#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@primitive</span><span class='comma'>,</span> <span class='ivar'>@units</span><span class='rparen'>)</span>
@@ -428,11 +626,41 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Sets the <code>primitive</code> unit for the unit group. It raises <code>PrimitiveUnitAlreadySetError</code> if the primitive unit has already been set for the unit group.</p>
+
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_primitive'>primitive</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>primitive</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the primitive unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Raises:</p>
 <ul class="raise">
   
@@ -442,6 +670,50 @@
         <span class='type'>(<tt><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>If the primitive unit has already been set for the unit group.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>4.0.0</p>
+</div>
       
     </li>
   
@@ -453,14 +725,14 @@
       <pre class="lines">
 
 
-32
-33
-34
-35
-36</pre>
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_primitive'>primitive</span><span class='lparen'>(</span><span class='id identifier rubyid_primitive'>primitive</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></span> <span class='kw'>if</span> <span class='ivar'>@primitive</span>
@@ -475,24 +747,156 @@
       <div class="method_details ">
   <h3 class="signature " id="si_unit-instance_method">
   
-    #<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; <tt>Object</tt> 
+    #<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds a set of <tt>SI units</tt> and adds them to the list of units. This method defines unit defined using <code>name</code> along with all the SI prefixes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_si_unit'>si_unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>meter</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metre</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>meters</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metres</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Numeric|String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aliases</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String|Symbol&gt;</tt>, <tt>optional</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of alternative names for the unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>Unit</code> instances.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'>#build_si_units</span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-17
-18
-19</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_si_unit'>si_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@units</span> <span class='op'>+=</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
@@ -511,21 +915,117 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines the <tt>unit system</tt> within the unit group and evaluates the provided block in the context of the builder.</p>
+
+<p>This method is used to group multiple units within the certain unit system, viz., metric, imperial, etc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Defining an imperial system with inches and feet:</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_system'>system</span> <span class='symbol'>:imperial</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25.4 mm</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inch</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inches</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ft</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>12 in</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foot</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>feet</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>system_name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit system in which the units are to be grouped.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A block of code to be executed in the context of the builder.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>4.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-25
-26
-27
-28
-29
-30</pre>
+101
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_system'>system</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@system</span> <span class='op'>=</span> <span class='id identifier rubyid_system_name'>system_name</span>
@@ -541,24 +1041,156 @@
       <div class="method_details ">
   <h3 class="signature " id="unit-instance_method">
   
-    #<strong>unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; <tt>Object</tt> 
+    #<strong>unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; <tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Defines a <code>unit</code> and adds it to the list of units.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>25.4 mm</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inch</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inches</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Numeric|String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aliases</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String|Symbol&gt;</tt>, <tt>optional</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of alternative names for the unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An instance of <code>Unit</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'>#build_unit</span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-13
-14
-15</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit'>unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@units</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
@@ -573,7 +1205,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 13 06:21:56 2023 by
+  Generated on Sat Oct 14 13:23:14 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
