@@ -5,9 +5,54 @@
 require "set"
 
 module UnitMeasurements
+  # The +UnitMeasurements::Unit+ class represents a unit of measurement and
+  # provides methods to interact with its properties and conversion factors.
+  #
+  # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+  # @since 1.0.0
   class Unit
-    attr_reader :name, :value, :aliases, :system, :unit_group
+    # The name of the unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    attr_reader :name
 
+    # The conversion value of the unit. It can be a numeric value or a string in
+    # the form of a number followed by a unit name (e.g., “10 m”).
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    attr_reader :value
+
+    # A set of alternative names for the unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    attr_reader :aliases
+
+    # The system to which the unit belongs (e.g., “metric”, “imperial”).
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 4.0.0
+    attr_reader :system
+
+    # The unit group to which the unit belongs.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    attr_reader :unit_group
+
+    # Initializes a new +Unit+ instance.
+    #
+    # @param [String|Symbol] name The name of the unit.
+    # @param [String|Numeric] value The conversion value of the unit.
+    # @param [Array<String|Symbol>] aliases Alternative names for the unit.
+    # @param [String|Symbol|NilClass] system The system to which the unit belongs.
+    # @param [UnitGroup|NilClass] unit_group The unit group to which the unit belongs.
+    #
+    # @see UnitGroup
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def initialize(name, value:, aliases:, system:, unit_group: nil)
       @name = name.to_s.freeze
       @value = value
@@ -16,6 +61,19 @@ module UnitMeasurements
       @unit_group = unit_group
     end
 
+    # Returns a new +Unit+ instance with specified attributes.
+    #
+    # @param [String|Symbol] name The new name of the unit.
+    # @param [String|Numeric] value The new conversion value of the unit.
+    # @param [Set<String>] aliases New alternative names for the unit.
+    # @param [String|Symbol|NilClass] system The new system to which the unit belongs.
+    # @param [UnitGroup|NilClass] unit_group The new unit group to which the unit belongs.
+    #
+    # @return [Unit] A new unit with specified parameters.
+    #
+    # @see UnitGroup
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def with(name: nil, value: nil, aliases: nil, system: nil, unit_group: nil)
       self.class.new(
         (name || self.name),
@@ -26,19 +84,58 @@ module UnitMeasurements
       )
     end
 
+    # Returns an array containing the name of the unit and its aliases, sorted
+    # alphabetically.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1, "m").unit.names
+    #   => ["m", "meter", "meters", "metre", "metres"]
+    #
+    # @return [Array<String>] An array of unit names.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def names
       (aliases + [name]).sort.freeze
     end
 
+    # Returns the name of the unit as a string.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1, "m").unit.to_s
+    #   => "m"
+    #
+    # @return [String] The name of the unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def to_s
       name
     end
 
+    # Returns an object representation of the unit, including its aliases if present.
+    #
+    # @return [Object] An object representation of the +unit+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def inspect
       aliases = "(#{@aliases.join(", ")})" if @aliases.any?
       "#<#{self.class.name}: #{name} #{aliases}>"
     end
 
+    # Calculates the conversion factor for the unit. This method is recursively
+    # invoked to calculate the conversion factor of the unit, if unit conversion
+    # +value+ is specified with respect to the other unit.
+    #
+    # This method uses +parse_value+ method to extract the conversion value and
+    # the unit.
+    #
+    # @return [Numeric] The conversion factor as a numeric value.
+    #
+    # @see #parse_value
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     def conversion_factor
       return value if value.is_a?(Numeric)
 
@@ -50,6 +147,10 @@ module UnitMeasurements
 
     private
 
+    # Decimal prefixes for SI units.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     SI_DECIMAL_PREFIXES = [
       ["q",  %w(quecto),    1e-30],
       ["r",  %w(ronto),     1e-27],
@@ -77,6 +178,32 @@ module UnitMeasurements
       ["Q",  %w(quetta),    1e+30]
     ].map(&:freeze).freeze
 
+    # Parses tokens and returns a +conversion value+ and the +unit+.
+    #
+    # This method is used internally to parse the conversion value of the unit
+    # while calculating the conversion factor. It handles cases where the value
+    # can be provided as a string or an array containing a number and a unit.
+    #
+    # For example, if the value is provided as a string in the form of "10 m",
+    # it will be parsed to return 10.0 as the conversion value and "m" as the
+    # unit.
+    #
+    # This method returns conversion value in +rational+ number to avoid precision
+    # errors and frozen string of unit name.
+    #
+    # @param [String|Array] tokens
+    #   The value to be parsed. It can be either a string or an array containing
+    #   a number and a unit.
+    #
+    # @return [Array<Numeric, String>] The array of conversion value and the unit.
+    #
+    # @raise [BaseError]
+    #   if +tokens+ is not an instance of +Array+ or +String+, or +tokens+ array
+    #   contains more than two elements.
+    #
+    # @see #conversion_factor
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.2.0
     def parse_value(tokens)
       case tokens
       when String
