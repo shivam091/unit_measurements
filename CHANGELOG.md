@@ -1,3 +1,12 @@
+## [4.10.0](https://github.com/shivam091/unit_measurements/compare/v4.9.0...v4.10.0) - 2023-10-14
+
+### What's new
+
+- Added documentation for all modules, classes, and methods.
+- Updated readme and added workflow for publishing documentation using `yardoc`.
+
+----------
+
 ## [4.9.0](https://github.com/shivam091/unit_measurements/compare/v4.8.0...v4.9.0) - 2023-10-13
 
 ### What's new
@@ -356,6 +365,7 @@
 - Added support to build `si` units.
 - Added support to parse `Complex`, `Rational`, `Scientific` numbers, and `ratios`.
 - Added support to convert quantity between two units using `#convert_to`, `#convert_to!`, and `#parse` methods.
+- Added normalizer to normalize special characters used in numbers.
 
 ----------
 
