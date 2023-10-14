@@ -56,7 +56,7 @@ RSpec.describe UnitMeasurements::Measurement do
     it "raises error if directly being subclassed" do
       expect {
         described_class.new(1, :g)
-      }.to raise_error(UnitMeasurements::BaseError, "`Measurement` does not have a `unit_group` object. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`.")
+      }.to raise_error(UnitMeasurements::BaseError, "`Measurement` does not have a `unit_group` instance. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`.")
     end
   end
 
