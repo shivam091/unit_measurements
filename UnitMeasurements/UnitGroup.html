@@ -322,6 +322,30 @@
 </li>
 
       
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#unit_name_to_unit-instance_method" title="#unit_name_to_unit (instance method)">#<strong>unit_name_to_unit</strong>(name)  &#x21d2; Unit|NilClass </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the <code>Unit</code> instance for a given unit name.</p>
+</div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -389,6 +413,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Checks if a given name corresponds to a defined unit or an alias of any defined unit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#unit_with_name_and_aliases-instance_method" title="#unit_with_name_and_aliases (instance method)">#<strong>unit_with_name_and_aliases</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a hash where keys are unit names (including aliases) and values are corresponding <code>Unit</code> instances.</p>
 </div></span>
   
 </li>
@@ -1120,6 +1168,117 @@ UnitMeasurements::Length.unit_for!(&quot;z&quot;)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="unit_name_to_unit-instance_method">
+  
+    #<strong>unit_name_to_unit</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>|NilClass</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the <code>Unit</code> instance for a given unit name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>|NilClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>Unit</code> instance or <code>nil</code> if the unit is not found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unit_name_to_unit'>unit_name_to_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_unit_with_name_and_aliases'>unit_with_name_and_aliases</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="unit_names-instance_method">
   
     #<strong>unit_names</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt> 
@@ -1442,12 +1601,116 @@ UnitMeasurements::Length.unit_or_alias?(&quot;metre&quot;)
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="unit_with_name_and_aliases-instance_method">
+  
+    #<strong>unit_with_name_and_aliases</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a hash where keys are unit names (including aliases) and values are corresponding <code>Unit</code> instances.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>UnitMeasurements::Length.unit_with_name_and_aliases
+=&gt; {&quot;m&quot;=&gt;#&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;, ...}</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A hash containing unit <code>names</code> as keys and <code>Unit</code> objects as values.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187
+188</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 184</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_unit_with_name_and_aliases'>unit_with_name_and_aliases</span>
+  <span class='id identifier rubyid_units'>units</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
+    <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_unit'>unit</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sat Oct 14 13:23:14 2023 by
+  Generated on Sat Oct 14 14:36:39 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

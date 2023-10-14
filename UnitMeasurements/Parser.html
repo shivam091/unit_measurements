@@ -585,6 +585,78 @@
 </li>
 
       
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_complex-class_method" title="parse_complex (class method)">.<strong>parse_complex</strong>(string)  &#x21d2; Array&lt;Numeric, String|NilClass&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a string representing a complex number with an optional unit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_rational-class_method" title="parse_rational (class method)">.<strong>parse_rational</strong>(string)  &#x21d2; Array&lt;Numeric, String|NilClass&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a string representing a rational number with an optional unit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_scientific-class_method" title="parse_scientific (class method)">.<strong>parse_scientific</strong>(string)  &#x21d2; Array&lt;Numeric, String|NilClass&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a string representing a scientific number with an optional unit.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -781,12 +853,377 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="parse_complex-class_method">
+  
+    .<strong>parse_complex</strong>(string)  &#x21d2; <tt>Array&lt;Numeric, String|NilClass&gt;</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a string representing a complex number with an optional unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The input string containing a complex number and an optional unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric, String|NilClass&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The parsed complex number and the associated unit (or <code>nil</code> if no unit is specified in the string).</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169
+170
+171
+172</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/parser.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_complex'>parse_complex</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_real'>real</span><span class='comma'>,</span> <span class='id identifier rubyid_imaginary'>imaginary</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#COMPLEX_REGEX-constant" title="UnitMeasurements::Parser::COMPLEX_REGEX (constant)">COMPLEX_REGEX</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+  <span class='id identifier rubyid_quantity'>quantity</span> <span class='op'>=</span> <span class='const'>Complex</span><span class='lparen'>(</span><span class='id identifier rubyid_real'>real</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='comma'>,</span> <span class='id identifier rubyid_imaginary'>imaginary</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span>
+
+  <span class='lbracket'>[</span><span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_rational-class_method">
+  
+    .<strong>parse_rational</strong>(string)  &#x21d2; <tt>Array&lt;Numeric, String|NilClass&gt;</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a string representing a rational number with an optional unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The input string containing a rational number and an optional unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric, String|NilClass&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The parsed rational number and the associated unit (or <code>nil</code> if no unit is specified in the string).</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/parser.rb', line 205</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_rational'>parse_rational</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_whole'>whole</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='comma'>,</span> <span class='id identifier rubyid_numerator'>numerator</span><span class='comma'>,</span> <span class='id identifier rubyid_denominator'>denominator</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#RATIONAL_REGEX-constant" title="UnitMeasurements::Parser::RATIONAL_REGEX (constant)">RATIONAL_REGEX</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_numerator'>numerator</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_denominator'>denominator</span>
+    <span class='id identifier rubyid_numerator'>numerator</span> <span class='op'>=</span> <span class='id identifier rubyid_numerator'>numerator</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_denominator'>denominator</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='id identifier rubyid_whole'>whole</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_denominator'>denominator</span> <span class='op'>=</span> <span class='id identifier rubyid_denominator'>denominator</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+    <span class='id identifier rubyid_quantity'>quantity</span> <span class='op'>=</span> <span class='const'>Rational</span><span class='lparen'>(</span><span class='id identifier rubyid_numerator'>numerator</span><span class='comma'>,</span> <span class='id identifier rubyid_denominator'>denominator</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_quantity'>quantity</span> <span class='op'>=</span> <span class='id identifier rubyid_whole'>whole</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+  <span class='kw'>end</span>
+
+  <span class='lbracket'>[</span><span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_scientific-class_method">
+  
+    .<strong>parse_scientific</strong>(string)  &#x21d2; <tt>Array&lt;Numeric, String|NilClass&gt;</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a string representing a scientific number with an optional unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The input string containing a scientific number and an optional unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Numeric, String|NilClass&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The parsed scientific number and the associated unit (or <code>nil</code> if no unit is specified in the string).</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/parser.rb', line 186</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_scientific'>parse_scientific</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_whole'>whole</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_REGEX-constant" title="UnitMeasurements::Parser::SCIENTIFIC_REGEX (constant)">SCIENTIFIC_REGEX</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+  <span class='id identifier rubyid_quantity'>quantity</span> <span class='op'>=</span> <span class='id identifier rubyid_whole'>whole</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+
+  <span class='lbracket'>[</span><span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sat Oct 14 13:23:13 2023 by
+  Generated on Sat Oct 14 14:36:39 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

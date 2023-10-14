@@ -228,6 +228,78 @@
 </li>
 
       
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#build_si_units-instance_method" title="#build_si_units (instance method)">#<strong>build_si_units</strong>(name, value:, aliases:)  &#x21d2; Array&lt;Unit&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Builds an array of <code>Unit</code> instances with one instance of <code>Unit</code> with name <code>name</code> along with all SI prefixed <code>Unit</code> instances for it.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#build_unit-instance_method" title="#build_unit (instance method)">#<strong>build_unit</strong>(name, value:, aliases:)  &#x21d2; Unit </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Builds an instance of <code>Unit</code> with name <code>name</code>, and specified conversion value, and alternate names.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#check_for_duplicate_unit_names!-instance_method" title="#check_for_duplicate_unit_names! (instance method)">#<strong>check_for_duplicate_unit_names!</strong>(unit)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks for duplicate unit names within the list of units.</p>
+</div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -615,6 +687,446 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="build_si_units-instance_method">
+  
+    #<strong>build_si_units</strong>(name, value:, aliases:)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds an array of <code>Unit</code> instances with one instance of <code>Unit</code> with name <code>name</code> along with all SI prefixed <code>Unit</code> instances for it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Numeric|String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aliases</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String|Symbol&gt;</tt>, <tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of alternative names for the unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>Unit</code> instances.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#build_unit-instance_method" title="UnitMeasurements::UnitGroupBuilder#build_unit (method)">#build_unit</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span><span class='comma'>,</span> <span class='label'>aliases:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_si_units'>si_units</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+
+  <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Unit.html#SI_DECIMAL_PREFIXES-constant" title="UnitMeasurements::Unit::SI_DECIMAL_PREFIXES (constant)">SI_DECIMAL_PREFIXES</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_short_prefix'>short_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_long_prefix'>long_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='op'>|</span>
+    <span class='id identifier rubyid_si_aliases'>si_aliases</span> <span class='op'>=</span> <span class='id identifier rubyid_long_prefix'>long_prefix</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='lparen'>(</span><span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prefix'>prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='op'>|</span>
+      <span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_alias_unit'>alias_unit</span><span class='op'>|</span> <span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>+</span> <span class='id identifier rubyid_alias_unit'>alias_unit</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_si_units'>si_units</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_short_prefix'>short_prefix</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_multiplier'>multiplier</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_si_aliases'>si_aliases</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_si_units'>si_units</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_unit-instance_method">
+  
+    #<strong>build_unit</strong>(name, value:, aliases:)  &#x21d2; <tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds an instance of <code>Unit</code> with name <code>name</code>, and specified conversion value, and alternate names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Numeric|String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aliases</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String|Symbol&gt;</tt>, <tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of alternative names for the unit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An instance of <code>Unit</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 170</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span><span class='comma'>,</span> <span class='label'>aliases:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Unit.html#initialize-instance_method" title="UnitMeasurements::Unit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='comma'>,</span> <span class='label'>system:</span> <span class='ivar'>@system</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_check_for_duplicate_unit_names!'>check_for_duplicate_unit_names!</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_unit'>unit</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_for_duplicate_unit_names!-instance_method">
+  
+    #<strong>check_for_duplicate_unit_names!</strong>(unit)  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks for duplicate unit names within the list of units.</p>
+
+<p>This method ensures that there are no duplicate unit names within the list of units. If a duplicate name is found, it raises a <code>UnitAlreadyDefinedError</code>.</p>
+
+<p>This method is used internally by the <code>UnitGroupBuilder</code> class to build units and handle unit definitions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>unit</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The unit to be checked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="UnitAlreadyDefinedError.html" title="UnitMeasurements::UnitAlreadyDefinedError (class)">UnitAlreadyDefinedError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If the unit name is already defined in the list of units.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+193
+194
+195
+196
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 193</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_for_duplicate_unit_names!'>check_for_duplicate_unit_names!</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='ivar'>@units</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:names</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span> <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="UnitAlreadyDefinedError.html" title="UnitMeasurements::UnitAlreadyDefinedError (class)">UnitAlreadyDefinedError</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="primitive-instance_method">
   
     #<strong>primitive</strong>(primitive)  &#x21d2; <tt>Object</tt> 
@@ -849,7 +1361,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'>#build_si_units</span></li>
+      <li><span class='object_link'><a href="#build_si_units-instance_method" title="UnitMeasurements::UnitGroupBuilder#build_si_units (method)">#build_si_units</a></span></li>
     
   </ul>
 <p class="tag_title">Author:</p>
@@ -1143,7 +1655,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'>#build_unit</span></li>
+      <li><span class='object_link'><a href="#build_unit-instance_method" title="UnitMeasurements::UnitGroupBuilder#build_unit (method)">#build_unit</a></span></li>
     
   </ul>
 <p class="tag_title">Author:</p>
@@ -1205,7 +1717,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Oct 14 13:23:14 2023 by
+  Generated on Sat Oct 14 14:36:39 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
