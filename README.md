@@ -9,7 +9,7 @@ A library that encapsulate measurements and their units in Ruby.
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/test_coverage)](https://codeclimate.com/github/shivam091/unit_measurements/test_coverage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE.md)
 
-**[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)**
+[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)
 
 ## Introduction
 
