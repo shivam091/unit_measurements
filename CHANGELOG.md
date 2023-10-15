@@ -1,3 +1,12 @@
+## [4.11.0](https://github.com/shivam091/unit_measurements/compare/v4.10.0...v4.11.0) - 2023-10-15
+
+### What's new
+
+- Added new units in `length` (ch, th, ftm, fur, nmi, rod, au, pc) unit group.
+- Added new units in `weight` (ct, Da, lb, st, oz, gr, ozt, dwt, dr, slug) unit group.
+
+----------
+
 ## [4.10.0](https://github.com/shivam091/unit_measurements/compare/v4.9.0...v4.10.0) - 2023-10-14
 
 ### What's new
