@@ -17,7 +17,15 @@ These units are defined in `UnitMeasurements::Length`.
 | 2 | in | ", inch, inches |
 | 3 | ft | ', foot, feet |
 | 4 | yd | yard, yards |
-| 5 | mi | mile, miles |
+| 5 | mi | mile, miles, statute mile, international mile |
+| 6 | ch | chain, chains |
+| 7 | th | thou, thousandth of an inch |
+| 8 | au | astronomical unit, astronomical units |
+| 9 | pc | parsec, parsecs |
+| 10 | ftm | fathom, fathoms |
+| 11 | fur | furlong, furlongs |
+| 12 | nmi | NMI, M, NM, nautical mile, nautical miles |
+| 13 | rod | rods, perch, pole, lug |
 
 ## 2. Weight/Mass
 
@@ -28,6 +36,16 @@ These units are defined in `UnitMeasurements::Weight`.
 | _1_ | _g*_ | _gram, grams, gramme, grammes_ |
 | 2 | q | quintal, quintals |
 | 3 | t | tonne, tonnes, metric tonne, metric tonnes |
+| 4 | ct | carat, carats |
+| 5 | Da | dalton, daltons |
+| 6 | st | stone, stones |
+| 7 | dr | dram, drams |
+| 8 | dwt | pennyweight, pennyweights |
+| 9 | ozt | troy ounce, troy ounces |
+| 10 | slug | slugs |
+| 11 | lb | lbs, lbm, pound-mass, pound, pounds, \# |
+| 12 | oz | ounce, ounces |
+| 13 | gr | grain, grains |
 
 ## 3. Time
 
