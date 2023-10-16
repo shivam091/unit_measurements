@@ -20,5 +20,15 @@ UnitMeasurements::Volume = UnitMeasurements.build do
     unit "ft³", value: "1728 in³", aliases: ["ft^3", "cu ft", "cubic foot", "cubic feet"]
     unit "yd³", value: "27 ft³", aliases: ["yd^3", "cu yd", "cubic yard", "cubic yards"]
     unit "mi³", value: "5451776000 yd³", aliases: ["mi^3", "cu mi", "cubic mile", "cubic miles"]
+
+    unit "c", value: "284.130625e-6 m³", aliases: ["cup", "cups"]
+    unit "qt", value: "0.0011365225 m³", aliases: ["quart", "quarts"]
+    unit "gi", value: "1/2 c", aliases: ["gill", "gills"]
+    unit "pt", value: "1/8 gal", aliases: ["pint", "pints"]
+    unit "gal", value: "4.54609 dm³", aliases: ["gallon", "gallons"]
+    unit "bbl", value: "36 gal", aliases: ["barrel", "barrels"]
+    unit "tsp", value: "1/24 gi", aliases: ["teaspoon", "teaspoons"]
+    unit "tbsp", value: "3 tsp", aliases: ["tbs", "tablespoon", "tablespoons"]
+    unit "floz", value: "1/160 gal", aliases: ["fluid ounce", "fluid ounces"]
   end
 end
