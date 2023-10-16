@@ -1,3 +1,12 @@
+## [4.12.0](https://github.com/shivam091/unit_measurements/compare/v4.11.0...v4.12.0) - 2023-10-16
+
+### What's new
+
+- Added new units in `area` (are, barn, hectare, acre, square chain, square furlong, square rod) unit group.
+- Added new units in `volume` (cup, quart, gill, pint, gallon, barrel, teaspoon, tablespoon, fluid ounce) unit group.
+
+----------
+
 ## [4.11.0](https://github.com/shivam091/unit_measurements/compare/v4.10.0...v4.11.0) - 2023-10-15
 
 ### What's new
