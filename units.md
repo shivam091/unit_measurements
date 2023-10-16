@@ -111,10 +111,17 @@ These units are defined in `UnitMeasurements::Area`.
 |:--|:--|:--|
 | _1_ | _m²_ | _m^2, sq m, square meter, square meters, square metre, square metres_ |
 | 2 | km² | km^2, sq km, square kilometer, square kilometers, square kilometre, square kilometres |
-| 3 | in² | in^2, sq in, square inch, square inches |
-| 4 | ft² | ft^2, sq ft, square foot, square feet |
-| 5 | yd² | yd^2, sq yd, square yard, square yards |
-| 6 | mi² | mi^2, sq mi, square mile, square miles |
+| 3 | a | are, ares |
+| 4 | b | barn, barns |
+| 5 | ha | hectare, hectares |
+| 6 | ac | acre, acres |
+| 7 | in² | in^2, sq in, square inch, square inches |
+| 8 | ft² | ft^2, sq ft, square foot, square feet |
+| 9 | yd² | yd^2, sq yd, square yard, square yards |
+| 10 | mi² | mi^2, sq mi, square mile, square miles |
+| 11 | ch² | ch^2, sq ch, square chain, square chains |
+| 12 | fur² | fur^2, sq fur, square furlong, square furlongs |
+| 13 | rod² | rod^2, sq rod, square rod, square rods |
 
 ## 9. Volume
 
@@ -132,6 +139,15 @@ These units are defined in `UnitMeasurements::Volume`.
 | 8 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
 | 9 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
 | 10 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
+| 11 | c | cup, cups |
+| 12 | qt | quart, quarts |
+| 13 | gi | gill, gills |
+| 14 | pt | pint, pints |
+| 15 | gal | gallon, gallons |
+| 16 | bbl | barrel, barrels |
+| 17 | tsp | teaspoon, teaspoons |
+| 18 | tbsp | tbs, tablespoon, tablespoons |
+| 19 | floz | fluid ounce, fluid ounces |
 
 ## 10. Density
 
