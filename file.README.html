@@ -137,6 +137,12 @@
 <span class='comment'>#=&gt; 1000.0 m
 </span></code></pre>
 
+<p>You can convert the measurement directly to the <code>primitive</code> unit of the unit group as:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>primitive</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 0.01 m
+</span></code></pre>
+
 <p>You can also chain call of <code>#convert_to</code> and <code>#convert_to!</code> methods as:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ft</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to!'>convert_to!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -248,9 +254,17 @@
 <span class='comment'>#=&gt; [&quot;\&quot;&quot;, &quot;&#39;&quot;, &quot;feet&quot;, &quot;foot&quot;, &quot;ft&quot;, &quot;in&quot;, &quot;inch&quot;, &quot;inches&quot;, &quot;m&quot;, &quot;meter&quot;, &quot;meters&quot;, &quot;metre&quot;, &quot;metres&quot;, &quot;mi&quot;, &quot;mile&quot;, &quot;miles&quot;, &quot;yard&quot;, &quot;yards&quot;, &quot;yd&quot;]
 </span></code></pre>
 
+<p><strong>See list of units within the unit system:</strong></p>
+
+<p>You can use <code>#units_for</code> or <code>#units_for!</code> methods to find units within the unit system. <code>#units_for!</code> method returns an error if there are no units associated with specified unit system.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_units_for'>units_for</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metric</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; [#&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;, ...]
+</span></code></pre>
+
 <p><strong>Finding units within the unit group:</strong></p>
 
-<p>You can use <code>#unit_for</code> or <code>#unit_for!</code> (aliased as <code>#[]</code>) to find units within the unit group. <code>#unit_for!</code> method returns error if a unit is not present in the unit group.</p>
+<p>You can use <code>#unit_for</code> or <code>#unit_for!</code> (aliased as <code>#[]</code>) methods to find units within the unit group. <code>#unit_for!</code> method returns an error if a unit is not present in the unit group.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_for'>unit_for</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; #&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;
@@ -324,9 +338,11 @@
 
 <p>The <strong><code>UnitMeasurements::Unit</code></strong> class is used to represent the units for a measurement.</p>
 
-<h3 id="label-Support+for+SI+decimal+prefixes">Support for SI decimal prefixes</h3>
+<h3 id="label-SI+prefixed+units">SI prefixed units</h3>
 
-<p>There is support for SI decimal prefixes through the use of <code>si_unit</code> method. Units declared through it will have automatic support for all decimal prefixes:</p>
+<p>There is support for SI prefixed units through the use of <code>si_unit</code> method. Units declared through it will have automatic support for all decimal SI prefixes. This method takes <code>add_binary_prefixes</code> parameter which can be set to true, if the unit supports binary SI prefixes along with decimal SI prefixes.</p>
+
+<h4 id="label-Decimal+SI+prefixes">Decimal SI prefixes</h4>
 
 <table role="table">
 <thead>
@@ -461,6 +477,60 @@
 </tbody>
 </table>
 
+<h4 id="label-Binary+SI+prefixes">Binary SI prefixes</h4>
+
+<table role="table">
+<thead>
+<tr>
+<th>Multiplying Factor</th>
+<th>SI Prefix</th>
+<th>Scientific Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 024</td>
+<td>kibi (Ki)</td>
+<td>2^10</td>
+</tr>
+<tr>
+<td>1 048 576</td>
+<td>mebi (Mi)</td>
+<td>2^20</td>
+</tr>
+<tr>
+<td>1 073 741 824</td>
+<td>gibi (Gi)</td>
+<td>2^30</td>
+</tr>
+<tr>
+<td>1 099 511 627 776</td>
+<td>tebi (Ti)</td>
+<td>2^40</td>
+</tr>
+<tr>
+<td>1 125 899 906 842 624</td>
+<td>pebi (Pi)</td>
+<td>2^50</td>
+</tr>
+<tr>
+<td>1 152 921 504 606 846 976</td>
+<td>exbi (Ei)</td>
+<td>2^60</td>
+</tr>
+<tr>
+<td>1 180 591 620 717 411 303 424</td>
+<td>zebi (Zi)</td>
+<td>2^70</td>
+</tr>
+<tr>
+<td>1 208 925 819 614 629 174 706 176</td>
+<td>yobi (Yi)</td>
+<td>2^80</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="label-Bundled+units">Bundled units</h3>
 
 <p>There are tons of units that are bundled in <code>unit_measurements</code>. You can check them out <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">here</a>.</p>
@@ -506,8 +576,11 @@
 
   <span class='comment'># Group units by the unit system (optional).
 </span>  <span class='id identifier rubyid_system'>system</span> <span class='symbol'>:metric</span> <span class='kw'>do</span>
-    <span class='comment'># Add a SI unit to the unit group.
+    <span class='comment'># This will add unit `m` along with all decimal SI prefixes.
 </span>    <span class='id identifier rubyid_si_unit'>si_unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>s</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>second</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>seconds</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+
+    <span class='comment'># This will add unit `B` along with all binary &amp; decimal SI prefixes.
+</span>    <span class='id identifier rubyid_si_unit'>si_unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>B</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>byte</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bytes</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>add_binary_prefixes:</span> <span class='kw'>true</span>
 
     <span class='comment'># Add units to the group, along with their conversion multipliers.
 </span>    <span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>60 s</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hour</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hours</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -548,7 +621,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Mon Oct 16 14:42:58 2023 by
+  Generated on Wed Oct 18 17:10:12 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

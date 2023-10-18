@@ -231,7 +231,7 @@
         <li class="private ">
   <span class="summary_signature">
     
-      <a href="#build_si_units-instance_method" title="#build_si_units (instance method)">#<strong>build_si_units</strong>(name, value:, aliases:)  &#x21d2; Array&lt;Unit&gt; </a>
+      <a href="#build_si_units-instance_method" title="#build_si_units (instance method)">#<strong>build_si_units</strong>(name, value:, add_binary_prefixes:, aliases:)  &#x21d2; Array&lt;Unit&gt; </a>
     
 
     
@@ -353,7 +353,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#si_unit-instance_method" title="#si_unit (instance method)">#<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; Array&lt;Unit&gt; </a>
+      <a href="#si_unit-instance_method" title="#si_unit (instance method)">#<strong>si_unit</strong>(name, value: 1.0, add_binary_prefixes: false, aliases: [])  &#x21d2; Array&lt;Unit&gt; </a>
     
 
     
@@ -671,12 +671,12 @@
       <pre class="lines">
 
 
-79
-80
-81</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build'>build</span>
   <span class='const'><span class='object_link'><a href="UnitGroup.html" title="UnitMeasurements::UnitGroup (class)">UnitGroup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="UnitGroup.html#initialize-instance_method" title="UnitMeasurements::UnitGroup#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@primitive</span><span class='comma'>,</span> <span class='ivar'>@units</span><span class='rparen'>)</span>
@@ -689,7 +689,7 @@
       <div class="method_details ">
   <h3 class="signature " id="build_si_units-instance_method">
   
-    #<strong>build_si_units</strong>(name, value:, aliases:)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>  <span class="extras">(private)</span>
+    #<strong>build_si_units</strong>(name, value:, add_binary_prefixes:, aliases:)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>  <span class="extras">(private)</span>
   
 
   
@@ -735,6 +735,22 @@
         &mdash;
         <div class='inline'>
 <p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>add_binary_prefixes</span>
+      
+      
+        <span class='type'>(<tt>TrueClass|FalseClass</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Whether the unit supports binary SI prefixes along with decimal SI prefixes.</p>
 </div>
       
     </li>
@@ -821,26 +837,30 @@
       <pre class="lines">
 
 
-144
-145
-146
-147
-148
-149
 150
 151
 152
 153
 154
-155</pre>
+155
+156
+157
+158
+159
+160
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 150</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span><span class='comma'>,</span> <span class='label'>aliases:</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span><span class='comma'>,</span> <span class='label'>add_binary_prefixes:</span><span class='comma'>,</span> <span class='label'>aliases:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_si_units'>si_units</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span><span class='rbracket'>]</span>
 
-  <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Unit.html#SI_DECIMAL_PREFIXES-constant" title="UnitMeasurements::Unit::SI_DECIMAL_PREFIXES (constant)">SI_DECIMAL_PREFIXES</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_short_prefix'>short_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_long_prefix'>long_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='op'>|</span>
+  <span class='id identifier rubyid_si_prefixes'>si_prefixes</span> <span class='op'>=</span> <span class='id identifier rubyid_add_binary_prefixes'>add_binary_prefixes</span> <span class='op'>?</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Unit.html#SI_DECIMAL_PREFIXES-constant" title="UnitMeasurements::Unit::SI_DECIMAL_PREFIXES (constant)">SI_DECIMAL_PREFIXES</a></span></span> <span class='op'>+</span> <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Unit.html#SI_BINARY_PREFIXES-constant" title="UnitMeasurements::Unit::SI_BINARY_PREFIXES (constant)">SI_BINARY_PREFIXES</a></span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Unit.html#SI_DECIMAL_PREFIXES-constant" title="UnitMeasurements::Unit::SI_DECIMAL_PREFIXES (constant)">SI_DECIMAL_PREFIXES</a></span></span>
+
+  <span class='id identifier rubyid_si_prefixes'>si_prefixes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_short_prefix'>short_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_long_prefix'>long_prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_multiplier'>multiplier</span><span class='op'>|</span>
     <span class='id identifier rubyid_si_aliases'>si_aliases</span> <span class='op'>=</span> <span class='id identifier rubyid_long_prefix'>long_prefix</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='lparen'>(</span><span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prefix'>prefix</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='op'>|</span>
       <span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_alias_unit'>alias_unit</span><span class='op'>|</span> <span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>+</span> <span class='id identifier rubyid_alias_unit'>alias_unit</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
     <span class='kw'>end</span>
@@ -982,15 +1002,15 @@
       <pre class="lines">
 
 
-170
-171
-172
-173
-174
-175</pre>
+178
+179
+180
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_unit'>build_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span><span class='comma'>,</span> <span class='label'>aliases:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Unit.html#initialize-instance_method" title="UnitMeasurements::Unit#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='comma'>,</span> <span class='label'>system:</span> <span class='ivar'>@system</span><span class='rparen'>)</span>
@@ -1103,16 +1123,16 @@
       <pre class="lines">
 
 
-193
-194
-195
-196
-197
-198
-199</pre>
+201
+202
+203
+204
+205
+206
+207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 201</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_for_duplicate_unit_names!'>check_for_duplicate_unit_names!</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='ivar'>@units</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:names</span><span class='rparen'>)</span>
@@ -1237,14 +1257,14 @@
       <pre class="lines">
 
 
-122
-123
-124
 125
-126</pre>
+126
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_primitive'>primitive</span><span class='lparen'>(</span><span class='id identifier rubyid_primitive'>primitive</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="PrimitiveUnitAlreadySetError.html" title="UnitMeasurements::PrimitiveUnitAlreadySetError (class)">PrimitiveUnitAlreadySetError</a></span></span> <span class='kw'>if</span> <span class='ivar'>@primitive</span>
@@ -1259,7 +1279,7 @@
       <div class="method_details ">
   <h3 class="signature " id="si_unit-instance_method">
   
-    #<strong>si_unit</strong>(name, value: 1.0, aliases: [])  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
+    #<strong>si_unit</strong>(name, value: 1.0, add_binary_prefixes: false, aliases: [])  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
   
 
   
@@ -1315,6 +1335,24 @@
         &mdash;
         <div class='inline'>
 <p>The conversion value of the unit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>add_binary_prefixes</span>
+      
+      
+        <span class='type'>(<tt>TrueClass|FalseClass</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Whether the unit supports binary SI prefixes along with decimal SI prefixes.</p>
 </div>
       
     </li>
@@ -1403,15 +1441,15 @@
       <pre class="lines">
 
 
-66
-67
-68</pre>
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 69</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_si_unit'>si_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='ivar'>@units</span> <span class='op'>+=</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_si_unit'>si_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='label'>add_binary_prefixes:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@units</span> <span class='op'>+=</span> <span class='id identifier rubyid_build_si_units'>build_si_units</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='label'>add_binary_prefixes:</span> <span class='id identifier rubyid_add_binary_prefixes'>add_binary_prefixes</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='id identifier rubyid_aliases'>aliases</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1529,15 +1567,15 @@
       <pre class="lines">
 
 
-101
-102
-103
 104
 105
-106</pre>
+106
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group_builder.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_system'>system</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@system</span> <span class='op'>=</span> <span class='id identifier rubyid_system_name'>system_name</span>
@@ -1717,7 +1755,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 16 14:42:59 2023 by
+  Generated on Wed Oct 18 17:10:13 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

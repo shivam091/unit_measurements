@@ -151,6 +151,63 @@
 
     <dl class="constants">
       
+        <dt id="SI_BINARY_PREFIXES-constant" class="">SI_BINARY_PREFIXES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Binary prefixes for SI units.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>5.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ki</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>kibi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Mi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>mebi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>20</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>gibi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>30</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ti</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>tebi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>40</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>pebi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>50</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ei</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>exbi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>60</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Zi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>zebi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>70</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>yobi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='int'>2</span><span class='period'>.</span><span class='id identifier rubyid_pow'>pow</span><span class='lparen'>(</span><span class='int'>80</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+<span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:freeze</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
         <dt id="SI_DECIMAL_PREFIXES-constant" class="">SI_DECIMAL_PREFIXES =
           <div class="docstring">
   <div class="discussion">
@@ -198,30 +255,30 @@
 </div>
         </dt>
         <dd><pre class="code"><span class='lbracket'>[</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>quecto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>    <span class='float'>1e-30</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>ronto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-27</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>y</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>yocto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-24</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>zepto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-21</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>atto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e-18</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>f</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>femto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-15</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>p</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>pico</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e-12</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>nano</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e-9</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>μ</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>micro</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-6</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>milli</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-3</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>centi</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e-2</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>deci</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e-1</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>da</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w(</span><span class='tstring_content'>deca</span><span class='words_sep'> </span><span class='tstring_content'>deka</span><span class='tstring_end'>)</span></span><span class='comma'>,</span> <span class='float'>1e+1</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>h</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>hecto</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e+2</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>k</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>kilo</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e+3</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>M</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>mega</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e+6</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>G</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>giga</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e+9</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>tera</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e+12</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>P</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>peta</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>      <span class='float'>1e+15</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>E</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>exa</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>       <span class='float'>1e+18</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Z</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>zetta</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e+21</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Y</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>yotta</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e+24</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>R</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>ronna</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>     <span class='float'>1e+27</span><span class='rbracket'>]</span><span class='comma'>,</span>
-  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w(</span><span class='tstring_content'>quetta</span><span class='tstring_end'>)</span></span><span class='comma'>,</span>    <span class='float'>1e+30</span><span class='rbracket'>]</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>quecto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>    <span class='float'>1e-30</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>ronto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-27</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>y</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>yocto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-24</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>zepto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-21</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>atto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e-18</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>f</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>femto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-15</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>p</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>pico</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e-12</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>n</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>nano</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e-9</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>μ</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>micro</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-6</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>milli</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-3</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>centi</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e-2</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>deci</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e-1</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>da</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>deca</span><span class='words_sep'> </span><span class='tstring_content'>deka</span><span class='tstring_end'>]</span></span><span class='comma'>,</span> <span class='float'>1e+1</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>h</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>hecto</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e+2</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>k</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>kilo</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e+3</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>M</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>mega</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e+6</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>G</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>giga</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e+9</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>tera</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e+12</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>P</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>peta</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>      <span class='float'>1e+15</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>E</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>exa</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>       <span class='float'>1e+18</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Z</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>zetta</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e+21</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Y</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>yotta</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e+24</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>R</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>ronna</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>     <span class='float'>1e+27</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Q</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>  <span class='qwords_beg'>%w[</span><span class='tstring_content'>quetta</span><span class='tstring_end'>]</span></span><span class='comma'>,</span>    <span class='float'>1e+30</span><span class='rbracket'>]</span>
 <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:freeze</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
@@ -733,7 +790,7 @@
   <span class='ivar'>@name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
   <span class='ivar'>@value</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
   <span class='ivar'>@aliases</span> <span class='op'>=</span> <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_s</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:freeze</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
-  <span class='ivar'>@system</span> <span class='op'>=</span> <span class='id identifier rubyid_system'>system</span>
+  <span class='ivar'>@system</span> <span class='op'>=</span> <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
   <span class='ivar'>@unit_group</span> <span class='op'>=</span> <span class='id identifier rubyid_unit_group'>unit_group</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1558,20 +1615,20 @@
       <pre class="lines">
 
 
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217</pre>
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit.rb', line 222</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_value'>parse_value</span><span class='lparen'>(</span><span class='id identifier rubyid_tokens'>tokens</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_tokens'>tokens</span>
@@ -1898,7 +1955,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 16 14:42:58 2023 by
+  Generated on Wed Oct 18 17:10:12 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

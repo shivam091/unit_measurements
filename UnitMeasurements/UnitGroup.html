@@ -442,6 +442,54 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#units_for-instance_method" title="#units_for (instance method)">#<strong>units_for</strong>(system_name)  &#x21d2; Array&lt;Unit&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an array of units associated with a specified <code>unit_system</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#units_for!-instance_method" title="#units_for! (instance method)">#<strong>units_for!</strong>(system_name)  &#x21d2; Array&lt;Unit&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This method works same as <code>units_for</code> method but it raises an error if there are no units associated with the <code>system_name</code>.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -1263,12 +1311,12 @@ UnitMeasurements::Length.unit_for!(&quot;z&quot;)
       <pre class="lines">
 
 
-199
-200
-201</pre>
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 199</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 262</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit_name_to_unit'>unit_name_to_unit</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unit_with_name_and_aliases'>unit_with_name_and_aliases</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span>
@@ -1686,14 +1734,14 @@ UnitMeasurements::Length.unit_or_alias?(&quot;metre&quot;)
       <pre class="lines">
 
 
-184
-185
-186
-187
-188</pre>
+247
+248
+249
+250
+251</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 184</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit_with_name_and_aliases'>unit_with_name_and_aliases</span>
   <span class='id identifier rubyid_units'>units</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
@@ -1705,12 +1753,303 @@ UnitMeasurements::Length.unit_or_alias?(&quot;metre&quot;)
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="units_for-instance_method">
+  
+    #<strong>units_for</strong>(system_name)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array of units associated with a specified <code>unit_system</code>.</p>
+
+<p>This method takes a unit system name as an argument and filters the units in the unit group to return only those units that belong to the specified unit system. It then returns an array containing these filtered units.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>UnitMeasurements::Length.units_for(&quot;metric&quot;)
+=&gt; [#&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;]
+
+UnitMeasurements::Length.units_for(&quot;imperial&quot;)
+=&gt; [#&lt;UnitMeasurements::Unit: in (&quot;, inch, inches)&gt;, ...]
+
+UnitMeasurements::Length.units_for(&quot;troy&quot;)
+=&gt; []</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>system_name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit system to retrieve units for.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>Unit</code> instances associated with the specified unit system.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>5.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+194
+195
+196</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 194</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_units_for'>units_for</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_units'>units</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_unit'>unit</span><span class='op'>|</span> <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>==</span> <span class='id identifier rubyid_system_name'>system_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="units_for!-instance_method">
+  
+    #<strong>units_for!</strong>(system_name)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This method works same as <code>units_for</code> method but it raises an error if there are no units associated with the <code>system_name</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>UnitMeasurements::Length.units_for!(&quot;metric&quot;)
+=&gt; [#&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;]
+
+UnitMeasurements::Length.units_for!(&quot;imperial&quot;)
+=&gt; [#&lt;UnitMeasurements::Unit: in (&quot;, inch, inches)&gt;, ...]
+
+UnitMeasurements::Length.units_for!(&quot;troy&quot;)
+=&gt; Invalid unit system &#39;troy&#39; within the unit group. (UnitMeasurements::BaseError)</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>system_name</span>
+      
+      
+        <span class='type'>(<tt>String|Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the unit system to retrieve units for.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>Unit</code> instances associated with the specified unit system.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="BaseError.html" title="UnitMeasurements::BaseError (class)">BaseError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If there are no units associated with the provided <code>system_name</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#units_for-instance_method" title="UnitMeasurements::UnitGroup#units_for (method)">#units_for</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>5.0.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+223
+224
+225
+226
+227
+228
+229
+230
+231</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/unit_group.rb', line 223</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_units_for!'>units_for!</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_system_units'>system_units</span> <span class='op'>=</span> <span class='id identifier rubyid_units_for'>units_for</span><span class='lparen'>(</span><span class='id identifier rubyid_system_name'>system_name</span><span class='rparen'>)</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_system_units'>system_units</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="BaseError.html" title="UnitMeasurements::BaseError (class)">BaseError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid unit system &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_system_name'>system_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; within the unit group.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_system_units'>system_units</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 16 14:42:58 2023 by
+  Generated on Wed Oct 18 17:10:12 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
