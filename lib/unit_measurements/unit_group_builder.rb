@@ -56,6 +56,9 @@ module UnitMeasurements
     #
     # @param [String|Symbol] name The name of the unit.
     # @param [Numeric|String] value The conversion value of the unit.
+    # @param [TrueClass|FalseClass] add_binary_prefixes
+    #   Whether the unit supports binary SI prefixes along with decimal SI
+    #   prefixes.
     # @param [Array<String|Symbol>, optional] aliases An array of alternative names for the unit.
     #
     # @return [Array<Unit>] An array of +Unit+ instances.
@@ -63,8 +66,8 @@ module UnitMeasurements
     # @see #build_si_units
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
-    def si_unit(name, value: 1.0, aliases: [])
-      @units += build_si_units(name, value: value, aliases: aliases)
+    def si_unit(name, value: 1.0, add_binary_prefixes: false, aliases: [])
+      @units += build_si_units(name, value: value, add_binary_prefixes: add_binary_prefixes, aliases: aliases)
     end
 
     # Constructs and returns a +UnitGroup+ object based on the units defined
@@ -133,6 +136,9 @@ module UnitMeasurements
     #
     # @param [String|Symbol] name The name of the unit.
     # @param [Numeric|String] value The conversion value of the unit.
+    # @param [TrueClass|FalseClass] add_binary_prefixes
+    #   Whether the unit supports binary SI prefixes along with decimal SI
+    #   prefixes.
     # @param [Array<String|Symbol>, optional] aliases
     #   An array of alternative names for the unit.
     #
@@ -141,10 +147,12 @@ module UnitMeasurements
     # @see #build_unit
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
-    def build_si_units(name, value:, aliases:)
+    def build_si_units(name, value:, add_binary_prefixes:, aliases:)
       si_units = [build_unit(name, value: value, aliases: aliases)]
 
-      Unit::SI_DECIMAL_PREFIXES.each do |short_prefix, long_prefix, multiplier|
+      si_prefixes = add_binary_prefixes ? (Unit::SI_DECIMAL_PREFIXES + Unit::SI_BINARY_PREFIXES) : Unit::SI_DECIMAL_PREFIXES
+
+      si_prefixes.each do |short_prefix, long_prefix, multiplier|
         si_aliases = long_prefix.product(aliases.to_a).flat_map do |prefix, unit|
           aliases.map { |alias_unit| prefix + alias_unit.to_s }
         end

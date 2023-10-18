@@ -5,8 +5,8 @@
 UnitMeasurements::InformationEntropy = UnitMeasurements.build do
   primitive "nat"
 
-  si_unit "b", value: "1 Sh", aliases: ["bit", "bits"]
-  si_unit "B", value: [2.pow(3), "b"], aliases: ["byte", "bytes"]
+  si_unit "b", value: "1 Sh", aliases: ["bit", "bits"], add_binary_prefixes: true
+  si_unit "B", value: [2.pow(3), "b"], aliases: ["byte", "bytes"], add_binary_prefixes: true
 
   unit "Sh", value: [Math.log(2), "nat"], aliases: ["shannon", "shannons"]
   unit "nat", aliases: ["nit", "nepit", "natural unit of information"]

@@ -147,35 +147,50 @@ module UnitMeasurements
 
     private
 
+    # Binary prefixes for SI units.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.0.0
+    SI_BINARY_PREFIXES = [
+      ["Ki", %w[kibi], 2.pow(10)],
+      ["Mi", %w[mebi], 2.pow(20)],
+      ["Gi", %w[gibi], 2.pow(30)],
+      ["Ti", %w[tebi], 2.pow(40)],
+      ["Pi", %w[pebi], 2.pow(50)],
+      ["Ei", %w[exbi], 2.pow(60)],
+      ["Zi", %w[zebi], 2.pow(70)],
+      ["Yi", %w[yobi], 2.pow(80)],
+    ].map(&:freeze).freeze
+
     # Decimal prefixes for SI units.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     SI_DECIMAL_PREFIXES = [
-      ["q",  %w(quecto),    1e-30],
-      ["r",  %w(ronto),     1e-27],
-      ["y",  %w(yocto),     1e-24],
-      ["z",  %w(zepto),     1e-21],
-      ["a",  %w(atto),      1e-18],
-      ["f",  %w(femto),     1e-15],
-      ["p",  %w(pico),      1e-12],
-      ["n",  %w(nano),      1e-9],
-      ["μ",  %w(micro),     1e-6],
-      ["m",  %w(milli),     1e-3],
-      ["c",  %w(centi),     1e-2],
-      ["d",  %w(deci),      1e-1],
-      ["da", %w(deca deka), 1e+1],
-      ["h",  %w(hecto),     1e+2],
-      ["k",  %w(kilo),      1e+3],
-      ["M",  %w(mega),      1e+6],
-      ["G",  %w(giga),      1e+9],
-      ["T",  %w(tera),      1e+12],
-      ["P",  %w(peta),      1e+15],
-      ["E",  %w(exa),       1e+18],
-      ["Z",  %w(zetta),     1e+21],
-      ["Y",  %w(yotta),     1e+24],
-      ["R",  %w(ronna),     1e+27],
-      ["Q",  %w(quetta),    1e+30]
+      ["q",  %w[quecto],    1e-30],
+      ["r",  %w[ronto],     1e-27],
+      ["y",  %w[yocto],     1e-24],
+      ["z",  %w[zepto],     1e-21],
+      ["a",  %w[atto],      1e-18],
+      ["f",  %w[femto],     1e-15],
+      ["p",  %w[pico],      1e-12],
+      ["n",  %w[nano],      1e-9],
+      ["μ",  %w[micro],     1e-6],
+      ["m",  %w[milli],     1e-3],
+      ["c",  %w[centi],     1e-2],
+      ["d",  %w[deci],      1e-1],
+      ["da", %w[deca deka], 1e+1],
+      ["h",  %w[hecto],     1e+2],
+      ["k",  %w[kilo],      1e+3],
+      ["M",  %w[mega],      1e+6],
+      ["G",  %w[giga],      1e+9],
+      ["T",  %w[tera],      1e+12],
+      ["P",  %w[peta],      1e+15],
+      ["E",  %w[exa],       1e+18],
+      ["Z",  %w[zetta],     1e+21],
+      ["Y",  %w[yotta],     1e+24],
+      ["R",  %w[ronna],     1e+27],
+      ["Q",  %w[quetta],    1e+30]
     ].map(&:freeze).freeze
 
     # Parses tokens and returns a +conversion value+ and the +unit+.
