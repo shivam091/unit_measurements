@@ -57,7 +57,7 @@ module UnitMeasurements
       @name = name.to_s.freeze
       @value = value
       @aliases = Set.new(aliases.map(&:to_s).sort.map(&:freeze)).freeze
-      @system = system
+      @system = system.to_s
       @unit_group = unit_group
     end
 
