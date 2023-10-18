@@ -101,8 +101,11 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
     #   => 100.0 cm
     #
+    #   UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
+    #   => 0.01 m
+    #
     # @param [String|Symbol] target_unit
-    #   The target unit for conversion. Specifing `primitive` will convert the
+    #   The target unit for conversion. Specifing +primitive+ will convert the
     #   measurement to a primitive unit of the unit group.
     #
     # @return [Measurement]
@@ -194,7 +197,7 @@ module UnitMeasurements
       # Methods delegated from the unit group.
       def_delegators :unit_group, :primitive, :units, :unit_names, :unit_with_name_and_aliases,
                      :unit_names_with_aliases, :unit_for, :unit_for!, :defined?,
-                     :unit_or_alias?, :[]
+                     :unit_or_alias?, :[], :units_for, :units_for!
 
       # Parses an input string and returns a +Measurement+ instance depending on
       # the input string. This method first normalizes the +input+ internally,
