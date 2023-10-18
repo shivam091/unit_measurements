@@ -88,6 +88,13 @@ UnitMeasurements::Length.new(1, "km").convert_to!("m")
 #=> 1000.0 m
 ```
 
+You can convert the measurement directly to the `primitive` unit of the unit group as:
+
+```ruby
+UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
+#=> 0.01 m
+```
+
 You can also chain call of `#convert_to` and `#convert_to!` methods as:
 
 ```ruby
@@ -215,11 +222,22 @@ UnitMeasurements::Length.unit_names_with_aliases
 #=> ["\"", "'", "feet", "foot", "ft", "in", "inch", "inches", "m", "meter", "meters", "metre", "metres", "mi", "mile", "miles", "yard", "yards", "yd"]
 ```
 
+**See list of units within the unit system:**
+
+You can use `#units_for` or `#units_for!` methods to find units within the unit system.
+`#units_for!` method returns an error if there are no units associated with specified
+unit system.
+
+```ruby
+UnitMeasurements::Length.units_for("metric")
+#=> [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, ...]
+```
+
 **Finding units within the unit group:**
 
-You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) to find units within
-the unit group. `#unit_for!` method returns error if a unit is not present in the
-unit group.
+You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) methods to find units
+within the unit group. `#unit_for!` method returns an error if a unit is not present
+in the unit group.
 
 ```ruby
 UnitMeasurements::Length.unit_for("m")
@@ -309,10 +327,14 @@ You can check more about them along with their examples
 
 The **`UnitMeasurements::Unit`** class is used to represent the units for a measurement.
 
-### Support for SI decimal prefixes
+### SI prefixed units
 
-There is support for SI decimal prefixes through the use of `si_unit` method.
-Units declared through it will have automatic support for all decimal prefixes:
+There is support for SI prefixed units through the use of `si_unit` method.
+Units declared through it will have automatic support for all decimal SI prefixes.
+This method takes `add_binary_prefixes` parameter which can be set to true, if the
+unit supports binary SI prefixes along with decimal SI prefixes.
+
+#### Decimal SI prefixes
 
 | Multiplying Factor                        | SI Prefix  | Scientific Notation |
 | ----------------------------------------- | ---------- | ------------------- |
@@ -340,6 +362,19 @@ Units declared through it will have automatic support for all decimal prefixes:
 | 0.000 000 000 000 000 000 000 001         | yocto (y)  | 10^-24              |
 | 0.000 000 000 000 000 000 000 000 001     | ronto (r)  | 10^-27              |
 | 0.000 000 000 000 000 000 000 000 000 001 | quecto (q) | 10^-30              |
+
+#### Binary SI prefixes
+
+| Multiplying Factor                | SI Prefix | Scientific Notation |
+| --------------------------------- | --------- | ------------------- |
+| 1 024                             | kibi (Ki) | 2^10                |
+| 1 048 576                         | mebi (Mi) | 2^20                |
+| 1 073 741 824                     | gibi (Gi) | 2^30                |
+| 1 099 511 627 776                 | tebi (Ti) | 2^40                |
+| 1 125 899 906 842 624             | pebi (Pi) | 2^50                |
+| 1 152 921 504 606 846 976         | exbi (Ei) | 2^60                |
+| 1 180 591 620 717 411 303 424     | zebi (Zi) | 2^70                |
+| 1 208 925 819 614 629 174 706 176 | yobi (Yi) | 2^80                |
 
 ### Bundled units
 
@@ -396,8 +431,11 @@ UnitMeasurements::Time = UnitMeasurements.build do
 
   # Group units by the unit system (optional).
   system :metric do
-    # Add a SI unit to the unit group.
+    # This will add unit `m` along with all decimal SI prefixes.
     si_unit "s", aliases: ["second", "seconds"]
+
+    # This will add unit `B` along with all binary & decimal SI prefixes.
+    si_unit "B", aliases: ["byte", "bytes"], add_binary_prefixes: true
 
     # Add units to the group, along with their conversion multipliers.
     unit "min", value: "60 s", aliases: ["hour", "hours"]

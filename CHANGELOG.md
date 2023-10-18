@@ -1,3 +1,14 @@
+## [5.0.0](https://github.com/shivam091/unit_measurements/compare/v4.12.0...v5.0.0) - 2023-10-18
+
+### What's new
+
+- Added support to add binary SI prefixes for the unit.
+- Added support to convert the measurement to a `primitive` unit of the unit group.
+- Added methods `UnitGroup#units_for` and `UnitGroup#units_for!` to find units within
+  the specified unit system.
+
+----------
+
 ## [4.12.0](https://github.com/shivam091/unit_measurements/compare/v4.11.0...v4.12.0) - 2023-10-16
 
 ### What's new

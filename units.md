@@ -4,8 +4,10 @@ As there are lots of units bundled with `unit_measurements`, we recommend you to
 bundled units before converting your measurements.
 
 **Notes:**
-1. Unit names suffixed with `*` support all [SI prefixes](README.md#support-for-si-decimal-prefixes).
-2. Primitive unit of the unit group is in _emphasised typeface_.
+1. Unit names suffixed with `*` support all [Decimal SI prefixes](README.md#decimal-si-prefixes).
+2. Unit names suffixed with `**` support all [Decimal SI prefixes](README.md#decimal-si-prefixes)
+and [Binary SI prefixes](README.md#binary-si-prefixes).
+3. Primitive unit of the unit group is in _emphasised typeface_.
 
 ## 1. Length/Distance
 
@@ -594,8 +596,8 @@ These units are defined in `UnitMeasurements::InformationEntropy`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| 1 | b* | bit, bits |
-| 2 | B* | byte, bytes |
+| 1 | b*\* | bit, bits |
+| 2 | B*\* | byte, bytes |
 | 3 | Sh | shannon, shannons |
 | _4_ | _nat_ | _nit, nepit, natural unit of information_ |
 | 5 | nybl | nibble, nibbles, nybble, nyble |
