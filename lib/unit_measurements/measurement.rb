@@ -101,7 +101,9 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
     #   => 100.0 cm
     #
-    # @param [String|Symbol] target_unit The target unit for conversion.
+    # @param [String|Symbol] target_unit
+    #   The target unit for conversion. Specifing `primitive` will convert the
+    #   measurement to a primitive unit of the unit group.
     #
     # @return [Measurement]
     #   A new +Measurement+ instance with the converted +quantity+ and
@@ -110,7 +112,11 @@ module UnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def convert_to(target_unit)
-      target_unit = unit_from_unit_or_name!(target_unit)
+      target_unit = if target_unit.to_s.eql?("primitive")
+        self.class.unit_group.primitive
+      else
+        unit_from_unit_or_name!(target_unit)
+      end
 
       return self if target_unit == unit
 

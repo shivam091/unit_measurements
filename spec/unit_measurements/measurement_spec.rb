@@ -6,10 +6,13 @@
 
 RSpec.describe UnitMeasurements::Measurement do
   Length = UnitMeasurements.build do
-    unit :m, aliases: [:meter]
-    unit :cm, value: 0.01, aliases: [:centimeter]
+    primitive "m"
+
+    unit "m", aliases: ["meter", "meters"]
+    unit "cm", value: 0.01, aliases: ["centimeter", "centimeters"]
   end
-  let(:length) { Length.new(1, :m) }
+  let(:base_length) { Length.new(1, :m) }
+  let(:other_length) { Length.new(100, :cm) }
   let(:m) { Length.unit_group.unit_for(:m) }
   let(:cm) { Length.unit_group.unit_for(:cm) }
 
@@ -23,8 +26,8 @@ RSpec.describe UnitMeasurements::Measurement do
     end
 
     it "sets attributes correctly" do
-      expect(length.quantity).to eq(1)
-      expect(length.unit).to eq(m)
+      expect(base_length.quantity).to eq(1)
+      expect(base_length.unit).to eq(m)
     end
 
     it "converts float quantity to BigDecimal" do
@@ -62,14 +65,23 @@ RSpec.describe UnitMeasurements::Measurement do
 
   describe "#convert_to" do
     it "converts to the target unit" do
-      converted_length = length.convert_to(:cm)
+      converted_length = base_length.convert_to(:cm)
+
       expect(converted_length.quantity).to eq(100)
       expect(converted_length.unit).to eq(cm)
     end
 
     it "returns self when target unit is the same as source unit" do
-      converted_length = length.convert_to(:m)
-      expect(converted_length).to eq(length)
+      converted_length = base_length.convert_to(:m)
+
+      expect(converted_length).to eq(base_length)
+    end
+
+    it "converts to a primitive unit" do
+      converted_length = other_length.convert_to("primitive")
+
+      expect(converted_length.quantity).to eq(1)
+      expect(converted_length.unit).to eq(m)
     end
   end
 
@@ -88,13 +100,13 @@ RSpec.describe UnitMeasurements::Measurement do
 
   describe "#inspect" do
     it "returns a formatted string representation" do
-      expect(length.inspect).to eq("1 m")
+      expect(base_length.inspect).to eq("1 m")
     end
   end
 
   describe "#to_s" do
     it "returns a string representation" do
-      expect(length.to_s).to eq("1 m")
+      expect(base_length.to_s).to eq("1 m")
     end
   end
 
