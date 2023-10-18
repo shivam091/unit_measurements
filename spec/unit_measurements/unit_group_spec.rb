@@ -79,4 +79,34 @@ RSpec.describe UnitMeasurements::UnitGroup do
       expect(unit_group.unit_or_alias?(:gram)).to be_truthy
     end
   end
+
+  describe "#units_for" do
+    it "returns array of units for the unit system name" do
+      units = unit_group.units_for!(:metric)
+
+      expect(units.size).to eq(2)
+      expect(units[0].inspect).to eq("#<UnitMeasurements::Unit: g (gram)>")
+      expect(units[1].inspect).to eq("#<UnitMeasurements::Unit: kg (kilogram)>")
+    end
+  end
+
+  describe "#units_for!" do
+    context "when valid unit system name is specified" do
+      it "returns array of units for the unit system name" do
+        units = unit_group.units_for!(:metric)
+
+        expect(units.size).to eq(2)
+        expect(units[0].inspect).to eq("#<UnitMeasurements::Unit: g (gram)>")
+        expect(units[1].inspect).to eq("#<UnitMeasurements::Unit: kg (kilogram)>")
+      end
+    end
+
+    context "when invalid unit system name is specified" do
+      it "raises error" do
+        expect {
+          expect(unit_group.units_for!(:troy))
+        }.to raise_error(UnitMeasurements::BaseError, "Invalid unit system 'troy' within the unit group.")
+      end
+    end
+  end
 end

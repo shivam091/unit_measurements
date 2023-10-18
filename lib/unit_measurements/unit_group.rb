@@ -167,6 +167,69 @@ module UnitMeasurements
       !!unit_for(name)
     end
 
+    # Returns an array of units associated with a specified +unit_system+.
+    #
+    # This method takes a unit system name as an argument and filters the units
+    # in the unit group to return only those units that belong to the specified
+    # unit system. It then returns an array containing these filtered units.
+    #
+    # @example
+    #   UnitMeasurements::Length.units_for("metric")
+    #   => [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>]
+    #
+    #   UnitMeasurements::Length.units_for("imperial")
+    #   => [#<UnitMeasurements::Unit: in (", inch, inches)>, ...]
+    #
+    #   UnitMeasurements::Length.units_for("troy")
+    #   => []
+    #
+    # @param [String|Symbol] system_name
+    #   The name of the unit system to retrieve units for.
+    #
+    # @return [Array<Unit>]
+    #   An array of +Unit+ instances associated with the specified unit system.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.0.0
+    def units_for(system_name)
+      units.select { |unit| unit.system.to_s == system_name.to_s }
+    end
+
+    # This method works same as +units_for+ method but it raises an error if
+    # there are no units associated with the +system_name+.
+    #
+    # @example
+    #   UnitMeasurements::Length.units_for!("metric")
+    #   => [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>]
+    #
+    #   UnitMeasurements::Length.units_for!("imperial")
+    #   => [#<UnitMeasurements::Unit: in (", inch, inches)>, ...]
+    #
+    #   UnitMeasurements::Length.units_for!("troy")
+    #   => Invalid unit system 'troy' within the unit group. (UnitMeasurements::BaseError)
+    #
+    # @param [String|Symbol] system_name
+    #   The name of the unit system to retrieve units for.
+    #
+    # @return [Array<Unit>]
+    #   An array of +Unit+ instances associated with the specified unit system.
+    #
+    # @raise [BaseError]
+    #   If there are no units associated with the provided +system_name+.
+    #
+    # @see units_for
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.0.0
+    def units_for!(system_name)
+      system_units = units_for(system_name)
+
+      unless system_units.any?
+        raise BaseError, "Invalid unit system '#{system_name}' within the unit group."
+      end
+
+      system_units
+    end
+
     private
 
     # @private

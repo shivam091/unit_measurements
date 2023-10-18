@@ -56,13 +56,22 @@ RSpec.describe UnitMeasurements::UnitGroupBuilder do
   end
 
   describe "#si_unit" do
-    it "adds the unit along with all SI prefixes" do
+    it "adds the unit along with all decimal SI prefixes" do
       subject.si_unit(:m, aliases: [:meter, :meters])
       units = subject.units
       unit_group = subject.build
 
       expect(units.size).to eq(25)
-      expect(unit_group.unit_names).to eq(["Em", "Gm", "Mm", "Pm", "Qm", "Rm", "Tm", "Ym", "Zm", "am", "cm", "dam", "dm", "fm", "hm", "km", "m", "mm", "nm", "pm", "qm", "rm", "ym", "zm", "μm"])
+      expect(unit_group.unit_names).to eq(%w[Em Gm Mm Pm Qm Rm Tm Ym Zm am cm dam dm fm hm km m mm nm pm qm rm ym zm μm])
+    end
+
+    it "adds the unit along with all decimal & binary SI prefixes" do
+      subject.si_unit(:m, aliases: [:meter, :meters], add_binary_prefixes: true)
+      units = subject.units
+      unit_group = subject.build
+
+      expect(units.size).to eq(33)
+      expect(unit_group.unit_names).to eq(%w[Eim Em Gim Gm Kim Mim Mm Pim Pm Qm Rm Tim Tm Yim Ym Zim Zm am cm dam dm fm hm km m mm nm pm qm rm ym zm μm])
     end
   end
 
