@@ -16,6 +16,11 @@ module UnitMeasurements
   # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
   # @since 1.4.0
   module Arithmetic
+    extend Forwardable
+
+    # Methods delegated from the Numeric.
+    def_delegators :@quantity, :zero?, :positive?, :negative?, :finite?, :infinite?
+
     # Adds the quantity of the other measurement or a numeric value to the
     # quantity of the current measurement.
     #
