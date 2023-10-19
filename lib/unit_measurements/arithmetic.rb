@@ -101,6 +101,70 @@ module UnitMeasurements
       arithmetic_operation(other, :/)
     end
 
+    # Raises the quantity of the current measurement to the power of the quantity of
+    # the other measurement or numeric value.
+    #
+    # When +other+ is an instance of +Measurement+, the quantity to raise
+    # is calculated by converting the +other+ measurement to the unit of the +current+
+    # measurement, and then the quantity of the +current+ measurement is raised to
+    # the converted quantity.
+    #
+    # @param [Numeric|Measurement] other
+    #   The value to be raised. It can be a numeric value or another measurement.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(2, "km") ** UnitMeasurements::Length.new(3, "m")
+    #   => 1.00208160507963279 km
+    #
+    #   UnitMeasurements::Length.new(2, "km") ** 3
+    #   => 8 km
+    #
+    #   UnitMeasurements::Length.new(8, "km") ** 1/3r
+    #   => 2 km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the raised quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.1.0
+    def **(other)
+      arithmetic_operation(other, :**)
+    end
+
+    # Negates the quantity of the measurement.
+    #
+    # @example
+    #   -UnitMeasurements::Length.new(2, "km")
+    #   => -2 km
+    #
+    #   -UnitMeasurements::Length.new(-2, "km")
+    #   => 2 km
+    #
+    # @return [Measurement] A new +Measurement+ instance with the negated quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.1.0
+    def -@
+      self.class.new(-self.quantity, self.unit)
+    end
+
+    # Checks whether the quantity of the measurement is nonzero.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(2, "km").nonzero?
+    #   => true
+    #
+    #   UnitMeasurements::Length.new(0, "km").nonzero?
+    #   => false
+    #
+    # @return [TrueClass|FalseClass]
+    #   +true+ if the quantity is nonzero otherwise it returns +false+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.1.0
+    def nonzero?
+      quantity.nonzero? ? true : false
+    end
+
     private
 
     # @private
