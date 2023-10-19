@@ -18,6 +18,8 @@ module UnitMeasurements
   class UnitGroupBuilder
     # An array to store the units defined using the builder.
     #
+    # @return [Array<Unit>] An array of +Unit+ instances.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :units
@@ -70,7 +72,7 @@ module UnitMeasurements
       @units += build_si_units(name, value: value, add_binary_prefixes: add_binary_prefixes, aliases: aliases)
     end
 
-    # Constructs and returns a +UnitGroup+ object based on the units defined
+    # Constructs and returns a +UnitGroup+ instance based on the units defined
     # using the builder.
     #
     # @return [UnitGroup]

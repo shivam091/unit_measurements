@@ -16,6 +16,8 @@ module UnitMeasurements
   class UnitAlreadyDefinedError < BaseError
     # The name of the unit that is already defined.
     #
+    # @return [String] The name of the unit that is already defined.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :unit

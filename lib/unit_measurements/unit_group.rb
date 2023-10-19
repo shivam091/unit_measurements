@@ -30,6 +30,8 @@ module UnitMeasurements
     #   UnitMeasurements::Length.units
     #   => [#<UnitMeasurements::Unit: m (meter, meters, metre, metres)>, ...]
     #
+    # @return [Array<Unit>] An array of +Unit+ instances.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :units
@@ -171,7 +173,8 @@ module UnitMeasurements
     #
     # This method takes a unit system name as an argument and filters the units
     # in the unit group to return only those units that belong to the specified
-    # unit system. It then returns an array containing these filtered units.
+    # unit system. It then returns an array containing these filtered units. If
+    # there are no units associated with unit system, it returns empty array.
     #
     # @example
     #   UnitMeasurements::Length.units_for("metric")
@@ -217,7 +220,7 @@ module UnitMeasurements
     # @raise [BaseError]
     #   If there are no units associated with the provided +system_name+.
     #
-    # @see units_for
+    # @see #units_for
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 5.0.0
     def units_for!(system_name)

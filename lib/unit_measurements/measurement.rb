@@ -33,12 +33,25 @@ module UnitMeasurements
     include Math
 
     # Regular expression to match conversion strings.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     CONVERSION_STRING_REGEXP = /(.+?)\s?(?:\s+(?:in|to|as)\s+(.+)|\z)/i.freeze
 
     # Quantity of the measurement.
+    #
+    # @return [Numeric] Quantity of the measurement.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     attr_reader :quantity
 
     # The unit associated with the measurement.
+    #
+    # @return [Unit] The +unit+ instance associated with the measurement.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
     attr_reader :unit
 
     # Initializes a new instance of +Measurement+ with a specified +quantity+
@@ -54,6 +67,12 @@ module UnitMeasurements
     #
     #   UnitMeasurements::Length.new("2e+2", "km")
     #   => 200.0 km
+    #
+    #   UnitMeasurements::Length.new("2e²", "km")
+    #   => 200.0 km
+    #
+    #   UnitMeasurements::Length.new("2e⁻²", "km")
+    #   => 0.02 km
     #
     # @example Initializing the measurement with complex number and unit:
     #   UnitMeasurements::Length.new(Complex(2, 3), "km")
@@ -75,6 +94,9 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new("½", "km")
     #   => 0.5 km
     #
+    #   UnitMeasurements::Length.new("2 ½", "km")
+    #   => 2.5 km
+    #
     # @example Initializing the measurement with ratio and unit:
     #   UnitMeasurements::Length.new("1:2", "km")
     #   => 0.5 km
@@ -95,7 +117,8 @@ module UnitMeasurements
       @unit = unit_from_unit_or_name!(unit)
     end
 
-    # Converts the measurement to a +target_unit+.
+    # Converts the measurement to a +target_unit+ and returns new instance of the
+    # measurement.
     #
     # @example
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
@@ -142,6 +165,7 @@ module UnitMeasurements
     # @return [Measurement]
     #   The current +Measurement+ instance with updated +quantity+ and +unit+.
     #
+    # @see #convert_to
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def convert_to!(target_unit)
@@ -275,7 +299,8 @@ module UnitMeasurements
       # @see Parser
       # @see Normalizer
       # @see CONVERSION_STRING_REGEXP
-      # @see _parse
+      # @see ._parse
+      # @see #convert_to
       # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
       # @since 1.0.0
       def parse(input)
@@ -309,6 +334,7 @@ module UnitMeasurements
       #
       # @return [Measurement] The +Measurement+ instance.
       #
+      # @see Parser.parse
       # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
       # @since 1.0.0
       def _parse(string)

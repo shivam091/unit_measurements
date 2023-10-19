@@ -15,6 +15,8 @@ module UnitMeasurements
   class UnitError < BaseError
     # The name of the invalid unit.
     #
+    # @return [String] The name of the invalid unit.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :unit
