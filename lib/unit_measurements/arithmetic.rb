@@ -78,6 +78,7 @@ module UnitMeasurements
     def *(other)
       arithmetic_operation(other, :*)
     end
+    alias_method :scale, :*
 
     # Divides the quantity of the current measurement by the quantity of the other
     # measurement or a numeric value.
