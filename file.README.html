@@ -74,22 +74,22 @@
 
 <p>The <code>unit_measurements</code> gem is designed to simplify the handling of units for scientific calculations.</p>
 
-<h2 id="label-Advantages">Advantages</h2>
-<ol><li>
-<p>It provides easy conversion between units.</p>
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>Easy unit conversion.</p>
 </li><li>
-<p>It is lightweight and easily extensible to include other units and conversions.</p>
+<p>Lightweight and extensible for adding custom units and conversions.</p>
 </li><li>
-<p>It has built in support for various <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit groups</a>.</p>
+<p>Supports various <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit groups</a>.</p>
 </li><li>
-<p>It has well organized and very descriptive documentation published <a href="https://shivam091.github.io/unit_measurements">here</a>.</p>
+<p>Well-documented: <a href="https://rubydoc.info/gems/unit_measurements">Documentation</a>.</p>
 </li><li>
-<p>It can convert <code>complex</code>, <code>fractional</code>, <code>mixed fractional</code>, <code>scientific</code> numbers, and <code>ratios</code>.</p>
-</li></ol>
+<p>Parses complex, fractional, mixed fractional, scientific numbers, and ratios.</p>
+</li></ul>
 
 <h2 id="label-Disclaimer">Disclaimer</h2>
 
-<p><em>The unit conversions presented in <code>unit_measurements</code> are provided for reference and general informational purposes. While we aim to offer accurate conversions, we cannot guarantee their precision in all scenarios. Users are advised to cross-verify conversions as needed for their specific use cases.</em></p>
+<p><em>The unit conversions provided here are for reference and general informational purposes. While we aim for accuracy, we cannot guarantee precision in all scenarios. Users are advised to cross-verify conversions for their specific use cases.</em></p>
 
 <h2 id="label-Minimum+Requirements">Minimum Requirements</h2>
 <ul><li>
@@ -171,7 +171,7 @@
 <span class='comment'>#=&gt; 200000.0 m
 </span></code></pre>
 
-<p>You can check supported special characters for exponents <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html">here</a>.</p>
+<p>You can check supported special characters for exponents <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html">here</a>.</p>
 
 <p><strong>Parse complex numbers, source unit, and (or) target unit:</strong></p>
 
@@ -185,23 +185,15 @@
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2 ½ km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; 2500.0 m
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2/3 km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; 666.666666666667 m
 </span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2/3 km to m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; 666.666666666667 m
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2 1/2 km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; 2500.0 m
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2 ½ km to m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; 2500.0 m
 </span></code></pre>
 
-<p>You can check supported special characters for fractional notations <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html">here</a>.</p>
+<p>You can check supported special characters for fractional notations <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html">here</a>.</p>
 
 <p><strong>Parse ratios, source unit, and (or) target unit:</strong></p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1:2</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; 500.0 m
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1:2 km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1:2 km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; 500.0 m
 </span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1:2 km to m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; 500.0 m
@@ -211,15 +203,11 @@
 
 <p>If you want to format measurement to certain format, you can use <code>#format</code> method. If format is not specified, it defaults to <code>&quot;%.2&lt;value&gt;f %&lt;unit&gt;s&quot;</code>.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_format'>format</span>
-<span class='comment'>#=&gt; &quot;3937.01 in&quot;
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%.4&lt;quantity&gt;f %&lt;unit&gt;s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%.4&lt;quantity&gt;f %&lt;unit&gt;s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; &quot;3937.0079 in&quot;
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%.4&lt;quantity&gt;f</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; &quot;3937.0079&quot;
 </span></code></pre>
 
-<p>You can check more about formatting along with their examples <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Formatter.html">here</a>.</p>
+<p>You can check more about formatting along with their examples <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Formatter.html">here</a>.</p>
 
 <p><strong>Extract the unit and the quantity from measurement:</strong></p>
 
@@ -270,8 +258,6 @@
 <span class='comment'>#=&gt; #&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;
 </span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_for'>unit_for</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; nil
-</span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'>#=&gt; #&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;
 </span><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; Invalid unit: &#39;z&#39;. (UnitMeasurements::UnitError)
 </span></code></pre>
@@ -300,7 +286,7 @@
 <span class='comment'>#=&gt; true
 </span></code></pre>
 
-<p>You can check supported comparisons along with their examples <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Comparison.html">here</a>.</p>
+<p>You can check supported comparisons along with their examples <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Comparison.html">here</a>.</p>
 
 <h3 id="label-Arithmetic">Arithmetic</h3>
 
@@ -312,7 +298,7 @@
 <span class='comment'>#=&gt; 4+2i km
 </span></code></pre>
 
-<p>You can check supported arithmetic operations along with their examples <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Arithmetic.html">here</a>.</p>
+<p>You can check supported arithmetic operations along with their examples <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Arithmetic.html">here</a>.</p>
 
 <h3 id="label-Math">Math</h3>
 
@@ -322,7 +308,7 @@
 <span class='comment'>#   =&gt; 18 m
 </span></code></pre>
 
-<p>You can check supported mathematical functions along with their examples <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Math.html">here</a>.</p>
+<p>You can check supported mathematical functions along with their examples <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Math.html">here</a>.</p>
 
 <h3 id="label-Conversions">Conversions</h3>
 
@@ -332,7 +318,7 @@
 <span class='comment'>#=&gt; 2 km
 </span></code></pre>
 
-<p>You can check more about them along with their examples <a href="https://shivam091.github.io/unit_measurements/UnitMeasurements/Conversion.html">here</a>.</p>
+<p>You can check more about them along with their examples <a href="https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Conversion.html">here</a>.</p>
 
 <h2 id="label-Units">Units</h2>
 
@@ -340,7 +326,7 @@
 
 <h3 id="label-SI+prefixed+units">SI prefixed units</h3>
 
-<p>There is support for SI prefixed units through the use of <code>si_unit</code> method. Units declared through it will have automatic support for all decimal SI prefixes. This method takes <code>add_binary_prefixes</code> parameter which can be set to true, if the unit supports binary SI prefixes along with decimal SI prefixes.</p>
+<p>Support for SI prefixed units is provided through the <code>si_unit</code> method. Units declared this way automatically support all decimal SI prefixes. This method takes an optional <code>add_binary_prefixes</code> parameter, which can be set to <code>true</code> if the unit supports binary SI prefixes in addition to decimal SI prefixes.</p>
 
 <h4 id="label-Decimal+SI+prefixes">Decimal SI prefixes</h4>
 
@@ -537,38 +523,24 @@
 
 <h3 id="label-Specifing+units">Specifing units</h3>
 
-<p>By default, <code>unit_measurements</code> ships with all the unit groups and this happens automatically when requiring the gem in the following manner.</p>
+<p>By default, <code>unit_measurements</code> includes all unit groups automatically when you require the gem using:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
 
 <p><strong>You can skip these unit groups and only your own unit groups[#building-new-unit-groups] by doing:</strong></p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/base</span><span class='tstring_end'>&quot;</span></span>
-</code></pre>
-
-<p>or simply</p>
-
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>require:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/base</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
 
 <p><strong>You can also use unit groups in your application as per your need as:</strong></p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/base</span><span class='tstring_end'>&quot;</span></span>
-
-<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/unit_groups/length</span><span class='tstring_end'>&quot;</span></span>
-</code></pre>
-
-<p>or</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>require:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/base</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements/unit_groups/length</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 </code></pre>
 
 <h3 id="label-Building+new+unit+groups">Building new unit groups</h3>
 
-<p>This library provides simpler way to build your own unit groups. To build new unit group, use <code>UnitMeasurements.build</code> method in order to define units within it:</p>
-
-<p>For convenience, you also have ability to group units by the unit system using <code>system</code> method and set primitive unit for each unit group using <code>primitive</code> method.</p>
+<p>This library provides a simpler way to define your own unit groups. Use the <code>UnitMeasurements.build</code> method to define units within it. You can also group units by the unit system using the <code>system</code> method and set the primitive unit for  each unit group using the <code>primitive</code> method.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Time</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='period'>.</span><span class='id identifier rubyid_build'><span class='object_link'><a href="UnitMeasurements.html#build-class_method" title="UnitMeasurements.build (method)">build</a></span></span> <span class='kw'>do</span>
   <span class='comment'># Set primitive unit for the unit group (optional).
@@ -586,7 +558,7 @@
 </span>    <span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>60 s</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hour</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hours</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 
     <span class='comment'># You can also specify unit value as an array.
-</span>    <span class='id identifier rubyid_unit'>unit</span> <span class='symbol'>:h</span><span class='comma'>,</span> <span class='label'>value:</span> <span class='lbracket'>[</span><span class='int'>60</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>day</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>days</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+</span>    <span class='id identifier rubyid_unit'>unit</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>h</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>value:</span> <span class='lbracket'>[</span><span class='int'>60</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>min</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>aliases:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>day</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>days</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 </code></pre>
@@ -621,7 +593,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Wed Oct 18 17:10:12 2023 by
+  Generated on Thu Oct 19 17:03:52 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
