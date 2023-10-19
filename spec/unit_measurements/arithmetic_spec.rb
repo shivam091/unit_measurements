@@ -89,6 +89,75 @@ RSpec.describe UnitMeasurements::Arithmetic do
     end
   end
 
+  describe "#**" do
+    it "must raise to a power" do
+      measurement = (subject.new(2, :m) ** 3)
+      expect(measurement.quantity).to eq(8)
+      expect(measurement.unit).to eq(m)
+    end
+
+    it "must raise to a negative power" do
+      measurement = (subject.new(1, :m) ** -3)
+      expect(measurement.quantity).to eq(1)
+      expect(measurement.unit).to eq(m)
+    end
+  end
+
+  describe "#-@" do
+    it "must raise to a power" do
+      measurement = -subject.new(2, :m)
+      expect(measurement.quantity).to eq(-2)
+      expect(measurement.unit).to eq(m)
+    end
+  end
+
+  describe "#nonzero?" do
+    it "returns true if measurement quantity is nonzero" do
+      measurement = subject.new(1, :m)
+      expect(measurement.nonzero?).to be_truthy
+    end
+  end
+
+  describe "#zero?" do
+    it "returns true if measurement quantity is zero" do
+      measurement1 = subject.new(1, :m)
+      measurement2 = subject.new(1, :m)
+      expect((measurement1 - measurement2).zero?).to be_truthy
+    end
+  end
+
+  describe "#positive?" do
+    it "returns true if measurement quantity is positive" do
+      measurement1 = subject.new(1, :m)
+      measurement2 = subject.new(1, :m)
+      expect((measurement1 + measurement2).positive?).to be_truthy
+    end
+  end
+
+  describe "#negative?" do
+    it "returns true if measurement quantity is negative" do
+      measurement1 = subject.new(0, :m)
+      measurement2 = subject.new(1, :m)
+      expect((measurement1 - measurement2).negative?).to be_truthy
+    end
+  end
+
+  describe "#finite?" do
+    it "returns true if measurement quantity is finite" do
+      measurement1 = subject.new(1, :m)
+      measurement2 = subject.new(1, :cm)
+      expect((measurement1 + measurement2).finite?).to be_truthy
+    end
+  end
+
+  describe "#infinite?" do
+    it "returns true if measurement quantity is infinite" do
+      measurement1 = subject.new(1, :m)
+      measurement2 = subject.new(Float::INFINITY, :cm)
+      expect((measurement1 + measurement2).infinite?).to be_truthy
+    end
+  end
+
   describe "#coerce" do
     let(:meter) { subject.new(1, :m) }
 

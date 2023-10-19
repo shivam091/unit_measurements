@@ -22,19 +22,19 @@ to numerous errors.
 
 The `unit_measurements` gem is designed to simplify the handling of units for scientific calculations.
 
-## Advantages
+## Features
 
-1. It provides easy conversion between units.
-2. It is lightweight and easily extensible to include other units and conversions.
-3. It has built in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
-4. It has well organized and very descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
-5. It can convert `complex`, `fractional`, `mixed fractional`, `scientific` numbers, and `ratios`.
+- Easy unit conversion.
+- Lightweight and extensible for adding custom units and conversions.
+- Supports various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+- Well-documented: [Documentation](https://rubydoc.info/gems/unit_measurements).
+- Parses complex, fractional, mixed fractional, scientific numbers, and ratios.
 
 ## Disclaimer
 
-_The unit conversions presented in `unit_measurements` are provided for reference and general informational purposes.
-While we aim to offer accurate conversions, we cannot guarantee their precision in all scenarios.
-Users are advised to cross-verify conversions as needed for their specific use cases._
+_The unit conversions provided here are for reference and general informational
+purposes. While we aim for accuracy, we cannot guarantee precision in all scenarios.
+Users are advised to cross-verify conversions for their specific use cases._
 
 ## Minimum Requirements
 
@@ -127,7 +127,7 @@ UnitMeasurements::Length.parse("2e+2 km to m")
 #=> 200000.0 m
 ```
 You can check supported special characters for exponents
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse complex numbers, source unit, and (or) target unit:**
 
@@ -143,24 +143,16 @@ UnitMeasurements::Length.parse("2+3i km to m")
 ```ruby
 UnitMeasurements::Length.parse("2 ½ km").convert_to("m")
 #=> 2500.0 m
-UnitMeasurements::Length.parse("2/3 km").convert_to("m")
-#=> 666.666666666667 m
 UnitMeasurements::Length.parse("2/3 km to m")
 #=> 666.666666666667 m
-UnitMeasurements::Length.parse("2 1/2 km").convert_to("m")
-#=> 2500.0 m
-UnitMeasurements::Length.parse("2 ½ km to m")
-#=> 2500.0 m
 ```
 
 You can check supported special characters for fractional notations
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse ratios, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.new("1:2", "km").convert_to("m")
-#=> 500.0 m
 UnitMeasurements::Length.parse("1:2 km").convert_to("m")
 #=> 500.0 m
 UnitMeasurements::Length.parse("1:2 km to m")
@@ -173,16 +165,12 @@ If you want to format measurement to certain format, you can use `#format` metho
 If format is not specified, it defaults to `"%.2<value>f %<unit>s"`.
 
 ```ruby
-UnitMeasurements::Length.new(100, "m").to("in").format
-#=> "3937.01 in"
 UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f %<unit>s")
 #=> "3937.0079 in"
-UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f")
-#=> "3937.0079"
 ```
 
 You can check more about formatting along with their examples
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Formatter.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Formatter.html).
 
 **Extract the unit and the quantity from measurement:**
 
@@ -244,8 +232,6 @@ UnitMeasurements::Length.unit_for("m")
 #=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
 UnitMeasurements::Length.unit_for("z")
 #=> nil
-UnitMeasurements::Length.unit_for!("m")
-#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
 UnitMeasurements::Length.unit_for!("z")
 #=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
 ```
@@ -279,7 +265,7 @@ UnitMeasurements::Length.parse("1 km") != UnitMeasurements::Length.parse("1 m")
 ```
 
 You can check supported comparisons along with their examples
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Comparison.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Comparison.html).
 
 ### Arithmetic
 
@@ -296,7 +282,7 @@ UnitMeasurements::Length.new(2, "km") * 2+2i
 ```
 
 You can check supported arithmetic operations along with their examples
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Arithmetic.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Arithmetic.html).
 
 ### Math
 
@@ -308,7 +294,7 @@ UnitMeasurements::Length.new(17.625, "m").round
 ```
 
 You can check supported mathematical functions along with their examples
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Math.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Math.html).
 
 ### Conversions
 
@@ -321,7 +307,7 @@ UnitMeasurements::Length.new(2.25567, "km").to_i
 ```
 
 You can check more about them along with their examples
-[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Conversion.html).
+[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Conversion.html).
 
 ## Units
 
@@ -329,10 +315,10 @@ The **`UnitMeasurements::Unit`** class is used to represent the units for a meas
 
 ### SI prefixed units
 
-There is support for SI prefixed units through the use of `si_unit` method.
-Units declared through it will have automatic support for all decimal SI prefixes.
-This method takes `add_binary_prefixes` parameter which can be set to true, if the
-unit supports binary SI prefixes along with decimal SI prefixes.
+Support for SI prefixed units is provided through the `si_unit` method. Units
+declared this way automatically support all decimal SI prefixes. This method takes
+an optional `add_binary_prefixes` parameter, which can be set to `true` if the
+unit supports binary SI prefixes in addition to decimal SI prefixes.
 
 #### Decimal SI prefixes
 
@@ -383,8 +369,7 @@ There are tons of units that are bundled in `unit_measurements`. You can check t
 
 ### Specifing units
 
-By default, `unit_measurements` ships with all the unit groups and this happens automatically
-when requiring the gem in the following manner.
+By default, `unit_measurements` includes all unit groups automatically when you require the gem using:
 
 ```ruby
 require "unit_measurements"
@@ -393,24 +378,10 @@ require "unit_measurements"
 **You can skip these unit groups and only [build your own unit groups](#building-new-unit-groups) by doing:**
 
 ```ruby
-require "unit_measurements/base"
-```
-
-or simply
-
-```ruby
 gem "unit_measurements", require: "unit_measurements/base"
 ```
 
 **You can also use unit groups in your application as per your need as:**
-
-```ruby
-require "unit_measurements/base"
-
-require "unit_measurements/unit_groups/length"
-```
-
-or
 
 ```ruby
 gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/unit_groups/length"]
@@ -418,11 +389,10 @@ gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/
 
 ### Building new unit groups
 
-This library provides simpler way to build your own unit groups. To build new unit group,
-use `UnitMeasurements.build` method in order to define units within it:
-
-For convenience, you also have ability to group units by the unit system using `system` method
-and set primitive unit for each unit group using `primitive` method.
+This library provides a simpler way to define your own unit groups. Use the
+`UnitMeasurements.build` method to define units within it. You can also group
+units by the unit system using the `system` method and set the primitive unit for
+ each unit group using the `primitive` method.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
@@ -441,7 +411,7 @@ UnitMeasurements::Time = UnitMeasurements.build do
     unit "min", value: "60 s", aliases: ["hour", "hours"]
 
     # You can also specify unit value as an array.
-    unit :h, value: [60, "min"], aliases: ["day", "days"]
+    unit "h", value: [60, "min"], aliases: ["day", "days"]
   end
 end
 ```

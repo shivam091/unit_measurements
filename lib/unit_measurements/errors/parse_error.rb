@@ -16,6 +16,8 @@ module UnitMeasurements
   class ParseError < BaseError
     # The input string that caused the error while parsing.
     #
+    # @return [String] The input string that caused the error while parsing.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :string

@@ -13,6 +13,8 @@ module UnitMeasurements
   class Unit
     # The name of the unit.
     #
+    # @return [String] Name of the unit.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :name
@@ -20,11 +22,16 @@ module UnitMeasurements
     # The conversion value of the unit. It can be a numeric value or a string in
     # the form of a number followed by a unit name (e.g., “10 m”).
     #
+    # @return [String|Numeric|Array<Numeric, String>]
+    #   Conversion value of the unit.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     attr_reader :value
 
     # A set of alternative names for the unit.
+    #
+    # @return [Set<String>] A set of alternative names.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
@@ -32,11 +39,15 @@ module UnitMeasurements
 
     # The system to which the unit belongs (e.g., “metric”, “imperial”).
     #
+    # @return [String] Unit system in which the unit belongs.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 4.0.0
     attr_reader :system
 
     # The unit group to which the unit belongs.
+    #
+    # @return [UnitGroup] Unit group in which the unit belongs.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
@@ -50,14 +61,13 @@ module UnitMeasurements
     # @param [String|Symbol|NilClass] system The system to which the unit belongs.
     # @param [UnitGroup|NilClass] unit_group The unit group to which the unit belongs.
     #
-    # @see UnitGroup
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def initialize(name, value:, aliases:, system:, unit_group: nil)
       @name = name.to_s.freeze
       @value = value
       @aliases = Set.new(aliases.map(&:to_s).sort.map(&:freeze)).freeze
-      @system = system.to_s
+      @system = system.to_s.freeze
       @unit_group = unit_group
     end
 
@@ -71,7 +81,6 @@ module UnitMeasurements
     #
     # @return [Unit] A new unit with specified parameters.
     #
-    # @see UnitGroup
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def with(name: nil, value: nil, aliases: nil, system: nil, unit_group: nil)

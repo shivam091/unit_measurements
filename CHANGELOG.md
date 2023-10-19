@@ -1,3 +1,18 @@
+## [5.1.0](https://github.com/shivam091/unit_measurements/compare/v5.0.0...v5.1.0) - 2023-10-19
+
+### What's new
+
+- Added new methods (`**`, `-@`, `nonzero?`, `zero?`, `positive?`, `negative?`,
+  `finite?`, and `infinite?`) to perform arithmetic operations.
+- Added new alias `scale` for `**` arithmetic method.
+
+### What's updated
+
+- Updated readme and documentation.
+- Updated documentation hosting link to `https://rubydoc.info/gems/unit_measurements`.
+
+----------
+
 ## [5.0.0](https://github.com/shivam091/unit_measurements/compare/v4.12.0...v5.0.0) - 2023-10-18
 
 ### What's new
