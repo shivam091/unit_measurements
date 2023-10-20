@@ -1,3 +1,12 @@
+## [5.1.1](https://github.com/shivam091/unit_measurements/compare/v5.1.0...v5.1.1) - 2023-10-20
+
+### What's updated
+
+- Updated readme and documentation.
+- Updated documentation hosting link to `https://shivam091.github.io/unit_measurements`.
+
+----------
+
 ## [5.1.0](https://github.com/shivam091/unit_measurements/compare/v5.0.0...v5.1.0) - 2023-10-19
 
 ### What's new
