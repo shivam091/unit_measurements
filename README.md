@@ -24,11 +24,11 @@ The `unit_measurements` gem is designed to simplify the handling of units for sc
 
 ## Features
 
-- Easy unit conversion.
-- Lightweight and extensible for adding custom units and conversions.
-- Supports various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
-- Well-documented: [Documentation](https://rubydoc.info/gems/unit_measurements).
-- Parses complex, fractional, mixed fractional, scientific numbers, and ratios.
+1. Provides easy conversion between units.
+2. Lightweight and easily extensible to include other units and conversions.
+3. Built in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+4. Well organized and very descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
+5. Parses strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.
 
 ## Disclaimer
 
@@ -127,7 +127,7 @@ UnitMeasurements::Length.parse("2e+2 km to m")
 #=> 200000.0 m
 ```
 You can check supported special characters for exponents
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse complex numbers, source unit, and (or) target unit:**
 
@@ -148,7 +148,7 @@ UnitMeasurements::Length.parse("2/3 km to m")
 ```
 
 You can check supported special characters for fractional notations
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Normalizer.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
 
 **Parse ratios, source unit, and (or) target unit:**
 
@@ -170,7 +170,7 @@ UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f %<unit>s"
 ```
 
 You can check more about formatting along with their examples
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Formatter.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Formatter.html).
 
 **Extract the unit and the quantity from measurement:**
 
@@ -265,7 +265,7 @@ UnitMeasurements::Length.parse("1 km") != UnitMeasurements::Length.parse("1 m")
 ```
 
 You can check supported comparisons along with their examples
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Comparison.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Comparison.html).
 
 ### Arithmetic
 
@@ -282,7 +282,7 @@ UnitMeasurements::Length.new(2, "km") * 2+2i
 ```
 
 You can check supported arithmetic operations along with their examples
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Arithmetic.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Arithmetic.html).
 
 ### Math
 
@@ -294,7 +294,7 @@ UnitMeasurements::Length.new(17.625, "m").round
 ```
 
 You can check supported mathematical functions along with their examples
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Math.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Math.html).
 
 ### Conversions
 
@@ -307,7 +307,7 @@ UnitMeasurements::Length.new(2.25567, "km").to_i
 ```
 
 You can check more about them along with their examples
-[here](https://rubydoc.info/gems/unit_measurements/UnitMeasurements/Conversion.html).
+[here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Conversion.html).
 
 ## Units
 
