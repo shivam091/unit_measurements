@@ -36,6 +36,8 @@ module UnitMeasurements
     #     system :imperial do
     #       unit "in", value: "25.4 mm", aliases: ['"', "inch", "inches"]
     #     end
+    #
+    #     cache "length.json"
     #   end
     #
     # @param block
@@ -78,6 +80,7 @@ module UnitMeasurements
 end
 
 # The following requires load various components of the unit measurements library.
+require "unit_measurements/cache"
 require "unit_measurements/unit_group_builder"
 require "unit_measurements/unit"
 require "unit_measurements/unit_group"
