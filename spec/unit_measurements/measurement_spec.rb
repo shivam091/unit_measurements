@@ -10,6 +10,8 @@ RSpec.describe UnitMeasurements::Measurement do
 
     unit "m", aliases: ["meter", "meters"]
     unit "cm", value: 0.01, aliases: ["centimeter", "centimeters"]
+
+    cache "test_group.json"
   end
   let(:base_length) { Length.new(1, :m) }
   let(:other_length) { Length.new(100, :cm) }

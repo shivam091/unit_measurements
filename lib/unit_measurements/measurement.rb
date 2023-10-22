@@ -219,9 +219,10 @@ module UnitMeasurements
       extend Forwardable
 
       # Methods delegated from the unit group.
-      def_delegators :unit_group, :primitive, :units, :unit_names, :unit_with_name_and_aliases,
-                     :unit_names_with_aliases, :unit_for, :unit_for!, :defined?,
-                     :unit_or_alias?, :[], :units_for, :units_for!
+      def_delegators :unit_group, :primitive, :units, :cache_file, :unit_names,
+                     :unit_with_name_and_aliases, :unit_names_with_aliases,
+                     :unit_for, :unit_for!, :defined?, :unit_or_alias?, :[],
+                     :units_for, :units_for!
 
       # Parses an input string and returns a +Measurement+ instance depending on
       # the input string. This method first normalizes the +input+ internally,

@@ -36,16 +36,30 @@ module UnitMeasurements
     # @since 1.0.0
     attr_reader :units
 
+    # The name of the cache file.
+    #
+    # @example
+    #   UnitMeasurements::Length.cache_file
+    #   => "length.json"
+    #
+    # @return [String] The name of the cache file.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.2.0
+    attr_reader :cache_file
+
     # Initializes a new +UnitGroup+ instance.
     #
     # @param [String|Symbol, optional] primitive The name of the primitive unit.
     # @param [Array<Unit>] units An array of +Unit+ instances.
+    # @param [String] cache_file The name of the cache file.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
-    def initialize(primitive, units)
+    def initialize(primitive, units, cache_file)
       @units = units.map { |unit| unit.with(unit_group: self) }
       @primitive = unit_for!(primitive) if primitive
+      @cache_file = cache_file
     end
 
     # Returns the unit instance for a given unit name. It returns +nil+ if unit
