@@ -153,15 +153,9 @@ module UnitMeasurements
       else
         unit_from_unit_or_name!(target_unit)
       end
-
       return self if target_unit == unit
 
-      if use_cache && self.class.cached.get(unit.name, target_unit.name)
-        conversion_factor = self.class.cached.get(unit.name, target_unit.name)
-      else
-        conversion_factor = (unit.conversion_factor / target_unit.conversion_factor)
-        self.class.cached.set(unit.name, target_unit.name, conversion_factor) if use_cache
-      end
+      conversion_factor = calculate_conversion_factor(target_unit, use_cache)
 
       self.class.new((quantity * conversion_factor), target_unit)
     end
@@ -445,6 +439,36 @@ module UnitMeasurements
     # @since 1.0.0
     def unit_from_unit_or_name!(value)
       value.is_a?(Unit) ? value : self.class.send(:unit_group).unit_for!(value)
+    end
+
+    # Calculates the conversion factor between the current unit and the target
+    # unit.
+    #
+    # If caching is enabled and a cached factor is available, it will be used.
+    # Otherwise, the conversion factor will be computed and, if caching is
+    # enabled, stored in the cache.
+    #
+    # @param [Unit] target_unit The target unit for conversion.
+    # @param [TrueClass|FalseClass] use_cache
+    #   Indicates whether caching should be used.
+    #
+    # @return [Numeric] The conversion factor.
+    #
+    # @see Unit
+    # @see #convert_to
+    #
+    # @note If caching is enabled, the calculated conversion factor will be stored in the cache.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.2.0
+    def calculate_conversion_factor(target_unit, use_cache)
+      if use_cache && (cached_factor = self.class.cached.get(unit.name, target_unit.name))
+        cached_factor
+      else
+        factor = unit.conversion_factor / target_unit.conversion_factor
+        self.class.cached.set(unit.name, target_unit.name, factor) if use_cache
+        factor
+      end
     end
   end
 end
