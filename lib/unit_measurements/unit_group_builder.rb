@@ -82,7 +82,7 @@ module UnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def build
-      UnitGroup.new(@primitive, @units)
+      UnitGroup.new(@primitive, @units, @cache_file)
     end
 
     # Defines the +unit system+ within the unit group and evaluates the provided
@@ -128,6 +128,19 @@ module UnitMeasurements
       raise PrimitiveUnitAlreadySetError if @primitive
 
       @primitive = primitive
+    end
+
+    # Sets the name of the cache file for the unit group.
+    #
+    # @example
+    #   cache "conversion_cache.json"
+    #
+    # @param [String] cache_file The name of the cache file.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.2.0
+    def cache(cache_file)
+      @cache_file = cache_file
     end
 
     private

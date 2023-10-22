@@ -1,12 +1,12 @@
 # Bundled unit groups and units
 
-As there are lots of units bundled with `unit_measurements`, we recommend you to check below list of
-bundled units before converting your measurements.
+As there are lots of units bundled with `unit_measurements`, we recommend you to
+check below list of bundled units before converting your measurements.
 
 **Notes:**
-1. Unit names suffixed with `*` support all [Decimal SI prefixes](README.md#decimal-si-prefixes).
-2. Unit names suffixed with `**` support all [Decimal SI prefixes](README.md#decimal-si-prefixes)
-and [Binary SI prefixes](README.md#binary-si-prefixes).
+1. Unit names suffixed with `*` support [Decimal SI prefixes](README.md#decimal-si-prefixes).
+2. Unit names suffixed with `**` support [Binary SI prefixes](README.md#binary-si-prefixes)
+in addition to [Decimal SI prefixes](README.md#decimal-si-prefixes).
 3. Primitive unit of the unit group is in _emphasised typeface_.
 
 ## 1. Length/Distance
@@ -125,7 +125,7 @@ These units are defined in `UnitMeasurements::Area`.
 | 12 | fur² | fur^2, sq fur, square furlong, square furlongs |
 | 13 | rod² | rod^2, sq rod, square rod, square rods |
 
-## 9. Volume
+## 9. Volume & Capacity
 
 These units are defined in `UnitMeasurements::Volume`.
 
@@ -328,7 +328,7 @@ These units are defined in `UnitMeasurements::ElectricalElastance`.
 | _1_ | _D*_ | _F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads_ |
 | 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
 
-## 24. Electrical resistance
+## 24. Electrical resistance/Impedance
 
 These units are defined in `UnitMeasurements::ElectricalResistance`.
 

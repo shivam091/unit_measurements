@@ -120,6 +120,11 @@ module UnitMeasurements
     # Converts the measurement to a +target_unit+ and returns new instance of the
     # measurement.
     #
+    # When +use_cache+ value is true, conversion factor between units are checked
+    # in cache file of the unit group. If cached conversion factor is present in
+    # the cache file, it is used for conversion otherwise conversion factor is
+    # stored in the cache before converting the measurement to the +target_unit+.
+    #
     # @example
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
     #   => 100.0 cm
@@ -127,9 +132,14 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
     #   => 0.01 m
     #
+    #   UnitMeasurements::Length.new(1, "m").convert_to("cm", use_cache: true)
+    #   => 100.0 cm
+    #
     # @param [String|Symbol] target_unit
     #   The target unit for conversion. Specifing +primitive+ will convert the
     #   measurement to a primitive unit of the unit group.
+    # @param [TrueClass|FalseClass] use_cache
+    #   Indicates whether to use cached conversion factors.
     #
     # @return [Measurement]
     #   A new +Measurement+ instance with the converted +quantity+ and
@@ -137,16 +147,15 @@ module UnitMeasurements
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
-    def convert_to(target_unit)
+    def convert_to(target_unit, use_cache: false)
       target_unit = if target_unit.to_s.eql?("primitive")
         self.class.unit_group.primitive
       else
         unit_from_unit_or_name!(target_unit)
       end
-
       return self if target_unit == unit
 
-      conversion_factor = (unit.conversion_factor / target_unit.conversion_factor)
+      conversion_factor = calculate_conversion_factor(target_unit, use_cache)
 
       self.class.new((quantity * conversion_factor), target_unit)
     end
@@ -160,7 +169,17 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "m").convert_to!("cm")
     #   => 100.0 cm
     #
-    # @param [String|Symbol] target_unit The target unit for conversion.
+    #   UnitMeasurements::Length.new(1, "cm").convert_to!("primitive")
+    #   => 0.01 m
+    #
+    #   UnitMeasurements::Length.new(1, "m").convert_to!("cm", use_cache: true)
+    #   => 100.0 cm
+    #
+    # @param [String|Symbol] target_unit
+    #   The target unit for conversion. Specifing +primitive+ will convert the
+    #   measurement to a primitive unit of the unit group.
+    # @param [TrueClass|FalseClass] use_cache
+    #   Indicates whether to use cached conversion factors.
     #
     # @return [Measurement]
     #   The current +Measurement+ instance with updated +quantity+ and +unit+.
@@ -168,8 +187,8 @@ module UnitMeasurements
     # @see #convert_to
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
-    def convert_to!(target_unit)
-      measurement = convert_to(target_unit)
+    def convert_to!(target_unit, use_cache: false)
+      measurement = convert_to(target_unit, use_cache: use_cache)
       @quantity, @unit = measurement.quantity, measurement.unit
 
       self
@@ -219,16 +238,20 @@ module UnitMeasurements
       extend Forwardable
 
       # Methods delegated from the unit group.
-      def_delegators :unit_group, :primitive, :units, :unit_names, :unit_with_name_and_aliases,
-                     :unit_names_with_aliases, :unit_for, :unit_for!, :defined?,
-                     :unit_or_alias?, :[], :units_for, :units_for!
+      def_delegators :unit_group, :primitive, :units, :cache_file, :unit_names,
+                     :unit_with_name_and_aliases, :unit_names_with_aliases,
+                     :unit_for, :unit_for!, :defined?, :unit_or_alias?, :[],
+                     :units_for, :units_for!
 
       # Parses an input string and returns a +Measurement+ instance depending on
       # the input string. This method first normalizes the +input+ internally,
       # using the +Normalizer+ before parsing it using the +Parser+.
       #
+      # You can separate *source* and *target* units from each other in +input+
+      # using +to+, +in+, or +as+.
+      #
       # If only the source unit is provided, it returns a new +Measurement+
-      # instance with the quantity in the source unit.If both source and target
+      # instance with the quantity in the source unit. If both source and target
       # units are provided in the input string, it returns a new +Measurement+
       # instance with the quantity converted to the target unit.
       #
@@ -237,7 +260,7 @@ module UnitMeasurements
       #   => 2.0+3.0i km
       #
       # @example Parsing string representing a complex number, source, and target units:
-      #   UnitMeasurements::Length.parse("2+3i km to m")
+      #   UnitMeasurements::Length.parse("2+3i km in m")
       #   => 2000.0+3000.0i m
       #
       # @example Parsing string representing a rational or mixed rational number and source unit:
@@ -260,10 +283,10 @@ module UnitMeasurements
       #   UnitMeasurements::Length.parse("2/3 km to m")
       #   => 666.666666666667 m
       #
-      #   UnitMeasurements::Length.parse("2 ½ km to m")
+      #   UnitMeasurements::Length.parse("2 ½ km in m")
       #   => 2500.0 m
       #
-      #   UnitMeasurements::Length.parse("2 1/2 km to m")
+      #   UnitMeasurements::Length.parse("2 1/2 km as m")
       #   => 2500.0 m
       #
       # @example Parsing string representing a scientific number and source unit:
@@ -281,7 +304,7 @@ module UnitMeasurements
       #   UnitMeasurements::Length.parse("2e+2 km to m")
       #   => 200000.0 m
       #
-      #   UnitMeasurements::Length.parse("2e⁻² km to m")
+      #   UnitMeasurements::Length.parse("2e⁻² km as m")
       #   => 20.0 m
       #
       # @example Parsing string representing a ratio and source unit:
@@ -289,10 +312,12 @@ module UnitMeasurements
       #   => 0.5 km
       #
       # @example Parsing string representing a ratio, source, and target units:
-      #   UnitMeasurements::Length.parse("1:2 km to m")
+      #   UnitMeasurements::Length.parse("1:2 km in m")
       #   => 500.0 m
       #
       # @param [String] input The input string to be parsed.
+      # @param [TrueClass|FalseClass] use_cache
+      #   Indicates whether to use cached conversion factors.
       #
       # @return [Measurement] The +Measurement+ instance.
       #
@@ -303,11 +328,42 @@ module UnitMeasurements
       # @see #convert_to
       # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
       # @since 1.0.0
-      def parse(input)
+      def parse(input, use_cache: false)
         input = Normalizer.normalize(input)
         source, target = input.match(CONVERSION_STRING_REGEXP)&.captures
 
-        target ? _parse(source).convert_to(target) : _parse(source)
+        target ? _parse(source).convert_to(target, use_cache: use_cache) : _parse(source)
+      end
+
+      # Returns the +Cache+ instance for the unit group to store and retrieve
+      # conversion factors.
+      #
+      # @return [Cache] The +Cache+ instance.
+      #
+      # @example
+      #   UnitMeasurements::Length.cached
+      #   => #<UnitMeasurements::Cache:0x00007fe407249750>
+      #
+      # @see Cache
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 5.2.0
+      def cached
+        @cached ||= Cache.new(self)
+      end
+
+      # Clears the cached conversion factors of the unit group.
+      #
+      # @return [void]
+      #
+      # @example
+      #   UnitMeasurements::Length.clear_cache
+      #
+      # @see Cache#clear_cache
+      #
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 5.2.0
+      def clear_cache
+        cached.clear_cache
       end
 
       private
@@ -383,6 +439,36 @@ module UnitMeasurements
     # @since 1.0.0
     def unit_from_unit_or_name!(value)
       value.is_a?(Unit) ? value : self.class.send(:unit_group).unit_for!(value)
+    end
+
+    # Calculates the conversion factor between the current unit and the target
+    # unit.
+    #
+    # If caching is enabled and a cached factor is available, it will be used.
+    # Otherwise, the conversion factor will be computed and, if caching is
+    # enabled, stored in the cache.
+    #
+    # @param [Unit] target_unit The target unit for conversion.
+    # @param [TrueClass|FalseClass] use_cache
+    #   Indicates whether caching should be used.
+    #
+    # @return [Numeric] The conversion factor.
+    #
+    # @see Unit
+    # @see #convert_to
+    #
+    # @note If caching is enabled, the calculated conversion factor will be stored in the cache.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.2.0
+    def calculate_conversion_factor(target_unit, use_cache)
+      if use_cache && (cached_factor = self.class.cached.get(unit.name, target_unit.name))
+        cached_factor
+      else
+        factor = unit.conversion_factor / target_unit.conversion_factor
+        self.class.cached.set(unit.name, target_unit.name, factor) if use_cache
+        factor
+      end
     end
   end
 end

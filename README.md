@@ -27,8 +27,9 @@ The `unit_measurements` gem is designed to simplify the handling of units for sc
 1. Provides easy conversion between units.
 2. Lightweight and easily extensible to include other units and conversions.
 3. Built in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
-4. Well organized and very descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
-5. Parses strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.
+4. Ability to parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.
+5. Well organized and descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
+6. Supports caching of conversion factors between different units of the unit group.
 
 ## Disclaimer
 
@@ -74,6 +75,8 @@ UnitMeasurements::Length.new(1, "km")
 This gem allows you to convert among units of same unit group. You can convert measurement to other unit using `#convert_to`
 (aliased as `#to`, `#in`, and `#as`) or `#convert_to!` (aliased as `#to!`, `#in!`, and `#as!`) methods.
 
+These methods provide `use_cache` parameter which can be used to indicate whether the caching of conversion factors should happen.
+
 You can use `#convert_to` as:
 
 ```ruby
@@ -103,6 +106,8 @@ UnitMeasurements::Length.new(100, "m").convert_to("ft").convert_to!("in")
 ```
 
 **Parse string without having to split out the quantity and source unit:**
+
+This method provides `use_cache` parameter which can be used to indicate whether the caching of conversion factors should happen.
 
 ```ruby
 UnitMeasurements::Length.parse("1 km")
@@ -252,6 +257,12 @@ UnitMeasurements::Length.unit_or_alias?("m")
 #=> true
 UnitMeasurements::Length.unit_or_alias?("metre")
 #=> true
+```
+
+**Clear cached data for the unit group:**
+
+```ruby
+UnitMeasurements::Length.clear_cache
 ```
 
 ### Comparisons
@@ -413,6 +424,9 @@ UnitMeasurements::Time = UnitMeasurements.build do
     # You can also specify unit value as an array.
     unit "h", value: [60, "min"], aliases: ["day", "days"]
   end
+
+  # Sets the name of the cache file (optional).
+  cache "time_cache.json"
 end
 ```
 
