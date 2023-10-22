@@ -3,7 +3,26 @@
 # -*- warn_indent: true -*-
 
 RSpec.describe UnitMeasurements do
-  it "has a valid version number" do
-    expect(UnitMeasurements::VERSION).to eq("5.2.0")
+  describe ".configuration" do
+    it "returns a Configuration instance" do
+      expect(described_class.configuration).to be_an_instance_of(UnitMeasurements::Configuration)
+    end
+  end
+
+  describe ".configure" do
+    it "yields the configuration block" do
+      expect { |block| described_class.configure(&block) }.to yield_with_args(described_class.configuration)
+    end
+  end
+
+  describe ".reset" do
+    it "resets the configuration to a new instance of Configuration" do
+      custom_config = double("Custom Configuration")
+      described_class.configuration = custom_config
+      described_class.reset
+
+      expect(described_class.configuration).not_to eq(custom_config)
+      expect(described_class.configuration).to be_an_instance_of(UnitMeasurements::Configuration)
+    end
   end
 end

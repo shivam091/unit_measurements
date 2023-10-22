@@ -7,6 +7,13 @@ require "unit_measurements/version"
 
 module UnitMeasurements
   class << self
+    # Allows setting an instance of +Configuration+ containing values of desired
+    # configurable options.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.3.0
+    attr_writer :configuration
+
     # Creates a new unit group based on the provided +block+ of instructions.
     #
     # The +build+ method allows you to define and create a custom unit group with
@@ -40,10 +47,6 @@ module UnitMeasurements
     #     cache "length.json"
     #   end
     #
-    # @param block
-    #   A block of instructions for defining units and their conversions within
-    #   the unit group.
-    #
     # @yield [builder]
     #   A block that defines the units to be added to the unit group.
     #   The block takes a {UnitGroupBuilder} instance as a parameter.
@@ -76,10 +79,58 @@ module UnitMeasurements
         @unit_group = builder.build
       end
     end
+
+    # Returns an instance of +Configuration+ with the values of desired configurable
+    # options of +*unit_measurements*+. If instance is not present, it initializes
+    # a new instance of {Configuration}.
+    #
+    # @return [Configuration] An instance of +Configuration+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.3.0
+    def configuration
+      @configuration ||= Configuration.new
+    end
+
+    # Reset the configuration to its default state.
+    #
+    # @example
+    #   UnitMeasurements.reset
+    #
+    # @return [Configuration] A new +Configuration+ object.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.3.0
+    def reset
+      @configuration = Configuration.new
+    end
+
+    # Configures options of the +*UnitMeasurements*+ module using a block. It
+    # yields the current +Configuration+ instance for updating default values of
+    # options by new values specified within a block.
+    #
+    # @example
+    #   UnitMeasurements.configure do |config|
+    #     config.use_cache = false
+    #   end
+    #
+    # @yield [configuration] The current +Configuration+ instance.
+    #
+    # @yieldparam [Configuration] configuration
+    #   An instance of +Configuration+ with the new values of options.
+    #
+    # @yieldreturn [Configuration] The updated +Configuration+ instance.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.3.0
+    def configure
+      yield configuration
+    end
   end
 end
 
 # The following requires load various components of the unit measurements library.
+require "unit_measurements/configuration"
 require "unit_measurements/cache"
 require "unit_measurements/unit_group_builder"
 require "unit_measurements/unit"
