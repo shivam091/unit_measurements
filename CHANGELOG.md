@@ -1,3 +1,12 @@
+## [5.2.0](https://github.com/shivam091/unit_measurements/compare/v5.1.1...v5.2.0) - 2023-10-22
+
+### What's new
+
+- Added ability to set name of the cache file for the unit group.
+- Added support for caching conversion factors between units of the unit group.
+
+----------
+
 ## [5.1.1](https://github.com/shivam091/unit_measurements/compare/v5.1.0...v5.1.1) - 2023-10-20
 
 ### What's updated
