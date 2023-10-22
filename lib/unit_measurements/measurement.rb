@@ -120,6 +120,11 @@ module UnitMeasurements
     # Converts the measurement to a +target_unit+ and returns new instance of the
     # measurement.
     #
+    # When +use_cache+ value is true, conversion factor between units are checked
+    # in cache file of the unit group. If cached conversion factor is present in
+    # the cache file, it is used for conversion otherwise conversion factor is
+    # stored in the cache before converting the measurement to the +target_unit+.
+    #
     # @example
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
     #   => 100.0 cm
@@ -248,8 +253,11 @@ module UnitMeasurements
       # the input string. This method first normalizes the +input+ internally,
       # using the +Normalizer+ before parsing it using the +Parser+.
       #
+      # You can separate *source* and *target* units from each other in +input+
+      # using +to+, +in+, or +as+.
+      #
       # If only the source unit is provided, it returns a new +Measurement+
-      # instance with the quantity in the source unit.If both source and target
+      # instance with the quantity in the source unit. If both source and target
       # units are provided in the input string, it returns a new +Measurement+
       # instance with the quantity converted to the target unit.
       #
@@ -258,7 +266,7 @@ module UnitMeasurements
       #   => 2.0+3.0i km
       #
       # @example Parsing string representing a complex number, source, and target units:
-      #   UnitMeasurements::Length.parse("2+3i km to m")
+      #   UnitMeasurements::Length.parse("2+3i km in m")
       #   => 2000.0+3000.0i m
       #
       # @example Parsing string representing a rational or mixed rational number and source unit:
@@ -281,10 +289,10 @@ module UnitMeasurements
       #   UnitMeasurements::Length.parse("2/3 km to m")
       #   => 666.666666666667 m
       #
-      #   UnitMeasurements::Length.parse("2 ½ km to m")
+      #   UnitMeasurements::Length.parse("2 ½ km in m")
       #   => 2500.0 m
       #
-      #   UnitMeasurements::Length.parse("2 1/2 km to m")
+      #   UnitMeasurements::Length.parse("2 1/2 km as m")
       #   => 2500.0 m
       #
       # @example Parsing string representing a scientific number and source unit:
@@ -302,7 +310,7 @@ module UnitMeasurements
       #   UnitMeasurements::Length.parse("2e+2 km to m")
       #   => 200000.0 m
       #
-      #   UnitMeasurements::Length.parse("2e⁻² km to m")
+      #   UnitMeasurements::Length.parse("2e⁻² km as m")
       #   => 20.0 m
       #
       # @example Parsing string representing a ratio and source unit:
@@ -310,7 +318,7 @@ module UnitMeasurements
       #   => 0.5 km
       #
       # @example Parsing string representing a ratio, source, and target units:
-      #   UnitMeasurements::Length.parse("1:2 km to m")
+      #   UnitMeasurements::Length.parse("1:2 km in m")
       #   => 500.0 m
       #
       # @param [String] input The input string to be parsed.
