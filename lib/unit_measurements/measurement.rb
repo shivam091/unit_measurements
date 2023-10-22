@@ -462,6 +462,8 @@ module UnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 5.2.0
     def calculate_conversion_factor(target_unit, use_cache)
+      use_cache = (UnitMeasurements.configuration.use_cache || use_cache)
+
       if use_cache && (cached_factor = self.class.cached.get(unit.name, target_unit.name))
         cached_factor
       else
