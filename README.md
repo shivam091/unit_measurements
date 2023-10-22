@@ -24,12 +24,13 @@ The `unit_measurements` gem is designed to simplify the handling of units for sc
 
 ## Features
 
-1. Provides easy conversion between units.
-2. Lightweight and easily extensible to include other units and conversions.
-3. Built in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+1. Simplifies the conversion of measurements between compatible units.
+2. Easily add new units and conversions to suit specific needs.
+3. Built-in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
 4. Ability to parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.
-5. Well organized and descriptive documentation published [here](https://shivam091.github.io/unit_measurements).
-6. Supports caching of conversion factors between different units of the unit group.
+5. Well-organized and descriptive [documentation](https://shivam091.github.io/unit_measurements).
+6. Ability to cache conversion factors for improved performance.
+7. Fine-tune behavior using configurable options.
 
 ## Disclaimer
 
@@ -56,6 +57,23 @@ And then execute:
 Or otherwise simply install it yourself as:
 
 `$ gem install unit_measurements`
+
+## Configuration
+
+`unit_measurements` is designed to work out of the box, but you can customize its behavior by placing
+the configuration block in an initializer file before requiring the library files:
+
+```ruby
+UnitMeasurements.configure do |config|
+  config.use_cache = false
+end
+```
+
+The current available configurable options are:
+
+| Option | Default value | Description |
+| ------ | ------------- | ----------- |
+| **use_cache** | false | Set to `true` to enable caching during conversions. |
 
 ## Usage
 

@@ -87,11 +87,11 @@ RSpec.describe UnitMeasurements::Measurement do
       expect(converted_length.unit).to eq(m)
     end
 
-    it 'fetches conversion factor from cache when use_cache is true' do
+    it "fetches conversion factor from cache when use_cache is true" do
       cache.clear_cache
       cache.set("m", "cm", 0.00001)
 
-      converted_length = base_length.convert_to('cm', use_cache: true)
+      converted_length = base_length.convert_to("cm", use_cache: true)
 
       expect(converted_length.quantity).to eq(1e-5)
     end
