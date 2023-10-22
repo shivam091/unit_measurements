@@ -1941,12 +1941,16 @@ UnitMeasurements::Length.parse(&quot;2e⁻² km as m&quot;)
 469
 470
 471
-472</pre>
+472
+473
+474</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 464</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_conversion_factor'>calculate_conversion_factor</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='comma'>,</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_use_cache'>use_cache</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configuration'><span class='object_link'><a href="../UnitMeasurements.html#configuration-class_method" title="UnitMeasurements.configuration (method)">configuration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_use_cache'><span class='object_link'><a href="Configuration.html#use_cache-instance_method" title="UnitMeasurements::Configuration#use_cache (method)">use_cache</a></span></span> <span class='op'>||</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
+
   <span class='kw'>if</span> <span class='id identifier rubyid_use_cache'>use_cache</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_cached_factor'>cached_factor</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_cached'>cached</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_target_unit'>target_unit</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_cached_factor'>cached_factor</span>
   <span class='kw'>else</span>
@@ -2744,7 +2748,7 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
 </div>
 
       <div id="footer">
-  Generated on Sun Oct 22 09:55:17 2023 by
+  Generated on Sun Oct 22 17:19:50 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
