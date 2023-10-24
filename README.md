@@ -22,15 +22,16 @@ to numerous errors.
 
 The `unit_measurements` gem is designed to simplify the handling of units for scientific calculations.
 
-## Features
-
-1. Simplifies the conversion of measurements between compatible units.
-2. Easily add new units and conversions to suit specific needs.
-3. Built-in support for various [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md).
-4. Ability to parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.
-5. Well-organized and descriptive [documentation](https://shivam091.github.io/unit_measurements).
-6. Ability to cache conversion factors for improved performance.
-7. Fine-tune behavior using configurable options.
+## Key Features
+1. **Simplified Measurement Conversion:** Easily convert measurements between compatible units, reducing the likelihood of errors in scientific calculations.
+2. **Extensible Unit Groups:** Effortlessly build own unit groups with specific units and conversions tailored to your needs.
+3. **Built-in Unit Groups:** Comes bundled with a wide range of standard [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md),
+  covering various units.
+4. **String Parsing Capabilities:** Effortlessly parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios directly
+  saving you the hassle of manually extracting and converting them.
+5. **Comprehensive Documentation:** Well-organized and descriptive [documentation](https://shivam091.github.io/unit_measurements) for quick reference and implementation guidance.
+6. **Configurable Options:** Fine-tune behavior with configurable options, including caching for enhanced performance.
+7. **Error Handling:** Robust error handling ensures stability and reliability during conversions.
 
 ## Disclaimer
 
@@ -418,10 +419,9 @@ gem "unit_measurements", require: ["unit_measurements/base", "unit_measurements/
 
 ### Building new unit groups
 
-This library provides a simpler way to define your own unit groups. Use the
-`UnitMeasurements.build` method to define units within it. You can also group
-units by the unit system using the `system` method and set the primitive unit for
- each unit group using the `primitive` method.
+This library provides a simpler way to define your own unit groups. Use the `UnitMeasurements.build` method to define
+units within it. You can group units by the unit system using the `system` method and set the primitive unit for the
+unit group using the `primitive` method. You can specify cache file name in unit group definition using the `cache` method.
 
 ```ruby
 UnitMeasurements::Time = UnitMeasurements.build do
