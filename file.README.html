@@ -74,21 +74,21 @@
 
 <p>The <code>unit_measurements</code> gem is designed to simplify the handling of units for scientific calculations.</p>
 
-<h2 id="label-Features">Features</h2>
+<h2 id="label-Key+Features">Key Features</h2>
 <ol><li>
-<p>Simplifies the conversion of measurements between compatible units.</p>
+<p><strong>Simplified Measurement Conversion:</strong> Easily convert measurements between compatible units, reducing the likelihood of errors in scientific calculations.</p>
 </li><li>
-<p>Easily add new units and conversions to suit specific needs.</p>
+<p><strong>Extensible Unit Groups:</strong> Effortlessly build own unit groups with specific units and conversions tailored to your needs.</p>
 </li><li>
-<p>Built-in support for various <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit groups</a>.</p>
+<p><strong>Built-in Unit Groups:</strong> Comes bundled with a wide range of standard <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit groups</a>,  covering various units.</p>
 </li><li>
-<p>Ability to parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios.</p>
+<p><strong>String Parsing Capabilities:</strong> Effortlessly parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios directly  saving you the hassle of manually extracting and converting them.</p>
 </li><li>
-<p>Well-organized and descriptive <a href="https://shivam091.github.io/unit_measurements">documentation</a>.</p>
+<p><strong>Comprehensive Documentation:</strong> Well-organized and descriptive <a href="https://shivam091.github.io/unit_measurements">documentation</a> for quick reference and implementation guidance.</p>
 </li><li>
-<p>Ability to cache conversion factors for improved performance.</p>
+<p><strong>Configurable Options:</strong> Fine-tune behavior with configurable options, including caching for enhanced performance.</p>
 </li><li>
-<p>Fine-tune behavior using configurable options.</p>
+<p><strong>Error Handling:</strong> Robust error handling ensures stability and reliability during conversions.</p>
 </li></ol>
 
 <h2 id="label-Disclaimer">Disclaimer</h2>
@@ -581,7 +581,7 @@
 
 <h3 id="label-Building+new+unit+groups">Building new unit groups</h3>
 
-<p>This library provides a simpler way to define your own unit groups. Use the <code>UnitMeasurements.build</code> method to define units within it. You can also group units by the unit system using the <code>system</code> method and set the primitive unit for  each unit group using the <code>primitive</code> method.</p>
+<p>This library provides a simpler way to define your own unit groups. Use the <code>UnitMeasurements.build</code> method to define units within it. You can group units by the unit system using the <code>system</code> method and set the primitive unit for the unit group using the <code>primitive</code> method. You can specify cache file name in unit group definition using the <code>cache</code> method.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Time</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='period'>.</span><span class='id identifier rubyid_build'><span class='object_link'><a href="UnitMeasurements.html#build-class_method" title="UnitMeasurements.build (method)">build</a></span></span> <span class='kw'>do</span>
   <span class='comment'># Set primitive unit for the unit group (optional).
@@ -637,7 +637,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Fri Oct 27 02:39:02 2023 by
+  Generated on Fri Oct 27 02:42:03 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
