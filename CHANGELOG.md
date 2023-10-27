@@ -1,3 +1,12 @@
+## [5.4.0](https://github.com/shivam091/unit_measurements/compare/v5.3.0...v5.4.0) - 2023-10-27
+
+### What's new
+
+- Added new units `Å`, `lnk`, `lea`, `hh`, `nl`, and `sft` in length.
+- Added new units `N`, `s`, `drt`, and `lbt` in weight.
+
+----------
+
 ## [5.3.0](https://github.com/shivam091/unit_measurements/compare/v5.2.0...v5.3.0) - 2023-10-24
 
 ### What's new

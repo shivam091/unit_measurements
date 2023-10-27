@@ -9,27 +9,33 @@ check below list of bundled units before converting your measurements.
 in addition to [Decimal SI prefixes](README.md#decimal-si-prefixes).
 3. Primitive unit of the unit group is in _emphasised typeface_.
 
-## 1. Length/Distance
+## 1. Length or distance
 
 These units are defined in `UnitMeasurements::Length`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _m*_ | _meter, metre, meters, metres_ |
-| 2 | in | ", inch, inches |
-| 3 | ft | ', foot, feet |
-| 4 | yd | yard, yards |
-| 5 | mi | mile, miles, statute mile, international mile |
-| 6 | ch | chain, chains |
-| 7 | th | thou, thousandth of an inch |
-| 8 | au | astronomical unit, astronomical units |
-| 9 | pc | parsec, parsecs |
-| 10 | ftm | fathom, fathoms |
-| 11 | fur | furlong, furlongs |
-| 12 | nmi | NMI, M, NM, nautical mile, nautical miles |
-| 13 | rod | rods, perch, pole, lug |
+| 2 | Å | angstrom, angstroms, ångström |
+| 3 | h | hh, hand, hands |
+| 4 | in | ", inch, inches |
+| 5 | ft | ', foot, feet |
+| 6 | yd | yard, yards |
+| 7 | mi | mile, miles, statute mile, international mile |
+| 8 | ch | chain, chains |
+| 9 | th | thou, thousandth of an inch, mil, mils |
+| 10 | au | astronomical unit, astronomical units |
+| 11 | pc | parsec, parsecs |
+| 12 | nl | NL, nleague, nleagues, nautical league, nautical leagues |
+| 13 | ftm | fm, fathom, fathoms |
+| 14 | fur | furlong, furlongs |
+| 15 | nmi | NMI, M, NM, nautical mile, nautical miles |
+| 16 | rod | rods, perch, pole, lug |
+| 17 | lnk | l, li, link, links |
+| 18 | lea | league, leagues |
+| 19 | sft | sfoot, sfeet, survey-foot, survey-feet |
 
-## 2. Weight/Mass
+## 2. Weight or mass
 
 These units are defined in `UnitMeasurements::Weight`.
 
@@ -38,16 +44,20 @@ These units are defined in `UnitMeasurements::Weight`.
 | _1_ | _g*_ | _gram, grams, gramme, grammes_ |
 | 2 | q | quintal, quintals |
 | 3 | t | tonne, tonnes, metric tonne, metric tonnes |
-| 4 | ct | carat, carats |
-| 5 | Da | dalton, daltons |
-| 6 | st | stone, stones |
-| 7 | dr | dram, drams |
-| 8 | dwt | pennyweight, pennyweights |
-| 9 | ozt | troy ounce, troy ounces |
-| 10 | slug | slugs |
-| 11 | lb | lbs, lbm, pound-mass, pound, pounds, \# |
-| 12 | oz | ounce, ounces |
-| 13 | gr | grain, grains |
+| 4 | N | newton, newtons |
+| 5 | s | scruple, scruples |
+| 6 | ct | carat, carats |
+| 7 | Da | dalton, daltons |
+| 8 | st | stone, stones |
+| 9 | dr | dram, drams |
+| 10 | lb | lbs, lbm, pound-mass, pound, pounds, \# |
+| 11 | oz | ounce, ounces |
+| 12 | gr | grain, grains |
+| 13 | dwt | pennyweight, pennyweights |
+| 14 | ozt | troy ounce, troy ounces |
+| 15 | lbt | troy pound, troy pounds |
+| 16 | drt | troy dram, troy drams |
+| 17 | slug | slugs |
 
 ## 3. Time
 

@@ -53,7 +53,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.000137043738537252)
+      expect(subject.convert_to("slug").quantity).to eq(0.000137043531698379)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.0196133)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(1.54323583529414)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.514411945098048)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.005358457761438)
     end
   end
 
@@ -105,7 +121,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(13.7043738537252)
+      expect(subject.convert_to("slug").quantity).to eq(13.7043531698379)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(1961.33)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(1.54323583529414e+5)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(51441.1945098048)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(535.8457761438)
     end
   end
 
@@ -157,7 +189,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(137.043738537252)
+      expect(subject.convert_to("slug").quantity).to eq(137.043531698379)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(19613.3)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(1.54323583529414e+6)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(5.14411945098048e+5)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(5358.457761438)
     end
   end
 
@@ -209,7 +257,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(2.74087477074504e-5)
+      expect(subject.convert_to("slug").quantity).to eq(2.74087063396758e-05)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.00392266)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(0.308647167058829)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.10288238901961)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.0010716915522876)
     end
   end
 
@@ -261,7 +325,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(2.27566461720455e-28)
+      expect(subject.convert_to("slug").quantity).to eq(2.27566118256456e-28)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(3.25686480192493e-26)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(2.56260316878787e-24)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(8.54201056262623e-25)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(8.89792766940233e-27)
     end
   end
 
@@ -313,7 +393,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(8.88028487953894e-6)
+      expect(subject.convert_to("slug").quantity).to eq(8.88027147660542e-06)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.001270920461503)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(0.1)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.0333333333333333)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.000347222222222222)
     end
   end
 
@@ -365,7 +461,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.0621619941567726)
+      expect(subject.convert_to("slug").quantity).to eq(0.0621619003362379)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(8.896443230521)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(700)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(233.333333333333)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(2.43055555555556)
     end
   end
 
@@ -417,7 +529,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.00388512463479828)
+      expect(subject.convert_to("slug").quantity).to eq(0.00388511877101487)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.556027701907562)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(43.75)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(14.5833333333333)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.151909722222222)
     end
   end
 
@@ -469,7 +597,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.870267918194816)
+      expect(subject.convert_to("slug").quantity).to eq(0.870266604707331)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(124.550205227294)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(9800)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(3266.66666666667)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(34.0277777777778)
     end
   end
 
@@ -521,7 +665,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.000242820289674893)
+      expect(subject.convert_to("slug").quantity).to eq(0.000242819923188429)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.0347517313692227)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(2.734375)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.911458333333333)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.00949435763888889)
     end
   end
 
@@ -573,7 +733,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.00426253674217869)
+      expect(subject.convert_to("slug").quantity).to eq(0.0042625303087706)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.61004182152144)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(48)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(16)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.166666666666667)
     end
   end
 
@@ -625,7 +801,23 @@ RSpec.describe UnitMeasurements::Weight do
     end
 
     it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.000213126837108934)
+      expect(subject.convert_to("slug").quantity).to eq(0.00021312651543853)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.030502091076072)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(2.4)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.8)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.00833333333333333)
     end
   end
 
@@ -633,51 +825,339 @@ RSpec.describe UnitMeasurements::Weight do
     subject { described_class.new(2, "slug") }
 
     it "converts to g" do
-      expect(subject.convert_to("g").quantity).to eq(29187.76182476)
+      expect(subject.convert_to("g").quantity).to eq(29187.805877651)
     end
 
     it "converts to q" do
-      expect(subject.convert_to("q").quantity).to eq(0.2918776182476)
+      expect(subject.convert_to("q").quantity).to eq(0.29187805877651)
     end
 
     it "converts to t" do
-      expect(subject.convert_to("t").quantity).to eq(0.02918776182476)
+      expect(subject.convert_to("t").quantity).to eq(0.029187805877651)
     end
 
     it "converts to st" do
-      expect(subject.convert_to("st").quantity).to eq(4.59628571428571)
+      expect(subject.convert_to("st").quantity).to eq(4.59629265142857)
     end
 
     it "converts to oz" do
-      expect(subject.convert_to("oz").quantity).to eq(1029.568)
+      expect(subject.convert_to("oz").quantity).to eq(1029.56955392)
     end
 
     it "converts to ct" do
-      expect(subject.convert_to("ct").quantity).to eq(1.459388091238e+5)
+      expect(subject.convert_to("ct").quantity).to eq(1.45939029388255e+5)
     end
 
     it "converts to dr" do
-      expect(subject.convert_to("dr").quantity).to eq(1.6473088e+4)
+      expect(subject.convert_to("dr").quantity).to eq(16473.11286272)
     end
 
     it "converts to Da" do
-      expect(subject.convert_to("Da").quantity).to eq(1.7577282565098e+28)
+      expect(subject.convert_to("Da").quantity).to eq(1.75773090943714e+28)
     end
 
     it "converts to lb" do
-      expect(subject.convert_to("lb").quantity).to eq(64.348)
+      expect(subject.convert_to("lb").quantity).to eq(64.34809712)
     end
 
     it "converts to gr" do
-      expect(subject.convert_to("gr").quantity).to eq(4.50436e+5)
+      expect(subject.convert_to("gr").quantity).to eq(4.5043667984e+5)
     end
 
     it "converts to dwt" do
-      expect(subject.convert_to("dwt").quantity).to eq(18768.1666666667)
+      expect(subject.convert_to("dwt").quantity).to eq(18768.1949933333)
     end
 
     it "converts to ozt" do
-      expect(subject.convert_to("ozt").quantity).to eq(938.408333333333)
+      expect(subject.convert_to("ozt").quantity).to eq(938.409749666667)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(286.234596510066)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(22521.833992)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(7507.27799733333)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(78.2008124722222)
+    end
+  end
+
+  describe "N" do
+    subject { described_class.new(2, "N") }
+
+    it "converts to g" do
+      expect(subject.convert_to("g").quantity).to eq(203.943242595586)
+    end
+
+    it "converts to q" do
+      expect(subject.convert_to("q").quantity).to eq(0.00203943242595586)
+    end
+
+    it "converts to t" do
+      expect(subject.convert_to("t").quantity).to eq(0.000203943242595586)
+    end
+
+    it "converts to st" do
+      expect(subject.convert_to("st").quantity).to eq(0.0321155632999586)
+    end
+
+    it "converts to oz" do
+      expect(subject.convert_to("oz").quantity).to eq(7.19388617919074)
+    end
+
+    it "converts to ct" do
+      expect(subject.convert_to("ct").quantity).to eq(1019.71621297793)
+    end
+
+    it "converts to dr" do
+      expect(subject.convert_to("dr").quantity).to eq(115.102178867052)
+    end
+
+    it "converts to Da" do
+      expect(subject.convert_to("Da").quantity).to eq(1.22817502207517e+26)
+    end
+
+    it "converts to lb" do
+      expect(subject.convert_to("lb").quantity).to eq(0.449617886199421)
+    end
+
+    it "converts to gr" do
+      expect(subject.convert_to("gr").quantity).to eq(3147.32520339595)
+    end
+
+    it "converts to dwt" do
+      expect(subject.convert_to("dwt").quantity).to eq(131.138550141498)
+    end
+
+    it "converts to ozt" do
+      expect(subject.convert_to("ozt").quantity).to eq(6.55692750707489)
+    end
+
+    it "converts to slug" do
+      expect(subject.convert_to("slug").quantity).to eq(0.0139745511156592)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(157.366260169797)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(52.4554200565991)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.546410625589574)
+    end
+  end
+
+  describe "s" do
+    subject { described_class.new(2, "s") }
+
+    it "converts to g" do
+      expect(subject.convert_to("g").quantity).to eq(2.5919564)
+    end
+
+    it "converts to q" do
+      expect(subject.convert_to("q").quantity).to eq(2.5919564e-5)
+    end
+
+    it "converts to t" do
+      expect(subject.convert_to("t").quantity).to eq(2.5919564e-6)
+    end
+
+    it "converts to st" do
+      expect(subject.convert_to("st").quantity).to eq(0.000408163265306122)
+    end
+
+    it "converts to oz" do
+      expect(subject.convert_to("oz").quantity).to eq(0.0914285714285714)
+    end
+
+    it "converts to ct" do
+      expect(subject.convert_to("ct").quantity).to eq(12.959782)
+    end
+
+    it "converts to dr" do
+      expect(subject.convert_to("dr").quantity).to eq(1.46285714285714)
+    end
+
+    it "converts to Da" do
+      expect(subject.convert_to("Da").quantity).to eq(1.56091276586223e+24)
+    end
+
+    it "converts to lb" do
+      expect(subject.convert_to("lb").quantity).to eq(0.00571428571428571)
+    end
+
+    it "converts to gr" do
+      expect(subject.convert_to("gr").quantity).to eq(40)
+    end
+
+    it "converts to dwt" do
+      expect(subject.convert_to("dwt").quantity).to eq(1.66666666666667)
+    end
+
+    it "converts to ozt" do
+      expect(subject.convert_to("ozt").quantity).to eq(0.0833333333333333)
+    end
+
+    it "converts to slug" do
+      expect(subject.convert_to("slug").quantity).to eq(0.000177605429532108)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.02541840923006)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(0.666666666666667)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.00694444444444444)
+    end
+  end
+
+  describe "drt" do
+    subject { described_class.new(2, "drt") }
+
+    it "converts to g" do
+      expect(subject.convert_to("g").quantity).to eq(7.7758692)
+    end
+
+    it "converts to q" do
+      expect(subject.convert_to("q").quantity).to eq(7.7758692e-5)
+    end
+
+    it "converts to t" do
+      expect(subject.convert_to("t").quantity).to eq(7.7758692e-6)
+    end
+
+    it "converts to st" do
+      expect(subject.convert_to("st").quantity).to eq(0.00122448979591837)
+    end
+
+    it "converts to oz" do
+      expect(subject.convert_to("oz").quantity).to eq(0.274285714285714)
+    end
+
+    it "converts to ct" do
+      expect(subject.convert_to("ct").quantity).to eq(38.879346)
+    end
+
+    it "converts to dr" do
+      expect(subject.convert_to("dr").quantity).to eq(4.38857142857143)
+    end
+
+    it "converts to Da" do
+      expect(subject.convert_to("Da").quantity).to eq(4.6827382975867e+24)
+    end
+
+    it "converts to lb" do
+      expect(subject.convert_to("lb").quantity).to eq(0.0171428571428571)
+    end
+
+    it "converts to gr" do
+      expect(subject.convert_to("gr").quantity).to eq(120)
+    end
+
+    it "converts to dwt" do
+      expect(subject.convert_to("dwt").quantity).to eq(5)
+    end
+
+    it "converts to ozt" do
+      expect(subject.convert_to("ozt").quantity).to eq(0.25)
+    end
+
+    it "converts to slug" do
+      expect(subject.convert_to("slug").quantity).to eq(0.000532816288596325)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.07625522769018)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(6)
+    end
+
+    it "converts to lbt" do
+      expect(subject.convert_to("lbt").quantity).to eq(0.0208333333333333)
+    end
+  end
+
+  describe "lbt" do
+    subject { described_class.new(2, "lbt") }
+
+    it "converts to g" do
+      expect(subject.convert_to("g").quantity).to eq(746.4834432)
+    end
+
+    it "converts to q" do
+      expect(subject.convert_to("q").quantity).to eq(0.007464834432)
+    end
+
+    it "converts to t" do
+      expect(subject.convert_to("t").quantity).to eq(0.0007464834432)
+    end
+
+    it "converts to st" do
+      expect(subject.convert_to("st").quantity).to eq(0.117551020408163)
+    end
+
+    it "converts to oz" do
+      expect(subject.convert_to("oz").quantity).to eq(26.3314285714286)
+    end
+
+    it "converts to ct" do
+      expect(subject.convert_to("ct").quantity).to eq(3732.417216)
+    end
+
+    it "converts to dr" do
+      expect(subject.convert_to("dr").quantity).to eq(421.302857142857)
+    end
+
+    it "converts to Da" do
+      expect(subject.convert_to("Da").quantity).to eq(4.49542876568323e+26)
+    end
+
+    it "converts to lb" do
+      expect(subject.convert_to("lb").quantity).to eq(1.64571428571429)
+    end
+
+    it "converts to gr" do
+      expect(subject.convert_to("gr").quantity).to eq(11520)
+    end
+
+    it "converts to dwt" do
+      expect(subject.convert_to("dwt").quantity).to eq(480)
+    end
+
+    it "converts to ozt" do
+      expect(subject.convert_to("ozt").quantity).to eq(24)
+    end
+
+    it "converts to slug" do
+      expect(subject.convert_to("slug").quantity).to eq(0.0511503637052472)
+    end
+
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(7.32050185825728)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(576)
+    end
+
+    it "converts to drt" do
+      expect(subject.convert_to("drt").quantity).to eq(192)
     end
   end
 end
