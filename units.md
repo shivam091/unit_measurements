@@ -59,7 +59,7 @@ These units are defined in `UnitMeasurements::Weight`.
 | 16 | drt | troy dram, troy drams |
 | 17 | slug | slugs |
 
-## 3. Time
+## 3. Time or duration
 
 These units are defined in `UnitMeasurements::Time`.
 
@@ -211,7 +211,7 @@ These units are defined in `UnitMeasurements::PlaneAngle`.
 | 8 | arcmin | ′, amin, arcminute, arcminutes |
 | 9 | arcsec | ″, asec, arcsecond, arcseconds |
 
-## 14. Solid angle
+## 14. Solid angle or 3D angle
 
 These units are defined in `UnitMeasurements::SolidAngle`.
 
@@ -237,7 +237,7 @@ These units are defined in `UnitMeasurements::Force`.
 | 6 | lbf | pound-force |
 | 7 | pdl | poundal, poundals |
 
-## 16. Velocity
+## 16. Velocity or speed
 
 These units are defined in `UnitMeasurements::Velocity`.
 
@@ -247,12 +247,12 @@ These units are defined in `UnitMeasurements::Velocity`.
 | 2 | m/min | m·min⁻¹, meter per minute, meters per minute, metre per minute, metres per minute |
 | 3 | m/h | m·h⁻¹, meter per hour, meters per hour, metre per hour, metres per hour |
 | 4 | Kn | kt, knot, knots |
-| 5 | in/s | in·s⁻¹, inch per second, inches per second |
-| 6 | in/min | in·min⁻¹, inch per minute, inches per minute |
-| 7 | in/h | in·h⁻¹, inch per hour, inches per hour |
-| 8 | ft/s | ft·s⁻¹, foot per second, feet per second |
-| 9 | ft/min | ft·min⁻¹, foot per minute, feet per minute |
-| 10 | ft/h | ft·h⁻¹, foot per hour, feet per hour |
+| 5 | in/s | in·s⁻¹, ips, inch per second, inches per second |
+| 6 | in/min | in·min⁻¹, ipm, inch per minute, inches per minute |
+| 7 | in/h | in·h⁻¹, iph, inch per hour, inches per hour |
+| 8 | ft/s | ft·s⁻¹, fps, foot per second, feet per second |
+| 9 | ft/min | ft·min⁻¹, fpm, foot per minute, feet per minute |
+| 10 | ft/h | ft·h⁻¹, fps, foot per hour, feet per hour |
 
 ## 17. Acceleration
 
@@ -261,11 +261,11 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _m/s²_ | _m/s^2, m·s⁻², meter per second squared, meters per second squared, metre per second squared, metres per second squared_ |
-| 2 | in/s² | in/s^2, in·s⁻², inch per second squared, inches per second squared |
-| 3 | ft/s² | ft/s^2, ft·s⁻², foot per second squared, feet per second squared |
+| 2 | in/s² | in/s^2, in·s⁻², ips², inch per second squared, inches per second squared |
+| 3 | ft/s² | ft/s^2, ft·s⁻², fps², foot per second squared, feet per second squared |
 | 4 | Kn/s | knot per second, knots per second |
 
-## 18. Angular velocity
+## 18. Angular velocity or rotational speed
 
 These units are defined in `UnitMeasurements::AngularVelocity`.
 
@@ -294,7 +294,7 @@ These units are defined in `UnitMeasurements::AngularAcceleration`.
 | 2 | deg/s² | deg/s^2, °/s², deg·s⁻², degree per second squared, degrees per second squared |
 | 3 | gon/s² | gon/s^2, ᵍ/s², gon·s⁻², gradian per second squared, gradians per second squared |
 
-## 20. Electric potential
+## 20. Electric potential or electromotive force
 
 These units are defined in `UnitMeasurements::ElectricPotential`.
 
@@ -338,7 +338,7 @@ These units are defined in `UnitMeasurements::ElectricalElastance`.
 | _1_ | _D*_ | _F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads_ |
 | 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
 
-## 24. Electrical resistance/Impedance
+## 24. Electrical resistance or impedance
 
 These units are defined in `UnitMeasurements::ElectricalResistance`.
 
@@ -429,7 +429,7 @@ These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
 | 2 | statC·cm² | statC*m^2, statcoulomb square meter, statcoulomb square metre |
 | 3 | B | buckingham, buckinghams |
 
-## 33. Pressure
+## 33. Pressure or mechanical stress
 
 These units are defined in `UnitMeasurements::Pressure`.
 
@@ -438,12 +438,12 @@ These units are defined in `UnitMeasurements::Pressure`.
 | _1_ | _Pa*_ | _pascal, pascals_ |
 | 2 | bar | bars |
 | 3 | Ba | barye, baryes |
-| 4 | pz | pièze |
+| 4 | pz | pieze, pièze |
 | 5 | at | technical atmosphere, technical atmospheres |
 | 6 | atm | atmosphere, atmospheres |
 | 7 | Torr | torr |
 
-## 34. Torque
+## 34. Torque or moment of force
 
 These units are defined in `UnitMeasurements::Torque`.
 
@@ -501,7 +501,7 @@ These units are defined in `UnitMeasurements::Frequency`.
 | 3 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
 | 4 | rev/s | rps, rev·s⁻¹, revolution per second, revolutions per second |
 
-## 39. Power
+## 39. Power or heat flow rate
 
 These units are defined in `UnitMeasurements::Power`.
 

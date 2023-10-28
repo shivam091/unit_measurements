@@ -1,3 +1,12 @@
+## [5.4.1](https://github.com/shivam091/unit_measurements/compare/v5.4.0...v5.4.1) - 2023-10-28
+
+### What's updated
+
+- Updated unit systems and aliases of unit groups.
+- Added alternative names for unit groups in unit reference file.
+
+----------
+
 ## [5.4.0](https://github.com/shivam091/unit_measurements/compare/v5.3.0...v5.4.0) - 2023-10-27
 
 ### What's new
