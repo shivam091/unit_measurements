@@ -1,3 +1,17 @@
+## [5.5.0](https://github.com/shivam091/unit_measurements/compare/v5.4.1...v5.5.0) - 2023-10-29
+
+### What's new
+
+- Added new units `ipm/s`, `iph/s`, `mi/s²`, `mpm/s`, `mph/s`, `fpm/s`, `fph/s`, `Gal` in acceleration.
+- Added new units `mi/s`, `mi/min`, `mi/h`, and `fur/ftn` in velocity.
+- Added new units `lnk²`, `ac`, `ft²`, `mi²`, `ch²`, `bd`, and `ro` in area.
+
+### What's updated
+
+- Changed unit name `rod²` to `rd²` along with its aliases.
+
+----------
+
 ## [5.4.1](https://github.com/shivam091/unit_measurements/compare/v5.4.0...v5.4.1) - 2023-10-28
 
 ### What's updated

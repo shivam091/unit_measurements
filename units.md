@@ -3,11 +3,13 @@
 As there are lots of units bundled with `unit_measurements`, we recommend you to
 check below list of bundled units before converting your measurements.
 
-**Notes:**
-1. Unit names suffixed with `*` support [Decimal SI prefixes](README.md#decimal-si-prefixes).
-2. Unit names suffixed with `**` support [Binary SI prefixes](README.md#binary-si-prefixes)
-in addition to [Decimal SI prefixes](README.md#decimal-si-prefixes).
-3. Primitive unit of the unit group is in _emphasised typeface_.
+**Legend**
+
+| Indicator | Definition |
+|:--|:--|
+| * | supports [decimal SI prefixes](README.md#decimal-si-prefixes) |
+| ** | supports [binary SI prefixes](README.md#binary-si-prefixes) in addition to [decimal SI prefixes](README.md#decimal-si-prefixes) |
+| _Italic_ | Primitive unit of the unit group |
 
 ## 1. Length or distance
 
@@ -122,20 +124,27 @@ These units are defined in `UnitMeasurements::Area`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _m²_ | _m^2, sq m, square meter, square meters, square metre, square metres_ |
-| 2 | km² | km^2, sq km, square kilometer, square kilometers, square kilometre, square kilometres |
-| 3 | a | are, ares |
-| 4 | b | barn, barns |
-| 5 | ha | hectare, hectares |
-| 6 | ac | acre, acres |
-| 7 | in² | in^2, sq in, square inch, square inches |
-| 8 | ft² | ft^2, sq ft, square foot, square feet |
-| 9 | yd² | yd^2, sq yd, square yard, square yards |
-| 10 | mi² | mi^2, sq mi, square mile, square miles |
-| 11 | ch² | ch^2, sq ch, square chain, square chains |
-| 12 | fur² | fur^2, sq fur, square furlong, square furlongs |
-| 13 | rod² | rod^2, sq rod, square rod, square rods |
+| 2 | a | are, ares |
+| 3 | b | barn, barns |
+| 4 | ha | hectare, hectares |
+| 5 | ac | acre, acres |
+| 6 | bd | board, boards |
+| 7 | ro | rood |
+| 8 | km² | km^2, sq km, square kilometer, square kilometers, square kilometre, square kilometres |
+| 9 | in² | in^2, sq in, square inch, square inches |
+| 10 | ft² | ft^2, sq ft, square foot, square feet |
+| 11 | yd² | yd^2, sq yd, square yard, square yards |
+| 12 | mi² | mi^2, sq mi, square mile, square miles |
+| 13 | ch² | ch^2, sq ch, square chain, square chains |
+| 14 | fur² | fur^2, sq fur, square furlong, square furlongs |
+| 15 | rd² | rd^2, sq rd, square rod, square rods |
+| 16 | lnk² | link^2, sq lnk, square link, square links |
+| 17 | ac (US) | acre (US), acres (US) |
+| 18 | ft² (US) | ft^2 (US), sq ft (US), square foot (US), square feet (US) |
+| 19 | mi² (US) | mi^2 (US), sq mi (US), square mile (US), square miles (US) |
+| 20 | ch² (US) | ch^2 (US), sq ch (US), square chain (US), square chains (US) |
 
-## 9. Volume & Capacity
+## 9. Volume & capacity
 
 These units are defined in `UnitMeasurements::Volume`.
 
@@ -243,16 +252,20 @@ These units are defined in `UnitMeasurements::Velocity`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _m/s_ | _m·s⁻¹, meter per second, meters per second, metre per second, metres per second_ |
-| 2 | m/min | m·min⁻¹, meter per minute, meters per minute, metre per minute, metres per minute |
-| 3 | m/h | m·h⁻¹, meter per hour, meters per hour, metre per hour, metres per hour |
-| 4 | Kn | kt, knot, knots |
+| 1 | Kn | kt, knot, knots |
+| _2_ | _m/s_ | _m·s⁻¹, meter per second, meters per second, metre per second, metres per second_ |
+| 3 | m/min | m·min⁻¹, meter per minute, meters per minute, metre per minute, metres per minute |
+| 4 | m/h | m·h⁻¹, meter per hour, meters per hour, metre per hour, metres per hour |
 | 5 | in/s | in·s⁻¹, ips, inch per second, inches per second |
 | 6 | in/min | in·min⁻¹, ipm, inch per minute, inches per minute |
 | 7 | in/h | in·h⁻¹, iph, inch per hour, inches per hour |
 | 8 | ft/s | ft·s⁻¹, fps, foot per second, feet per second |
 | 9 | ft/min | ft·min⁻¹, fpm, foot per minute, feet per minute |
-| 10 | ft/h | ft·h⁻¹, fps, foot per hour, feet per hour |
+| 10 | ft/h | ft·h⁻¹, fph, foot per hour, feet per hour |
+| 11 | mi/s | mi·s⁻¹, mps, mile per second, miles per second |
+| 12 | mi/min | mi·min⁻¹, mpm, mile per minute, miles per minute |
+| 13 | mi/h | mi·h⁻¹, mph, mile per hour, miles per hour |
+| 14 | fur/ftn | fur·ftn⁻¹, furlong per fortnight, furlongs per fortnight |
 
 ## 17. Acceleration
 
@@ -260,10 +273,18 @@ These units are defined in `UnitMeasurements::Acceleration`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _m/s²_ | _m/s^2, m·s⁻², meter per second squared, meters per second squared, metre per second squared, metres per second squared_ |
-| 2 | in/s² | in/s^2, in·s⁻², ips², inch per second squared, inches per second squared |
-| 3 | ft/s² | ft/s^2, ft·s⁻², fps², foot per second squared, feet per second squared |
-| 4 | Kn/s | knot per second, knots per second |
+| 1 | Gal | gal, galileo |
+| _2_ | _m/s²_ | _m/s^2, m·s⁻², meter per second squared, meters per second squared, metre per second squared, metres per second squared_ |
+| 3 | in/s² | in/s^2, in·s⁻², ips², inch per second squared, inches per second squared |
+| 4 | ipm/s | in/(min⋅s), inch per minute per second, inches per minute per second |
+| 5 | iph/s | in/(h⋅s), inch per hour per second, inches per hour per second |
+| 5 | ft/s² | ft/s^2, ft·s⁻², fps², foot per second squared, feet per second squared |
+| 6 | fpm/s | ft/(min⋅s), foot per minute per second, feet per minute per second |
+| 7 | fph/s | ft/(h⋅s), foot per hour per second, feet per hour per second |
+| 8 | mi/s² | mi/s^2, mi·s⁻², mps², mile per second squared, miles per second squared |
+| 9 | mpm/s | mi/(min⋅s), mile per minute per second, miles per minute per second |
+| 10 | mph/s | mi/(h⋅s), mile per hour per second, miles per hour per second |
+| 11 | Kn/s | knot per second, knots per second |
 
 ## 18. Angular velocity or rotational speed
 
