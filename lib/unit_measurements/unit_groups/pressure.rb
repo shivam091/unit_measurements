@@ -16,10 +16,13 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
   end
 
   system :metre_tonne_second do
-    unit "pz", value: "1 kPa", aliases: ["pièze"]
+    unit "pz", value: "1 kPa", aliases: ["pieze", "pièze"]
   end
 
-  unit "at", value: "98066.5 Pa", aliases: ["technical atmosphere", "technical atmospheres"]
+  system :gravitational_metric do
+    unit "at", value: "98066.5 Pa", aliases: ["technical atmosphere", "technical atmospheres"]
+  end
+
   unit "atm", value: "101325 Pa", aliases: ["atmosphere", "atmospheres"]
   unit "Torr", value: [Rational(1, 760), "atm"], aliases: ["torr"]
 end
