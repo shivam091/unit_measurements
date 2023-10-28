@@ -20,7 +20,7 @@ UnitMeasurements::Velocity = UnitMeasurements.build do
   system :foot_pound_second do
     unit "ft/s", value: "12 in/s", aliases: ["ft·s⁻¹", "fps", "foot per second", "feet per second"]
     unit "ft/min", value: "1/60 ft/s", aliases: ["ft·min⁻¹", "fpm", "foot per minute", "feet per minute"]
-    unit "ft/h", value: "1/60 ft/min", aliases: ["ft·h⁻¹", "fps", "foot per hour", "feet per hour"]
+    unit "ft/h", value: "1/60 ft/min", aliases: ["ft·h⁻¹", "fph", "foot per hour", "feet per hour"]
   end
 
   system :meteorology_aviation_maritime do
