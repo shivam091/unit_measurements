@@ -8,11 +8,11 @@ UnitMeasurements::Time = UnitMeasurements.build do
   system :metric do
     si_unit "s", aliases: ["sec", "second", "seconds"]
 
+    unit "h", value: "60 min", aliases: ["hr", "hour", "hours"]
+    unit "d", value: "24 h", aliases: ["day", "days"]
     unit "min", value: "60 s", aliases: ["minute", "minutes"]
   end
 
-  unit "h", value: "60 min", aliases: ["hr", "hour", "hours"]
-  unit "d", value: "24 h", aliases: ["day", "days"]
   unit "wk", value: "7 d", aliases: ["week", "weeks"]
   unit "mo", value: "30.4167 d", aliases: ["month", "months"]
   unit "yr", value: "365 d", aliases: ["y", "year", "years"]

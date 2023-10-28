@@ -7,7 +7,7 @@ UnitMeasurements::SoundLevel = UnitMeasurements.build do
 
   system :metric do
     si_unit "B", aliases: ["bel", "bels"]
-  end
 
-  unit "Np", value: [(20 / Math.log(10)), "dB"], aliases: ["neper", "nepers"] # (20 / ln(10)) dB
+    unit "Np", value: [(20 / Math.log(10)), "dB"], aliases: ["neper", "nepers"] # (20 / ln(10)) dB
+  end
 end
