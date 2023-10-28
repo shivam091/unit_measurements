@@ -160,15 +160,28 @@ These units are defined in `UnitMeasurements::Volume`.
 | 8 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
 | 9 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
 | 10 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
-| 11 | c | cup, cups |
-| 12 | qt | quart, quarts |
-| 13 | gi | gill, gills |
-| 14 | pt | pint, pints |
-| 15 | gal | gallon, gallons |
-| 16 | bbl | barrel, barrels |
-| 17 | tsp | teaspoon, teaspoons |
-| 18 | tbsp | tbs, tablespoon, tablespoons |
-| 19 | floz | fluid ounce, fluid ounces |
+| 11 | ftm³ | ftm^3, cu ftm, cubic fathom, cubic fathoms |
+| 12 | c | cup, cups |
+| 13 | qt | quart, quarts |
+| 14 | gi | gill, gills |
+| 15 | pt | pint, pints |
+| 16 | pk | peck, pecks |
+| 17 | gt | gtt, drop, drops |
+| 18 | gal | gallon, gallons |
+| 19 | bbl | barrel, barrels |
+| 20 | tsp | teaspoon, teaspoons |
+| 21 | bsh | bu, bushel, bushels |
+| 22 | min | minim, minims |
+| 23 | bkt | bucket, buckets |
+| 24 | hhd | hogshead, hogsheads |
+| 25 | fls | fluid scruple, fluid scruples |
+| 26 | dspn | dsp, dessertspoon, dessertspoons |
+| 27 | fldr | fluid drachm, fluid drachms |
+| 28 | bdft | bf, fbm, board-foot, board-feet |
+| 29 | tbsp | tbs, tablespoon, tablespoons |
+| 30 | floz | fluid ounce, fluid ounces |
+| 31 | ac⋅ft | acre-foot, acre-feet |
+| 32 | ac⋅in | acre-inch, acre-inches |
 
 ## 10. Density
 
@@ -181,6 +194,14 @@ These units are defined in `UnitMeasurements::Density`.
 | 3 | g/l | g·l⁻¹, gram per liter, grams per liter, gramme per litre, grammes per litre |
 | 4 | g/ml | g·ml⁻¹, gram per milliliter, grams per milliliter, gramme per millilitre, grammes per millilitre |
 | 5 | kg/l | kg·l⁻¹, kilogram per liter, kilograms per liter, kilogramme per litre, kilogrammes per litre |
+| 6 | oz/ft³ | oz/ft^3, oz·ft⁻³, ounce per cubic foot, ounces per cubic foot |
+| 7 | oz/in³ | oz/in^3, oz·in⁻³, ounce per cubic inch, ounces per cubic inch |
+| 8 | oz/gal | oz·gal⁻¹, ounce per gallon, ounces per gallon |
+| 9 | lb/ft³ | lb/ft^3, lb·ft⁻³, pound per cubic foot, pounds per cubic foot |
+| 10 | lb/in³ | lb/in^3, lb·in⁻³, pound per cubic inch, pounds per cubic inch |
+| 11 | lb/gal | lb·gal⁻¹, pound per gallon, pounds per gallon |
+| 12 | slug/ft³ | slug/ft^3, slug·ft⁻³, slug per cubic foot, slugs per cubic foot |
+| 13 | slug/in³ | slug/in^3, slug·in⁻³, slug per cubic inch, slugs per cubic inch |
 
 ## 11. Quantity
 
