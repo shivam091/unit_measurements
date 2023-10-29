@@ -9,6 +9,7 @@ UnitMeasurements::Volume = UnitMeasurements.build do
     si_unit "l", aliases: ["liter", "litre", "liters", "litres"]
 
     unit "m³", value: "1000 l", aliases: ["m^3", "cu m", "cubic meter", "cubic meters", "cubic metre", "cubic metres"]
+
     unit "mm³", value: "1e-9 m³", aliases: ["mm^3", "cu mm", "cubic millimeter", "cubic millimeters", "cubic millimetre", "cubic millimetres"]
     unit "cm³", value: "1e-6 m³", aliases: ["cm^3", "cu cm", "cubic centimeter", "cubic centimeters", "cubic centimetre", "cubic centimetres"]
     unit "dm³", value: "1 l", aliases: ["dm^3", "cu dm", "cubic decimeter", "cubic decimeters", "cubic decimetre", "cubic decimetres"]
@@ -20,15 +21,35 @@ UnitMeasurements::Volume = UnitMeasurements.build do
     unit "ft³", value: "1728 in³", aliases: ["ft^3", "cu ft", "cubic foot", "cubic feet"]
     unit "yd³", value: "27 ft³", aliases: ["yd^3", "cu yd", "cubic yard", "cubic yards"]
     unit "mi³", value: "5451776000 yd³", aliases: ["mi^3", "cu mi", "cubic mile", "cubic miles"]
+    unit "ftm³", value: "216 ft³", aliases: ["ftm^3", "cu ftm", "cubic fathom", "cubic fathoms"]
 
     unit "c", value: "284.130625e-6 m³", aliases: ["cup", "cups"]
+
     unit "qt", value: "0.0011365225 m³", aliases: ["quart", "quarts"]
+    unit "pk", value: "2 gal", aliases: ["peck", "pecks"]
     unit "gi", value: "1/2 c", aliases: ["gill", "gills"]
     unit "pt", value: "1/8 gal", aliases: ["pint", "pints"]
+    unit "gt", value: "1/288 floz", aliases: ["gtt", "drop", "drops"]
+
     unit "gal", value: "4.54609 dm³", aliases: ["gallon", "gallons"]
+    unit "bsh", value: "8 gal", aliases: ["bu", "bushel", "bushels"]
+    unit "min", value: "1/480 floz", aliases: ["minim", "minims"]
     unit "bbl", value: "36 gal", aliases: ["barrel", "barrels"]
     unit "tsp", value: "1/24 gi", aliases: ["teaspoon", "teaspoons"]
+    unit "bkt", value: "4 gal", aliases: ["bucket", "buckets"]
+    unit "hhd", value: "2 bbl", aliases: ["hogshead", "hogsheads"]
+    unit "fls", value: "1/24 floz", aliases: ["fluid scruple", "fluid scruples"]
+
+    unit "dspn", value: "10 ml", aliases: ["dsp", "dessertspoon", "dessertspoons"]
     unit "tbsp", value: "3 tsp", aliases: ["tbs", "tablespoon", "tablespoons"]
     unit "floz", value: "1/160 gal", aliases: ["fluid ounce", "fluid ounces"]
+    unit "fldr", value: "1/8 floz", aliases: ["fluid drachm", "fluid drachms"]
+  end
+
+  system :us_customary do
+    unit "bdft", value: "144 in³", aliases: ["bf", "fbm", "board-foot", "board-feet"]
+
+    unit "ac⋅ft", value: "43560 ft³", aliases: ["acre-foot", "acre-feet"]
+    unit "ac⋅in", value: "6272640 in³", aliases: ["acre-inch", "acre-inches"]
   end
 end

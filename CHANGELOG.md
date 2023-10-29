@@ -1,3 +1,12 @@
+## [5.6.0](https://github.com/shivam091/unit_measurements/compare/v5.5.0...v5.6.0) - 2023-10-31
+
+### What's new
+
+- Added new units `ftm³`, `pk`, `gt`, `bsh`, `min`, `bkt`, `hhd`, `fls`, `dspn`, `fldr`, `bdft`, `ac⋅ft`, `ac⋅in` in volume.
+- Added new units `oz/ft³`, `oz/in³`, `oz/gal`, `lb/ft³`, `lb/in³`, `lb/gal`, `slug/ft³`, `slug/in³` in density.
+
+----------
+
 ## [5.5.0](https://github.com/shivam091/unit_measurements/compare/v5.4.1...v5.5.0) - 2023-10-29
 
 ### What's new
