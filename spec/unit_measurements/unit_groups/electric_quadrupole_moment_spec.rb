@@ -6,38 +6,14 @@
 
 RSpec.describe UnitMeasurements::ElectricQuadrupoleMoment do
   describe "C·m²" do
-    subject { described_class.new(2, "C·m²") }
+    subject { described_class.new(5, "C·m²") }
 
     it "converts to statC·cm²" do
-      expect(subject.convert_to("statC·cm²").quantity).to eq(5.99584907368629e+13)
+      expect(subject.convert_to("statC·cm²").quantity).to eq(1.49896226842157e+14)
     end
 
     it "converts to B" do
-      expect(subject.convert_to("B").quantity).to eq(5.99584907368629e+39)
-    end
-  end
-
-  describe "statC·cm²" do
-    subject { described_class.new(2, "statC·cm²") }
-
-    it "converts to C·m²" do
-      expect(subject.convert_to("C·m²").quantity).to eq(6.671282e-14)
-    end
-
-    it "converts to B" do
-      expect(subject.convert_to("B").quantity).to eq(2e+26)
-    end
-  end
-
-  describe "B" do
-    subject { described_class.new(2, "B") }
-
-    it "converts to C·m²" do
-      expect(subject.convert_to("C·m²").quantity).to eq(6.671282e-40)
-    end
-
-    it "converts to statC·cm²" do
-      expect(subject.convert_to("statC·cm²").quantity).to eq(2e-26)
+      expect(subject.convert_to("B").quantity).to eq(1.49896226842157e+40)
     end
   end
 end

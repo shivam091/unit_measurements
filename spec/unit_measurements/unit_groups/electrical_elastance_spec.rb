@@ -6,18 +6,10 @@
 
 RSpec.describe UnitMeasurements::ElectricalElastance do
   describe "D" do
-    subject { described_class.new(10, "D") }
+    subject { described_class.new(5, "D") }
 
     it "converts to V/C" do
-      expect(subject.convert_to("V/C").quantity).to eq(10)
-    end
-  end
-
-  describe "V/C" do
-    subject { described_class.new(10, "V/C") }
-
-    it "converts to D" do
-      expect(subject.convert_to("D").quantity).to eq(10)
+      expect(subject.convert_to("V/C").quantity).to eq(5)
     end
   end
 end

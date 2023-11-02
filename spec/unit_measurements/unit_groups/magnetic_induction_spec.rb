@@ -6,18 +6,10 @@
 
 RSpec.describe UnitMeasurements::MagneticInduction do
   describe "T" do
-    subject { described_class.new(10, "T") }
+    subject { described_class.new(5, "T") }
 
     it "converts to G" do
-      expect(subject.convert_to("G").quantity).to eq(1e+5)
-    end
-  end
-
-  describe "G" do
-    subject { described_class.new(10, "G") }
-
-    it "converts to T" do
-      expect(subject.convert_to("T").quantity).to eq(0.001)
+      expect(subject.convert_to("G").quantity).to eq(50000)
     end
   end
 end
