@@ -104,7 +104,7 @@ RSpec.describe UnitMeasurements::UnitGroup do
     context "when invalid unit system name is specified" do
       it "raises error" do
         expect {
-          expect(unit_group.units_for!(:troy))
+          unit_group.units_for!(:troy)
         }.to raise_error(UnitMeasurements::BaseError, "Invalid unit system 'troy' within the unit group.")
       end
     end

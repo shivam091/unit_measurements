@@ -105,6 +105,7 @@ RSpec.describe UnitMeasurements::Measurement do
       expect(measurement.unit).to eq(cm)
 
       measurement.convert_to!(:m)
+
       expect(measurement.quantity).to eq(3)
       expect(measurement.unit).to eq(m)
     end
