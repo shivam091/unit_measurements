@@ -10,7 +10,8 @@ UnitMeasurements::RadiationAbsorbedDose = UnitMeasurements.build do
   end
 
   system :centimetre_gram_second do
-    unit "erg/g", value: "1e-4 Gy", aliases: ["erg per gram", "erg per gramme", "ergs per gram", "ergs per gramme"]
     unit "rad", value: "0.01 Gy", aliases: ["radiation absorbed dose"]
+
+    unit "erg/g", value: "1e-4 Gy", aliases: ["erg per gram", "erg per gramme", "ergs per gram", "ergs per gramme"]
   end
 end

@@ -17,7 +17,7 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "in", value: "25.4 mm", aliases: ['"', "inch", "inches"]
     unit "ft", value: "12 in", aliases: ["'", "foot", "feet"]
     unit "yd", value: "3 ft", aliases: ["yard", "yards"]
-    unit "mi", value: "5280 ft", aliases: ["mile", "miles", "statute mile", "international mile"]
+    unit "mi", value: "5280 ft", aliases: ["mile", "miles", "statute mile", "international mile", "statute miles", "international miles"]
     unit "ch", value: "22 yd", aliases: ["chain", "chains"]
     unit "th", value: "1/1000 in", aliases: ["thou", "thousandth of an inch", "mil", "mils"]
     unit "nl", value: "3 nmi", aliases: ["NL", "nleague", "nleagues", "nautical league", "nautical leagues"]

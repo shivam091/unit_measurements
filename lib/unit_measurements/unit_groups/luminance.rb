@@ -6,13 +6,14 @@ UnitMeasurements::Luminance = UnitMeasurements.build do
   primitive "cd/m²"
 
   system :metric do
-    unit "cd/m²", aliases: ["cd/m^2", "cd·m⁻²", "candela per square metre", "candelas per square metre", "candela per square meter", "candelas per square meter"]
+    unit "cd/m²", aliases: ["cd/m^2", "candela per square metre", "candelas per square metre", "candela per square meter", "candelas per square meter"]
   end
 
   system :us_customary do
-    unit "cd/in²", value: "1550.0031 cd/m²", aliases: ["cd/in^2", "cd·in⁻²", "candela per square inch", "candelas per square inch"]
-    unit "cd/ft²", value: "10.763910417 cd/m²", aliases: ["cd/ft^2", "cd·ft⁻²", "candela per square foot", "candelas per square foot"]
     unit "fL", value: [Rational(1, Math::PI), "cd/ft²"], aliases: ["ft-L", "foot lambert", "foot-lambert"]
+
+    unit "cd/in²", value: "1550.0031 cd/m²", aliases: ["cd/in^2", "candela per square inch", "candelas per square inch"]
+    unit "cd/ft²", value: "10.763910417 cd/m²", aliases: ["cd/ft^2", "candela per square foot", "candelas per square foot"]
   end
 
   system :centimetre_gram_second do

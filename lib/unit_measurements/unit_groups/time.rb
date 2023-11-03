@@ -16,8 +16,10 @@ UnitMeasurements::Time = UnitMeasurements.build do
   unit "wk", value: "7 d", aliases: ["week", "weeks"]
   unit "mo", value: "30.4167 d", aliases: ["month", "months"]
   unit "yr", value: "365 d", aliases: ["y", "year", "years"]
+
   unit "ftn", value: "2 wk", aliases: ["4tnite", "fortnight", "fortnights"]
   unit "qtr", value: "3 mo", aliases: ["quarter", "quarters"]
   unit "dec", value: "10 y", aliases: ["decade", "decades"]
+
   unit "cent", value: "10 dec", aliases: ["century", "centuries"]
 end
