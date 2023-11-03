@@ -24,6 +24,14 @@ RSpec.describe UnitMeasurements::Area do
       expect(subject.convert_to("ac").quantity).to eq(0.00123552690733583)
     end
 
+    it "converts to bd" do
+      expect(subject.convert_to("bd").quantity).to eq(645.834625002583)
+    end
+
+    it "converts to ro" do
+      expect(subject.convert_to("ro").quantity).to eq(0.00494210762934331)
+    end
+
     it "converts to km²" do
       expect(subject.convert_to("km²").quantity).to eq(5e-6)
     end
@@ -48,20 +56,12 @@ RSpec.describe UnitMeasurements::Area do
       expect(subject.convert_to("ch²").quantity).to eq(0.0123552690733583)
     end
 
-    it "converts to fur²" do
-      expect(subject.convert_to("fur²").quantity).to eq(0.000123552690733583)
-    end
-
     it "converts to rd²" do
       expect(subject.convert_to("rd²").quantity).to eq(0.197684305173732)
     end
 
-    it "converts to bd" do
-      expect(subject.convert_to("bd").quantity).to eq(645.834625002583)
-    end
-
-    it "converts to ro" do
-      expect(subject.convert_to("ro").quantity).to eq(0.00494210762934331)
+    it "converts to fur²" do
+      expect(subject.convert_to("fur²").quantity).to eq(0.000123552690733583)
     end
 
     it "converts to lnk²" do

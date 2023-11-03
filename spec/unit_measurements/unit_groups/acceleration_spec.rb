@@ -12,6 +12,10 @@ RSpec.describe UnitMeasurements::Acceleration do
       expect(subject.convert_to("Gal").quantity).to eq(500)
     end
 
+    it "converts to Kn/s" do
+      expect(subject.convert_to("Kn/s").quantity).to eq(9.71922330187674)
+    end
+
     it "converts to in/s²" do
       expect(subject.convert_to("in/s²").quantity).to eq(196.850393700787)
     end
@@ -46,10 +50,6 @@ RSpec.describe UnitMeasurements::Acceleration do
 
     it "converts to mph/s" do
       expect(subject.convert_to("mph/s").quantity).to eq(11.184681460272)
-    end
-
-    it "converts to Kn/s" do
-      expect(subject.convert_to("Kn/s").quantity).to eq(9.71922330187674)
     end
   end
 end

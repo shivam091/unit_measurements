@@ -8,6 +8,14 @@ RSpec.describe UnitMeasurements::Length do
   describe "m" do
     subject { described_class.new(5, "m") }
 
+    it "converts to Å" do
+      expect(subject.convert_to("Å").quantity).to eq(5e+10)
+    end
+
+    it "converts to h" do
+      expect(subject.convert_to("h").quantity).to eq(49.2125984251969)
+    end
+
     it "converts to in" do
       expect(subject.convert_to("in").quantity).to eq(196.850393700787)
     end
@@ -40,6 +48,10 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("pc").quantity).to eq(1.62038964472218e-16)
     end
 
+    it "converts to nl" do
+      expect(subject.convert_to("nl").quantity).to eq(0.000899928005759539)
+    end
+
     it "converts to ftm" do
       expect(subject.convert_to("ftm").quantity).to eq(2.73403324584427)
     end
@@ -56,24 +68,12 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("rod").quantity).to eq(0.994193907579734)
     end
 
-    it "converts to Å" do
-      expect(subject.convert_to("Å").quantity).to eq(5e+10)
-    end
-
     it "converts to lnk" do
       expect(subject.convert_to("lnk").quantity).to eq(24.8548476894934)
     end
 
     it "converts to lea" do
       expect(subject.convert_to("lea").quantity).to eq(0.00103561865372889)
-    end
-
-    it "converts to hh" do
-      expect(subject.convert_to("h").quantity).to eq(49.2125984251969)
-    end
-
-    it "converts to nl" do
-      expect(subject.convert_to("nl").quantity).to eq(0.000899928005759539)
     end
 
     it "converts to sft" do

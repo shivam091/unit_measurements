@@ -8,12 +8,12 @@ RSpec.describe UnitMeasurements::Radioactivity do
   describe "Bq" do
     subject { described_class.new(5, "Bq") }
 
-    it "converts to Ci" do
-      expect(subject.convert_to("Ci").quantity).to eq(1.35135135135135e-10)
-    end
-
     it "converts to Rd" do
       expect(subject.convert_to("Rd").quantity).to eq(5e-6)
+    end
+
+    it "converts to Ci" do
+      expect(subject.convert_to("Ci").quantity).to eq(1.35135135135135e-10)
     end
   end
 end

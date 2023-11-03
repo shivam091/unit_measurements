@@ -5,7 +5,7 @@
 # spec/unit_measurements/cache_spec.rb
 
 RSpec.describe UnitMeasurements::Cache do
-  let(:unit_group) { TEST_GROUP }
+  let(:unit_group) { UnitMeasurements::Length }
   let!(:cache) { described_class.new(unit_group) }
 
   before { cache.clear_cache }
@@ -51,7 +51,7 @@ RSpec.describe UnitMeasurements::Cache do
         allow(unit_group).to receive(:cache_file).and_return(nil)
 
         expect(cache.send(:build_cache_file_path, unit_group)).to eq(
-          Pathname.new(File.expand_path("test_group.json", described_class::CACHE_DIRECTORY))
+          Pathname.new(File.expand_path("length.json", described_class::CACHE_DIRECTORY))
         )
       end
     end

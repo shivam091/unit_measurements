@@ -20,10 +20,6 @@ RSpec.describe UnitMeasurements::Time do
       expect(subject.convert_to("wk").quantity).to eq(9.92063492063492e-5)
     end
 
-    it "converts to fn" do
-      expect(subject.convert_to("ftn").quantity).to eq(4.96031746031746e-5)
-    end
-
     it "converts to mo" do
       expect(subject.convert_to("mo").quantity).to eq(2.28310252080089e-5)
     end
@@ -34,6 +30,10 @@ RSpec.describe UnitMeasurements::Time do
 
     it "converts to min" do
       expect(subject.convert_to("min").quantity).to eq(1)
+    end
+
+    it "converts to ftn" do
+      expect(subject.convert_to("ftn").quantity).to eq(4.96031746031746e-5)
     end
 
     it "converts to qtr" do

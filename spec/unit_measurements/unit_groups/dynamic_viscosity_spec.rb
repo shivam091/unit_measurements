@@ -12,6 +12,10 @@ RSpec.describe UnitMeasurements::DynamicViscosity do
       expect(subject.convert_to("P").quantity).to eq(50)
     end
 
+    it "converts to Pl" do
+      expect(subject.convert_to("Pl").quantity).to eq(5)
+    end
+
     it "converts to lb/(ft⋅s)" do
       expect(subject.convert_to("lb/(ft⋅s)").quantity).to eq(3.35984474829387)
     end
@@ -26,10 +30,6 @@ RSpec.describe UnitMeasurements::DynamicViscosity do
 
     it "converts to (lbf⋅s)/in²" do
       expect(subject.convert_to("(lbf⋅s)/in²").quantity).to eq(0.000725188719486416)
-    end
-
-    it "converts to Pl" do
-      expect(subject.convert_to("Pl").quantity).to eq(5)
     end
   end
 end

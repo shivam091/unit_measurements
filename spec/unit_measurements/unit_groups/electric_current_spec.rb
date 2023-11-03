@@ -8,12 +8,12 @@ RSpec.describe UnitMeasurements::ElectricCurrent do
   describe "A" do
     subject { described_class.new(5, "A") }
 
-    it "converts to abA" do
-      expect(subject.convert_to("abA").quantity).to eq(0.5)
-    end
-
     it "converts to Bi" do
       expect(subject.convert_to("Bi").quantity).to eq(0.5)
+    end
+
+    it "converts to abA" do
+      expect(subject.convert_to("abA").quantity).to eq(0.5)
     end
 
     it "converts to statA" do

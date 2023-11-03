@@ -44,6 +44,10 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("mi³").quantity).to eq(1.19956379289464e-9)
     end
 
+    it "converts to ftm³" do
+      expect(subject.convert_to("ftm³").quantity).to eq(0.817469137071495)
+    end
+
     it "converts to c" do
       expect(subject.convert_to("c").quantity).to eq(17597.539863927)
     end
@@ -60,6 +64,14 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("pt").quantity).to eq(8798.76993196351)
     end
 
+    it "converts to pk" do
+      expect(subject.convert_to("pk").quantity).to eq(549.923120747719)
+    end
+
+    it "converts to gt" do
+      expect(subject.convert_to("gt").quantity).to eq(5.06809148081098e+7)
+    end
+
     it "converts to gal" do
       expect(subject.convert_to("gal").quantity).to eq(1099.84624149544)
     end
@@ -68,16 +80,12 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("bbl").quantity).to eq(30.5512844859844)
     end
 
+    it "converts to dsp" do
+      expect(subject.convert_to("dsp").quantity).to eq(5e+5)
+    end
+
     it "converts to tsp" do
       expect(subject.convert_to("tsp").quantity).to eq(8.44681913468497e+5)
-    end
-
-    it "converts to tbsp" do
-      expect(subject.convert_to("tbsp").quantity).to eq(2.81560637822832e+5)
-    end
-
-    it "converts to floz" do
-      expect(subject.convert_to("floz").quantity).to eq(1.7597539863927e+5)
     end
 
     it "converts to bkt" do
@@ -96,28 +104,20 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("hhd").quantity).to eq(15.2756422429922)
     end
 
-    it "converts to pk" do
-      expect(subject.convert_to("pk").quantity).to eq(549.923120747719)
-    end
-
     it "converts to fls" do
       expect(subject.convert_to("fls").quantity).to eq(4.22340956734249e+6)
     end
 
+    it "converts to tbsp" do
+      expect(subject.convert_to("tbsp").quantity).to eq(2.81560637822832e+5)
+    end
+
+    it "converts to floz" do
+      expect(subject.convert_to("floz").quantity).to eq(1.7597539863927e+5)
+    end
+
     it "converts to fldr" do
       expect(subject.convert_to("fldr").quantity).to eq(1.40780318911416e+6)
-    end
-
-    it "converts to ftm³" do
-      expect(subject.convert_to("ftm³").quantity).to eq(0.817469137071495)
-    end
-
-    it "converts to gt" do
-      expect(subject.convert_to("gt").quantity).to eq(5.06809148081098e+7)
-    end
-
-    it "converts to dsp" do
-      expect(subject.convert_to("dsp").quantity).to eq(5e+5)
     end
 
     it "converts to bdft" do

@@ -16,6 +16,14 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("t").quantity).to eq(5e-6)
     end
 
+    it "converts to N" do
+      expect(subject.convert_to("N").quantity).to eq(0.04903325)
+    end
+
+    it "converts to s" do
+      expect(subject.convert_to("s").quantity).to eq(3.85808958823536)
+    end
+
     it "converts to ct" do
       expect(subject.convert_to("ct").quantity).to eq(25)
     end
@@ -52,24 +60,16 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("dwt").quantity).to eq(3.2150746568628)
     end
 
-    it "converts to slug" do
-      expect(subject.convert_to("slug").quantity).to eq(0.000342608829245948)
-    end
-
-    it "converts to N" do
-      expect(subject.convert_to("N").quantity).to eq(0.04903325)
-    end
-
-    it "converts to s" do
-      expect(subject.convert_to("s").quantity).to eq(3.85808958823536)
-    end
-
     it "converts to drt" do
       expect(subject.convert_to("drt").quantity).to eq(1.28602986274512)
     end
 
     it "converts to lbt" do
       expect(subject.convert_to("lbt").quantity).to eq(0.013396144403595)
+    end
+
+    it "converts to slug" do
+      expect(subject.convert_to("slug").quantity).to eq(0.000342608829245948)
     end
   end
 end
