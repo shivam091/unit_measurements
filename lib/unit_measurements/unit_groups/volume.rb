@@ -8,6 +8,7 @@ UnitMeasurements::Volume = UnitMeasurements.build do
   system :metric do
     si_unit "l", aliases: ["liter", "litre", "liters", "litres"]
 
+    unit "λ", value: "1e-9 m³", aliases: ["lambda", "lambdas"]
     unit "m³", value: "1000 l", aliases: ["m^3", "cu m", "cubic meter", "cubic meters", "cubic metre", "cubic metres"]
 
     unit "mm³", value: "1e-9 m³", aliases: ["mm^3", "cu mm", "cubic millimeter", "cubic millimeters", "cubic millimetre", "cubic millimetres"]

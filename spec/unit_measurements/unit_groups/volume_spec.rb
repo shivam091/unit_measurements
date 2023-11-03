@@ -12,6 +12,10 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("l").quantity).to eq(5000)
     end
 
+    it "converts to λ" do
+      expect(subject.convert_to("λ").quantity).to eq(5e+9)
+    end
+
     it "converts to mm³" do
       expect(subject.convert_to("mm³").quantity).to eq(5e+9)
     end
