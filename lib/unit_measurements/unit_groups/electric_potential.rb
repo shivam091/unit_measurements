@@ -8,8 +8,8 @@ UnitMeasurements::ElectricPotential = UnitMeasurements.build do
   system :metric do
     si_unit "V", aliases: ["volt", "volts"]
 
-    unit "W/A", value: "1 V", aliases: ["W·A⁻¹", "watt per ampere", "watts per ampere"]
-    unit "J/C", value: "1 V", aliases: ["J·C⁻¹", "joule per coulomb", "joules per coulomb"]
+    unit "W/A", value: "1 V", aliases: ["watt per ampere", "watts per ampere"]
+    unit "J/C", value: "1 V", aliases: ["joule per coulomb", "joules per coulomb"]
   end
 
   system :centimetre_gram_second do

@@ -31,6 +31,7 @@ RSpec.describe UnitMeasurements::Unit do
   describe "#with" do
     it "returns a new instance with updated attributes" do
       new_unit = unit.with(name: :new_name, aliases: [:new_alias], unit_group: :new_group)
+
       expect(new_unit.name).to eq("new_name")
       expect(new_unit.aliases).to eq(Set.new(["new_alias"]))
       expect(new_unit.unit_group).to eq(:new_group)
@@ -58,11 +59,13 @@ RSpec.describe UnitMeasurements::Unit do
   describe "#parse_value" do
     it "parses a valid string into [number, unit]" do
       result = unit.send(:parse_value, "2.5 m")
+
       expect(result).to eq([Rational(5, 2), "m".freeze])
     end
 
     it "parses a valid array into [number, unit]" do
       result = unit.send(:parse_value, [2.5, :m])
+
       expect(result).to eq([Rational(5, 2), :m.freeze])
     end
 

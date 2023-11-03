@@ -10,6 +10,7 @@ RSpec.describe UnitMeasurements::UnitGroupBuilder do
   describe "#primitive" do
     it "sets the primitive unit" do
       subject.primitive(:m)
+
       expect(subject.instance_variable_get(:@primitive)).to eq(:m)
     end
 

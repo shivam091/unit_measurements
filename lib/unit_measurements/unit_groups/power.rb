@@ -16,8 +16,8 @@ UnitMeasurements::Power = UnitMeasurements.build do
   end
 
   system :centimetre_gram_second do
-    unit "erg/s", value: "1e-7 W", aliases: ["erg·s⁻¹", "erg per second", "ergs per second"]
+    unit "erg/s", value: "1e-7 W", aliases: ["erg per second", "ergs per second"]
   end
 
-  unit "cal/s", value: "4.1868 W", aliases: ["cal·s⁻¹", "calorie per second", "calories per second"]
+  unit "cal/s", value: "4.1868 W", aliases: ["calorie per second", "calories per second"]
 end

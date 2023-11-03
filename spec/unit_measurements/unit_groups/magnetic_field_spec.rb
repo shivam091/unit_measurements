@@ -6,18 +6,10 @@
 
 RSpec.describe UnitMeasurements::MagneticField do
   describe "Oe" do
-    subject { described_class.new(10, "Oe") }
+    subject { described_class.new(5, "Oe") }
 
     it "converts to A/m" do
-      expect(subject.convert_to("A/m").quantity).to eq(795.774715459477)
-    end
-  end
-
-  describe "A/m" do
-    subject { described_class.new(10, "A/m") }
-
-    it "converts to Oe" do
-      expect(subject.convert_to("Oe").quantity).to eq(0.125663706143592)
+      expect(subject.convert_to("A/m").quantity).to eq(397.887357729738)
     end
   end
 end

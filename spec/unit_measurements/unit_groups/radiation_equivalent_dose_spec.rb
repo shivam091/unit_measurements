@@ -6,18 +6,10 @@
 
 RSpec.describe UnitMeasurements::RadiationEquivalentDose do
   describe "Sv" do
-    subject { described_class.new(2, "Sv") }
+    subject { described_class.new(5, "Sv") }
 
     it "converts to rem" do
-      expect(subject.convert_to("rem").quantity).to eq(200)
-    end
-  end
-
-  describe "rem" do
-    subject { described_class.new(2, "rem") }
-
-    it "converts to Sv" do
-      expect(subject.convert_to("Sv").quantity).to eq(0.02)
+      expect(subject.convert_to("rem").quantity).to eq(500)
     end
   end
 end

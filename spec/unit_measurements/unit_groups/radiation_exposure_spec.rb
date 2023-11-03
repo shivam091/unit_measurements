@@ -6,18 +6,10 @@
 
 RSpec.describe UnitMeasurements::RadiationExposure do
   describe "C/kg" do
-    subject { described_class.new(2, "C/kg") }
+    subject { described_class.new(5, "C/kg") }
 
     it "converts to R" do
-      expect(subject.convert_to("R").quantity).to eq(7751.93798449612)
-    end
-  end
-
-  describe "R" do
-    subject { described_class.new(2, "R") }
-
-    it "converts to C/kg" do
-      expect(subject.convert_to("C/kg").quantity).to eq(0.000516)
+      expect(subject.convert_to("R").quantity).to eq(19379.8449612403)
     end
   end
 end

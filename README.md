@@ -23,15 +23,17 @@ to numerous errors.
 The `unit_measurements` gem is designed to simplify the handling of units for scientific calculations.
 
 ## Key Features
-1. **Simplified Measurement Conversion:** Easily convert measurements between compatible units, reducing the likelihood of errors in scientific calculations.
+
+1. **Flexible Measurement Conversion:** Easily convert measurements between compatible units, reducing the likelihood of errors in scientific calculations.
 2. **Extensible Unit Groups:** Effortlessly build own unit groups with specific units and conversions tailored to your needs.
 3. **Built-in Unit Groups:** Comes bundled with a wide range of standard [unit groups](https://github.com/shivam091/unit_measurements/blob/main/units.md),
   covering various units.
 4. **String Parsing Capabilities:** Effortlessly parse strings representing complex, fractional, mixed fractional, scientific numbers, and ratios directly
   saving you the hassle of manually extracting and converting them.
 5. **Comprehensive Documentation:** Well-organized and descriptive [documentation](https://shivam091.github.io/unit_measurements) for quick reference and implementation guidance.
-6. **Configurable Options:** Fine-tune behavior with configurable options, including caching for enhanced performance.
-7. **Error Handling:** Robust error handling ensures stability and reliability during conversions.
+6. **Caching Support:** Option to cache conversion factors for improved performance.
+7. **Configurable Options:** Fine-tune behavior with configurable options, including caching for enhanced performance.
+8. **Error Handling:** Robust error handling ensures stability and reliability during conversions.
 
 ## Disclaimer
 
@@ -94,12 +96,12 @@ UnitMeasurements::Length.new(1, "km")
 This gem allows you to convert among units of same unit group. You can convert measurement to other unit using `#convert_to`
 (aliased as `#to`, `#in`, and `#as`) or `#convert_to!` (aliased as `#to!`, `#in!`, and `#as!`) methods.
 
-These methods provide `use_cache` parameter which can be used to indicate whether the caching of conversion factors should happen.
+These methods provide `use_cache` parameter which defaults to `false` to indicate whether the caching of conversion factors should happen.
 
 You can use `#convert_to` as:
 
 ```ruby
-UnitMeasurements::Length.new(1, "km").convert_to("m")
+UnitMeasurements::Length.new(1, "km").convert_to("m", use_cache: true)
 #=> 1000.0 m
 ```
 
@@ -120,13 +122,13 @@ UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
 You can also chain call of `#convert_to` and `#convert_to!` methods as:
 
 ```ruby
-UnitMeasurements::Length.new(100, "m").convert_to("ft").convert_to!("in")
+UnitMeasurements::Length.new(100, "m").convert_to("ft").convert_to!("in", use_cache: true)
 #=> 3937.00787401574071916010498688 in
 ```
 
 **Parse string without having to split out the quantity and source unit:**
 
-This method provides `use_cache` parameter which can be used to indicate whether the caching of conversion factors should happen.
+This method provides `use_cache` parameter which defaults to `false` to indicate whether the caching of conversion factors should happen.
 
 ```ruby
 UnitMeasurements::Length.parse("1 km")
@@ -185,11 +187,11 @@ UnitMeasurements::Length.parse("1:2 km to m")
 
 **Formatting measurement:**
 
-If you want to format measurement to certain format, you can use `#format` method.
+If you want to format the measurement to certain format, you can use `#to_fs` method.
 If format is not specified, it defaults to `"%.2<value>f %<unit>s"`.
 
 ```ruby
-UnitMeasurements::Length.new(100, "m").to("in").format("%.4<quantity>f %<unit>s")
+UnitMeasurements::Length.new(100, "m").to("in").to_fs("%.4<quantity>f %<unit>s")
 #=> "3937.0079 in"
 ```
 
@@ -424,7 +426,7 @@ units within it. You can group units by the unit system using the `system` metho
 unit group using the `primitive` method. You can specify cache file name in unit group definition using the `cache` method.
 
 ```ruby
-UnitMeasurements::Time = UnitMeasurements.build do
+UnitMeasurements::MyUnitGroup = UnitMeasurements.build do
   # Set primitive unit for the unit group (optional).
   primitive "s"
 
@@ -444,7 +446,7 @@ UnitMeasurements::Time = UnitMeasurements.build do
   end
 
   # Sets the name of the cache file (optional).
-  cache "time_cache.json"
+  cache "my_units_cache.json"
 end
 ```
 

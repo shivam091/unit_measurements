@@ -15,8 +15,8 @@ UnitMeasurements::DynamicViscosity = UnitMeasurements.build do
   end
 
   system :foot_pound_second do
-    unit "lb/(ft⋅s)", value: "1.488164 Pa⋅s", aliases: ["lb/(ft*s)", "pound per foot second"]
-    unit "lb/(ft⋅h)", value: "0.0004133789 Pa⋅s", aliases: ["lb/(ft*h)", "pound per foot hour"]
+    unit "lb/(ft⋅s)", value: "1.488164 Pa⋅s", aliases: ["lb/(ft*s)", "pound per foot second", "pounds per foot second"]
+    unit "lb/(ft⋅h)", value: "0.0004133789 Pa⋅s", aliases: ["lb/(ft*h)", "pound per foot hour", "pounds per foot hour"]
 
     unit "(lbf⋅s)/ft²", value: "47.88026 Pa⋅s", aliases: ["(lb⋅s)/ft²", "(lbf*s)/ft^2", "(lb*s)/ft^2", "pound-force second per square foot"]
     unit "(lbf⋅s)/in²", value: "6894.757 Pa⋅s", aliases: ["(lb⋅s)/in²", "(lbf*s)/in^2", "(lb*s)/in^2", "pound-force second per square inch"]

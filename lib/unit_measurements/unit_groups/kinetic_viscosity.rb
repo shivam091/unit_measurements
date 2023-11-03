@@ -15,6 +15,6 @@ UnitMeasurements::KineticViscosity = UnitMeasurements.build do
   end
 
   system :centimetre_gram_second do
-    unit "St", value: "1e-4 m²/s", aliases: ["strokes"]
+    unit "St", value: "1e-4 m²/s", aliases: ["stoke", "strokes"]
   end
 end
