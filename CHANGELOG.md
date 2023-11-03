@@ -1,3 +1,12 @@
+## [5.6.1](https://github.com/shivam091/unit_measurements/compare/v5.6.0...v5.6.1) - 2023-11-03
+
+### What's removed
+
+- Removed uneeded aliases from units.
+- Removed test cases of all unit conversions other than primitive unit.
+
+----------
+
 ## [5.6.0](https://github.com/shivam091/unit_measurements/compare/v5.5.0...v5.6.0) - 2023-10-31
 
 ### What's new

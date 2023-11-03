@@ -9,7 +9,7 @@ check below list of bundled units before converting your measurements.
 |:--|:--|
 | * | supports [decimal SI prefixes](README.md#decimal-si-prefixes) |
 | ** | supports [binary SI prefixes](README.md#binary-si-prefixes) in addition to [decimal SI prefixes](README.md#decimal-si-prefixes) |
-| _Italic_ | Primitive unit of the unit group |
+| _emphasised typeface_ | Primitive unit of the unit group |
 
 ## 1. Length or distance
 
@@ -23,7 +23,7 @@ These units are defined in `UnitMeasurements::Length`.
 | 4 | in | ", inch, inches |
 | 5 | ft | ', foot, feet |
 | 6 | yd | yard, yards |
-| 7 | mi | mile, miles, statute mile, international mile |
+| 7 | mi | mile, miles, statute mile, international mile, statute miles, international miles |
 | 8 | ch | chain, chains |
 | 9 | th | thou, thousandth of an inch, mil, mils |
 | 10 | au | astronomical unit, astronomical units |
@@ -189,19 +189,19 @@ These units are defined in `UnitMeasurements::Density`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| 1 | g/m³ | g/m^3, g·m⁻³, gram per cubic meter, grams per cubic meter, gramme per cubic metre, grammes per cubic metre |
-| _2_ | _kg/m³_ | _kg/m^3, kg·m⁻³, kilogram per cubic meter, kilograms per cubic meter, kilogramme per cubic metre, kilogrammes per cubic metre_ |
-| 3 | g/l | g·l⁻¹, gram per liter, grams per liter, gramme per litre, grammes per litre |
-| 4 | g/ml | g·ml⁻¹, gram per milliliter, grams per milliliter, gramme per millilitre, grammes per millilitre |
-| 5 | kg/l | kg·l⁻¹, kilogram per liter, kilograms per liter, kilogramme per litre, kilogrammes per litre |
-| 6 | oz/ft³ | oz/ft^3, oz·ft⁻³, ounce per cubic foot, ounces per cubic foot |
-| 7 | oz/in³ | oz/in^3, oz·in⁻³, ounce per cubic inch, ounces per cubic inch |
-| 8 | oz/gal | oz·gal⁻¹, ounce per gallon, ounces per gallon |
-| 9 | lb/ft³ | lb/ft^3, lb·ft⁻³, pound per cubic foot, pounds per cubic foot |
-| 10 | lb/in³ | lb/in^3, lb·in⁻³, pound per cubic inch, pounds per cubic inch |
-| 11 | lb/gal | lb·gal⁻¹, pound per gallon, pounds per gallon |
-| 12 | slug/ft³ | slug/ft^3, slug·ft⁻³, slug per cubic foot, slugs per cubic foot |
-| 13 | slug/in³ | slug/in^3, slug·in⁻³, slug per cubic inch, slugs per cubic inch |
+| 1 | g/m³ | g/m^3, gram per cubic meter, grams per cubic meter, gramme per cubic metre, grammes per cubic metre |
+| _2_ | _kg/m³_ | _kg/m^3, kilogram per cubic meter, kilograms per cubic meter, kilogramme per cubic metre, kilogrammes per cubic metre_ |
+| 3 | g/l | gram per liter, grams per liter, gramme per litre, grammes per litre |
+| 4 | g/ml | gram per milliliter, grams per milliliter, gramme per millilitre, grammes per millilitre |
+| 5 | kg/l | kilogram per liter, kilograms per liter, kilogramme per litre, kilogrammes per litre |
+| 6 | oz/ft³ | oz/ft^3, ounce per cubic foot, ounces per cubic foot |
+| 7 | oz/in³ | oz/in^3, ounce per cubic inch, ounces per cubic inch |
+| 8 | oz/gal | ounce per gallon, ounces per gallon |
+| 9 | lb/ft³ | lb/ft^3, pound per cubic foot, pounds per cubic foot |
+| 10 | lb/in³ | lb/in^3, pound per cubic inch, pounds per cubic inch |
+| 11 | lb/gal | pound per gallon, pounds per gallon |
+| 12 | slug/ft³ | slug/ft^3, slug per cubic foot, slugs per cubic foot |
+| 13 | slug/in³ | slug/in^3, slug per cubic inch, slugs per cubic inch |
 
 ## 11. Quantity
 
@@ -274,19 +274,19 @@ These units are defined in `UnitMeasurements::Velocity`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | 1 | Kn | kt, knot, knots |
-| _2_ | _m/s_ | _m·s⁻¹, meter per second, meters per second, metre per second, metres per second_ |
-| 3 | m/min | m·min⁻¹, meter per minute, meters per minute, metre per minute, metres per minute |
-| 4 | m/h | m·h⁻¹, meter per hour, meters per hour, metre per hour, metres per hour |
-| 5 | in/s | in·s⁻¹, ips, inch per second, inches per second |
-| 6 | in/min | in·min⁻¹, ipm, inch per minute, inches per minute |
-| 7 | in/h | in·h⁻¹, iph, inch per hour, inches per hour |
-| 8 | ft/s | ft·s⁻¹, fps, foot per second, feet per second |
-| 9 | ft/min | ft·min⁻¹, fpm, foot per minute, feet per minute |
-| 10 | ft/h | ft·h⁻¹, fph, foot per hour, feet per hour |
-| 11 | mi/s | mi·s⁻¹, mps, mile per second, miles per second |
-| 12 | mi/min | mi·min⁻¹, mpm, mile per minute, miles per minute |
-| 13 | mi/h | mi·h⁻¹, mph, mile per hour, miles per hour |
-| 14 | fur/ftn | fur·ftn⁻¹, furlong per fortnight, furlongs per fortnight |
+| _2_ | _m/s_ | _meter per second, meters per second, metre per second, metres per second_ |
+| 3 | m/min | meter per minute, meters per minute, metre per minute, metres per minute |
+| 4 | m/h | meter per hour, meters per hour, metre per hour, metres per hour |
+| 5 | in/s | ips, inch per second, inches per second |
+| 6 | in/min | ipm, inch per minute, inches per minute |
+| 7 | in/h | iph, inch per hour, inches per hour |
+| 8 | ft/s | fps, foot per second, feet per second |
+| 9 | ft/min | fpm, foot per minute, feet per minute |
+| 10 | ft/h | fph, foot per hour, feet per hour |
+| 11 | mi/s | mps, mile per second, miles per second |
+| 12 | mi/min | mpm, mile per minute, miles per minute |
+| 13 | mi/h | mph, mile per hour, miles per hour |
+| 14 | fur/ftn | furlong per fortnight, furlongs per fortnight |
 
 ## 17. Acceleration
 
@@ -295,17 +295,17 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | 1 | Gal | gal, galileo |
-| _2_ | _m/s²_ | _m/s^2, m·s⁻², meter per second squared, meters per second squared, metre per second squared, metres per second squared_ |
-| 3 | in/s² | in/s^2, in·s⁻², ips², inch per second squared, inches per second squared |
+| _2_ | _m/s²_ | _m/s^2, meter per second squared, meters per second squared, metre per second squared, metres per second squared_ |
+| 3 | in/s² | in/s^2, ips², inch per second squared, inches per second squared |
 | 4 | ipm/s | in/(min⋅s), inch per minute per second, inches per minute per second |
 | 5 | iph/s | in/(h⋅s), inch per hour per second, inches per hour per second |
-| 5 | ft/s² | ft/s^2, ft·s⁻², fps², foot per second squared, feet per second squared |
-| 6 | fpm/s | ft/(min⋅s), foot per minute per second, feet per minute per second |
-| 7 | fph/s | ft/(h⋅s), foot per hour per second, feet per hour per second |
-| 8 | mi/s² | mi/s^2, mi·s⁻², mps², mile per second squared, miles per second squared |
-| 9 | mpm/s | mi/(min⋅s), mile per minute per second, miles per minute per second |
-| 10 | mph/s | mi/(h⋅s), mile per hour per second, miles per hour per second |
-| 11 | Kn/s | knot per second, knots per second |
+| 6 | ft/s² | ft/s^2, fps², foot per second squared, feet per second squared |
+| 7 | fpm/s | ft/(min⋅s), foot per minute per second, feet per minute per second |
+| 8 | fph/s | ft/(h⋅s), foot per hour per second, feet per hour per second |
+| 9 | mi/s² | mi/s^2, mps², mile per second squared, miles per second squared |
+| 10 | mpm/s | mi/(min⋅s), mile per minute per second, miles per minute per second |
+| 11 | mph/s | mi/(h⋅s), mile per hour per second, miles per hour per second |
+| 12 | Kn/s | knot per second, knots per second |
 
 ## 18. Angular velocity or rotational speed
 
@@ -313,18 +313,18 @@ These units are defined in `UnitMeasurements::AngularVelocity`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _rad/s_ | _rad·s⁻¹, radian per second, radians per second_ |
-| 2 | rad/min | rad·min⁻¹, radian per minute, radians per minute |
-| 3 | rad/h | rad·h⁻¹, radian per hour, radians per hour |
-| 4 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
-| 5 | deg/min | °/min, deg·min⁻¹, degree per minute, degrees per minute |
-| 6 | deg/h | °/h, deg·h⁻¹, degree per hour, degrees per hour |
-| 7 | rev/s | rev·s⁻¹, revolution per second, revolutions per second |
-| 8 | rev/min | rev·min⁻¹, revolution per minute, revolutions per minute |
-| 9 | rev/h | rev·h⁻¹, revolution per hour, revolutions per hour |
-| 10 | gon/s | ᵍ/s, gon·s⁻¹, gradian per second, gradians per second |
-| 11 | gon/min | ᵍ/min, gon·min⁻¹, gradian per minute, gradians per minute |
-| 12 | gon/h | ᵍ/h, gon·h⁻¹, gradian per hour, gradians per hour |
+| _1_ | _rad/s_ | _radian per second, radians per second_ |
+| 2 | rad/min | radian per minute, radians per minute |
+| 3 | rad/h | radian per hour, radians per hour |
+| 4 | deg/s | °/s, degree per second, degrees per second |
+| 5 | deg/min | °/min, degree per minute, degrees per minute |
+| 6 | deg/h | °/h, degree per hour, degrees per hour |
+| 7 | rev/s | revolution per second, revolutions per second |
+| 8 | rev/min | revolution per minute, revolutions per minute |
+| 9 | rev/h | revolution per hour, revolutions per hour |
+| 10 | gon/s | ᵍ/s, gradian per second, gradians per second |
+| 11 | gon/min | ᵍ/min, gradian per minute, gradians per minute |
+| 12 | gon/h | ᵍ/h, gradian per hour, gradians per hour |
 
 ## 19. Angular acceleration
 
@@ -332,9 +332,9 @@ These units are defined in `UnitMeasurements::AngularAcceleration`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _rad/s²_ | _rad/s^2, rad·s⁻², radian per second squared, radians per second squared_ |
-| 2 | deg/s² | deg/s^2, °/s², deg·s⁻², degree per second squared, degrees per second squared |
-| 3 | gon/s² | gon/s^2, ᵍ/s², gon·s⁻², gradian per second squared, gradians per second squared |
+| _1_ | _rad/s²_ | _rad/s^2, radian per second squared, radians per second squared_ |
+| 2 | deg/s² | °/s², deg/s^2, degree per second squared, degrees per second squared |
+| 3 | gon/s² | ᵍ/s², gon/s^2, gradian per second squared, gradians per second squared |
 
 ## 20. Electric potential or electromotive force
 
@@ -345,8 +345,8 @@ These units are defined in `UnitMeasurements::ElectricPotential`.
 | _1_ | _V*_ | _volt, volts_ |
 | 2 | abV | abvolt, abvolts |
 | 3 | statV | statvolt, statvolts |
-| 4 | W/A | W·A⁻¹, watt per ampere, watts per ampere |
-| 5 | J/C | J·C⁻¹, joule per coulomb, joules per coulomb |
+| 4 | W/A | watt per ampere, watts per ampere |
+| 5 | J/C | joule per coulomb, joules per coulomb |
 
 ## 21. Electric charge
 
@@ -369,7 +369,7 @@ These units are defined in `UnitMeasurements::ElectricalCapacitance`.
 | _1_ | _F*_ | _farad, farads_ |
 | 2 | abF | abfarad, abfarads |
 | 3 | statF | statfarad, statfarads |
-| 4 | C/V | C·V⁻¹, coulomb/volt, coulombs/volt, coulomb per volt, coulombs per volt |
+| 4 | C/V | coulomb/volt, coulombs/volt, coulomb per volt, coulombs per volt |
 
 ## 23. Electrical elastance
 
@@ -378,7 +378,7 @@ These units are defined in `UnitMeasurements::ElectricalElastance`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _D*_ | _F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads_ |
-| 2 | V/C | V·C⁻¹, volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
+| 2 | V/C | volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
 
 ## 24. Electrical resistance or impedance
 
@@ -390,7 +390,7 @@ These units are defined in `UnitMeasurements::ElectricalResistance`.
 | 2 | abΩ | abω, abohm, abohms |
 | 3 | statΩ | statω, statohm, statohms |
 | 4 | S | siemens, mho, mhos |
-| 5 | V/A | V·A⁻¹, volt/amp, volts/amp, volt/ampere, volts/ampere, volt per ampere, volts per ampere |
+| 5 | V/A | volt/amp, volts/amp, volt/ampere, volts/ampere, volt per ampere, volts per ampere |
 
 ## 25. Electric conductance
 
@@ -401,7 +401,7 @@ These units are defined in `UnitMeasurements::ElectricConductance`.
 | _1_ | _S*_ | _℧, Ω⁻¹, siemens, mho, mhos_ |
 | 2 | abS | ab℧, absiemens, abmho, abmhos |
 | 3 | statS | stat℧, statsiemens, statmho, statmhos |
-| 3 | A/V | A·V⁻¹, amp/volt, amps/volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
+| 3 | A/V | amp/volt, amps/volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
 
 ## 26. Electrical inductance
 
@@ -412,7 +412,7 @@ These units are defined in `UnitMeasurements::ElectricalInductance`.
 | _1_ | _H*_ | _henry, henries_ |
 | 2 | abH | abhenry, abhenries |
 | 3 | statH | stathenry, stathenries |
-| 4 | Wb/A | Wb·A⁻¹, weber per ampere, webers per ampere |
+| 4 | Wb/A | weber per ampere, webers per ampere |
 
 ## 27. Magnetic flux
 
@@ -441,7 +441,7 @@ These units are defined in `UnitMeasurements::MagneticField`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _Oe*_ | _oersted, oersteds_ |
-| 2 | A/m | A·m⁻¹, ampere/meter, ampere/metre, amperes/meter, amperes/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
+| 2 | A/m | ampere/meter, ampere/metre, amperes/meter, amperes/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
 
 ## 30. Catalytic activity
 
@@ -514,9 +514,9 @@ These units are defined in `UnitMeasurements::Illuminance`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _lx*_ | _lux, lm/m², lm/m^2, lm·m⁻², lumen per square metre, lumen per square meter_ |
-| 2 | ph | phot, phots, lm/cm², lm/cm^2, lm·cm⁻², lumen per square centimetre, lumen per square centimeter |
-| 3 | fc | footcandle, lm/ft², lm/ft^2, lm·ft⁻², lumen per square foot |
+| _1_ | _lx*_ | _lux, lm/m², lm/m^2, lumen per square metre, lumen per square meter_ |
+| 2 | ph | phot, phots, lm/cm², lm/cm^2, lumen per square centimetre, lumen per square centimeter |
+| 3 | fc | footcandle, lm/ft², lm/ft^2, lumen per square foot |
 | 4 | nx | nox |
 
 ## 37. Luminance
@@ -525,9 +525,9 @@ These units are defined in `UnitMeasurements::Luminance`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _cd/m²_ | _cd/m^2, cd·m⁻², candela per square metre, candelas per square metre, candela per square meter, candelas per square meter_ |
-| 2 | cd/in² | cd/in^2, cd·in⁻², candela per square inch, candelas per square inch |
-| 3 | cd/ft² | cd/ft^2, cd·ft⁻², candela per square foot, candelas per square foot |
+| _1_ | _cd/m²_ | _cd/m^2, candela per square metre, candelas per square metre, candela per square meter, candelas per square meter_ |
+| 2 | cd/in² | cd/in^2, candela per square inch, candelas per square inch |
+| 3 | cd/ft² | cd/ft^2, candela per square foot, candelas per square foot |
 | 4 | fL | ft-L, foot lambert, foot-lambert |
 | 5 | L | lambert, lamberts |
 | 6 | sb | stlib |
@@ -539,9 +539,9 @@ These units are defined in `UnitMeasurements::Frequency`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _Hz*_ | _hertz, hertzes_ |
-| 2 | rad/s | rad·s⁻¹, radian per second, radians per second |
-| 3 | deg/s | °/s, deg·s⁻¹, degree per second, degrees per second |
-| 4 | rev/s | rps, rev·s⁻¹, revolution per second, revolutions per second |
+| 2 | rad/s | radian per second, radians per second |
+| 3 | deg/s | °/s, degree per second, degrees per second |
+| 4 | rev/s | rps, revolution per second, revolutions per second |
 
 ## 39. Power or heat flow rate
 
@@ -552,8 +552,8 @@ These units are defined in `UnitMeasurements::Power`.
 | _1_ | _W*_ | _watt, watts_ |
 | 2 | hp (M) | PS, metric horsepower |
 | 3 | hp | hp (I), horsepower |
-| 4 | erg/s | erg·s⁻¹, erg per second, ergs per second |
-| 5 | cal/s | cal·s⁻¹, calorie per second, calories per second |
+| 4 | erg/s | erg per second, ergs per second |
+| 5 | cal/s | calorie per second, calories per second |
 
 ## 40. Energy
 
@@ -578,8 +578,8 @@ These units are defined in `UnitMeasurements::DynamicViscosity`.
 |:--|:--|:--|
 | _1_ | _Pa⋅s*_ | _Pa*s, pascal second_ |
 | 2 | P | dyne·s/cm², dyne*s/cm^2, poise |
-| 3 | lb/(ft⋅s) | lb/(ft*s), pound per foot second |
-| 4 | lb/(ft⋅h) | lb/(ft*h), pound per foot hour |
+| 3 | lb/(ft⋅s) | lb/(ft*s), pound per foot second, pounds per foot second |
+| 4 | lb/(ft⋅h) | lb/(ft*h), pound per foot hour, pounds per foot hour |
 | 5 | (lbf⋅s)/ft² | (lb⋅s)/ft², (lbf\*s)/ft^2, (lb\*s)/ft^2, pound-force second per square foot |
 | 6 | (lbf⋅s)/in² | (lb⋅s)/in², (lbf\*s)/in^2, (lb\*s)/in^2, pound-force second per square inch |
 | 7 | Pl | poiseuille |
@@ -591,7 +591,7 @@ These units are defined in `UnitMeasurements::KineticViscosity`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _m²/s_ | _m^2/s, square metre per second, square meter per second, square metres per second, square meters per second_ |
-| 2 | St | strokes |
+| 2 | St | stoke, strokes |
 | 3 | ft²/s | ft^2/s, square foot per second, square feet per second |
 | 4 | in²/s | in^2/s, square inch per second, square inches per second |
 
