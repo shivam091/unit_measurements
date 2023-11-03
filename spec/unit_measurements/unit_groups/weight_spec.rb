@@ -52,6 +52,14 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("dr").quantity).to eq(2.82191695596643)
     end
 
+    it "converts to tn" do
+      expect(subject.convert_to("tn").quantity).to eq(5.51155655462194e-6)
+    end
+
+    it "converts to LT" do
+      expect(subject.convert_to("LT").quantity).to eq(4.9210326380553e-6)
+    end
+
     it "converts to ozt" do
       expect(subject.convert_to("ozt").quantity).to eq(0.16075373284314)
     end
@@ -68,8 +76,20 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("lbt").quantity).to eq(0.013396144403595)
     end
 
+    it "converts to hyl" do
+      expect(subject.convert_to("hyl").quantity).to eq(0.000509858106488964)
+    end
+
+    it "converts to cwt" do
+      expect(subject.convert_to("cwt").quantity).to eq(0.0000984206527611061)
+    end
+
     it "converts to slug" do
       expect(subject.convert_to("slug").quantity).to eq(0.000342608829245948)
+    end
+
+    it "converts to cwt (US)" do
+      expect(subject.convert_to("cwt (US)").quantity).to eq(0.000110231131092439)
     end
   end
 end

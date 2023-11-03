@@ -24,11 +24,22 @@ UnitMeasurements::Weight = UnitMeasurements.build do
     unit "oz", value: "1/16 lb", aliases: ["ounce", "ounces"]
     unit "dr", value: "1/16 oz", aliases: ["dram", "drams"]
     unit "gr", value: "1/7000 lb", aliases: ["grain", "grains"]
+    unit "LT", value: "2240 lb", aliases: ["imperial ton", "displacement ton", "imperial tons", "displacement tons", "long ton", "long tons", "weight ton", "weight tons"]
 
     unit "drt", value: "60 gr", aliases: ["troy dram", "troy drams"]
     unit "ozt", value: "480 gr", aliases: ["troy ounce", "troy ounces"]
     unit "lbt", value: "5760 gr", aliases: ["troy pound", "troy pounds"]
     unit "dwt", value: "1/20 ozt", aliases: ["pwt", "pennyweight", "pennyweights"]
+    unit "cwt", value: "112 lb", aliases: ["hundredweight", "long hundredweight", "imperial hundredweight"]
+  end
+
+  system :us_customary do
+    unit "tn", value: "2000 lb", aliases: ["ton", "tons", "short ton", "short tons"]
+    unit "cwt (US)", value: "100 lb", aliases: ["hundredweight (US)", "short hundredweight"]
+  end
+
+  system :gravitational_metric do
+    unit "hyl", value: "9.80665 kg", aliases: ["mug", "metric slug", "metric slugs", "hyls"]
   end
 
   system :foot_pound_second do
