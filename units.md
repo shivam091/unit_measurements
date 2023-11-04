@@ -7,8 +7,8 @@ check below list of bundled units before converting your measurements.
 
 | Indicator | Definition |
 |:--|:--|
-| * | supports [decimal SI prefixes](README.md#decimal-si-prefixes) |
-| ** | supports [binary SI prefixes](README.md#binary-si-prefixes) in addition to [decimal SI prefixes](README.md#decimal-si-prefixes) |
+| * | Supports [decimal SI prefixes](README.md#decimal-si-prefixes) |
+| ** | Supports [binary SI prefixes](README.md#binary-si-prefixes) in addition to [decimal SI prefixes](README.md#decimal-si-prefixes) |
 | _emphasised typeface_ | Primitive unit of the unit group |
 
 ## 1. Length or distance
@@ -19,23 +19,36 @@ These units are defined in `UnitMeasurements::Length`.
 |:--|:--|:--|
 | _1_ | _m*_ | _meter, metre, meters, metres_ |
 | 2 | Å | angstrom, angstroms, ångström |
-| 3 | h | hh, hand, hands |
-| 4 | in | ", inch, inches |
-| 5 | ft | ', foot, feet |
-| 6 | yd | yard, yards |
-| 7 | mi | mile, miles, statute mile, international mile, statute miles, international miles |
-| 8 | ch | chain, chains |
-| 9 | th | thou, thousandth of an inch, mil, mils |
-| 10 | au | astronomical unit, astronomical units |
-| 11 | pc | parsec, parsecs |
-| 12 | nl | NL, nleague, nleagues, nautical league, nautical leagues |
-| 13 | ftm | fm, fathom, fathoms |
-| 14 | fur | furlong, furlongs |
-| 15 | nmi | NMI, M, NM, nautical mile, nautical miles |
-| 16 | rod | rods, perch, pole, lug |
-| 17 | lnk | l, li, link, links |
-| 18 | lea | league, leagues |
-| 19 | sft | sfoot, sfeet, survey-foot, survey-feet |
+| 3 | S | spat, spats |
+| 4 | μ | micron, microns |
+| 5 | h | hh, hand, hands |
+| 6 | in | ", inch, inches |
+| 7 | ft | ', foot, feet |
+| 8 | yd | yard, yards |
+| 9 | mi | mile, miles, statute mile, international mile, statute miles, international miles |
+| 10 | ch | chain, chains |
+| 11 | th | thou, thousandth of an inch, mil, mils |
+| 12 | au | astronomical unit, astronomical units |
+| 13 | pc | parsec, parsecs |
+| 14 | nl | NL, nleague, nleagues, nautical league, nautical leagues |
+| 15 | rd | rod, rods, perch, pole, lug |
+| 16 | cb | CBL., cable length |
+| 17 | ls | light-second, light-seconds |
+| 18 | lh | light-hour, light-hours |
+| 19 | ld | light-day, light-days |
+| 20 | lw | light-week, light-weeks |
+| 21 | lm | light-month, light-months |
+| 22 | ly | light-year, light-years |
+| 23 | ftm | fm, fathom, fathoms |
+| 24 | fur | furlong, furlongs |
+| 25 | nmi | NMI, M, NM, nautical mile, nautical miles |
+| 26 | lnk | l, li, link, links |
+| 27 | lea | league, leagues |
+| 28 | sft | sfoot, sfeet, survey-foot, survey-feet |
+| 29 | b.c. | bc, barleycorn, barleycorns |
+| 30 | lmin | light-minute, light-minutes |
+| 31 | cb (M) | CBL. (M), cable length (M) |
+| 32 | cb (US) | CBL. (US), cable length (US) |
 
 ## 2. Weight or mass
 
@@ -55,11 +68,16 @@ These units are defined in `UnitMeasurements::Weight`.
 | 10 | lb | lbs, lbm, pound-mass, pound, pounds, \# |
 | 11 | oz | ounce, ounces |
 | 12 | gr | grain, grains |
-| 13 | dwt | pennyweight, pennyweights |
-| 14 | ozt | troy ounce, troy ounces |
-| 15 | lbt | troy pound, troy pounds |
-| 16 | drt | troy dram, troy drams |
-| 17 | slug | slugs |
+| 13 | tn | ton, tons, short ton, short tons |
+| 14 | LT | imperial ton, displacement ton, imperial tons, displacement tons, long ton, long tons, weight ton, weight tons |
+| 15 | dwt | pennyweight, pennyweights |
+| 16 | ozt | troy ounce, troy ounces |
+| 17 | lbt | troy pound, troy pounds |
+| 18 | drt | troy dram, troy drams |
+| 19 | hyl | mug, metric slug, metric slugs, hyls |
+| 20 | cwt | hundredweight, long hundredweight, imperial hundredweight |
+| 21 | slug | slugs |
+| 22 | cwt (US) | hundredweight (US), short hundredweight |
 
 ## 3. Time or duration
 
@@ -151,37 +169,40 @@ These units are defined in `UnitMeasurements::Volume`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | 1 | l* | liter, litre, liters, litres |
-| _2_ | _m³_ | _m^3, cu m, cubic meter, cubic meters, cubic metre, cubic metres_ |
-| 3 | mm³ | mm^3, cu mm, cubic millimeter, cubic millimeters, cubic millimetre, cubic millimetres |
-| 4 | cm³ | cm^3, cu cm, cubic centimeter, cubic centimeters, cubic centimetre, cubic centimetres |
-| 5 | dm³ | dm^3, cu dm, cubic decimeter, cubic decimeters, cubic decimetre, cubic decimetres |
-| 6 | km³ | km^3, cu km, cubic kilometer, cubic kilometers, cubic kilometre, cubic kilometres |
-| 7 | in³ | in^3, cu in, cubic inch, cubic inches |
-| 8 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
-| 9 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
-| 10 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
-| 11 | ftm³ | ftm^3, cu ftm, cubic fathom, cubic fathoms |
-| 12 | c | cup, cups |
-| 13 | qt | quart, quarts |
-| 14 | gi | gill, gills |
-| 15 | pt | pint, pints |
-| 16 | pk | peck, pecks |
-| 17 | gt | gtt, drop, drops |
-| 18 | gal | gallon, gallons |
-| 19 | bbl | barrel, barrels |
-| 20 | tsp | teaspoon, teaspoons |
-| 21 | bsh | bu, bushel, bushels |
-| 22 | min | minim, minims |
-| 23 | bkt | bucket, buckets |
-| 24 | hhd | hogshead, hogsheads |
-| 25 | fls | fluid scruple, fluid scruples |
-| 26 | dspn | dsp, dessertspoon, dessertspoons |
-| 27 | fldr | fluid drachm, fluid drachms |
-| 28 | bdft | bf, fbm, board-foot, board-feet |
-| 29 | tbsp | tbs, tablespoon, tablespoons |
-| 30 | floz | fluid ounce, fluid ounces |
-| 31 | ac⋅ft | acre-foot, acre-feet |
-| 32 | ac⋅in | acre-inch, acre-inches |
+| 2 | λ | lambda, lambdas |
+| _3_ | _m³_ | _m^3, cu m, cubic meter, cubic meters, cubic metre, cubic metres_ |
+| 4 | mm³ | mm^3, cu mm, cubic millimeter, cubic millimeters, cubic millimetre, cubic millimetres |
+| 5 | cm³ | cm^3, cu cm, cubic centimeter, cubic centimeters, cubic centimetre, cubic centimetres |
+| 6 | dm³ | dm^3, cu dm, cubic decimeter, cubic decimeters, cubic decimetre, cubic decimetres |
+| 7 | km³ | km^3, cu km, cubic kilometer, cubic kilometers, cubic kilometre, cubic kilometres |
+| 8 | in³ | in^3, cu in, cubic inch, cubic inches |
+| 9 | ft³ | ft^3, cu ft, cubic foot, cubic feet |
+| 10 | yd³ | yd^3, cu yd, cubic yard, cubic yards |
+| 11 | mi³ | mi^3, cu mi, cubic mile, cubic miles |
+| 12 | ftm³ | ftm^3, cu ftm, cubic fathom, cubic fathoms |
+| 13 | c | cup, cups |
+| 14 | qt | quart, quarts |
+| 15 | gi | gill, gills |
+| 16 | pt | pint, pints |
+| 17 | pk | peck, pecks |
+| 18 | gt | gtt, drop, drops |
+| 19 | cd | cord, cords |
+| 20 | gal | gallon, gallons |
+| 21 | bbl | barrel, barrels |
+| 22 | tsp | teaspoon, teaspoons |
+| 23 | bsh | bu, bushel, bushels |
+| 24 | min | minim, minims |
+| 25 | bkt | bucket, buckets |
+| 26 | hhd | hogshead, hogsheads |
+| 27 | fls | fluid scruple, fluid scruples |
+| 28 | dspn | dsp, dstspn, dessertspoon, dessertspoons |
+| 29 | fldr | fluid drachm, fluid drachms |
+| 30 | bdft | bf, fbm, board-foot, board-feet |
+| 31 | tbsp | tbs, tablespoon, tablespoons |
+| 32 | floz | fluid ounce, fluid ounces |
+| 33 | ac⋅ft | acre-foot, acre-feet |
+| 34 | ac⋅in | acre-inch, acre-inches |
+| 35 | cd-ft | cord-foot, cord-feet |
 
 ## 10. Density
 
@@ -232,14 +253,20 @@ These units are defined in `UnitMeasurements::PlaneAngle`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _rad*_ | _radian, radians_ |
-| 2 | deg | °, degree, degrees |
-| 3 | gon | ᵍ, grad, gradian, gradians |
-| 4 | cir | circle, circles |
-| 5 | mil | mils |
-| 6 | rev | revolution, revolutions |
-| 7 | brad | b°, bdeg, binary degree, binary radian, binary degrees, binary radians |
-| 8 | arcmin | ′, amin, arcminute, arcminutes |
-| 9 | arcsec | ″, asec, arcsecond, arcseconds |
+| 2 | tr | turn, turns |
+| 3 | deg | °, degree, degrees, degree of arc, degrees of arc, arcdegree, arcdegrees |
+| 4 | gon | ᵍ, grad, gradian, gradians |
+| 5 | cir | circle, circles |
+| 6 | mil | mils |
+| 7 | rev | revolution, revolutions |
+| 8 | cyc | cycle, cycles |
+| 9 | brad | b°, bdeg, binary degree, binary radian, binary degrees, binary radians |
+| 10 | sign | signs |
+| 11 | arcmin | ′, amin, arcminute, arcminutes |
+| 12 | arcsec | ″, asec, arcsecond, arcseconds |
+| 13 | octant | octants |
+| 14 | sextant | sextants |
+| 15 | quadrant | quadrants |
 
 ## 14. Solid angle or 3D angle
 
@@ -432,7 +459,7 @@ These units are defined in `UnitMeasurements::MagneticInduction`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _T*_ | _tesla, teslas_ |
-| 2 | G | Gs, gauss, gausses |
+| 2 | G | Gs, gauss |
 
 ## 29. Magnetic field
 
@@ -538,7 +565,7 @@ These units are defined in `UnitMeasurements::Frequency`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| _1_ | _Hz*_ | _hertz, hertzes_ |
+| _1_ | _Hz*_ | _hertz_ |
 | 2 | rad/s | radian per second, radians per second |
 | 3 | deg/s | °/s, degree per second, degrees per second |
 | 4 | rev/s | rps, revolution per second, revolutions per second |

@@ -1,3 +1,18 @@
+## [5.7.0](https://github.com/shivam091/unit_measurements/compare/v5.6.1...v5.7.0) - 2023-11-04
+
+### What's new
+
+- Added new units `λ`, `cd`, and `cd-ft` in `volume`.
+- Added new units `tn`, `LT`, `hyl`, `cwt`, and `cwt (US)` in `weight`.
+- Added new units `μ`, `cb`, `b.c.`, `S`, `ls`, `lmin`, `lh`, `ld`, `lw`, `lm`, `ly` in `length`.
+- Added new units `tr`, `cyc`, `sign`, `octant`, `sextant`, and `quadrant` in `plane angle`.
+
+### What's removed
+
+- Removed wrong plural aliases from units of `frequency` and `magnetic induction`.
+
+----------
+
 ## [5.6.1](https://github.com/shivam091/unit_measurements/compare/v5.6.0...v5.6.1) - 2023-11-03
 
 ### What's removed
