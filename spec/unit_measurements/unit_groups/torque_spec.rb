@@ -8,12 +8,48 @@ RSpec.describe UnitMeasurements::Torque do
   describe "N·m" do
     subject { described_class.new(5, "N·m") }
 
+    it "converts to N·cm" do
+      expect(subject.convert_to("N·cm").quantity).to eq(500)
+    end
+
+    it "converts to N·mm" do
+      expect(subject.convert_to("N·mm").quantity).to eq(5000)
+    end
+
+    it "converts to gf·m" do
+      expect(subject.convert_to("gf·m").quantity).to eq(509.858106488964)
+    end
+
+    it "converts to gf·cm" do
+      expect(subject.convert_to("gf·cm").quantity).to eq(50985.8106488964)
+    end
+
+    it "converts to gf·mm" do
+      expect(subject.convert_to("gf·mm").quantity).to eq(5.09858106488964e+5)
+    end
+
     it "converts to kgf·m" do
       expect(subject.convert_to("kgf·m").quantity).to eq(0.509858106488964)
     end
 
+    it "converts to kgf·cm" do
+      expect(subject.convert_to("kgf·cm").quantity).to eq(50.9858106488964)
+    end
+
+    it "converts to kgf·mm" do
+      expect(subject.convert_to("kgf·mm").quantity).to eq(509.858106488964)
+    end
+
+    it "converts to dyn·m" do
+      expect(subject.convert_to("dyn·m").quantity).to eq(5e+5)
+    end
+
     it "converts to dyn·cm" do
       expect(subject.convert_to("dyn·cm").quantity).to eq(5e+7)
+    end
+
+    it "converts to dyn·mm" do
+      expect(subject.convert_to("dyn·mm").quantity).to eq(5e+8)
     end
 
     it "converts to lbf⋅in" do
@@ -30,6 +66,10 @@ RSpec.describe UnitMeasurements::Torque do
 
     it "converts to ozf·in" do
       expect(subject.convert_to("ozf·in").quantity).to eq(708.059845218118)
+    end
+
+    it "converts to ozf·ft" do
+      expect(subject.convert_to("ozf·ft").quantity).to eq(59.0049871015098)
     end
   end
 end
