@@ -1,3 +1,12 @@
+## [5.8.0](https://github.com/shivam091/unit_measurements/compare/v5.7.0...v5.8.0) - 2023-11-06
+
+### What's new
+
+- Added new units of `pressure`.
+- Added new units of `power`.
+
+----------
+
 ## [5.7.0](https://github.com/shivam091/unit_measurements/compare/v5.6.1...v5.7.0) - 2023-11-04
 
 ### What's new

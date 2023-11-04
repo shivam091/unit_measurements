@@ -505,12 +505,32 @@ These units are defined in `UnitMeasurements::Pressure`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _Pa*_ | _pascal, pascals_ |
-| 2 | bar | bars |
-| 3 | Ba | barye, baryes |
-| 4 | pz | pieze, pièze |
-| 5 | at | technical atmosphere, technical atmospheres |
-| 6 | atm | atmosphere, atmospheres |
-| 7 | Torr | torr |
+| 2 | Ba | barye, baryes |
+| 3 | pz | pieze, pièze |
+| 4 | at | technical atmosphere, technical atmospheres |
+| 5 | atm | atmosphere, atmospheres |
+| 6 | bar | bars |
+| 7 | psf | lb/ft², lb/ft^2, pound per square foot, pounds per square foot |
+| 8 | psi | lb/in², lb/in^2, pound per square inch, pounds per square inch |
+| 9 | ksi | kip per square inch, kilopound per square inch, kilopounds per square inch |
+| 10 | Torr | torr |
+| 11 | μmHg | micrometer of mercury, micrometers of mercury, micrometre of mercury, micrometres of mercury |
+| 12 | mmHg | millimeter of mercury, millimeters of mercury, millimetre of mercury, millimetres of mercury |
+| 13 | cmHg | centimeter of mercury, centimeters of mercury, centimetre of mercury, centimetres of mercury |
+| 14 | inHg | ″Hg, inch of mercury, inches of mercury |
+| 15 | ftHg | ′Hg, foot of mercury, feet of mercury |
+| 16 | mH₂O | mH2O, meter of water, meters of water, metre of water, metres of water |
+| 17 | dmH₂O | dmH2O, decimeter of water, decimeters of water, decimetre of water, decimetres of water |
+| 18 | cmH₂O | cmH2O, centimeter of water, centimeters of water, centimetre of water, centimetres of water |
+| 19 | mmH₂O | mmH2O, millimeter of water, millimeters of water, millimetre of water, millimetres of water |
+| 20 | ftH₂O | ftH2O, foot of water, feet of water |
+| 21 | inH₂O | inH2O, Aq, inAq, inch of water, inches of water, inch of water gauge, inches of water gauge, inch of water column, inches of water column |
+| 22 | LT/ft² | LT/ft^2, long ton per square foot, long tons per square foot |
+| 23 | tn/ft² | tn/ft^2, ton per square foot, tons per square foot, short ton per square foot, short tons per square foot |
+| 24 | pdl/ft² | pdl/ft^2, poundal per square foot, poundals per square foot |
+| 25 | kgf/m² | kgf/m^2, kilogram-force per square metre, kilogramme-force per square metre |
+| 26 | kgf/mm² | kgf/mm^2, kilogram-force per square millimetre, kilogramme-force per square millimetre |
+| 27 | kgf/dm² | kgf/dm^2, kilogram-force per square decimetre, kilogramme-force per square decimetre |
 
 ## 34. Torque or moment of force
 
@@ -577,10 +597,30 @@ These units are defined in `UnitMeasurements::Power`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _W*_ | _watt, watts_ |
-| 2 | hp (M) | PS, metric horsepower |
-| 3 | hp | hp (I), horsepower |
-| 4 | erg/s | erg per second, ergs per second |
+| 2 | p | poncelet, poncelets |
+| 3 | hp (M) | PS, metric horsepower |
+| 4 | kgf⋅m | kgf*m, kilogramme-force meter, kilogram-force meter |
 | 5 | cal/s | calorie per second, calories per second |
+| 6 | cal/min | calorie per minute, calories per minute |
+| 7 | cal/h | calorie per hour, calories per hour |
+| 8 | l·atm/s | l*atm/s, litre-atmosphere per second, liter-atmosphere per second |
+| 9 | l·atm/min | l*atm/min, litre-atmosphere per minute, liter-atmosphere per minute |
+| 10 | l·atm/h | l*atm/h, litre-atmosphere per hour, liter-atmosphere per hour |
+| 11 | atm⋅cm³/s | atm*cm^3/s, atmosphere-cubic centimetre per second, atmosphere-cubic centimeter per second |
+| 12 | atm⋅cm³/min | atm*cm^3/min, atmosphere-cubic centimetre per minute, atmosphere-cubic centimeter per minute |
+| 13 | atm⋅cm³/h | atm*cm^3/h, atmosphere-cubic centimetre per hour, atmosphere-cubic centimeter per hour |
+| 14 | hp | hp (I), horsepower |
+| 15 | ft⋅lbf/s | ft*lbf/s, foot pound-force per second |
+| 16 | ft⋅lbf/min | ft*lbf/min, foot pound-force per minute |
+| 17 | ft⋅lbf/h | ft*lbf/h, foot pound-force per hour |
+| 18 | BTU/s | british thermal unit per second, british thermal units per second |
+| 19 | BTU/min | british thermal unit per minute, british thermal units per minute |
+| 20 | BTU/h | british thermal unit per hour, british thermal units per hour |
+| 21 | erg/s | erg per second, ergs per second |
+| 22 | lusec | lusecs |
+| 23 | atm⋅ft³/s | atm*ft^3/s, atmosphere-cubic foot per second |
+| 24 | atm⋅ft³/min | atm*ft^3/min, atmosphere-cubic foot per minute |
+| 25 | atm⋅ft³/h | atm*ft^3/h, atmosphere-cubic foot per hour |
 
 ## 40. Energy
 
