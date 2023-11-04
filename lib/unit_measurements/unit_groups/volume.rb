@@ -41,16 +41,20 @@ UnitMeasurements::Volume = UnitMeasurements.build do
     unit "hhd", value: "2 bbl", aliases: ["hogshead", "hogsheads"]
     unit "fls", value: "1/24 floz", aliases: ["fluid scruple", "fluid scruples"]
 
-    unit "dspn", value: "10 ml", aliases: ["dsp", "dessertspoon", "dessertspoons"]
+    unit "dspn", value: "10 ml", aliases: ["dsp", "dstspn", "dessertspoon", "dessertspoons"]
     unit "tbsp", value: "3 tsp", aliases: ["tbs", "tablespoon", "tablespoons"]
     unit "floz", value: "1/160 gal", aliases: ["fluid ounce", "fluid ounces"]
     unit "fldr", value: "1/8 floz", aliases: ["fluid drachm", "fluid drachms"]
   end
 
   system :us_customary do
+    unit "cd", value: "128 ft³", aliases: ["cord", "cords"]
+
     unit "bdft", value: "144 in³", aliases: ["bf", "fbm", "board-foot", "board-feet"]
 
     unit "ac⋅ft", value: "43560 ft³", aliases: ["acre-foot", "acre-feet"]
     unit "ac⋅in", value: "6272640 in³", aliases: ["acre-inch", "acre-inches"]
+
+    unit "cd-ft", value: "1/8 cd", aliases: ["cord-foot", "cord-feet"]
   end
 end

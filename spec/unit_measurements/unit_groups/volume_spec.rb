@@ -76,6 +76,10 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("gt").quantity).to eq(5.06809148081098e+7)
     end
 
+    it "converts to cd" do
+      expect(subject.convert_to("cd").quantity).to eq(1.37947916880815)
+    end
+
     it "converts to gal" do
       expect(subject.convert_to("gal").quantity).to eq(1099.84624149544)
     end
@@ -134,6 +138,10 @@ RSpec.describe UnitMeasurements::Volume do
 
     it "converts to ac⋅in" do
       expect(subject.convert_to("ac⋅in").quantity).to eq(0.0486427916273948)
+    end
+
+    it "converts to cd-ft" do
+      expect(subject.convert_to("cd-ft").quantity).to eq(11.0358333504652)
     end
   end
 end
