@@ -6,7 +6,7 @@ UnitMeasurements::Frequency = UnitMeasurements.build do
   primitive "Hz"
 
   system :metric do
-    si_unit "Hz", aliases: ["hertz", "hertzes"]
+    si_unit "Hz", aliases: ["hertz"]
 
     unit "deg/s", value: [Rational(1, 360), "Hz"], aliases: ["°/s", "degree per second", "degrees per second"]
     unit "rad/s", value: [Rational(1, (2 * Math::PI)), "Hz"], aliases: ["radian per second", "radians per second"]

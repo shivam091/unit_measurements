@@ -328,7 +328,7 @@ UnitMeasurements::Length.new(17.625, "m").round
 You can check supported mathematical functions along with their examples
 [here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Math.html).
 
-### Conversions
+### Numeric conversions
 
 You can convert measurement quantity directly to other numeric types viz.
 `Integer`, `BigDecimal`, `Rational`, `Complex`, and `Float`.

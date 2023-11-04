@@ -10,6 +10,6 @@ UnitMeasurements::MagneticInduction = UnitMeasurements.build do
   end
 
   system :centimetre_gram_second do
-    unit "G", value: "1e-4 T", aliases: ["Gs", "gauss", "gausses"]
+    unit "G", value: "1e-4 T", aliases: ["Gs", "gauss"]
   end
 end
