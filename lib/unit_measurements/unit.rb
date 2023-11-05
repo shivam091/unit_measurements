@@ -154,6 +154,10 @@ module UnitMeasurements
       conversion_factor * measurement_value
     end
 
+    def convertion_proc(target_unit)
+      self.value[target_unit.name]
+    end
+
     private
 
     # Binary prefixes for SI units.
@@ -232,12 +236,10 @@ module UnitMeasurements
       case tokens
       when String
         tokens = Parser.parse(value)
-      when Array
-        raise BaseError, "Cannot parse [number, unit] formatted tokens from #{tokens}." unless tokens.size == 2
+        [tokens[0].to_r, tokens[1].freeze]
       else
-        raise BaseError, "Value of the unit must be defined as string or array, but received #{tokens}"
+        raise BaseError, "Value of the unit must be defined as string or hash, but received #{tokens}"
       end
-      [tokens[0].to_r, tokens[1].freeze]
     end
   end
 end

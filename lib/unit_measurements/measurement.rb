@@ -153,11 +153,20 @@ module UnitMeasurements
       else
         unit_from_unit_or_name!(target_unit)
       end
+
       return self if target_unit == unit
 
-      conversion_factor = calculate_conversion_factor(target_unit, use_cache)
+      converted_quantity = if self.instance_of?(UnitMeasurements::Temperature)
+        convertion_proc = unit.convertion_proc(target_unit)
 
-      self.class.new((quantity * conversion_factor), target_unit)
+        convertion_proc[quantity.to_f]
+      else
+        conversion_factor = calculate_conversion_factor(target_unit, use_cache)
+
+        (quantity * conversion_factor)
+      end
+
+      self.class.new(converted_quantity, target_unit)
     end
     alias_method :to, :convert_to
     alias_method :in, :convert_to

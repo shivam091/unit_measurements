@@ -52,9 +52,9 @@ module UnitMeasurements
                             \s+                # Match one or more whitespace characters
                           )?                   # End of the first capturing group
                           (                    # Start of the second capturing group (the fraction part)
-                            (\d+)              # Start of the third capturing group (one or more digits, the numerator)
+                            #{SCIENTIFIC_NUMBER}              # Start of the third capturing group (one or more digits, the numerator)
                             \/                 # Match a forward slash - the division symbol
-                            (\d+)              # Start of the fourth capturing group (one or more digits, the denominator)
+                            #{SCIENTIFIC_NUMBER}              # Start of the fourth capturing group (one or more digits, the denominator)
                           )                    # End of the second capturing group (the fraction part)
                         /x.freeze
 
