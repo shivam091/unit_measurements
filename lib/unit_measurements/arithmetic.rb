@@ -134,6 +134,8 @@ module UnitMeasurements
     def **(other)
       arithmetic_operation(other, :**)
     end
+    alias_method :pow, :**
+    alias_method :^, :**
 
     # Negates the quantity of the measurement.
     #
@@ -151,6 +153,8 @@ module UnitMeasurements
     def -@
       self.class.new(-self.quantity, self.unit)
     end
+    alias_method :inverse, :-@
+    alias_method :negate, :-@
 
     # Checks whether the quantity of the measurement is nonzero.
     #
