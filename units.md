@@ -287,12 +287,22 @@ These units are defined in `UnitMeasurements::Force`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _N*_ | _newton, newtons_ |
-| 2 | tf | tonne-force |
-| 3 | dyn | dyne, dynes |
-| 4 | kgf | kilogram-force, kilogramme-force |
-| 5 | ozf | ounce-force |
-| 6 | lbf | pound-force |
-| 7 | pdl | poundal, poundals |
+| 2 | p | pond, ponds |
+| 3 | gf | gram-force, gramme-force |
+| 4 | tf | metric ton-force, tonne-force |
+| 5 | sn | sthene, sthenes, sthène |
+| 6 | dyn | dyne, dynes |
+| 7 | kgf | kp, gvf, kilogram-force, kilogramme-force |
+| 8 | ozf | ounce-force |
+| 9 | lbf | pound-force |
+| 10 | pdl | poundal, poundals |
+| 11 | tnf | ton-force, short ton-force |
+| 12 | LTf | long ton-force |
+| 13 | mgvf | gvtf, gravet-force, milligrave-force |
+| 14 | kipf | kip, klbf, kip-force |
+| 15 | (lb⋅m)/s² | (lb*m)/s^2, pound meter per second squared, pound metre per second squared |
+| 16 | (lb⋅ft)/s² | (lb*ft)/s^2, pound foot per second squared |
+| 17 | (lb⋅in)/s² | (lb*in)/s^2, pound inch per second squared |
 
 ## 16. Velocity or speed
 
@@ -539,13 +549,22 @@ These units are defined in `UnitMeasurements::Torque`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _N·m*_ | _N*m, newton meter, newton metre_ |
-| 2 | kgf·m | kgf*m, Kilogram-force meter, kilogramme-force metre |
-| 3 | dyn·cm | dyn*cm, dyne centimeter, dyne centimetre |
-| 4 | pdl⋅ft | pdl*ft, poundal foot, foot-poundal |
-| 5 | ozf·in | oz⋅in, ozf\*in, oz\*in, ounce-force inch, ounce-inch |
-| 6 | ozf·ft | oz⋅ft, ozf\*ft, oz\*ft, ounce-force foot, ounce-foot |
-| 7 | lbf⋅in | lb⋅in, lbf\*in, lb\*in, pound-force inch, pound-inch |
-| 8 | lbf⋅ft | lb⋅ft, lbf\*ft, lb\*ft, pound-force foot, pound-foot |
+| 2 | N·cm | N*cm, newton centimeter, newton centimetre |
+| 3 | N·mm | N*mm, newton millimeter, newton millimetre |
+| 4 | gf·m | gf*m, gram-force meter, gramme-force metre |
+| 5 | gf·cm | gf*cm, gram-force centimeter, gramme-force centimetre |
+| 6 | gf·mm | gf*mm, gram-force millimeter, gramme-force millimetre |
+| 7 | kgf·m | kgf*m, Kilogram-force meter, kilogramme-force metre |
+| 8 | kgf·cm | kgf*cm, Kilogram-force centimeter, kilogramme-force centimetre |
+| 9 | kgf·mm | kgf*mm, Kilogram-force millimeter, kilogramme-force millimetre |
+| 10 | dyn·m | dyn*m, dyne meter, dyne metre |
+| 11 | dyn·cm | dyn*cm, dyne centimeter, dyne centimetre |
+| 12 | dyn·mm | dyn*mm, dyne millimeter, dyne millimetre |
+| 13 | pdl⋅ft | pdl*ft, poundal foot, foot-poundal |
+| 14 | ozf·in | oz⋅in, ozf\*in, oz\*in, ounce-force inch, ounce-inch |
+| 15 | ozf·ft | oz⋅ft, ozf\*ft, oz\*ft, ounce-force foot, ounce-foot |
+| 16 | lbf⋅in | lb⋅in, lbf\*in, lb\*in, pound-force inch, pound-inch |
+| 17 | lbf⋅ft | lb⋅ft, lbf\*ft, lb\*ft, pound-force foot, pound-foot |
 
 ## 35. Luminous flux
 
@@ -629,13 +648,29 @@ These units are defined in `UnitMeasurements::Energy`.
 | # | Name | Aliases |
 |:--|:--|:--|
 | _1_ | _J*_ | _joule, joules_ |
-| 2 | cal | calorie, calories |
-| 3 | eV | electronvolt, electron volt, electron-volt |
-| 4 | erg | ergs |
-| 5 | Btu | btu, btus, british thermal unit, british thermal units |
-| 6 | thm | therm, therms |
-| 7 | quad | quads |
-| 8 | foe | bethe |
+| 2 | eV | electronvolt, electron volt, electron-volt |
+| 3 | th | thermie, thermies |
+| 4 | Ry | rydberg |
+| 5 | Ha | hartree, atomic unit of energy |
+| 6 | boe | barrel of oil equivalent, barrels of oil equivalent |
+| 7 | toe | tonne of oil equivalent, tonnes of oil equivalent |
+| 8 | tce | TCE, tonne of coal equivalent, tonnes of coal equivalent |
+| 9 | cal | calorie, calories |
+| 10 | erg | ergs |
+| 11 | BTU | Btu, british thermal unit, british thermal units |
+| 12 | thm | therm, therms |
+| 13 | W⋅s | W*s, watt-second |
+| 14 | W⋅h | W*h, watt-hour |
+| 15 | kp⋅m | kpm, kp*m, kilopond-metre, kilopond-meter |
+| 16 | hp⋅h | hp*h, horsepower-hour |
+| 17 | kW⋅h | kW*h, kilowatt-hour |
+| 18 | foe | bethe |
+| 19 | quad | quads |
+| 20 | l⋅atm | l*atm, litre-atmosphere, liter-atmosphere |
+| 21 | ft⋅lbf | ft\*lbf, ft⋅lb, ft\*lb, foot-pound force |
+| 22 | in⋅lbf | in\*lbf, in⋅lb, in\*lb, inch-pound force |
+| 23 | ft⋅pdl | ft*pdl, foot-poundal |
+| 24 | gal⋅atm | gal*atm, gallon-atmosphere |
 
 ## 41. Dynamic viscosity
 

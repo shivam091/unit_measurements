@@ -1,3 +1,13 @@
+## [5.9.0](https://github.com/shivam091/unit_measurements/compare/v5.8.0...v5.9.0) - 2023-11-08
+
+### What's new
+
+- Added new units of `force`.
+- Added new units of `torque`.
+- Added new units of `energy`.
+
+----------
+
 ## [5.8.0](https://github.com/shivam091/unit_measurements/compare/v5.7.0...v5.8.0) - 2023-11-06
 
 ### What's new
