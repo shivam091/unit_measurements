@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unit_measurements (5.8.0)
+    unit_measurements (5.9.0)
       activesupport (~> 7.0)
 
 GEM
