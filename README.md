@@ -95,6 +95,7 @@ UnitMeasurements::Length.new(1, "km")
 
 This gem allows you to convert among units of same unit group. You can convert measurement to other unit using `#convert_to`
 (aliased as `#to`, `#in`, and `#as`) or `#convert_to!` (aliased as `#to!`, `#in!`, and `#as!`) methods.
+You can also chain call of `#convert_to` and `#convert_to!` methods.
 
 These methods provide `use_cache` parameter which defaults to `false` to indicate whether the caching of conversion factors should happen.
 
@@ -117,13 +118,6 @@ You can convert the measurement directly to the `primitive` unit of the unit gro
 ```ruby
 UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
 #=> 0.01 m
-```
-
-You can also chain call of `#convert_to` and `#convert_to!` methods as:
-
-```ruby
-UnitMeasurements::Length.new(100, "m").convert_to("ft").convert_to!("in", use_cache: true)
-#=> 3937.00787401574071916010498688 in
 ```
 
 **Parse string without having to split out the quantity and source unit:**
@@ -198,7 +192,7 @@ UnitMeasurements::Length.new(100, "m").to("in").to_fs("%.4<quantity>f %<unit>s")
 You can check more about formatting along with their examples
 [here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Formatter.html).
 
-**Extract the unit and the quantity from measurement:**
+**Extract the quantity and the unit from measurement:**
 
 ```ruby
 length = UnitMeasurements::Length.new(1, "km")
@@ -206,6 +200,15 @@ length.quantity
 #=> 1
 length.unit
 #=> #<UnitMeasurements::Unit: km (kilometer, kilometers, kilometre, kilometres)>
+```
+
+Unit object can be interrogated for a range of attributes:
+
+```ruby
+length.unit.aliases # Alternative names for the unit.
+#=> #<Set: {"kilometer", "kilometers", "kilometre", "kilometres"}>
+length.unit.conversion_factor # Conversion factor relative to primitive unit.
+#=> 1000.0
 ```
 
 **See primitive unit of the unit group:**

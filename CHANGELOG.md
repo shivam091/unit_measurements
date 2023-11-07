@@ -1,3 +1,19 @@
+## [5.10.0](https://github.com/shivam091/unit_measurements/compare/v5.9.0...v5.10.0) - 2023-11-09
+
+### What's new
+
+- Added new method `#to_fs` to format the measurement.
+- Aliased arithmetic method `#**` to `#pow` and `#^`.
+- Aliased arithmetic method `#-@` to `#inverse` and `#negate`.
+- Added `UnitMeasurements::BlankQuantityError` error if tried to initialize the `Measurement` with a blank quantity.
+- Added `UnitMeasurements::BlankUnitError` error if tried to initialize the `Measurement` with a blank unit.
+
+### What's deprecated
+
+- `#format` method in favour of `#to_fs`.
+
+----------
+
 ## [5.9.0](https://github.com/shivam091/unit_measurements/compare/v5.8.0...v5.9.0) - 2023-11-08
 
 ### What's new
