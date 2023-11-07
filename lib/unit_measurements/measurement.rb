@@ -250,7 +250,7 @@ module UnitMeasurements
       def_delegators :unit_group, :primitive, :units, :cache_file, :unit_names,
                      :unit_with_name_and_aliases, :unit_names_with_aliases,
                      :unit_for, :unit_for!, :defined?, :unit_or_alias?, :[],
-                     :units_for, :units_for!
+                     :units_for, :units_for!, :ratio
 
       # Parses an input string and returns a +Measurement+ instance depending on
       # the input string. This method first normalizes the +input+ internally,
@@ -373,6 +373,15 @@ module UnitMeasurements
       # @since 5.2.0
       def clear_cache
         cached.clear_cache
+      end
+
+      def ratio(source_unit, target_unit)
+        source_unit = unit_for!(source_unit)
+        target_unit = unit_for!(target_unit)
+
+        measurement = new(1, target_unit).convert_to(source_unit)
+
+        "#{measurement.quantity} #{source_unit} per #{target_unit}"
       end
 
       private
