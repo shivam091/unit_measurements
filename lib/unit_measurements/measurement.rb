@@ -104,13 +104,15 @@ module UnitMeasurements
     # @param [Numeric|String] quantity The quantity of the measurement.
     # @param [String|Unit] unit The unit of the measurement.
     #
-    # @raise [BaseError] If +quantity+ or +unit+ is blank.
+    # @raise [BlankQuantityError] If +quantity+ is blank.
+    # @raise [BaseError] If +unit+ is blank.
     #
+    # @see BlankQuantityError
     # @see BaseError
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def initialize(quantity, unit)
-      raise BaseError, "Quantity cannot be blank." if quantity.blank?
+      raise BlankQuantityError if quantity.blank?
       raise BaseError, "Unit cannot be blank." if unit.blank?
 
       @quantity = convert_quantity(quantity)
