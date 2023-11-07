@@ -64,7 +64,7 @@ module UnitMeasurements
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.6.0
-    def floor(ndigits =0)
+    def floor(ndigits = 0)
       self.class.new(quantity.floor(ndigits), unit)
     end
 
@@ -84,7 +84,7 @@ module UnitMeasurements
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.6.0
-    def ceil(ndigits =0)
+    def ceil(ndigits = 0)
       self.class.new(quantity.ceil(ndigits), unit)
     end
   end
