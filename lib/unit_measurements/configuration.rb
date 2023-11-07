@@ -55,7 +55,7 @@ module UnitMeasurements
     # @since 5.3.0
     def use_cache=(use_cache)
       unless [true, false].include?(use_cache)
-        raise BaseError, "Configuration#use_cache= only accepts true or false, but received #{use_cache}"
+        raise ArgumentError, "Configuration#use_cache= only accepts true or false, but received #{use_cache}"
       end
 
       @use_cache = use_cache

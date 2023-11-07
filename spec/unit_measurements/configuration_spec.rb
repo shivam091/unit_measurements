@@ -31,7 +31,7 @@ RSpec.describe UnitMeasurements::Configuration do
     it "raises BaseError for invalid input" do
       config = described_class.new
 
-      expect { config.use_cache = "invalid" }.to raise_error(UnitMeasurements::BaseError, /only accepts true or false/)
+      expect { config.use_cache = "invalid" }.to raise_error(ArgumentError, /only accepts true or false/)
     end
   end
 end
