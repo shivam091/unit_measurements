@@ -1,4 +1,4 @@
-## [5.10.0](https://github.com/shivam091/unit_measurements/compare/v5.9.0...v5.10.0) - 2023-11-
+## [5.10.0](https://github.com/shivam091/unit_measurements/compare/v5.9.0...v5.10.0) - 2023-11-09
 
 ### What's new
 
