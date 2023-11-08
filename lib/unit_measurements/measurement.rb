@@ -368,6 +368,40 @@ module UnitMeasurements
         cached.clear_cache
       end
 
+      # Calculates the ratio between two units.
+      #
+      # This method takes a source unit and a target unit, and returns the ratio
+      # between them as a string representation.
+      #
+      # @example Calculating the ratio between 'in' and 'ft':
+      #   UnitMeasurements::Length.ratio("in", "ft")
+      #   => "12.0 in/ft"
+      #
+      #   UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for("in"), "ft")
+      #   => "12.0 in/ft"
+      #
+      # @param [Unit|String|Symbol] source_unit
+      #   The source unit for the ratio calculation.
+      # @param [Unit|String|Symbol] target_unit
+      #   The target unit for the ratio calculation.
+      #
+      # @return [String] The ratio between the source and target units.
+      #
+      # @raise [UnitError]
+      #   If either the source unit or the target unit is not found in the unit group.
+      #
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 5.11.0
+      def ratio(source_unit, target_unit)
+        source_unit = source_unit.is_a?(Unit) ? source_unit : unit_for!(source_unit)
+        target_unit = target_unit.is_a?(Unit) ? target_unit : unit_for!(target_unit)
+
+        source_quantity = 1
+        target_quantity = new(source_quantity, target_unit).convert_to(source_unit).quantity
+
+        "#{target_quantity} #{source_unit}/#{target_unit}"
+      end
+
       private
 
       # @private
