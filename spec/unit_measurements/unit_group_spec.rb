@@ -109,4 +109,10 @@ RSpec.describe UnitMeasurements::UnitGroup do
       end
     end
   end
+
+  describe "#systems" do
+    it "returns arrays of unit system names" do
+      expect(unit_group.systems).to eq(["metric"])
+    end
+  end
 end

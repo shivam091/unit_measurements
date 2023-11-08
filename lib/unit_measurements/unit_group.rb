@@ -247,6 +247,22 @@ module UnitMeasurements
       system_units
     end
 
+    # Returns an array of unit system names defined within the unit group.
+    #
+    # It scans through the units and compiles a list of unique system names.
+    #
+    # @example
+    #   UnitMeasurements::Length.systems
+    #   => ["metric", "imperial", "us_customary", "astronomical"]
+    #
+    # @return [Array<String>] An array of unit system names.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.11.0
+    def systems
+      units.map { _1.system }.uniq
+    end
+
     private
 
     # @private
