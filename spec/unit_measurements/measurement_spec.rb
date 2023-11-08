@@ -121,19 +121,19 @@ RSpec.describe UnitMeasurements::Measurement do
     context "when only quantity and source unit is provided" do
       it "parses scientific notations" do
         measurement = UnitMeasurements::Length.parse("4.3e12 m")
-        expect(measurement.quantity).to eq(4.3e12)
+        expect(measurement.quantity).to eq(4.3e+12)
         expect(measurement.unit).to eq(m)
 
         measurement = UnitMeasurements::Length.parse("4.3e12 m")
-        expect(measurement.quantity).to eq(4.3e12)
+        expect(measurement.quantity).to eq(4.3e+12)
         expect(measurement.unit).to eq(m)
 
         measurement = UnitMeasurements::Length.parse("4.3e12m")
-        expect(measurement.quantity).to eq(4.3e12)
+        expect(measurement.quantity).to eq(4.3e+12)
         expect(measurement.unit).to eq(m)
 
         measurement = UnitMeasurements::Length.new("4.3e12", "m")
-        expect(measurement.quantity).to eq(4.3e12)
+        expect(measurement.quantity).to eq(4.3e+12)
         expect(measurement.unit).to eq(m)
 
         expect(measurement.inspect).to eq("4300000000000.0 m")
@@ -307,15 +307,15 @@ RSpec.describe UnitMeasurements::Measurement do
     context "when quantity, source unit, and target unit is provided" do
       it "parses scientific notations" do
         measurement = UnitMeasurements::Length.parse("4.3e12 m to cm")
-        expect(measurement.quantity).to eq(0.43e15)
+        expect(measurement.quantity).to eq(4.3e+14)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("4.3e12 m to cm")
-        expect(measurement.quantity).to eq(0.43e15)
+        expect(measurement.quantity).to eq(4.3e+14)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("4.3e12m to cm")
-        expect(measurement.quantity).to eq(0.43e15)
+        expect(measurement.quantity).to eq(4.3e+14)
         expect(measurement.unit).to eq(cm)
 
         expect(measurement.inspect).to eq("430000000000000.0 cm")
@@ -323,11 +323,11 @@ RSpec.describe UnitMeasurements::Measurement do
 
       it "parses fractions" do
         measurement = UnitMeasurements::Length.parse("1/4 m to cm")
-        expect(measurement.quantity).to eq(0.25e2)
+        expect(measurement.quantity).to eq(25)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("1/4 m to cm")
-        expect(measurement.quantity).to eq(0.25e2)
+        expect(measurement.quantity).to eq(25)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("1/4m to cm")
@@ -339,21 +339,21 @@ RSpec.describe UnitMeasurements::Measurement do
 
       it "parses fractions with special characters" do
         measurement = UnitMeasurements::Length.parse("⅜ m to cm")
-        expect(measurement.quantity).to eq(0.375e2)
+        expect(measurement.quantity).to eq(37.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("⅜ m to cm")
-        expect(measurement.quantity).to eq(0.375e2)
+        expect(measurement.quantity).to eq(37.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("⅜m to cm")
-        expect(measurement.quantity).to eq(0.375e2)
+        expect(measurement.quantity).to eq(37.5)
         expect(measurement.unit).to eq(cm)
       end
 
       it "parses mixed fractions" do
         measurement = UnitMeasurements::Length.parse("3 2/5 m to cm")
-        expect(measurement.quantity).to eq(0.34e3)
+        expect(measurement.quantity).to eq(340)
         expect(measurement.unit).to eq(cm)
 
         expect(measurement.inspect).to eq("340.0 cm")
@@ -361,63 +361,63 @@ RSpec.describe UnitMeasurements::Measurement do
 
       it "parses mixed fractions with special characters" do
         measurement = UnitMeasurements::Length.parse("3⅜ m to cm")
-        expect(measurement.quantity).to eq(0.3375e3)
+        expect(measurement.quantity).to eq(337.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("3 ⅜ m to cm")
-        expect(measurement.quantity).to eq(0.3375e3)
+        expect(measurement.quantity).to eq(337.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("3⅜ m to cm")
-        expect(measurement.quantity).to eq(0.3375e3)
+        expect(measurement.quantity).to eq(337.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("3 ⅜ m to cm")
-        expect(measurement.quantity).to eq(0.3375e3)
+        expect(measurement.quantity).to eq(337.5)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("3⅜m to cm")
-        expect(measurement.quantity).to eq(0.3375e3)
+        expect(measurement.quantity).to eq(337.5)
         expect(measurement.unit).to eq(cm)
       end
 
       it "parses exponent symbols" do
         measurement = UnitMeasurements::Length.parse("10⁸ m to cm")
-        expect(measurement.quantity).to eq(0.108e5)
+        expect(measurement.quantity).to eq(10800)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("10e³ m to cm")
-        expect(measurement.quantity).to eq(0.1e7)
+        expect(measurement.quantity).to eq(1000000)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("10e⁺³ m to cm")
-        expect(measurement.quantity).to eq(0.1e7)
+        expect(measurement.quantity).to eq(1000000)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("10e+³ m to cm")
-        expect(measurement.quantity).to eq(0.1e7)
+        expect(measurement.quantity).to eq(1000000)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("10e⁻³ m to cm")
-        expect(measurement.quantity).to eq(0.1e1)
+        expect(measurement.quantity).to eq(1)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("10e-³ m to cm")
-        expect(measurement.quantity).to eq(0.1e1)
+        expect(measurement.quantity).to eq(1)
         expect(measurement.unit).to eq(cm)
       end
 
       it "parses decimals" do
         measurement = UnitMeasurements::Length.parse("2.1 m to cm")
-        expect(measurement.quantity).to eq(0.21e3)
+        expect(measurement.quantity).to eq(210)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("2.1 m to cm")
-        expect(measurement.quantity).to eq(0.21e3)
+        expect(measurement.quantity).to eq(210)
         expect(measurement.unit).to eq(cm)
 
         measurement = UnitMeasurements::Length.parse("2.1m to cm")
-        expect(measurement.quantity).to eq(0.21e3)
+        expect(measurement.quantity).to eq(210)
         expect(measurement.unit).to eq(cm)
 
         expect(measurement.inspect).to eq("210.0 cm")
@@ -433,7 +433,7 @@ RSpec.describe UnitMeasurements::Measurement do
 
       it "parses integers" do
         measurement = UnitMeasurements::Length.parse("1 m to cm")
-        expect(measurement.quantity).to eq(0.1e3)
+        expect(measurement.quantity).to eq(100)
         expect(measurement.unit).to eq(cm)
 
         expect(measurement.inspect).to eq("100.0 cm")
@@ -441,7 +441,7 @@ RSpec.describe UnitMeasurements::Measurement do
 
       it "parses ratios" do
         measurement = UnitMeasurements::Length.parse("1:4 m to cm")
-        expect(measurement.quantity).to eq(0.25e2)
+        expect(measurement.quantity).to eq(25)
         expect(measurement.unit).to eq(cm)
       end
     end
@@ -455,6 +455,20 @@ RSpec.describe UnitMeasurements::Measurement do
       UnitMeasurements::Length.clear_cache
 
       expect(cache.get("km", "m")).to be_nil
+    end
+  end
+
+  describe "#ratio" do
+    context "when the source unit and the target unit are strings" do
+      it "calculates the ratio" do
+        expect(UnitMeasurements::Length.ratio(:m, :cm)).to eq("0.01 m/cm")
+      end
+    end
+
+    context "when the source unit and the target unit are instance of Unit" do
+      it "calculates the ratio" do
+        expect(UnitMeasurements::Length.ratio(m, cm)).to eq("0.01 m/cm")
+      end
     end
   end
 end
