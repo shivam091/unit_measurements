@@ -231,6 +231,12 @@
 <span class='comment'>#=&gt; 500.0 m
 </span></code></pre>
 
+<p><strong>Calculate the ratio between two units:</strong></p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_ratio'>ratio</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ft</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; &quot;12.0 in/ft&quot;
+</span></code></pre>
+
 <p><strong>Formatting measurement:</strong></p>
 
 <p>If you want to format the measurement to certain format, you can use <code>#to_fs</code> method. If format is not specified, it defaults to <code>&quot;%.2&lt;value&gt;f %&lt;unit&gt;s&quot;</code>.</p>
@@ -280,6 +286,12 @@
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_names_with_aliases'>unit_names_with_aliases</span>
 <span class='comment'>#=&gt; [&quot;\&quot;&quot;, &quot;&#39;&quot;, &quot;feet&quot;, &quot;foot&quot;, &quot;ft&quot;, &quot;in&quot;, &quot;inch&quot;, &quot;inches&quot;, &quot;m&quot;, &quot;meter&quot;, &quot;meters&quot;, &quot;metre&quot;, &quot;metres&quot;, &quot;mi&quot;, &quot;mile&quot;, &quot;miles&quot;, &quot;yard&quot;, &quot;yards&quot;, &quot;yd&quot;]
+</span></code></pre>
+
+<p><strong>See list of unit systems defined within the unit group:</strong></p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span>
+<span class='comment'>#=&gt; [&quot;metric&quot;, &quot;imperial&quot;, &quot;us_customary&quot;, &quot;astronomical&quot;]
 </span></code></pre>
 
 <p><strong>See list of units within the unit system:</strong></p>
@@ -641,7 +653,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Tue Nov  7 14:15:37 2023 by
+  Generated on Thu Nov  9 16:45:59 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
