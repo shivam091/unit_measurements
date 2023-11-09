@@ -1,3 +1,12 @@
+## [5.11.0](https://github.com/shivam091/unit_measurements/compare/v5.10.0...v5.11.0) - 2023-11-11
+
+### What's new
+
+- Added `#systems` method to return unit systems within the unit group.
+- Added `#ratio` method to calculate the ratio between two units.
+
+----------
+
 ## [5.10.0](https://github.com/shivam091/unit_measurements/compare/v5.9.0...v5.10.0) - 2023-11-09
 
 ### What's new

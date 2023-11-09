@@ -179,6 +179,13 @@ UnitMeasurements::Length.parse("1:2 km to m")
 #=> 500.0 m
 ```
 
+**Calculate the ratio between two units:**
+
+```ruby
+UnitMeasurements::Length.ratio("in", "ft")
+#=> "12.0 in/ft"
+```
+
 **Formatting measurement:**
 
 If you want to format the measurement to certain format, you can use `#to_fs` method.
@@ -237,6 +244,13 @@ UnitMeasurements::Length.unit_names
 ```ruby
 UnitMeasurements::Length.unit_names_with_aliases
 #=> ["\"", "'", "feet", "foot", "ft", "in", "inch", "inches", "m", "meter", "meters", "metre", "metres", "mi", "mile", "miles", "yard", "yards", "yd"]
+```
+
+**See list of unit systems defined within the unit group:**
+
+```ruby
+UnitMeasurements::Length.systems
+#=> ["metric", "imperial", "us_customary", "astronomical"]
 ```
 
 **See list of units within the unit system:**
