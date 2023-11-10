@@ -68,7 +68,7 @@ module UnitMeasurements
                           i                    # Match the letter 'i' (the imaginary unit)
                         /x.freeze
 
-    # Matches strings containing scientific numbers and unit.
+    # Matches strings containing scientific numbers and optional unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
@@ -80,7 +80,7 @@ module UnitMeasurements
                           \z                   # Anchor at the end of the string
                         /x.freeze
 
-    # Matches strings containing rational numbers and unit.
+    # Matches strings containing rational numbers and optional unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
@@ -89,10 +89,10 @@ module UnitMeasurements
                           #{RATIONAL_NUMBER}   # Match a rational number (as defined earlier)
                           \s*                  # Match zero or more whitespace characters
                           #{UNIT_REGEX}?       # Match a unit, the '?' makes it optional
-                          \z
+                          \z                   # Anchor at the end of the string
                         /x.freeze
 
-    # Matches strings containing complex numbers and unit.
+    # Matches strings containing complex numbers and optional unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
@@ -101,7 +101,29 @@ module UnitMeasurements
                           #{COMPLEX_NUMBER}    # Match a complex number (as defined earlier)
                           \s*                  # Match zero or more whitespace characters
                           #{UNIT_REGEX}?       # Match a unit, the '?' makes it optional
-                          \z
+                          \z                   # Anchor at the end of the string
+                        /x.freeze
+
+    # Matches any substring enclosed in parentheses. (e.g., (1+2), (2+(4/2)))
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    EXPRESSION        = /
+                          \(                   # Matches an opening parenthesis
+                            (.+)+              # Captures one or more of any character and digit (except for a newline)
+                          \)                   # Matches a closing parenthesis
+                        /x.freeze
+
+    # Matches any substring enclosed in parentheses and optional unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.0.0
+    EXPRESSION_REGEX  = /
+                          \A                   # Anchor at the start of the string
+                          #{EXPRESSION}        # Match expressions enclosed in parentheses
+                          \s*                  # Match zero or more whitespace characters
+                          #{UNIT_REGEX}?       # Match a unit, the '?' makes it optional
+                          \z                   # Anchor at the end of the string
                         /x.freeze
 
     class << self
@@ -146,6 +168,7 @@ module UnitMeasurements
         when COMPLEX_REGEX    then parse_complex(string)
         when SCIENTIFIC_REGEX then parse_scientific(string)
         when RATIONAL_REGEX   then parse_rational(string)
+        when EXPRESSION_REGEX then parse_expression(string)
         else                       raise ParseError, string
         end
       end
@@ -214,6 +237,12 @@ module UnitMeasurements
         end
 
         [quantity, unit]
+      end
+
+      def parse_expression(string)
+        quantity, unit = string.match(EXPRESSION_REGEX)&.captures
+
+        [eval(quantity), unit]
       end
     end
   end

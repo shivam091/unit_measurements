@@ -60,6 +60,11 @@ module UnitMeasurements
       "↉"  => "0/3",
     }.freeze
 
+    SPECIAL_SYMBOLS = {
+      "π" => ::Math::PI,
+      "e" => ::Math::E
+    }
+
     # Matches a combination of digits, optional exponent notation, and optional plus or minus sign.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -99,6 +104,11 @@ module UnitMeasurements
                        )                                     # End of the second capturing group
                      /x.freeze
 
+    SPECIAL_SYMBOLS_REGEX = /
+                              (
+                                #{SPECIAL_SYMBOLS.keys.join("|")}
+                              )
+                            /x.freeze
 
     class << self
       # Normalizes a string containing special symbols of exponents and fractions,
@@ -146,6 +156,8 @@ module UnitMeasurements
           str.gsub!(FRACTION_REGEX) { " #{FRACTIONS_SYMBOLS[$1]}" }
 
           str.gsub!(RATIO_REGEX)    { "#{$1.to_i}/#{$2.to_i}" }
+
+          str.gsub!(SPECIAL_SYMBOLS_REGEX) { "#{SPECIAL_SYMBOLS[$1]}" }
 
           str.strip!
         end

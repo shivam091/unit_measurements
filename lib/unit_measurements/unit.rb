@@ -154,6 +154,10 @@ module UnitMeasurements
       conversion_factor * measurement_value
     end
 
+    def convertion_proc(target_unit)
+      self.value[target_unit.name]
+    end
+
     private
 
     # Binary prefixes for SI units.

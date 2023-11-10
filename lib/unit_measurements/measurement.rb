@@ -32,6 +32,9 @@ module UnitMeasurements
     include Formatter
     include Math
 
+    extend NumericMethods
+    extend ConversionMethods
+
     # Regular expression to match conversion strings.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -157,9 +160,17 @@ module UnitMeasurements
       end
       return self if target_unit == unit
 
-      conversion_factor = calculate_conversion_factor(target_unit, use_cache)
+      converted_quantity = if self.instance_of?(UnitMeasurements::Temperature)
+        convertion_proc = unit.convertion_proc(target_unit)
 
-      self.class.new((quantity * conversion_factor), target_unit)
+        convertion_proc[quantity.to_f]
+      else
+        conversion_factor = calculate_conversion_factor(target_unit, use_cache)
+
+        (quantity * conversion_factor)
+      end
+
+      self.class.new(converted_quantity, target_unit)
     end
     alias_method :to, :convert_to
     alias_method :in, :convert_to
@@ -366,6 +377,11 @@ module UnitMeasurements
       # @since 5.2.0
       def clear_cache
         cached.clear_cache
+      end
+
+      def define_extension_methods
+        define_numeric_methods
+        define_conversion_methods
       end
 
       # Calculates the ratio between two units.

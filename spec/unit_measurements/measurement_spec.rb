@@ -289,6 +289,36 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.inspect).to eq("1.0 m")
       end
 
+      it "parses mathematical expressions" do
+        measurement = UnitMeasurements::Length.parse("(1+2+(1+2*π)) m")
+        expect(measurement.quantity).to eq(10.2831853071796)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("(2/π) m")
+        expect(measurement.quantity).to eq(0.636619772367581)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("(1+2+(1+π)) m")
+        expect(measurement.quantity).to eq(7.14159265358979)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("(1+2*π) m")
+        expect(measurement.quantity).to eq(7.28318530717959)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("((2*π)+1) m")
+        expect(measurement.quantity).to eq(7.28318530717959)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("(20/(2*π)) m")
+        expect(measurement.quantity).to eq(3.18309886183791)
+        expect(measurement.unit).to eq(m)
+
+        measurement = UnitMeasurements::Length.parse("((2/π)+(1+π)) m")
+        expect(measurement.quantity).to eq(4.77821242595737)
+        expect(measurement.unit).to eq(m)
+      end
+
       it "parses ratios" do
         measurement = UnitMeasurements::Length.parse("1:4 m")
         expect(measurement.quantity).to eq(0.25)

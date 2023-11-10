@@ -68,6 +68,27 @@ RSpec.describe UnitMeasurements::Parser do
       end
     end
 
+    context "when parsing strings with mathematical expression and unit" do
+      it "parses mathematical expression with unit" do
+        quantity, unit = described_class.parse("(2.0/4.0) m")
+
+        expect(quantity).to eq(0.5)
+        expect(unit).to eq("m")
+
+        quantity, unit = described_class.parse("(1+2+(1+3)) m")
+
+        expect(quantity).to eq(7)
+        expect(unit).to eq("m")
+      end
+
+      it "parses mathematical expression without unit" do
+        quantity, unit = described_class.parse("(20/(2*2))")
+
+        expect(quantity).to eq(5)
+        expect(unit).to be_nil
+      end
+    end
+
     context "when parsing unknown format" do
       it "raises a ParseError" do
         expect {

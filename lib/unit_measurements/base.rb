@@ -130,6 +130,9 @@ module UnitMeasurements
 end
 
 # The following requires load various components of the unit measurements library.
+require "unit_measurements/extras/numeric_methods"
+require "unit_measurements/extras/conversion_methods"
+
 require "unit_measurements/configuration"
 require "unit_measurements/cache"
 require "unit_measurements/unit_group_builder"
@@ -150,3 +153,5 @@ require "unit_measurements/errors/unit_already_defined_error"
 require "unit_measurements/errors/primitive_unit_already_set_error"
 require "unit_measurements/errors/blank_quantity_error"
 require "unit_measurements/errors/blank_unit_error"
+require "unit_measurements/errors/method_already_defined_error"
+require "unit_measurements/errors/primitive_unit_not_set_error"
