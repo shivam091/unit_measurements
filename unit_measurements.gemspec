@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.summary = spec.description
   spec.homepage = "https://github.com/shivam091/unit_measurements"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.2.2"
+  spec.required_ruby_version = ">= 3"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
