@@ -4,7 +4,7 @@
 
 module UnitMeasurements
   # The +UnitMeasurements::Math+ mixin module provides methods for performing
-  # mathematical functions on the measurement.
+  # mathematical functions on the quantity of a measurement.
   #
   # This module is included in the +Measurement+ class to allow mathematical
   # functions on the measurement.
@@ -86,6 +86,85 @@ module UnitMeasurements
     # @since 1.6.0
     def ceil(ndigits = 0)
       self.class.new(quantity.ceil(ndigits), unit)
+    end
+
+    # Returns a new +Measurement+ instance with the square root of the quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(9, "m").sqrt
+    #   #=> 3.0 m
+    #
+    # @return [Measurement] A new +Measurement+ instance with the square root of quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.6.0
+    def sqrt
+      self.class.new((quantity ** Rational(1, 2)), unit)
+    end
+
+    # Returns a new +Measurement+ instance with the cube root of the quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(27, "m").cbrt
+    #   #=> 3.0 m
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with the cube root of quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.6.0
+    def cbrt
+      self.class.new((quantity ** Rational(1, 3)), unit)
+    end
+
+    # Returns a new +Measurement+ instance with the logarithm of the quantity to
+    # the given base.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1000, "m").log
+    #   #=> 6.90775527898214 m
+    #
+    # @param [Integer|BigDecimal|Float] base The base of the logarithm.
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with the logarithm of the quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.6.0
+    def log(base = ::Math::E)
+      self.class.new(::Math.log(quantity, base), unit)
+    end
+
+    # Returns a new +Measurement+ instance with the base 10 logarithm of the
+    # quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1000, "m").log10
+    #   #=> 3.0 m
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with the base 10 logarithm of the quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.6.0
+    def log10
+      self.class.new(::Math.log10(quantity), unit)
+    end
+
+    # Returns a new +Measurement+ instance with the base 2 logarithm of the
+    # quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1000, "m").log2
+    #   #=> 9.96578428466209 m
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with the base 2 logarithm of the quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 1.6.0
+    def log2
+      self.class.new(::Math.log2(quantity), unit)
     end
   end
 end
