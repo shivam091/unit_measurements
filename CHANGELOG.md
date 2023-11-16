@@ -1,3 +1,13 @@
+## [5.11.1](https://github.com/shivam091/unit_measurements/compare/v5.11.0...v5.11.1) - 2023-11-16
+
+### What's changed
+
+- Moved `BaseError` to base file for removing uninitialized constant error in reverse dependencies viz.
+[unit_measurements-rails](https://rubygems.org/gems/unit_measurements-rails) and
+[composite_unit_measurements](https://rubygems.org/gems/composite_unit_measurements).
+
+----------
+
 ## [5.11.0](https://github.com/shivam091/unit_measurements/compare/v5.10.0...v5.11.0) - 2023-11-11
 
 ### What's new
