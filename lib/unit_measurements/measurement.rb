@@ -119,6 +119,7 @@ module UnitMeasurements
       raise BlankUnitError if unit.blank?
 
       @quantity = convert_quantity(quantity)
+      @unit_name = unit
       @unit = unit_from_unit_or_name!(unit)
     end
 
@@ -490,7 +491,12 @@ module UnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def unit_from_unit_or_name!(value)
-      value.is_a?(Unit) ? value : self.class.send(:unit_group).unit_for!(value)
+      if value.is_a?(Unit)
+        value
+      else
+        matched_unit = self.class.send(:unit_group).unit_or_alias?(value)
+        matched_unit ? value : self.class.send(:unit_group).unit_for!(value)
+      end
     end
 
     # Calculates the conversion factor between the current unit and the target
