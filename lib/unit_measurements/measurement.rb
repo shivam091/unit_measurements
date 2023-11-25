@@ -147,11 +147,17 @@ module UnitMeasurements
     #   A new +Measurement+ instance with the converted +quantity+ and
     #   +target unit+.
     #
+    # @raise [MissingPrimitiveUnitError]
+    #   if primitive unit is not set for the unit group.
+    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def convert_to(target_unit, use_cache: false)
       target_unit = if target_unit.to_s.eql?("primitive")
-        self.class.unit_group.primitive
+        primitive_unit = self.class.primitive
+
+        raise MissingPrimitiveUnitError if primitive_unit.nil?
+        primitive_unit
       else
         unit_from_unit_or_name!(target_unit)
       end
@@ -474,7 +480,7 @@ module UnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def unit_from_unit_or_name!(value)
-      value.is_a?(Unit) ? value : self.class.send(:unit_group).unit_for!(value)
+      value.is_a?(Unit) ? value : self.class.unit_for!(value)
     end
 
     # Calculates the conversion factor between the current unit and the target

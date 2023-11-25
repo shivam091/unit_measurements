@@ -16,10 +16,13 @@ require "unit_measurements/version"
 module UnitMeasurements
   # This is the base class for custom errors in the +UnitMeasurements+ module.
   #
-  # @see ParseError
-  # @see PrimitiveUnitAlreadySetError
-  # @see UnitAlreadyDefinedError
   # @see UnitError
+  # @see ParseError
+  # @see BlankUnitError
+  # @see BlankQuantityError
+  # @see UnitAlreadyDefinedError
+  # @see MissingPrimitiveUnitError
+  # @see PrimitiveUnitAlreadySetError
   # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
   # @since 1.1.0
   class BaseError < StandardError; end
@@ -168,3 +171,4 @@ require "unit_measurements/errors/unit_already_defined_error"
 require "unit_measurements/errors/primitive_unit_already_set_error"
 require "unit_measurements/errors/blank_quantity_error"
 require "unit_measurements/errors/blank_unit_error"
+require "unit_measurements/errors/missing_primitive_unit_error"
