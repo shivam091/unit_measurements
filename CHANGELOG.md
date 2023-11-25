@@ -1,3 +1,16 @@
+## [5.12.0](https://github.com/shivam091/unit_measurements/compare/v5.11.1...v5.12.0) - 2023-11-25
+
+### What's new
+
+- Added `MissingPrimitiveUnitError` error if user tries to convert measurement to
+  the primitive unit but it's not set for the unit group.
+- Aliased `#+` method as `#add`.
+- Aliased `#-` method as `#subtract`.
+- Aliased `#*` method as `#times` and `#multiply`.
+- Aliased `#/` method as `#divide`.
+
+----------
+
 ## [5.11.1](https://github.com/shivam091/unit_measurements/compare/v5.11.0...v5.11.1) - 2023-11-16
 
 ### What's changed
