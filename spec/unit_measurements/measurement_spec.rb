@@ -74,13 +74,6 @@ RSpec.describe UnitMeasurements::Measurement do
       expect(converted_length).to eq(base_length)
     end
 
-    it "converts to a primitive unit" do
-      converted_length = other_length.convert_to("primitive")
-
-      expect(converted_length.quantity).to eq(1)
-      expect(converted_length.unit).to eq(m)
-    end
-
     it "fetches conversion factor from cache when use_cache is true" do
       cache.clear_cache
       cache.set("m", "cm", 0.00001)
@@ -88,6 +81,25 @@ RSpec.describe UnitMeasurements::Measurement do
       converted_length = base_length.convert_to("cm", use_cache: true)
 
       expect(converted_length.quantity).to eq(1e-5)
+    end
+
+    context "when the primitive unit is set to unit group" do
+      it "converts to a primitive unit" do
+        converted_length = other_length.convert_to("primitive")
+
+        expect(converted_length.quantity).to eq(1)
+        expect(converted_length.unit).to eq(m)
+      end
+    end
+
+    context "when the primitive unit is not set to unit group" do
+      it "raises UnitMeasurements::MissingPrimitiveUnitError" do
+        allow(UnitMeasurements::Length).to receive(:primitive).and_return(nil)
+
+        expect {
+          UnitMeasurements::Length.new(1, "m").convert_to("primitive")
+        }.to raise_error(UnitMeasurements::MissingPrimitiveUnitError, "The primitive unit is not set for the unit group.")
+      end
     end
   end
 
@@ -461,7 +473,7 @@ RSpec.describe UnitMeasurements::Measurement do
   describe "#ratio" do
     context "when the source unit and the target unit are strings" do
       it "calculates the ratio" do
-        expect(UnitMeasurements::Length.ratio(:m, :cm)).to eq("0.01 m/cm")
+        expect(UnitMeasurements::Length.ratio("m", "cm")).to eq("0.01 m/cm")
       end
     end
 

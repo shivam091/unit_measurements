@@ -41,6 +41,7 @@ module UnitMeasurements
     def +(other)
       arithmetic_operation(other, :+)
     end
+    alias_method :add, :+
 
     # Subtracts the quantity of the other measurement or a numeric value from the
     # quantity of the current measurement.
@@ -62,6 +63,7 @@ module UnitMeasurements
     def -(other)
       arithmetic_operation(other, :-)
     end
+    alias_method :subtract, :-
 
     # Multiplies the quantity of the current measurement by the quantity of the
     # other measurement or a numeric value.
@@ -84,6 +86,8 @@ module UnitMeasurements
       arithmetic_operation(other, :*)
     end
     alias_method :scale, :*
+    alias_method :times, :*
+    alias_method :multiply, :*
 
     # Divides the quantity of the current measurement by the quantity of the other
     # measurement or a numeric value.
@@ -105,6 +109,7 @@ module UnitMeasurements
     def /(other)
       arithmetic_operation(other, :/)
     end
+    alias_method :divide, :/
 
     # Raises the quantity of the current measurement to the power of the quantity of
     # the other measurement or numeric value.
