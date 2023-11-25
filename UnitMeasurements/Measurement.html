@@ -1255,14 +1255,14 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
       <pre class="lines">
 
 
-432
-433
-434
-435
-436</pre>
+438
+439
+440
+441
+442</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 432</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 438</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__parse'>_parse</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Parser.html" title="UnitMeasurements::Parser (class)">Parser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="Parser.html#parse-class_method" title="UnitMeasurements::Parser.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
@@ -1366,12 +1366,12 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
       <pre class="lines">
 
 
-352
-353
-354</pre>
+358
+359
+360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 352</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 358</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cached'>cached</span>
   <span class='ivar'>@cached</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Cache.html" title="UnitMeasurements::Cache (class)">Cache</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Cache.html#initialize-instance_method" title="UnitMeasurements::Cache#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -1454,12 +1454,12 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
       <pre class="lines">
 
 
-367
-368
-369</pre>
+373
+374
+375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 367</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 373</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_cache'>clear_cache</span>
   <span class='id identifier rubyid_cached'>cached</span><span class='period'>.</span><span class='id identifier rubyid_clear_cache'>clear_cache</span>
@@ -1699,15 +1699,15 @@ UnitMeasurements::Length.parse(&quot;2e⁻² km as m&quot;)
       <pre class="lines">
 
 
-333
-334
-335
-336
-337
-338</pre>
+339
+340
+341
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 333</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='label'>use_cache:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Normalizer.html" title="UnitMeasurements::Normalizer (class)">Normalizer</a></span></span><span class='period'>.</span><span class='id identifier rubyid_normalize'><span class='object_link'><a href="Normalizer.html#normalize-class_method" title="UnitMeasurements::Normalizer.normalize (method)">normalize</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
@@ -1868,18 +1868,18 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
       <pre class="lines">
 
 
-395
-396
-397
-398
-399
-400
 401
 402
-403</pre>
+403
+404
+405
+406
+407
+408
+409</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 401</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ratio'>ratio</span><span class='lparen'>(</span><span class='id identifier rubyid_source_unit'>source_unit</span><span class='comma'>,</span> <span class='id identifier rubyid_target_unit'>target_unit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_source_unit'>source_unit</span> <span class='op'>=</span> <span class='id identifier rubyid_source_unit'>source_unit</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_source_unit'>source_unit</span> <span class='op'>:</span> <span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='id identifier rubyid_source_unit'>source_unit</span><span class='rparen'>)</span>
@@ -1996,12 +1996,12 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
       <pre class="lines">
 
 
-418
-419
-420</pre>
+424
+425
+426</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 418</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 424</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit_group'>unit_group</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="BaseError.html" title="UnitMeasurements::BaseError (class)">BaseError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>`Measurement` does not have a `unit_group` instance. You cannot directly use `Measurement`. Instead, build a new unit group by calling `UnitMeasurements.build`.</span><span class='tstring_end'>&quot;</span></span>
@@ -2148,20 +2148,20 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
       <pre class="lines">
 
 
-500
-501
-502
-503
-504
-505
 506
 507
 508
 509
-510</pre>
+510
+511
+512
+513
+514
+515
+516</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 500</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 506</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_conversion_factor'>calculate_conversion_factor</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='comma'>,</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_use_cache'>use_cache</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configuration'><span class='object_link'><a href="../UnitMeasurements.html#configuration-class_method" title="UnitMeasurements.configuration (method)">configuration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_use_cache'><span class='object_link'><a href="Configuration.html#use_cache-instance_method" title="UnitMeasurements::Configuration#use_cache (method)">use_cache</a></span></span> <span class='op'>||</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
@@ -2275,12 +2275,6 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
       <pre class="lines">
 
 
-450
-451
-452
-453
-454
-455
 456
 457
 458
@@ -2289,10 +2283,16 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
 461
 462
 463
-464</pre>
+464
+465
+466
+467
+468
+469
+470</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 450</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 456</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert_quantity'>convert_quantity</span><span class='lparen'>(</span><span class='id identifier rubyid_quantity'>quantity</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_quantity'>quantity</span>
@@ -2410,6 +2410,24 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to(&quot;cm&quot;, use_ca
     </li>
   
 </ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="MissingPrimitiveUnitError.html" title="UnitMeasurements::MissingPrimitiveUnitError (class)">MissingPrimitiveUnitError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if primitive unit is not set for the unit group.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Author:</p>
 <ul class="author">
   
@@ -2449,9 +2467,6 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to(&quot;cm&quot;, use_ca
       <pre class="lines">
 
 
-152
-153
-154
 155
 156
 157
@@ -2460,14 +2475,23 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to(&quot;cm&quot;, use_ca
 160
 161
 162
-163</pre>
+163
+164
+165
+166
+167
+168
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='comma'>,</span> <span class='label'>use_cache:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_target_unit'>target_unit</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_target_unit'>target_unit</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_eql?'>eql?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>primitive</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_unit_group'>unit_group</span><span class='period'>.</span><span class='id identifier rubyid_primitive'>primitive</span>
+    <span class='id identifier rubyid_primitive_unit'>primitive_unit</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_primitive'>primitive</span>
+
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="MissingPrimitiveUnitError.html" title="UnitMeasurements::MissingPrimitiveUnitError (class)">MissingPrimitiveUnitError</a></span></span> <span class='kw'>if</span> <span class='id identifier rubyid_primitive_unit'>primitive_unit</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_primitive_unit'>primitive_unit</span>
   <span class='kw'>else</span>
     <span class='id identifier rubyid_unit_from_unit_or_name!'>unit_from_unit_or_name!</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -2622,15 +2646,15 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
       <pre class="lines">
 
 
-192
-193
-194
-195
-196
-197</pre>
+198
+199
+200
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 192</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_convert_to!'>convert_to!</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='comma'>,</span> <span class='label'>use_cache:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_measurement'>measurement</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='id identifier rubyid_target_unit'>target_unit</span><span class='comma'>,</span> <span class='label'>use_cache:</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
@@ -2741,12 +2765,12 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
       <pre class="lines">
 
 
-210
-211
-212</pre>
+216
+217
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 216</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='label'>dump:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dump'>dump</span> <span class='op'>?</span> <span class='kw'>super</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_to_s'>to_s</span>
@@ -2832,12 +2856,12 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
       <pre class="lines">
 
 
-220
-221
-222</pre>
+226
+227
+228</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 226</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_quantity'>quantity</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_unit'>unit</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -2943,15 +2967,15 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
       <pre class="lines">
 
 
-476
-477
-478</pre>
+482
+483
+484</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 476</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/measurement.rb', line 482</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unit_from_unit_or_name!'>unit_from_unit_or_name!</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:unit_group</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2963,7 +2987,7 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;, use_c
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 16 06:35:37 2023 by
+  Generated on Sat Nov 25 13:27:54 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
