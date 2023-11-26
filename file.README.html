@@ -175,9 +175,11 @@
 
 <p>You can convert the measurement directly to the <code>primitive</code> unit of the unit group as:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>primitive</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_primitive'>to_primitive</span>
 <span class='comment'>#=&gt; 0.01 m
 </span></code></pre>
+
+<p>Note: <code>#to_primitive</code> method is aliased as <code>#in_primitive</code> and <code>#as_primitive</code>.</p>
 
 <p><strong>Parse string without having to split out the quantity and source unit:</strong></p>
 
@@ -600,7 +602,7 @@
 <p>This library provides a simpler way to define your own unit groups. Use the <code>UnitMeasurements.build</code> method to define units within it. You can group units by the unit system using the <code>system</code> method and set the primitive unit for the unit group using the <code>primitive</code> method. You can specify cache file name in unit group definition using the <code>cache</code> method.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>MyUnitGroup</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='period'>.</span><span class='id identifier rubyid_build'><span class='object_link'><a href="UnitMeasurements.html#build-class_method" title="UnitMeasurements.build (method)">build</a></span></span> <span class='kw'>do</span>
-  <span class='comment'># Set primitive unit for the unit group (optional).
+  <span class='comment'># Set primitive unit for the unit group.
 </span>  <span class='id identifier rubyid_primitive'>primitive</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>s</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='comment'># Group units by the unit system (optional).
@@ -653,7 +655,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Sat Nov 25 13:27:53 2023 by
+  Generated on Sun Nov 26 09:12:11 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
