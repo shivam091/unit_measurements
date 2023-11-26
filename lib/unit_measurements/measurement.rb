@@ -131,15 +131,11 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "m").convert_to("cm")
     #   => 100.0 cm
     #
-    #   UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
-    #   => 0.01 m
-    #
-    #   UnitMeasurements::Length.new(1, "m").convert_to("cm", use_cache: true)
-    #   => 100.0 cm
+    #   UnitMeasurements::Length.new(1, "m").convert_to("mm", use_cache: true)
+    #   => 1000.0 cm
     #
     # @param [String|Symbol] target_unit
-    #   The target unit for conversion. Specifing +primitive+ will convert the
-    #   measurement to a primitive unit of the unit group.
+    #   The target unit for conversion.
     # @param [TrueClass|FalseClass] use_cache
     #   Indicates whether to use cached conversion factors.
     #
@@ -147,20 +143,10 @@ module UnitMeasurements
     #   A new +Measurement+ instance with the converted +quantity+ and
     #   +target unit+.
     #
-    # @raise [MissingPrimitiveUnitError]
-    #   if primitive unit is not set for the unit group.
-    #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 1.0.0
     def convert_to(target_unit, use_cache: false)
-      target_unit = if target_unit.to_s.eql?("primitive")
-        primitive_unit = self.class.primitive
-
-        raise MissingPrimitiveUnitError if primitive_unit.nil?
-        primitive_unit
-      else
-        unit_from_unit_or_name!(target_unit)
-      end
+      target_unit = unit_from_unit_or_name!(target_unit)
       return self if target_unit == unit
 
       conversion_factor = calculate_conversion_factor(target_unit, use_cache)
@@ -177,15 +163,11 @@ module UnitMeasurements
     #   UnitMeasurements::Length.new(1, "m").convert_to!("cm")
     #   => 100.0 cm
     #
-    #   UnitMeasurements::Length.new(1, "cm").convert_to!("primitive")
-    #   => 0.01 m
-    #
-    #   UnitMeasurements::Length.new(1, "m").convert_to!("cm", use_cache: true)
-    #   => 100.0 cm
+    #   UnitMeasurements::Length.new(1, "m").convert_to!("mm", use_cache: true)
+    #   => 1000.0 mm
     #
     # @param [String|Symbol] target_unit
-    #   The target unit for conversion. Specifing +primitive+ will convert the
-    #   measurement to a primitive unit of the unit group.
+    #   The target unit for conversion.
     # @param [TrueClass|FalseClass] use_cache
     #   Indicates whether to use cached conversion factors.
     #
@@ -204,6 +186,41 @@ module UnitMeasurements
     alias_method :to!, :convert_to!
     alias_method :in!, :convert_to!
     alias_method :as!, :convert_to!
+
+    # Converts the measurement to its primitive unit and returns a new instance
+    # of the +Measurement+.
+    #
+    # The method first retrieves the primitive unit of the unit group associated
+    # with the measurement. If the primitive unit is not set, it raises a
+    # +MissingPrimitiveUnitError+.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(1, "m").to_primitive
+    #   => 1 m
+    #
+    #   UnitMeasurements::Length.new(1, "cm").to_primitive
+    #   => 0.01 m
+    #
+    # @param [TrueClass|FalseClass] use_cache
+    #   Indicates whether to use cached conversion factors.
+    # @return [Measurement]
+    #   A new +Measurement+ instance representing the measurement in its
+    #   primitive unit.
+    #
+    # @raise [MissingPrimitiveUnitError]
+    #   If the primitive unit is not set for the unit group associated with the
+    #   measurement.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.13.0
+    def to_primitive(use_cache: false)
+      primitive_unit = self.class.primitive
+      raise MissingPrimitiveUnitError if primitive_unit.nil?
+
+      convert_to(primitive_unit, use_cache: use_cache)
+    end
+    alias_method :in_primitive, :to_primitive
+    alias_method :as_primitive, :to_primitive
 
     # Returns an object representation of the +Measurement+.
     #
