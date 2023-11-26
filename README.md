@@ -116,9 +116,11 @@ UnitMeasurements::Length.new(1, "km").convert_to!("m")
 You can convert the measurement directly to the `primitive` unit of the unit group as:
 
 ```ruby
-UnitMeasurements::Length.new(1, "cm").convert_to("primitive")
+UnitMeasurements::Length.new(1, "cm").to_primitive
 #=> 0.01 m
 ```
+
+Note: `#to_primitive` method is aliased as `#in_primitive` and `#as_primitive`.
 
 **Parse string without having to split out the quantity and source unit:**
 
@@ -444,7 +446,7 @@ unit group using the `primitive` method. You can specify cache file name in unit
 
 ```ruby
 UnitMeasurements::MyUnitGroup = UnitMeasurements.build do
-  # Set primitive unit for the unit group (optional).
+  # Set primitive unit for the unit group.
   primitive "s"
 
   # Group units by the unit system (optional).

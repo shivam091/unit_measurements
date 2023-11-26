@@ -82,25 +82,6 @@ RSpec.describe UnitMeasurements::Measurement do
 
       expect(converted_length.quantity).to eq(1e-5)
     end
-
-    context "when the primitive unit is set to unit group" do
-      it "converts to a primitive unit" do
-        converted_length = other_length.convert_to("primitive")
-
-        expect(converted_length.quantity).to eq(1)
-        expect(converted_length.unit).to eq(m)
-      end
-    end
-
-    context "when the primitive unit is not set to unit group" do
-      it "raises UnitMeasurements::MissingPrimitiveUnitError" do
-        allow(UnitMeasurements::Length).to receive(:primitive).and_return(nil)
-
-        expect {
-          UnitMeasurements::Length.new(1, "m").convert_to("primitive")
-        }.to raise_error(UnitMeasurements::MissingPrimitiveUnitError, "The primitive unit is not set for the unit group.")
-      end
-    end
   end
 
   describe "#convert_to!" do
@@ -114,6 +95,27 @@ RSpec.describe UnitMeasurements::Measurement do
 
       expect(measurement.quantity).to eq(3)
       expect(measurement.unit).to eq(m)
+    end
+  end
+
+  describe "#to_primitive" do
+    context "when the primitive unit is set to unit group" do
+      it "converts to a primitive unit" do
+        converted_length = other_length.to_primitive
+
+        expect(converted_length.quantity).to eq(1)
+        expect(converted_length.unit).to eq(m)
+      end
+    end
+
+    context "when the primitive unit is not set to unit group" do
+      it "raises UnitMeasurements::MissingPrimitiveUnitError" do
+        allow(UnitMeasurements::Length).to receive(:primitive).and_return(nil)
+
+        expect {
+          UnitMeasurements::Length.new(1, "cm").to_primitive
+        }.to raise_error(UnitMeasurements::MissingPrimitiveUnitError, "The primitive unit is not set for the unit group.")
+      end
     end
   end
 

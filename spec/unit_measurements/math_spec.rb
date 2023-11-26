@@ -6,7 +6,7 @@
 
 RSpec.describe UnitMeasurements::Math do
   describe "#round" do
-    let(:measurement) { UnitMeasurements::Length.new(17.625, :m) }
+    let(:measurement) { UnitMeasurements::Length.new(17.625, "m") }
 
     context "when parameter ndigits is not specified" do
       it "rounds quantity to nearest integer" do
@@ -24,7 +24,7 @@ RSpec.describe UnitMeasurements::Math do
   end
 
   describe "#abs" do
-    let(:measurement) { UnitMeasurements::Length.new(-17.625, :m) }
+    let(:measurement) { UnitMeasurements::Length.new(-17.625, "m") }
 
     it "returns absolute value of the quantity." do
       expect(measurement.abs.quantity).to eq(17.625)
@@ -32,7 +32,7 @@ RSpec.describe UnitMeasurements::Math do
   end
 
   describe "#floor" do
-    let(:measurement) { UnitMeasurements::Length.new(17.625, :cm) }
+    let(:measurement) { UnitMeasurements::Length.new(17.625, "cm") }
 
     it "rounds quantity to next lower integer" do
       expect(measurement.floor.quantity).to eq(17)
@@ -40,10 +40,26 @@ RSpec.describe UnitMeasurements::Math do
   end
 
   describe "#ceil" do
-    let(:measurement) { UnitMeasurements::Length.new(17.625, :m) }
+    let(:measurement) { UnitMeasurements::Length.new(17.625, "m") }
 
     it "rounds quantity to next higher integer" do
       expect(measurement.ceil.quantity).to eq(18)
+    end
+  end
+
+  describe "#sqrt" do
+    let(:measurement) { UnitMeasurements::Length.new(4, "m") }
+
+    it "returns square root of measurement quantity" do
+      expect(measurement.sqrt.quantity).to eq(2.0)
+    end
+  end
+
+  describe "#cbrt" do
+    let(:measurement) { UnitMeasurements::Length.new(27, "m") }
+
+    it "returns cube root of measurement quantity" do
+      expect(measurement.cbrt.quantity).to eq(3.0)
     end
   end
 end

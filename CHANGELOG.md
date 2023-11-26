@@ -1,3 +1,14 @@
+## [5.13.0](https://github.com/shivam091/unit_measurements/compare/v5.12.0...v5.13.0) - 2023-11-27
+
+### What's new
+
+- Added `Measurement#to_primitive` to convert the measurement to the primitive unit.
+- Added `#cbrt` method to calculate cube root of the measurement quantity.
+- Added `#sqrt` method to calculate square root of the measurement quantity.
+- Aliased `#to_primitive` method as `#in_primitive` and `#as_primitive`.
+
+----------
+
 ## [5.12.0](https://github.com/shivam091/unit_measurements/compare/v5.11.1...v5.12.0) - 2023-11-25
 
 ### What's new
