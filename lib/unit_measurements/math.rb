@@ -87,5 +87,34 @@ module UnitMeasurements
     def ceil(ndigits = 0)
       self.class.new(quantity.ceil(ndigits), unit)
     end
+
+    # Returns square root of the measurement quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(9, "m").sqrt
+    #   => 3.0 m
+    #
+    # @return [Measurement] A new +Measurement+ instance with square root of quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.13.0
+    def sqrt
+      self.class.new((quantity ** Rational(1, 2)), unit)
+    end
+
+    # Returns cube root of the measurement quantity.
+    #
+    # @example
+    #   UnitMeasurements::Length.new(27, "m").cbrt
+    #   => 3.0 m
+    #
+    # @return [Measurement]
+    #   A new +Measurement+ instance with cube root of quantity.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.13.0
+    def cbrt
+      self.class.new((quantity ** Rational(1, 3)), unit)
+    end
   end
 end
