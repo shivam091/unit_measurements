@@ -1,3 +1,11 @@
+## [5.14.0](https://github.com/shivam091/unit_measurements/compare/v5.13.0...v5.14.0) - 2023-11-29
+
+### What's new
+
+- Added `.define_numeric_methods` support to define numeric extension methods for units.
+
+----------
+
 ## [5.13.0](https://github.com/shivam091/unit_measurements/compare/v5.12.0...v5.13.0) - 2023-11-27
 
 ### What's new

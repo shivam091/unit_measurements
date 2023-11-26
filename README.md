@@ -482,6 +482,31 @@ Length = UnitMeasurements::Length
 Volume = UnitMeasurements::Volume
 ```
 
+## Extras
+
+### Numeric extension methods
+
+The `.define_numeric_methods` method allows you to instantiate measurements in a
+manner similar to how `ActiveSupport::Duration` objects are created in Rails,
+providing a familiar syntax and functionality.
+
+To define numeric extension methods for specific units within a unit group, use
+the following syntax:
+
+```ruby
+UnitMeasurements::Length.define_numeric_methods("metre", "foot", "inch")
+```
+
+This will enable the usage of these units as methods to instantiate and use measurements:
+
+```ruby
+1.m                 #=> Instantiate a measurement representing 1 metre.
+5.feet              #=> Instantiate a measurement representing 5 feet.
+10.inches           #=> Instantiate a measurement representing 10 inches.
+1.foot == 12.inches #=> equality comparison between two measurements.
+1.ft + 12.in        #=> adds quantity of two measurements.
+```
+
 ## Contributing
 
 1. Fork it
