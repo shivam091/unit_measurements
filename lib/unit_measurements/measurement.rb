@@ -241,6 +241,8 @@ module UnitMeasurements
     # @since 1.5.0
     def quantity
       case @quantity
+      when Float
+        (@quantity % 1).zero? ? @quantity.to_i : @quantity
       when Rational
         @quantity.denominator == 1 ? @quantity.numerator : @quantity
       else

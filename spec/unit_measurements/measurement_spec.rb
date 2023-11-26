@@ -136,7 +136,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(4.3e+12)
         expect(measurement.unit).to eq(m)
 
-        expect(measurement.inspect).to eq("4300000000000.0 m")
+        expect(measurement.inspect).to eq("4300000000000 m")
       end
 
       it "parses fractions" do
@@ -286,7 +286,7 @@ RSpec.describe UnitMeasurements::Measurement do
         expect(measurement.quantity).to eq(1)
         expect(measurement.unit).to eq(m)
 
-        expect(measurement.inspect).to eq("1.0 m")
+        expect(measurement.inspect).to eq("1 m")
       end
 
       it "parses mathematical expressions" do
