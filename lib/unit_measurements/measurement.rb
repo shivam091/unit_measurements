@@ -23,6 +23,7 @@ module UnitMeasurements
   # @see Conversion
   # @see Formatter
   # @see Math
+  # @see NumericMethods
   # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
   # @since 1.0.0
   class Measurement
@@ -31,6 +32,8 @@ module UnitMeasurements
     include Conversion
     include Formatter
     include Math
+
+    extend NumericMethods
 
     # Regular expression to match conversion strings.
     #
