@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Module: UnitMeasurements::NumericMethods
+  Module: UnitMeasurements::ConversionMethods
   
     &mdash; Documentation by YARD 0.9.34
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
 <script type="text/javascript">
-  pathId = "UnitMeasurements::NumericMethods";
+  pathId = "UnitMeasurements::ConversionMethods";
   relpath = '../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../_index.html">Index (N)</a> &raquo;
+    <a href="../_index.html">Index (C)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span>
      &raquo; 
-    <span class="title">NumericMethods</span>
+    <span class="title">ConversionMethods</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Module: UnitMeasurements::NumericMethods
+      <div id="content"><h1>Module: UnitMeasurements::ConversionMethods
   
   
   
@@ -83,7 +83,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/unit_measurements/extras/numeric_methods.rb</dd>
+    <dd>lib/unit_measurements/extras/conversion_methods.rb</dd>
   </dl>
   
 </div>
@@ -91,9 +91,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This module provides methods to define <code>Numeric</code> methods for a list of units within a unit group. If units are empty, it defaults to defining methods for all units in the unit group.</p>
+<p>This module provides functionality to define conversion methods for a list of units within a unit group. If units are empty, it defaults to defining methods for all units in the unit group. These methods allow easy conversion between different units within a given unit group.</p>
 
-<p>This module is included in the <code>Measurement</code> class to allow defining numeric methods for specified units.</p>
+<p>This module is included in the <code>Measurement</code> class to allow defining conversion methods for specified units.</p>
 
 
   </div>
@@ -133,7 +133,7 @@
       
         
         <div class='inline'>
-<p>5.14.0</p>
+<p>5.15.0</p>
 </div>
       
     </li>
@@ -158,7 +158,7 @@
         <li class="private ">
   <span class="summary_signature">
     
-      <a href="#define_numeric_method_for-class_method" title="define_numeric_method_for (class method)">.<strong>define_numeric_method_for</strong>(unit, unit_group)  &#x21d2; Unit </a>
+      <a href="#define_conversion_method_for-class_method" title="define_conversion_method_for (class method)">.<strong>define_conversion_method_for</strong>(unit, unit_group)  &#x21d2; Unit </a>
     
 
     
@@ -173,7 +173,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Defines a numeric method for a specific <code>unit</code> within a <code>unit_group</code>.</p>
+<p>Defines conversion methods for a specific <code>unit</code> within a <code>unit_group</code>.</p>
 </div></span>
   
 </li>
@@ -182,7 +182,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#define_numeric_methods-class_method" title="define_numeric_methods (class method)">.<strong>define_numeric_methods</strong>(*units)  &#x21d2; Array&lt;Unit&gt; </a>
+      <a href="#define_conversion_methods-class_method" title="define_conversion_methods (class method)">.<strong>define_conversion_methods</strong>(*units)  &#x21d2; Array&lt;Unit&gt; </a>
     
 
     
@@ -197,7 +197,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Defines <code>Numeric</code> methods for specified <code>units</code> within the unit group.</p>
+<p>Defines conversion methods for specified <code>units</code> within the unit group.</p>
 </div></span>
   
 </li>
@@ -213,9 +213,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="define_numeric_method_for-class_method">
+  <h3 class="signature first" id="define_conversion_method_for-class_method">
   
-    .<strong>define_numeric_method_for</strong>(unit, unit_group)  &#x21d2; <tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>  <span class="extras">(private)</span>
+    .<strong>define_conversion_method_for</strong>(unit, unit_group)  &#x21d2; <tt><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></tt>  <span class="extras">(private)</span>
   
 
   
@@ -224,7 +224,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Defines a numeric method for a specific <code>unit</code> within a <code>unit_group</code>. The method is defined dynamically using <code>define_method</code> and associates the unit with the numeric value.</p>
+<p>Defines conversion methods for a specific <code>unit</code> within a <code>unit_group</code>. These methods are defined dynamically using <code>define_method</code>.</p>
 
 
   </div>
@@ -244,7 +244,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The unit (or its name) for which the numeric method needs to be defined.</p>
+<p>The unit (or its name) for which the conversion methods need to be defined.</p>
 </div>
       
     </li>
@@ -279,7 +279,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The unit instance for which the method was defined.</p>
+<p>The unit instance for which the conversion methods were defined.</p>
 </div>
       
     </li>
@@ -289,7 +289,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="#define_numeric_methods-class_method" title="UnitMeasurements::NumericMethods.define_numeric_methods (method)">define_numeric_methods</a></span></li>
+      <li><span class='object_link'><a href="#define_conversion_methods-class_method" title="UnitMeasurements::ConversionMethods.define_conversion_methods (method)">define_conversion_methods</a></span></li>
     
   </ul>
 <p class="tag_title">Author:</p>
@@ -318,7 +318,7 @@
       
         
         <div class='inline'>
-<p>5.14.0</p>
+<p>5.15.0</p>
 </div>
       
     </li>
@@ -344,21 +344,25 @@
 80
 81
 82
-83</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/extras/numeric_methods.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/extras/conversion_methods.rb', line 70</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_define_numeric_method_for'>define_numeric_method_for</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_define_conversion_method_for'>define_conversion_method_for</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unit'>unit</span> <span class='op'>=</span> <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_unit'>unit</span> <span class='op'>:</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='period'>.</span><span class='id identifier rubyid_unit_for!'>unit_for!</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_unit'>unit</span><span class='period'>.</span><span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_method_name'>method_name</span><span class='op'>|</span>
     <span class='comment'># Check if the name contains alphabetic characters
 </span>    <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_method_name'>method_name</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^[a-zA-Z]+$</span><span class='regexp_end'>/</span></span>
 
-    <span class='const'>Numeric</span><span class='period'>.</span><span class='id identifier rubyid_define_method'>define_method</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='rparen'>)</span> <span class='kw'>do</span>
-      <span class='id identifier rubyid_unit_group'>unit_group</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_define_method'>define_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method_name'>method_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='label'>use_cache:</span> <span class='kw'>false</span><span class='op'>|</span>
+      <span class='id identifier rubyid_convert_to'>convert_to</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='label'>use_cache:</span> <span class='id identifier rubyid_use_cache'>use_cache</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
+    <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method_name'>method_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method_name'>method_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>as_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method_name'>method_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method_name'>method_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_unit'>unit</span>
@@ -369,9 +373,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="define_numeric_methods-class_method">
+  <h3 class="signature " id="define_conversion_methods-class_method">
   
-    .<strong>define_numeric_methods</strong>(*units)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
+    .<strong>define_conversion_methods</strong>(*units)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Unit.html" title="UnitMeasurements::Unit (class)">Unit</a></span>&gt;</tt> 
   
 
   
@@ -383,12 +387,12 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This method defines a numeric methods specifically for units that contain alphabetic characters in their names.</p>
+<p>This method defines a conversion methods specifically for units that contain alphabetic characters in their names.</p>
 </div>
   </div>
 
 
-<p>Defines <code>Numeric</code> methods for specified <code>units</code> within the unit group. If <code>units</code> are empty, it defaults to defining methods for all units within the unit group.</p>
+<p>Defines conversion methods for specified <code>units</code> within the unit group. If <code>units</code> are empty, it defaults to defining methods for all units within the unit group.</p>
 
 
   </div>
@@ -400,17 +404,17 @@
     
       
         <p class="example_title"><div class='inline'>
-<p>Define numeric methods for metres, centimetres, and millimetres:</p>
+<p>Define conversion methods for metres, centimetres, and millimetres:</p>
 </div></p>
       
-      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_numeric_methods'>define_numeric_methods</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metres</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:cm</span><span class='comma'>,</span> <span class='symbol'>:mm</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_conversion_methods'>define_conversion_methods</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metres</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:cm</span><span class='comma'>,</span> <span class='symbol'>:mm</span><span class='rparen'>)</span></code></pre>
     
       
         <p class="example_title"><div class='inline'>
-<p>Define numeric methods for all units within the unit group:</p>
+<p>Define conversion methods for all units within the unit group:</p>
 </div></p>
       
-      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_numeric_methods'>define_numeric_methods</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_conversion_methods'>define_conversion_methods</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -427,7 +431,7 @@
       
         &mdash;
         <div class='inline'>
-<p>An array of units’ names for which numeric methods need to be defined. If empty, methods will be defined for all units within the unit group.</p>
+<p>An array of units’ names for which conversion methods need to be defined. If empty, methods will be defined for all units within the unit group.</p>
 </div>
       
     </li>
@@ -446,7 +450,7 @@
       
         &mdash;
         <div class='inline'>
-<p>An array of units for which numeric methods were defined.</p>
+<p>An array of units for which the conversion methods were defined.</p>
 </div>
       
     </li>
@@ -456,7 +460,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="#define_numeric_method_for-class_method" title="UnitMeasurements::NumericMethods.define_numeric_method_for (method)">define_numeric_method_for</a></span></li>
+      <li><span class='object_link'><a href="#define_conversion_method_for-class_method" title="UnitMeasurements::ConversionMethods.define_conversion_method_for (method)">define_conversion_method_for</a></span></li>
     
   </ul>
 <p class="tag_title">Author:</p>
@@ -485,7 +489,7 @@
       
         
         <div class='inline'>
-<p>5.14.0</p>
+<p>5.15.0</p>
 </div>
       
     </li>
@@ -498,24 +502,24 @@
       <pre class="lines">
 
 
-43
 44
 45
 46
 47
 48
 49
-50</pre>
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/unit_measurements/extras/numeric_methods.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/unit_measurements/extras/conversion_methods.rb', line 44</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_define_numeric_methods'>define_numeric_methods</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_units'>units</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_define_conversion_methods'>define_conversion_methods</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_units'>units</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_unit_group'>unit_group</span> <span class='op'>=</span> <span class='kw'>self</span>
   <span class='id identifier rubyid_units'>units</span> <span class='op'>=</span> <span class='id identifier rubyid_units'>units</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='period'>.</span><span class='id identifier rubyid_units'>units</span> <span class='op'>:</span> <span class='id identifier rubyid_units'>units</span>
 
   <span class='id identifier rubyid_units'>units</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_units'>units</span><span class='comma'>,</span> <span class='id identifier rubyid_unit'>unit</span><span class='op'>|</span>
-    <span class='id identifier rubyid_units'>units</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_define_numeric_method_for'>define_numeric_method_for</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_units'>units</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_define_conversion_method_for'>define_conversion_method_for</span><span class='lparen'>(</span><span class='id identifier rubyid_unit'>unit</span><span class='comma'>,</span> <span class='id identifier rubyid_unit_group'>unit_group</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>

@@ -99,12 +99,12 @@
 
 <h2 id="label-Minimum+Requirements">Minimum Requirements</h2>
 <ul><li>
-<p>Ruby 3.2.2+ (<a href="https://www.ruby-lang.org/en/downloads/branches">www.ruby-lang.org/en/downloads/branches</a>/)</p>
+<p>Ruby 3.2.2+ (<a href="https://www.ruby-lang.org/en/downloads/branches/">Download Ruby</a>)</p>
 </li></ul>
 
 <h2 id="label-Installation">Installation</h2>
 
-<p>If using bundler, first add this line to your application’s Gemfile:</p>
+<p>To use <code>unit_measurements</code> in your Rails application, add the following line to your Gemfile:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>unit_measurements</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
@@ -306,7 +306,7 @@
 
 <p><strong>Finding units within the unit group:</strong></p>
 
-<p>You can use <code>#unit_for</code> or <code>#unit_for!</code> (aliased as <code>#[]</code>) methods to find units within the unit group. <code>#unit_for!</code> method returns an error if a unit is not present in the unit group.</p>
+<p>You can use <code>#unit_for</code> or <code>#unit_for!</code> (aliased as <code>#[]</code>) methods to find units within the unit group. <code>#unit_for!</code> method returns an error if a unit system is not defined within the unit group.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_unit_for'>unit_for</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='comment'>#=&gt; #&lt;UnitMeasurements::Unit: m (meter, meters, metre, metres)&gt;
@@ -638,44 +638,66 @@
 
 <h2 id="label-Extras">Extras</h2>
 
-<h3 id="label-Numeric+extension+methods">Numeric extension methods</h3>
+<h3 id="label-Numeric+methods">Numeric methods</h3>
 
-<p>The <code>.define_numeric_methods</code> method allows you to instantiate measurements in a manner similar to how <code>ActiveSupport::Duration</code> objects are created in Rails, providing a familiar syntax and functionality.</p>
+<p>The <code>.define_numeric_methods</code> method allows you to define numeric methods that help you to initialize measurements in a manner similar to how <code>ActiveSupport::Duration</code> objects are created in Rails, providing a familiar syntax and functionality.</p>
 
-<p>To define numeric extension methods for specific units within a unit group, use the following syntax:</p>
+<p>To define numeric methods for specific units within the unit group, use the following syntax:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_numeric_methods'>define_numeric_methods</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metre</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foot</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inch</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 </code></pre>
 
 <p>This will enable the usage of these units as methods to instantiate and use measurements:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span>                 <span class='comment'>#=&gt; Instantiate a measurement representing 1 metre.
-</span><span class='int'>5</span><span class='period'>.</span><span class='id identifier rubyid_feet'>feet</span>              <span class='comment'>#=&gt; Instantiate a measurement representing 5 feet.
-</span><span class='int'>10</span><span class='period'>.</span><span class='id identifier rubyid_inches'>inches</span>           <span class='comment'>#=&gt; Instantiate a measurement representing 10 inches.
-</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_foot'>foot</span> <span class='op'>==</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_inches'>inches</span> <span class='comment'>#=&gt; equality comparison between two measurements.
-</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_ft'>ft</span> <span class='op'>+</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span>        <span class='comment'>#=&gt; adds quantity of two measurements.
+<pre class="code ruby"><code class="ruby"><span class='comment'># Initialize a measurement
+</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span>                 <span class='comment'>#=&gt; 1 m
+</span><span class='int'>5</span><span class='period'>.</span><span class='id identifier rubyid_feet'>feet</span>              <span class='comment'>#=&gt; 5 ft
+</span><span class='int'>10</span><span class='period'>.</span><span class='id identifier rubyid_inches'>inches</span>           <span class='comment'>#=&gt; 10 in
+</span>
+<span class='comment'># Usage
+</span><span class='comment'>## Equality comparison
+</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_foot'>foot</span> <span class='op'>==</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_inches'>inches</span> <span class='comment'>#=&gt; true
+</span><span class='comment'>## Arithmetic operation
+</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_ft'>ft</span> <span class='op'>+</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span>        <span class='comment'>#=&gt; 2.0 ft
+</span></code></pre>
+
+<h3 id="label-Conversion+methods">Conversion methods</h3>
+
+<p>The <code>.define_conversion_methods</code> method allows you to define conversion methods that help you to easily convert measurements to a different unit.</p>
+
+<p>To define conversion methods for specific units within the unit group, use the following syntax:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_define_conversion_methods'>define_conversion_methods</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>metre</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foot</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>inch</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<p>This will enable you to convert units as:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ft</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_in_inches'>in_inches</span> <span class='comment'>#=&gt; 12.0 in
+</span><span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='period'>.</span><span class='id identifier rubyid_in_foot'>in_foot</span>                                   <span class='comment'>#=&gt; 1.0 ft
 </span></code></pre>
 
 <h2 id="label-Contributing">Contributing</h2>
+
+<p>Contributions to this project are welcomed! To contribute:</p>
 <ol><li>
-<p>Fork it</p>
+<p>Fork this repository</p>
 </li><li>
-<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+<p>Create a new branch (<code>git checkout -b my-new-feature</code>)</p>
 </li><li>
 <p>Commit your changes (<code>git commit -am &quot;Add some feature&quot;</code>)</p>
 </li><li>
-<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+<p>Push the changes to your branch (<code>git push origin my-new-feature</code>)</p>
 </li><li>
-<p>Create new Pull Request</p>
+<p>Create new <strong>Pull Request</strong></p>
 </li></ol>
 
 <h2 id="label-License">License</h2>
 
-<p>Copyright 2023 <a href="(https://shivam091.github.io)">Harshal V. LADHE</a>, Released under the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+<p>Copyright 2023 <a href="https://shivam091.github.io">Harshal V. LADHE</a>, Released under the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Nov 27 14:47:17 2023 by
+  Generated on Wed Nov 29 12:32:47 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
