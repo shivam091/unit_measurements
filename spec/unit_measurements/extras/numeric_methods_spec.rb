@@ -10,7 +10,7 @@ RSpec.describe UnitMeasurements::NumericMethods do
   let(:cm) { unit_group.unit_for!(:cm) }
 
   context "when units are specified" do
-    it "defines extension methods for specified units" do
+    it "defines methods for specified units" do
       unit_group.define_numeric_methods("m", "cm")
 
       expect(Numeric.method_defined?("m")).to be_truthy
@@ -21,7 +21,7 @@ RSpec.describe UnitMeasurements::NumericMethods do
   end
 
   context "when units are specified" do
-    it "defines extension methods for all units within the unit group" do
+    it "defines methods for all units within the unit group" do
       unit_group.define_numeric_methods
 
       expect(Numeric.method_defined?("ft")).to be_truthy
