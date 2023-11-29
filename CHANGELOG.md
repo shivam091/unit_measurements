@@ -1,8 +1,16 @@
+## [5.15.0](https://github.com/shivam091/unit_measurements/compare/v5.14.0...v5.15.0) - 2023-12-01
+
+### What's new
+
+- Added `.define_conversion_methods` method to define conversion helper methods for units.
+
+----------
+
 ## [5.14.0](https://github.com/shivam091/unit_measurements/compare/v5.13.0...v5.14.0) - 2023-11-29
 
 ### What's new
 
-- Added `.define_numeric_methods` support to define numeric extension methods for units.
+- Added `.define_numeric_methods` method to define numeric extension methods for units.
 
 ----------
 
