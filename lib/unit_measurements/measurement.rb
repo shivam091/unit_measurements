@@ -34,6 +34,7 @@ module UnitMeasurements
     include Math
 
     extend NumericMethods
+    extend ConversionMethods
 
     # Regular expression to match conversion strings.
     #
