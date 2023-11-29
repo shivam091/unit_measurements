@@ -43,11 +43,12 @@ Users are advised to cross-verify conversions for their specific use cases._
 
 ## Minimum Requirements
 
-* Ruby 3.2.2+ (https://www.ruby-lang.org/en/downloads/branches/)
+* Ruby 3.2.2+ ([Download Ruby](https://www.ruby-lang.org/en/downloads/branches/))
 
 ## Installation
 
-If using bundler, first add this line to your application's Gemfile:
+To use `unit_measurements` in your Rails application, add the
+following line to your Gemfile:
 
 ```ruby
 gem "unit_measurements"
@@ -269,8 +270,7 @@ UnitMeasurements::Length.units_for("metric")
 **Finding units within the unit group:**
 
 You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) methods to find units
-within the unit group. `#unit_for!` method returns an error if a unit is not present
-in the unit group.
+within the unit group. `#unit_for!` method returns an error if a unit system is not defined within the unit group.
 
 ```ruby
 UnitMeasurements::Length.unit_for("m")
@@ -484,13 +484,12 @@ Volume = UnitMeasurements::Volume
 
 ## Extras
 
-### Numeric extension methods
+### Numeric methods
 
-The `.define_numeric_methods` method allows you to instantiate measurements in a
-manner similar to how `ActiveSupport::Duration` objects are created in Rails,
-providing a familiar syntax and functionality.
+The `.define_numeric_methods` method allows you to define numeric methods that help you to initialize measurements in a
+manner similar to how `ActiveSupport::Duration` objects are created in Rails, providing a familiar syntax and functionality.
 
-To define numeric extension methods for specific units within a unit group, use
+To define numeric methods for specific units within the unit group, use
 the following syntax:
 
 ```ruby
@@ -500,21 +499,46 @@ UnitMeasurements::Length.define_numeric_methods("metre", "foot", "inch")
 This will enable the usage of these units as methods to instantiate and use measurements:
 
 ```ruby
-1.m                 #=> Instantiate a measurement representing 1 metre.
-5.feet              #=> Instantiate a measurement representing 5 feet.
-10.inches           #=> Instantiate a measurement representing 10 inches.
-1.foot == 12.inches #=> equality comparison between two measurements.
-1.ft + 12.in        #=> adds quantity of two measurements.
+# Initialize a measurement
+1.m                 #=> 1 m
+5.feet              #=> 5 ft
+10.inches           #=> 10 in
+
+# Usage
+## Equality comparison
+1.foot == 12.inches #=> true
+## Arithmetic operation
+1.ft + 12.in        #=> 2.0 ft
+```
+
+### Conversion methods
+
+The `.define_conversion_methods` method allows you to define conversion methods that
+help you to easily convert measurements to a different unit.
+
+To define conversion methods for specific units within the unit group, use the following syntax:
+
+```ruby
+UnitMeasurements::Length.define_conversion_methods("metre", "foot", "inch")
+```
+
+This will enable you to convert units as:
+
+```ruby
+UnitMeasurements::Length.new(1, "ft").in_inches #=> 12.0 in
+12.in.in_foot                                   #=> 1.0 ft
 ```
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
+Contributions to this project are welcomed! To contribute:
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am "Add some feature"`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+4. Push the changes to your branch (`git push origin my-new-feature`)
+5. Create new **Pull Request**
 
 ## License
 
-Copyright 2023 [Harshal V. LADHE]((https://shivam091.github.io)), Released under the [MIT License](http://opensource.org/licenses/MIT).
+Copyright 2023 [Harshal V. LADHE](https://shivam091.github.io), Released under the [MIT License](http://opensource.org/licenses/MIT).
