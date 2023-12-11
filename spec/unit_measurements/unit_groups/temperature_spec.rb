@@ -11,5 +11,9 @@ RSpec.describe UnitMeasurements::Temperature do
     it "converts to °R" do
       expect(subject.convert_to("°R").quantity).to eq(9)
     end
+
+    it "converts to Tₚ" do
+      expect(subject.convert_to("Tₚ").quantity).to eq(3.52911947057561e-32)
+    end
   end
 end

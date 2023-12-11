@@ -71,5 +71,9 @@ RSpec.describe UnitMeasurements::Force do
     it "converts to (lb⋅in)/s²" do
       expect(subject.convert_to("(lb⋅in)/s²").quantity).to eq(433.980831072594)
     end
+
+    it "converts to Fₚ" do
+      expect(subject.convert_to("Fₚ").quantity).to eq(4.13120713872594e-44)
+    end
   end
 end

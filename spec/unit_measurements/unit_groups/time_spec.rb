@@ -47,5 +47,9 @@ RSpec.describe UnitMeasurements::Time do
     it "converts to cent" do
       expect(subject.convert_to("cent").quantity).to eq(1.90258751902588e-8)
     end
+
+    it "converts to tₚ" do
+      expect(subject.convert_to("tₚ").quantity).to eq(1.11291506399169e+45)
+    end
   end
 end

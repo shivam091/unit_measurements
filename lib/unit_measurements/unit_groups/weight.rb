@@ -45,4 +45,8 @@ UnitMeasurements::Weight = UnitMeasurements.build do
   system :foot_pound_second do
     unit "slug", value: "32.17404856 lb", aliases: ["slugs"]
   end
+
+  system :planck_units do
+    unit "mₚ", value: "2.176434e-8 kg", aliases: ["planck mass", "quantum mass"]
+  end
 end

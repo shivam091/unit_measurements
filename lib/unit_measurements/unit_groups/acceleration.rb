@@ -32,4 +32,8 @@ UnitMeasurements::Acceleration = UnitMeasurements.build do
   system :centimetre_gram_second do
     unit "Gal", value: "1e-2 m/s²", aliases: ["gal", "galileo"]
   end
+
+  system :planck_units do
+    unit "aₚ", value: "5.5608e+51 m/s²", aliases: ["planck acceleration", "quantum acceleration"]
+  end
 end

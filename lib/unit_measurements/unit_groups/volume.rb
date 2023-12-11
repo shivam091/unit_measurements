@@ -57,4 +57,8 @@ UnitMeasurements::Volume = UnitMeasurements.build do
 
     unit "cd-ft", value: "1/8 cd", aliases: ["cord-foot", "cord-feet"]
   end
+
+  system :planck_units do
+    unit "Vₚ", value: "4.2217e-105 m³", aliases: ["planck volume", "quantum volume"]
+  end
 end

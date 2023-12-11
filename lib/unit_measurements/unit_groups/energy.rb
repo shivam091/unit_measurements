@@ -46,6 +46,10 @@ UnitMeasurements::Energy = UnitMeasurements.build do
     unit "hp⋅h", value: "2.685e+13 erg", aliases: ["hp*h", "horsepower-hour"]
   end
 
+  system :planck_units do
+    unit "Eₚ", value: "1.9561e+9 J", aliases: ["planck energy", "quantum energy"]
+  end
+
   unit "Ry", value: "2.179872e-18 J", aliases: ["rydberg"]
   unit "Ha", value: "4.359744e-18 J", aliases: ["hartree", "atomic unit of energy"]
   unit "boe", value: "5.86152 GJ", aliases: ["barrel of oil equivalent", "barrels of oil equivalent"]

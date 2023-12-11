@@ -111,5 +111,9 @@ RSpec.describe UnitMeasurements::Pressure do
     it "converts to kgf/mm²" do
       expect(subject.convert_to("kgf/mm²").quantity).to eq(5.09858106488964e-7)
     end
+
+    it "converts to Pₚ" do
+      expect(subject.convert_to("Pₚ").quantity).to eq(1.07919336770924e-113)
+    end
   end
 end

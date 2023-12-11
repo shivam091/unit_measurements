@@ -52,6 +52,10 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("ftm³").quantity).to eq(0.817469137071495)
     end
 
+    it "converts to Vₚ" do
+      expect(subject.convert_to("Vₚ").quantity).to eq(1.18435701257787e+105)
+    end
+
     it "converts to c" do
       expect(subject.convert_to("c").quantity).to eq(17597.539863927)
     end

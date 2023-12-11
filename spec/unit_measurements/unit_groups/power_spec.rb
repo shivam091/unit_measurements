@@ -103,5 +103,9 @@ RSpec.describe UnitMeasurements::Power do
     it "converts to atm⋅ft³/h" do
       expect(subject.convert_to("atm⋅ft³/h").quantity).to eq(6.27351590548899)
     end
+
+    it "converts to Pₚ" do
+      expect(subject.convert_to("Pₚ").quantity).to eq(1.37805583882259e-52)
+    end
   end
 end

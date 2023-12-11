@@ -56,4 +56,8 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
   system :gravitational_metric do
     unit "at", value: "98066.5 Pa", aliases: ["technical atmosphere", "technical atmospheres"]
   end
+
+  system :planck_units do
+    unit "Pₚ", value: "4.63309e+113 Pa", aliases: ["planck pressure", "quantum pressure"]
+  end
 end

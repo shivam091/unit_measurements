@@ -36,6 +36,10 @@ UnitMeasurements::Area = UnitMeasurements.build do
     unit "ch² (US)", value: "404.6873 m²", aliases: ["ch^2 (US)", "sq ch (US)", "square chain (US)", "square chains (US)"]
   end
 
+  system :planck_units do
+    unit "Aₚ", value: "2.6121e-70 m²", aliases: ["planck area", "quantum area"]
+  end
+
   unit "bd", value: "0.00774192 m²", aliases: ["board", "boards"]
   unit "ro", value: "1/4 ac", aliases: ["rood"]
 end
