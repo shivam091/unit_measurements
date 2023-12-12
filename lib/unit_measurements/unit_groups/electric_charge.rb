@@ -15,4 +15,8 @@ UnitMeasurements::ElectricCharge = UnitMeasurements.build do
     unit "abC", value: "10 C", aliases: ["abcoulomb", "abcoulombs"]
     unit "statC", value: "3.335641e-10 C", aliases: ["statcoulomb", "statcoulombs"]
   end
+
+  system :planck_units do
+    unit "qₚ", value: "1.875545956e-18 C", aliases: ["planck length", "quantum length"]
+  end
 end
