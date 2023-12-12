@@ -1,4 +1,12 @@
-## [5.15.0](https://github.com/shivam091/unit_measurements/compare/v5.14.0...v5.15.0) - 2023-12-01
+## [5.16.0](https://github.com/shivam091/unit_measurements/compare/v5.15.0...v5.16.0) - 2023-12-13
+
+### What's new
+
+- Added planck units and their conversions.
+
+----------
+
+## [5.15.0](https://github.com/shivam091/unit_measurements/compare/v5.14.0...v5.15.0) - 2023-12-11
 
 ### What's new
 

@@ -9,7 +9,7 @@ A library that encapsulate measurements and their units in Ruby.
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8aec9bffa356d108784/test_coverage)](https://codeclimate.com/github/shivam091/unit_measurements/test_coverage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/unit_measurements/blob/main/LICENSE.md)
 
-[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)
+**[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)**
 
 ## Introduction
 
@@ -47,8 +47,7 @@ Users are advised to cross-verify conversions for their specific use cases._
 
 ## Installation
 
-To use `unit_measurements` in your Rails application, add the
-following line to your Gemfile:
+To use `unit_measurements` in your Rails application, add the following line to your Gemfile:
 
 ```ruby
 gem "unit_measurements"
@@ -88,8 +87,7 @@ viz., `UnitMeasurements::Weight`, `UnitMeasurements::Length`, etc.
 **Initialize a measurement:**
 
 ```ruby
-UnitMeasurements::Length.new(1, "km")
-#=> 1 km
+UnitMeasurements::Length.new(1, "km") #=> 1 km
 ```
 
 **Converting to other units:**
@@ -103,22 +101,19 @@ These methods provide `use_cache` parameter which defaults to `false` to indicat
 You can use `#convert_to` as:
 
 ```ruby
-UnitMeasurements::Length.new(1, "km").convert_to("m", use_cache: true)
-#=> 1000.0 m
+UnitMeasurements::Length.new(1, "km").convert_to("m", use_cache: true) #=> 1000.0 m
 ```
 
 If you want to modify measurement object itself, you can use `#convert_to!` method as:
 
 ```ruby
-UnitMeasurements::Length.new(1, "km").convert_to!("m")
-#=> 1000.0 m
+UnitMeasurements::Length.new(1, "km").convert_to!("m") #=> 1000.0 m
 ```
 
 You can convert the measurement directly to the `primitive` unit of the unit group as:
 
 ```ruby
-UnitMeasurements::Length.new(1, "cm").to_primitive
-#=> 0.01 m
+UnitMeasurements::Length.new(1, "cm").to_primitive #=> 0.01 m
 ```
 
 Note: `#to_primitive` method is aliased as `#in_primitive` and `#as_primitive`.
@@ -128,8 +123,7 @@ Note: `#to_primitive` method is aliased as `#in_primitive` and `#as_primitive`.
 This method provides `use_cache` parameter which defaults to `false` to indicate whether the caching of conversion factors should happen.
 
 ```ruby
-UnitMeasurements::Length.parse("1 km")
-#=> 1.0 km
+UnitMeasurements::Length.parse("1 km") #=> 1.0 km
 ```
 
 **Parse string that mentions quantity, source unit, and target unit:**
@@ -137,17 +131,14 @@ UnitMeasurements::Length.parse("1 km")
 A source unit can be separated from the target unit using the `in`, `to`, or `as` operators.
 
 ```ruby
-UnitMeasurements::Length.parse("1 km to m")
-#=> 1000.0 m
+UnitMeasurements::Length.parse("1 km to m") #=> 1000.0 m
 ```
 
 **Parse scientific numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.parse("2e+2 km").convert_to("m")
-#=> 200000.0 m
-UnitMeasurements::Length.parse("2e+2 km to m")
-#=> 200000.0 m
+UnitMeasurements::Length.parse("2e+2 km").convert_to("m") #=> 200000.0 m
+UnitMeasurements::Length.parse("2e+2 km to m") #=> 200000.0 m
 ```
 You can check supported special characters for exponents
 [here](https://shivam091.github.io/unit_measurements/UnitMeasurements/Normalizer.html).
@@ -155,19 +146,15 @@ You can check supported special characters for exponents
 **Parse complex numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.parse("2+3i km").convert_to("m")
-#=> 2000.0+3000.0i m
-UnitMeasurements::Length.parse("2+3i km to m")
-#=> 2000.0+3000.0i m
+UnitMeasurements::Length.parse("2+3i km").convert_to("m") #=> 2000.0+3000.0i m
+UnitMeasurements::Length.parse("2+3i km to m") #=> 2000.0+3000.0i m
 ```
 
 **Parse fractional/mixed fractional numbers, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.parse("2 ½ km").convert_to("m")
-#=> 2500.0 m
-UnitMeasurements::Length.parse("2/3 km to m")
-#=> 666.666666666667 m
+UnitMeasurements::Length.parse("2 ½ km").convert_to("m") #=> 2500.0 m
+UnitMeasurements::Length.parse("2/3 km to m") #=> 666.666666666667 m
 ```
 
 You can check supported special characters for fractional notations
@@ -176,17 +163,14 @@ You can check supported special characters for fractional notations
 **Parse ratios, source unit, and (or) target unit:**
 
 ```ruby
-UnitMeasurements::Length.parse("1:2 km").convert_to("m")
-#=> 500.0 m
-UnitMeasurements::Length.parse("1:2 km to m")
-#=> 500.0 m
+UnitMeasurements::Length.parse("1:2 km").convert_to("m") #=> 500.0 m
+UnitMeasurements::Length.parse("1:2 km to m") #=> 500.0 m
 ```
 
 **Calculate the ratio between two units:**
 
 ```ruby
-UnitMeasurements::Length.ratio("in", "ft")
-#=> "12.0 in/ft"
+UnitMeasurements::Length.ratio("in", "ft") #=> "12.0 in/ft"
 ```
 
 **Formatting measurement:**
@@ -195,8 +179,7 @@ If you want to format the measurement to certain format, you can use `#to_fs` me
 If format is not specified, it defaults to `"%.2<value>f %<unit>s"`.
 
 ```ruby
-UnitMeasurements::Length.new(100, "m").to("in").to_fs("%.4<quantity>f %<unit>s")
-#=> "3937.0079 in"
+UnitMeasurements::Length.new(100, "m").to("in").to_fs("%.4<quantity>f %<unit>s") #=> "3937.0079 in"
 ```
 
 You can check more about formatting along with their examples
@@ -206,26 +189,23 @@ You can check more about formatting along with their examples
 
 ```ruby
 length = UnitMeasurements::Length.new(1, "km")
-length.quantity
-#=> 1
-length.unit
-#=> #<UnitMeasurements::Unit: km (kilometer, kilometers, kilometre, kilometres)>
+length.quantity #=> 1
+length.unit #=> #<UnitMeasurements::Unit: km (kilometer, kilometers, kilometre, kilometres)>
 ```
 
 Unit object can be interrogated for a range of attributes:
 
 ```ruby
-length.unit.aliases # Alternative names for the unit.
-#=> #<Set: {"kilometer", "kilometers", "kilometre", "kilometres"}>
-length.unit.conversion_factor # Conversion factor relative to primitive unit.
-#=> 1000.0
+# Alternative names for the unit.
+length.unit.aliases #=> #<Set: {"kilometer", "kilometers", "kilometre", "kilometres"}>
+# Conversion factor relative to primitive unit.
+length.unit.conversion_factor #=> 1000.0
 ```
 
 **See primitive unit of the unit group:**
 
 ```ruby
-UnitMeasurements::Length.primitive
-#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
+UnitMeasurements::Length.primitive #=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
 ```
 
 **See all units of the unit group:**
@@ -238,8 +218,7 @@ UnitMeasurements::Length.units
 **See names of all valid units of the unit group:**
 
 ```ruby
-UnitMeasurements::Length.unit_names
-#=> ["ft", "in", "m", "mi", "yd"]
+UnitMeasurements::Length.unit_names #=> ["ft", "in", "m", "mi", "yd"]
 ```
 
 **See all valid units of the unit group along with their aliases:**
@@ -252,8 +231,7 @@ UnitMeasurements::Length.unit_names_with_aliases
 **See list of unit systems defined within the unit group:**
 
 ```ruby
-UnitMeasurements::Length.systems
-#=> ["metric", "imperial", "us_customary", "astronomical"]
+UnitMeasurements::Length.systems #=> ["metric", "imperial", "us_customary", "astronomical"]
 ```
 
 **See list of units within the unit system:**
@@ -273,30 +251,23 @@ You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) methods to find units
 within the unit group. `#unit_for!` method returns an error if a unit system is not defined within the unit group.
 
 ```ruby
-UnitMeasurements::Length.unit_for("m")
-#=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
-UnitMeasurements::Length.unit_for("z")
-#=> nil
-UnitMeasurements::Length.unit_for!("z")
-#=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
+UnitMeasurements::Length.unit_for("m") #=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
+UnitMeasurements::Length.unit_for("z") #=> nil
+UnitMeasurements::Length.unit_for!("z") #=> Invalid unit: 'z'. (UnitMeasurements::UnitError)
 ```
 
 **Finding whether the unit is defined within the unit group:**
 
 ```ruby
-UnitMeasurements::Length.defined?("m")
-#=> true
-UnitMeasurements::Length.defined?("metre")
-#=> false
+UnitMeasurements::Length.defined?("m") #=> true
+UnitMeasurements::Length.defined?("metre") #=> false
 ```
 
 **Check if the unit is a valid unit or alias within the unit group:**
 
 ```ruby
-UnitMeasurements::Length.unit_or_alias?("m")
-#=> true
-UnitMeasurements::Length.unit_or_alias?("metre")
-#=> true
+UnitMeasurements::Length.unit_or_alias?("m") #=> true
+UnitMeasurements::Length.unit_or_alias?("metre") #=> true
 ```
 
 **Clear cached data for the unit group:**
@@ -311,8 +282,7 @@ You have ability to compare the measurements with the same or different units wi
 For example, comparing length with length will work, comparing a length with a area would fail.
 
 ```ruby
-UnitMeasurements::Length.parse("1 km") != UnitMeasurements::Length.parse("1 m")
-#=> true
+UnitMeasurements::Length.parse("1 km") != UnitMeasurements::Length.parse("1 m") #=> true
 ```
 
 You can check supported comparisons along with their examples
@@ -326,10 +296,8 @@ measurement by either other measurement with compatible unit or numeric value.
 In cases of different units, the left hand side takes precedence.
 
 ```ruby
-UnitMeasurements::Length.new(1, "km") + UnitMeasurements::Length.new(1, "m")
-#=> 1.001 km
-UnitMeasurements::Length.new(2, "km") * 2+2i
-#=> 4+2i km
+UnitMeasurements::Length.new(1, "km") + UnitMeasurements::Length.new(1, "m") #=> 1.001 km
+UnitMeasurements::Length.new(2, "km") * 2+2i #=> 4+2i km
 ```
 
 You can check supported arithmetic operations along with their examples
@@ -340,8 +308,7 @@ You can check supported arithmetic operations along with their examples
 You can perform mathematical functions on the measurements.
 
 ```ruby
-UnitMeasurements::Length.new(17.625, "m").round
-#   => 18 m
+UnitMeasurements::Length.new(17.625, "m").round #=> 18 m
 ```
 
 You can check supported mathematical functions along with their examples
@@ -353,8 +320,7 @@ You can convert measurement quantity directly to other numeric types viz.
 `Integer`, `BigDecimal`, `Rational`, `Complex`, and `Float`.
 
 ```ruby
-UnitMeasurements::Length.new(2.25567, "km").to_i
-#=> 2 km
+UnitMeasurements::Length.new(2.25567, "km").to_i #=> 2 km
 ```
 
 You can check more about them along with their examples
@@ -500,9 +466,9 @@ This will enable the usage of these units as methods to instantiate and use meas
 
 ```ruby
 # Initialize a measurement
-1.m                 #=> 1 m
-5.feet              #=> 5 ft
-10.inches           #=> 10 in
+1.m       #=> 1 m
+5.feet    #=> 5 ft
+10.inches #=> 10 in
 
 # Usage
 ## Equality comparison
