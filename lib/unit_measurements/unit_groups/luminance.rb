@@ -7,6 +7,9 @@ UnitMeasurements::Luminance = UnitMeasurements.build do
 
   system :metric do
     unit "cd/m²", aliases: ["cd/m^2", "candela per square metre", "candelas per square metre", "candela per square meter", "candelas per square meter"]
+
+    unit "L", value: [Rational(10000, Math::PI), "cd/m²"], aliases: ["lambert", "lamberts"]
+    unit "sb", value: "10000 cd/m²", aliases: ["stlib"]
   end
 
   system :us_customary do
@@ -14,10 +17,5 @@ UnitMeasurements::Luminance = UnitMeasurements.build do
 
     unit "cd/in²", value: "1550.0031 cd/m²", aliases: ["cd/in^2", "candela per square inch", "candelas per square inch"]
     unit "cd/ft²", value: "10.763910417 cd/m²", aliases: ["cd/ft^2", "candela per square foot", "candelas per square foot"]
-  end
-
-  system :centimetre_gram_second do
-    unit "L", value: [Rational(10000, Math::PI), "cd/m²"], aliases: ["lambert", "lamberts"]
-    unit "sb", value: "10000 cd/m²", aliases: ["stlib"]
   end
 end

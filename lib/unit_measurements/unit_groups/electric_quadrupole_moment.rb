@@ -7,9 +7,7 @@ UnitMeasurements::ElectricQuadrupoleMoment = UnitMeasurements.build do
 
   system :metric do
     si_unit "C·m²", aliases: ["C*m^2", "coulomb square meter", "coulomb square metre"]
-  end
 
-  system :centimetre_gram_second do
     unit "B", value: "1e-26 statC·cm²", aliases: ["buckingham", "buckinghams"]
     unit "statC·cm²", value: "3.335641e-14 C·m²", aliases: ["statC*m^2", "statcoulomb square meter", "statcoulomb square metre"]
   end
