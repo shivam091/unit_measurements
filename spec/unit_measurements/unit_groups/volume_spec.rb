@@ -16,6 +16,10 @@ RSpec.describe UnitMeasurements::Volume do
       expect(subject.convert_to("λ").quantity).to eq(5e+9)
     end
 
+    it "converts to st" do
+      expect(subject.convert_to("st").quantity).to eq(5)
+    end
+
     it "converts to mm³" do
       expect(subject.convert_to("mm³").quantity).to eq(5e+9)
     end
@@ -122,6 +126,14 @@ RSpec.describe UnitMeasurements::Volume do
 
     it "converts to tbsp" do
       expect(subject.convert_to("tbsp").quantity).to eq(2.81560637822832e+5)
+    end
+
+    it "converts to fir" do
+      expect(subject.convert_to("fir").quantity).to eq(122.205137943938)
+    end
+
+    it "converts to pot" do
+      expect(subject.convert_to("pot").quantity).to eq(2199.69248299088)
     end
 
     it "converts to floz" do
