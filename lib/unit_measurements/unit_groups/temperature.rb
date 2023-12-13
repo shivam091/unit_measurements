@@ -12,4 +12,8 @@ UnitMeasurements::Temperature = UnitMeasurements.build do
   system :english_engineering do
     unit "°R", value: "5/9 K", aliases: ["R", "°Ra", "Ra", "rankine"]
   end
+
+  system :planck_units do
+    unit "Tₚ", value: "1.416784e+32 K", aliases: ["planck temperature", "quantum temperature"]
+  end
 end

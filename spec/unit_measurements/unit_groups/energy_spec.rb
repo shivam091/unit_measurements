@@ -99,5 +99,9 @@ RSpec.describe UnitMeasurements::Energy do
     it "converts to gal⋅atm" do
       expect(subject.convert_to("gal⋅atm").quantity).to eq(0.0108546384554201)
     end
+
+    it "converts to Eₚ" do
+      expect(subject.convert_to("Eₚ").quantity).to eq(2.55610653852053e-9)
+    end
   end
 end

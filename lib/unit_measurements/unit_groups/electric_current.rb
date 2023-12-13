@@ -14,4 +14,8 @@ UnitMeasurements::ElectricCurrent = UnitMeasurements.build do
     unit "abA", value: "10 A", aliases: ["abampere", "abamperes"]
     unit "statA", value: "3.33564e-10 A", aliases: ["statampere", "statamperes"]
   end
+
+  system :planck_units do
+    unit "Iₚ", value: "3.4789e+25 A", aliases: ["planck current", "quantum current"]
+  end
 end

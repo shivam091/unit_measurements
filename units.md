@@ -49,6 +49,7 @@ These units are defined in `UnitMeasurements::Length`.
 | 30 | lmin | light-minute, light-minutes |
 | 31 | cb (M) | CBL. (M), cable length (M) |
 | 32 | cb (US) | CBL. (US), cable length (US) |
+| 33 | lₚ | planck length, quantum length |
 
 ## 2. Weight or mass
 
@@ -78,6 +79,7 @@ These units are defined in `UnitMeasurements::Weight`.
 | 20 | cwt | hundredweight, long hundredweight, imperial hundredweight |
 | 21 | slug | slugs |
 | 22 | cwt (US) | hundredweight (US), short hundredweight |
+| 23 | mₚ | planck mass, quantum mass |
 
 ## 3. Time or duration
 
@@ -96,6 +98,7 @@ These units are defined in `UnitMeasurements::Time`.
 | 9 | qtr | quarter, quarters |
 | 10 | dec | decade, decades |
 | 11 | cent | century, centuries |
+| 12 | tₚ | planck time, quantum time |
 
 ## 4. Amount of substance
 
@@ -116,6 +119,7 @@ These units are defined in `UnitMeasurements::ElectricCurrent`.
 | 2 | abA | abampere, abamperes |
 | 3 | Bi | biot, biots |
 | 4 | statA | statampere, statamperes |
+| 5 | Iₚ | planck current, quantum current |
 
 ## 6. Luminous intensity
 
@@ -134,6 +138,7 @@ These units are defined in `UnitMeasurements::Temperature`.
 |:--|:--|:--|
 | _1_ | _K*_ | _kelvin, kelvins_ |
 | 2 | °R | R, °Ra, Ra, rankine |
+| 3 | Tₚ | planck temperature, quantum temperature |
 
 ## 8. Area
 
@@ -161,6 +166,7 @@ These units are defined in `UnitMeasurements::Area`.
 | 18 | ft² (US) | ft^2 (US), sq ft (US), square foot (US), square feet (US) |
 | 19 | mi² (US) | mi^2 (US), sq mi (US), square mile (US), square miles (US) |
 | 20 | ch² (US) | ch^2 (US), sq ch (US), square chain (US), square chains (US) |
+| 21 | Aₚ | planck area, quantum area |
 
 ## 9. Volume & capacity
 
@@ -203,6 +209,7 @@ These units are defined in `UnitMeasurements::Volume`.
 | 33 | ac⋅ft | acre-foot, acre-feet |
 | 34 | ac⋅in | acre-inch, acre-inches |
 | 35 | cd-ft | cord-foot, cord-feet |
+| 36 | Vₚ | planck volume, quantum volume |
 
 ## 10. Density
 
@@ -223,6 +230,7 @@ These units are defined in `UnitMeasurements::Density`.
 | 11 | lb/gal | pound per gallon, pounds per gallon |
 | 12 | slug/ft³ | slug/ft^3, slug per cubic foot, slugs per cubic foot |
 | 13 | slug/in³ | slug/in^3, slug per cubic inch, slugs per cubic inch |
+| 14 | ρₚ | planck density, quantum density |
 
 ## 11. Quantity
 
@@ -302,7 +310,8 @@ These units are defined in `UnitMeasurements::Force`.
 | 14 | kipf | kip, klbf, kip-force |
 | 15 | (lb⋅m)/s² | (lb*m)/s^2, pound meter per second squared, pound metre per second squared |
 | 16 | (lb⋅ft)/s² | (lb*ft)/s^2, pound foot per second squared |
-| 17 | (lb⋅in)/s² | (lb*in)/s^2, pound inch per second squared |
+| 17 | (lb⋅in)/s² | (lb\*in)/s^2, pound inch per second squared |
+| 18 | Fₚ | planck force, quantum force |
 
 ## 16. Velocity or speed
 
@@ -343,6 +352,7 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | 10 | mpm/s | mi/(min⋅s), mile per minute per second, miles per minute per second |
 | 11 | mph/s | mi/(h⋅s), mile per hour per second, miles per hour per second |
 | 12 | Kn/s | knot per second, knots per second |
+| 13 | aₚ | planck acceleration, quantum acceleration |
 
 ## 18. Angular velocity or rotational speed
 
@@ -396,6 +406,7 @@ These units are defined in `UnitMeasurements::ElectricCharge`.
 | 3 | statC | statcoulomb, statcoulombs |
 | 4 | Fr | franklin, franklins |
 | 5 | Fd | faraday, faradays |
+| 6 | qₚ | planck charge, quantum charge |
 
 ## 22. Electrical capacitance
 
@@ -541,6 +552,7 @@ These units are defined in `UnitMeasurements::Pressure`.
 | 25 | kgf/m² | kgf/m^2, kilogram-force per square metre, kilogramme-force per square metre |
 | 26 | kgf/mm² | kgf/mm^2, kilogram-force per square millimetre, kilogramme-force per square millimetre |
 | 27 | kgf/dm² | kgf/dm^2, kilogram-force per square decimetre, kilogramme-force per square decimetre |
+| 28 | Pₚ | planck pressure, quantum pressure |
 
 ## 34. Torque or moment of force
 
@@ -639,7 +651,8 @@ These units are defined in `UnitMeasurements::Power`.
 | 22 | lusec | lusecs |
 | 23 | atm⋅ft³/s | atm*ft^3/s, atmosphere-cubic foot per second |
 | 24 | atm⋅ft³/min | atm*ft^3/min, atmosphere-cubic foot per minute |
-| 25 | atm⋅ft³/h | atm*ft^3/h, atmosphere-cubic foot per hour |
+| 25 | atm⋅ft³/h | atm\*ft^3/h, atmosphere-cubic foot per hour |
+| 26 | Pₚ | planck power, quantum power |
 
 ## 40. Energy
 
@@ -671,6 +684,7 @@ These units are defined in `UnitMeasurements::Energy`.
 | 22 | in⋅lbf | in\*lbf, in⋅lb, in\*lb, inch-pound force |
 | 23 | ft⋅pdl | ft*pdl, foot-poundal |
 | 24 | gal⋅atm | gal*atm, gallon-atmosphere |
+| 25 | Eₚ | planck energy, quantum energy |
 
 ## 41. Dynamic viscosity
 

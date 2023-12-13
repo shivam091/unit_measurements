@@ -91,5 +91,9 @@ RSpec.describe UnitMeasurements::Weight do
     it "converts to cwt (US)" do
       expect(subject.convert_to("cwt (US)").quantity).to eq(0.000110231131092439)
     end
+
+    it "converts to mₚ" do
+      expect(subject.convert_to("mₚ").quantity).to eq(2.29733591737677e+5)
+    end
   end
 end

@@ -43,4 +43,8 @@ UnitMeasurements::Force = UnitMeasurements.build do
     unit "(lb⋅ft)/s²", value: "0.138254954376 N", aliases: ["(lb*ft)/s^2", "pound foot per second squared"]
     unit "(lb⋅in)/s²", value: "0.011521246198	N", aliases: ["(lb*in)/s^2", "pound inch per second squared"]
   end
+
+  system :planck_units do
+    unit "Fₚ", value: "1.2103e+44 N", aliases: ["planck force", "quantum force"]
+  end
 end

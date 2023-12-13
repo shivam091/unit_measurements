@@ -13,6 +13,10 @@ UnitMeasurements::Time = UnitMeasurements.build do
     unit "min", value: "60 s", aliases: ["minute", "minutes"]
   end
 
+  system :planck_units do
+    unit "tₚ", value: "5.391247e-44 s", aliases: ["planck time", "quantum time"]
+  end
+
   unit "wk", value: "7 d", aliases: ["week", "weeks"]
   unit "mo", value: "30.4167 d", aliases: ["month", "months"]
   unit "yr", value: "365 d", aliases: ["y", "year", "years"]

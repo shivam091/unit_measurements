@@ -56,4 +56,8 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "lm", value: "30 ld", aliases: ["light-month", "light-months"]
     unit "ly", value: "365.25 ld", aliases: ["light-year", "light-years"]
   end
+
+  system :planck_units do
+    unit "lₚ", value: "1.616255e-35 m", aliases: ["planck length", "quantum length"]
+  end
 end

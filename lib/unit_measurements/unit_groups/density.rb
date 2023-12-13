@@ -26,4 +26,8 @@ UnitMeasurements::Density = UnitMeasurements.build do
     unit "slug/ft³", value: "515.3788184 kg/m³", aliases: ["slug/ft^3", "slug per cubic foot", "slugs per cubic foot"]
     unit "slug/in³", value: "890574.582782 kg/m³", aliases: ["slug/in^3", "slug per cubic inch", "slugs per cubic inch"]
   end
+
+  system :planck_units do
+    unit "ρₚ", value: "5.1550e+96 kg/m³", aliases: ["planck density", "quantum density"]
+  end
 end

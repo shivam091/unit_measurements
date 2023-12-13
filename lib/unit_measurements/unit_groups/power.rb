@@ -49,5 +49,9 @@ UnitMeasurements::Power = UnitMeasurements.build do
     unit "erg/s", value: "1e-7 W", aliases: ["erg per second", "ergs per second"]
   end
 
+  system :planck_units do
+    unit "Pₚ", value: "3.6283e+52 W", aliases: ["planck power", "quantum power"]
+  end
+
   unit "lusec", value: "133.3224 μW", aliases: ["lusecs"]
 end

@@ -83,5 +83,9 @@ RSpec.describe UnitMeasurements::Area do
     it "converts to ch² (US)" do
       expect(subject.convert_to("ch² (US)").quantity).to eq(0.0123552184612663)
     end
+
+    it "converts to Aₚ" do
+      expect(subject.convert_to("Aₚ").quantity).to eq(1.91416867654378e+70)
+    end
   end
 end

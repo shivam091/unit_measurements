@@ -51,5 +51,9 @@ RSpec.describe UnitMeasurements::Acceleration do
     it "converts to mph/s" do
       expect(subject.convert_to("mph/s").quantity).to eq(11.184681460272)
     end
+
+    it "converts to aₚ" do
+      expect(subject.convert_to("aₚ").quantity).to eq(8.99151201266005e-52)
+    end
   end
 end
