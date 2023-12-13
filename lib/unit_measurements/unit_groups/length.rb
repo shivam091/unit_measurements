@@ -27,6 +27,7 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "rd", value: "16 1/2 ft", aliases: ["rod", "rods", "perch", "pole", "lug"]
     unit "cb", value: "608 ft", aliases: ["CBL.", "cable length"]
     unit "qr", value: "1/4 yd", aliases: ["quarter", "quarters"]
+    unit "bc", value: "1/3 in", aliases: ["b.c.", "barleycorn", "barleycorns"]
 
     unit "ftm", value: "6 ft", aliases: ["fathom", "fathoms"]
     unit "fur", value: "220 yd", aliases: ["furlong", "furlongs"]
@@ -34,7 +35,6 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "lnk", value: "33/50 ft", aliases: ["l", "li", "link", "links"]
     unit "lea", value: "3 mi", aliases: ["league", "leagues"]
 
-    unit "b.c.", value: "1/3 in", aliases: ["bc", "barleycorn", "barleycorns"]
   end
 
   system :us_customary do

@@ -132,8 +132,8 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("lmin").quantity).to eq(2.77970079331793e-10)
     end
 
-    it "converts to b.c." do
-      expect(subject.convert_to("b.c.").quantity).to eq(590.551181102362)
+    it "converts to bc" do
+      expect(subject.convert_to("bc").quantity).to eq(590.551181102362)
     end
 
     it "converts to cb (M)" do
