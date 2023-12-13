@@ -60,6 +60,10 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("LT").quantity).to eq(0.0049210326380553)
     end
 
+    it "converts to qr" do
+      expect(subject.convert_to("qr").quantity).to eq(0.393682611044424)
+    end
+
     it "converts to ozt" do
       expect(subject.convert_to("ozt").quantity).to eq(160.75373284314)
     end
@@ -82,6 +86,14 @@ RSpec.describe UnitMeasurements::Weight do
 
     it "converts to cwt" do
       expect(subject.convert_to("cwt").quantity).to eq(0.0984206527611061)
+    end
+
+    it "converts to fir" do
+      expect(subject.convert_to("fir").quantity).to eq(0.196841305522212)
+    end
+
+    it "converts to us qr" do
+      expect(subject.convert_to("us qr").quantity).to eq(0.440924524369755)
     end
 
     it "converts to slug" do
