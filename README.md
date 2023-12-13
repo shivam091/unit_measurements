@@ -236,9 +236,9 @@ UnitMeasurements::Length.systems #=> ["metric", "imperial", "us_customary", "ast
 
 **See list of units within the unit system:**
 
-You can use `#units_for` or `#units_for!` methods to find units within the unit system.
-`#units_for!` method returns an error if there are no units associated with specified
-unit system.
+You can use `#units_for` or `#units_for!` methods to find all the units defined
+within the unit system. `#units_for!` method returns a runtime error if the unit
+system is not defined within the unit group.
 
 ```ruby
 UnitMeasurements::Length.units_for("metric")
@@ -248,7 +248,8 @@ UnitMeasurements::Length.units_for("metric")
 **Finding units within the unit group:**
 
 You can use `#unit_for` or `#unit_for!` (aliased as `#[]`) methods to find units
-within the unit group. `#unit_for!` method returns an error if a unit system is not defined within the unit group.
+within the unit group. `#unit_for!` method returns an error if the unit is not
+defined within the unit group.
 
 ```ruby
 UnitMeasurements::Length.unit_for("m") #=> #<UnitMeasurements::Unit: m (meter, meters, metre, metres)>
