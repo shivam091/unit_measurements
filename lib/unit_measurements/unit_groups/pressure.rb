@@ -8,6 +8,7 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
   system :metric do
     si_unit "Pa", aliases: ["pascal", "pascals"]
 
+    unit "Ba", value: "0.1 Pa", aliases: ["barye", "baryes"]
     unit "bar", value: "100 kPa", aliases: ["bars"]
     unit "atm", value: "101325 Pa", aliases: ["atmosphere", "atmospheres"]
     unit "Torr", value: "1/760 atm", aliases: ["torr"]
@@ -43,10 +44,6 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
     unit "inH₂O", value: "249.0889 Pa", aliases: ["inH2O", "Aq", "inAq", "inch of water", "inches of water", "inch of water gauge", "inches of water gauge", "inch of water column", "inches of water column"]
 
     unit "tn/ft²", value: "9.5760518e+4 Pa", aliases: ["tn/ft^2", "ton per square foot", "tons per square foot", "short ton per square foot", "short tons per square foot"]
-  end
-
-  system :centimetre_gram_second do
-    unit "Ba", value: "0.1 Pa", aliases: ["barye", "baryes"]
   end
 
   system :metre_tonne_second do

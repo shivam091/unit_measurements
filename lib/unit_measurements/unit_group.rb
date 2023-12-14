@@ -212,8 +212,8 @@ module UnitMeasurements
       units.select { |unit| unit.system.to_s == system_name.to_s }
     end
 
-    # This method works same as +units_for+ method but it raises an error if
-    # there are no units associated with the +system_name+.
+    # This method works same as {units_for} method but it raises an error if
+    # the unit system +system_name+ is not defined within the unit group.
     #
     # @example
     #   UnitMeasurements::Length.units_for!("metric")
@@ -231,20 +231,18 @@ module UnitMeasurements
     # @return [Array<Unit>]
     #   An array of +Unit+ instances associated with the specified unit system.
     #
-    # @raise [BaseError]
-    #   If there are no units associated with the provided +system_name+.
+    # @raise [RuntimeError]
+    #   If unit system is not defined within the unit group.
     #
     # @see #units_for
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 5.0.0
     def units_for!(system_name)
-      system_units = units_for(system_name)
-
-      unless system_units.any?
-        raise BaseError, "Invalid unit system '#{system_name}' within the unit group."
+      unless systems.include?(system_name.to_s)
+        raise "Invalid unit system '#{system_name}' within the unit group."
       end
 
-      system_units
+      units_for(system_name)
     end
 
     # Returns an array of unit system names defined within the unit group.

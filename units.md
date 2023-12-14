@@ -45,11 +45,14 @@ These units are defined in `UnitMeasurements::Length`.
 | 26 | lnk | l, li, link, links |
 | 27 | lea | league, leagues |
 | 28 | sft | sfoot, sfeet, survey-foot, survey-feet |
-| 29 | b.c. | bc, barleycorn, barleycorns |
+| 29 | bc | b.c., barleycorn, barleycorns |
 | 30 | lmin | light-minute, light-minutes |
 | 31 | cb (M) | CBL. (M), cable length (M) |
 | 32 | cb (US) | CBL. (US), cable length (US) |
 | 33 | lₚ | planck length, quantum length |
+| 34 | qr | quarter, quarters |
+| 35 | U | RU, rack unit, rack units |
+| 36 | z | red-shift, redshift, redshifts |
 
 ## 2. Weight or mass
 
@@ -80,6 +83,9 @@ These units are defined in `UnitMeasurements::Weight`.
 | 21 | slug | slugs |
 | 22 | cwt (US) | hundredweight (US), short hundredweight |
 | 23 | mₚ | planck mass, quantum mass |
+| 24 | qr | qtr, quarter, quarters |
+| 25 | fir | firkin, firkins |
+| 26 | us qr | us qtr, us quarter, us quarters |
 
 ## 3. Time or duration
 
@@ -167,6 +173,9 @@ These units are defined in `UnitMeasurements::Area`.
 | 19 | mi² (US) | mi^2 (US), sq mi (US), square mile (US), square miles (US) |
 | 20 | ch² (US) | ch^2 (US), sq ch (US), square chain (US), square chains (US) |
 | 21 | Aₚ | planck area, quantum area |
+| 22 | dun | ḍn, dunam, dunams |
+| 23 | sec | sect, section, sections |
+| 24 | twp | survey township, survey townships |
 
 ## 9. Volume & capacity
 
@@ -210,6 +219,9 @@ These units are defined in `UnitMeasurements::Volume`.
 | 34 | ac⋅in | acre-inch, acre-inches |
 | 35 | cd-ft | cord-foot, cord-feet |
 | 36 | Vₚ | planck volume, quantum volume |
+| 37 | st | stère, stere, steres |
+| 38 | fir | firkin, firkins |
+| 39 | pot | pottle, pottles |
 
 ## 10. Density
 

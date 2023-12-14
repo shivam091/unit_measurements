@@ -11,11 +11,8 @@ UnitMeasurements::Force = UnitMeasurements.build do
     unit "p", value: "0.00980665 N", aliases: ["pond", "ponds"]
     unit "gf", value: "0.00980665 N", aliases: ["gram-force", "gramme-force"]
     unit "kgf", value: "9.80665 N", aliases: ["kp", "gvf", "kilogram-force", "kilogramme-force"]
-    unit "mgvf", value: "9.80665 mN", aliases: ["gvtf", "gravet-force", "milligrave-force"]
-  end
-
-  system :centimetre_gram_second do
     unit "dyn", value: "1e-5 N", aliases: ["dyne", "dynes"]
+    unit "mgvf", value: "9.80665 mN", aliases: ["gvtf", "gravet-force", "milligrave-force"]
   end
 
   system :metre_tonne_second do

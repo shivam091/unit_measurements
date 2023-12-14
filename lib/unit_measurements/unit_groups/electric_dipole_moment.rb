@@ -7,9 +7,7 @@ UnitMeasurements::ElectricDipoleMoment = UnitMeasurements.build do
 
   system :metric do
     si_unit "C⋅m", aliases: ["C*m", "coulomb-meter", "coulomb-metre"]
-  end
 
-  system :centimetre_gram_second do
     unit "D", value: "3.33564095e-30 C⋅m", aliases: ["debye", "debyes"]
   end
 end

@@ -8,11 +8,8 @@ UnitMeasurements::ElectricalInductance = UnitMeasurements.build do
   system :metric do
     si_unit "H", aliases: ["henry", "henries"]
 
-    unit "Wb/A", value: "1 H", aliases: ["weber per ampere", "webers per ampere"]
-  end
-
-  system :centimetre_gram_second do
     unit "abH", value: "1e-9 H", aliases: ["abhenry", "abhenries"]
+    unit "Wb/A", value: "1 H", aliases: ["weber per ampere", "webers per ampere"]
     unit "statH", value: "8.98755178736818e+11 H", aliases: ["stathenry", "stathenries"]
   end
 end

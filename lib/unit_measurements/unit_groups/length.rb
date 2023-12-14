@@ -26,6 +26,8 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "nl", value: "3 nmi", aliases: ["NL", "nleague", "nleagues", "nautical league", "nautical leagues"]
     unit "rd", value: "16 1/2 ft", aliases: ["rod", "rods", "perch", "pole", "lug"]
     unit "cb", value: "608 ft", aliases: ["CBL.", "cable length"]
+    unit "qr", value: "1/4 yd", aliases: ["quarter", "quarters"]
+    unit "bc", value: "1/3 in", aliases: ["b.c.", "barleycorn", "barleycorns"]
 
     unit "ftm", value: "6 ft", aliases: ["fathom", "fathoms"]
     unit "fur", value: "220 yd", aliases: ["furlong", "furlongs"]
@@ -33,10 +35,10 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "lnk", value: "33/50 ft", aliases: ["l", "li", "link", "links"]
     unit "lea", value: "3 mi", aliases: ["league", "leagues"]
 
-    unit "b.c.", value: "1/3 in", aliases: ["bc", "barleycorn", "barleycorns"]
   end
 
   system :us_customary do
+    unit "U", value: "1.75 in", aliases: ["RU", "rack unit", "rack units"]
     unit "sft", value: "1200/3937 m", aliases: ["sfoot", "sfeet", "survey-foot", "survey-feet"]
 
     unit "cb (US)", value: "720 ft", aliases: ["CBL. (US)", "cable length (US)"]
@@ -60,4 +62,6 @@ UnitMeasurements::Length = UnitMeasurements.build do
   system :planck_units do
     unit "lₚ", value: "1.616255e-35 m", aliases: ["planck length", "quantum length"]
   end
+
+  unit "z", value: "1.302773e+26 m", aliases: ["red-shift", "redshift", "redshifts"]
 end

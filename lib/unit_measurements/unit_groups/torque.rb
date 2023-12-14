@@ -18,9 +18,7 @@ UnitMeasurements::Torque = UnitMeasurements.build do
     unit "kgf·m", value: "9.80665 N·m", aliases: ["kgf*m", "Kilogram-force meter", "kilogramme-force metre"]
     unit "kgf·cm", value: "0.0980665 N·m", aliases: ["kgf*cm", "Kilogram-force centimeter", "kilogramme-force centimetre"]
     unit "kgf·mm", value: "0.00980665 N·m", aliases: ["kgf*mm", "Kilogram-force millimeter", "kilogramme-force millimetre"]
-  end
 
-  system :centimetre_gram_second do
     unit "dyn·m", value: "1e-5 N·m", aliases: ["dyn*m", "dyne meter", "dyne metre"]
     unit "dyn·cm", value: "1e-7 N·m", aliases: ["dyn*cm", "dyne centimeter", "dyne centimetre"]
     unit "dyn·mm", value: "1e-8 N·m", aliases: ["dyn*mm", "dyne millimeter", "dyne millimetre"]

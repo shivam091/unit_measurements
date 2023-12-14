@@ -20,6 +20,7 @@ UnitMeasurements::Weight = UnitMeasurements.build do
     unit "s", value: "20 gr", aliases: ["scruple", "scruples"]
 
     unit "lb", value: "0.45359237 kg", aliases: ["lbs", "lbm", "pound-mass", "pound", "pounds", "#"]
+    unit "qr", value: "1/4 cwt", aliases: ["qtr", "quarter", "quarters"]
     unit "st", value: "14 lb", aliases: ["stone", "stones"]
     unit "oz", value: "1/16 lb", aliases: ["ounce", "ounces"]
     unit "dr", value: "1/16 oz", aliases: ["dram", "drams"]
@@ -31,10 +32,12 @@ UnitMeasurements::Weight = UnitMeasurements.build do
     unit "lbt", value: "5760 gr", aliases: ["troy pound", "troy pounds"]
     unit "dwt", value: "1/20 ozt", aliases: ["pwt", "pennyweight", "pennyweights"]
     unit "cwt", value: "112 lb", aliases: ["hundredweight", "long hundredweight", "imperial hundredweight"]
+    unit "fir", value: "56 lb", aliases: ["firkin", "firkins"]
   end
 
   system :us_customary do
     unit "tn", value: "2000 lb", aliases: ["ton", "tons", "short ton", "short tons"]
+    unit "us qr", value: "1/4 cwt (US)", aliases: ["us qtr", "us quarter", "us quarters"]
     unit "cwt (US)", value: "100 lb", aliases: ["hundredweight (US)", "short hundredweight"]
   end
 
