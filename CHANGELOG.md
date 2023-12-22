@@ -1,3 +1,12 @@
+## [5.18.0](https://github.com/shivam091/unit_measurements/compare/v5.17.0...v5.18.0) - 2023-12-16
+
+### What's new
+
+- Added unit group for `mass flow rate` units.
+- Added unit group for `volumetric flow rate` units.
+
+----------
+
 ## [5.17.0](https://github.com/shivam091/unit_measurements/compare/v5.16.0...v5.17.0) - 2023-12-15
 
 ### What's new
