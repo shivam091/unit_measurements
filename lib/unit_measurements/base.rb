@@ -151,6 +151,9 @@ module UnitMeasurements
 end
 
 # The following requires load various components of the unit measurements library.
+require "unit_measurements/extras/numeric_methods"
+require "unit_measurements/extras/conversion_methods"
+
 require "unit_measurements/configuration"
 require "unit_measurements/cache"
 require "unit_measurements/unit_group_builder"

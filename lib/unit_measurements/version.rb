@@ -4,5 +4,5 @@
 
 module UnitMeasurements
   # Current stable version.
-  VERSION = "5.13.0"
+  VERSION = "5.17.0"
 end

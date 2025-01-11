@@ -7,9 +7,7 @@ UnitMeasurements::DynamicViscosity = UnitMeasurements.build do
 
   system :metric do
     si_unit "Pa⋅s", aliases: ["Pa*s", "pascal second"]
-  end
 
-  system :centimetre_gram_second do
     unit "P", value: "1 dPa⋅s", aliases: ["dyne·s/cm²", "dyne*s/cm^2", "poise"]
     unit "Pl", value: "10 P", aliases: ["poiseuille"]
   end

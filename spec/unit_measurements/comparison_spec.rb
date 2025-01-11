@@ -51,11 +51,5 @@ RSpec.describe UnitMeasurements::Comparison do
         expect(length1.between?(length2, length3)).to be_falsy
       end
     end
-
-    describe "#between?" do
-      it "returns true" do
-        expect(length1.between?(length2, length3)).to be_falsy
-      end
-    end
   end
 end

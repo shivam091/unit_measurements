@@ -36,6 +36,18 @@ RSpec.describe UnitMeasurements::Area do
       expect(subject.convert_to("km²").quantity).to eq(5e-6)
     end
 
+    it "converts to dun" do
+      expect(subject.convert_to("dun").quantity).to eq(0.005)
+    end
+
+    it "converts to sec" do
+      expect(subject.convert_to("sec").quantity).to eq(1.93051079271223e-6)
+    end
+
+    it "converts to twp" do
+      expect(subject.convert_to("twp").quantity).to eq(5.36252997975619e-8)
+    end
+
     it "converts to in²" do
       expect(subject.convert_to("in²").quantity).to eq(7750.015500031)
     end
@@ -82,6 +94,10 @@ RSpec.describe UnitMeasurements::Area do
 
     it "converts to ch² (US)" do
       expect(subject.convert_to("ch² (US)").quantity).to eq(0.0123552184612663)
+    end
+
+    it "converts to Aₚ" do
+      expect(subject.convert_to("Aₚ").quantity).to eq(1.91416867654378e+70)
     end
   end
 end

@@ -55,5 +55,9 @@ RSpec.describe UnitMeasurements::Density do
     it "converts to slug/in³" do
       expect(subject.convert_to("slug/in³").quantity).to eq(5.61435290953496e-9)
     end
+
+    it "converts to ρₚ" do
+      expect(subject.convert_to("ρₚ").quantity).to eq(9.69932104752667e-100)
+    end
   end
 end

@@ -19,5 +19,9 @@ RSpec.describe UnitMeasurements::ElectricCurrent do
     it "converts to statA" do
       expect(subject.convert_to("statA").quantity).to eq(1.49896271779928e+10)
     end
+
+    it "converts to Iₚ" do
+      expect(subject.convert_to("Iₚ").quantity).to eq(1.43723590790192e-25)
+    end
   end
 end

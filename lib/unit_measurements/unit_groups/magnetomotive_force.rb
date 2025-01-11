@@ -7,9 +7,7 @@ UnitMeasurements::MagnetomotiveForce = UnitMeasurements.build do
 
   system :metric do
     unit "A⋅t", aliases: ["A*t", "ampere-turn"]
-  end
 
-  system :centimetre_gram_second do
     unit "Gb", value: [Rational(10, (4 * Math::PI)), "A⋅t"], aliases: ["Gi", "gilbert", "gilberts"]
   end
 end

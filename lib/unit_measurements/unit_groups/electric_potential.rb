@@ -10,9 +10,7 @@ UnitMeasurements::ElectricPotential = UnitMeasurements.build do
 
     unit "W/A", value: "1 V", aliases: ["watt per ampere", "watts per ampere"]
     unit "J/C", value: "1 V", aliases: ["joule per coulomb", "joules per coulomb"]
-  end
 
-  system :centimetre_gram_second do
     unit "abV", value: "1e-8 V", aliases: ["abvolt", "abvolts"]
     unit "statV", value: "299.792458 V", aliases: ["statvolt", "statvolts"]
   end

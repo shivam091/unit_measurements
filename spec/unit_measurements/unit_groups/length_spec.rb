@@ -20,8 +20,16 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("μ").quantity).to eq(5e+6)
     end
 
+    it "converts to U" do
+      expect(subject.convert_to("U").quantity).to eq(112.485939257593)
+    end
+
     it "converts to S" do
       expect(subject.convert_to("S").quantity).to eq(5e-12)
+    end
+
+    it "converts to z" do
+      expect(subject.convert_to("z").quantity).to eq(3.83796716695848e-26)
     end
 
     it "converts to in" do
@@ -38,6 +46,10 @@ RSpec.describe UnitMeasurements::Length do
 
     it "converts to mi" do
       expect(subject.convert_to("mi").quantity).to eq(0.00310685596118667)
+    end
+
+    it "converts to qr" do
+      expect(subject.convert_to("qr").quantity).to eq(21.8722659667542)
     end
 
     it "converts to ch" do
@@ -120,8 +132,8 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("lmin").quantity).to eq(2.77970079331793e-10)
     end
 
-    it "converts to b.c." do
-      expect(subject.convert_to("b.c.").quantity).to eq(590.551181102362)
+    it "converts to bc" do
+      expect(subject.convert_to("bc").quantity).to eq(590.551181102362)
     end
 
     it "converts to cb (M)" do
@@ -130,6 +142,10 @@ RSpec.describe UnitMeasurements::Length do
 
     it "converts to cb (US)" do
       expect(subject.convert_to("cb (US)").quantity).to eq(0.0227836103820356)
+    end
+
+    it "converts to lₚ" do
+      expect(subject.convert_to("lₚ").quantity).to eq(3.09357124958623e+35)
     end
   end
 end

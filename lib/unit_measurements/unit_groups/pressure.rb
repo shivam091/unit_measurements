@@ -8,6 +8,7 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
   system :metric do
     si_unit "Pa", aliases: ["pascal", "pascals"]
 
+    unit "Ba", value: "0.1 Pa", aliases: ["barye", "baryes"]
     unit "bar", value: "100 kPa", aliases: ["bars"]
     unit "atm", value: "101325 Pa", aliases: ["atmosphere", "atmospheres"]
     unit "Torr", value: "1/760 atm", aliases: ["torr"]
@@ -45,15 +46,15 @@ UnitMeasurements::Pressure = UnitMeasurements.build do
     unit "tn/ft²", value: "9.5760518e+4 Pa", aliases: ["tn/ft^2", "ton per square foot", "tons per square foot", "short ton per square foot", "short tons per square foot"]
   end
 
-  system :centimetre_gram_second do
-    unit "Ba", value: "0.1 Pa", aliases: ["barye", "baryes"]
-  end
-
   system :metre_tonne_second do
     unit "pz", value: "1 kPa", aliases: ["pieze", "pièze"]
   end
 
   system :gravitational_metric do
     unit "at", value: "98066.5 Pa", aliases: ["technical atmosphere", "technical atmospheres"]
+  end
+
+  system :planck_units do
+    unit "Pₚ", value: "4.63309e+113 Pa", aliases: ["planck pressure", "quantum pressure"]
   end
 end

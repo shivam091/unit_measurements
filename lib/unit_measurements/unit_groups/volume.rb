@@ -10,6 +10,7 @@ UnitMeasurements::Volume = UnitMeasurements.build do
 
     unit "λ", value: "1e-9 m³", aliases: ["lambda", "lambdas"]
     unit "m³", value: "1000 l", aliases: ["m^3", "cu m", "cubic meter", "cubic meters", "cubic metre", "cubic metres"]
+    unit "st", value: "1 m³", aliases: ["stère", "stere", "steres"]
 
     unit "mm³", value: "1e-9 m³", aliases: ["mm^3", "cu mm", "cubic millimeter", "cubic millimeters", "cubic millimetre", "cubic millimetres"]
     unit "cm³", value: "1e-6 m³", aliases: ["cm^3", "cu cm", "cubic centimeter", "cubic centimeters", "cubic centimetre", "cubic centimetres"]
@@ -40,6 +41,7 @@ UnitMeasurements::Volume = UnitMeasurements.build do
     unit "bkt", value: "4 gal", aliases: ["bucket", "buckets"]
     unit "hhd", value: "2 bbl", aliases: ["hogshead", "hogsheads"]
     unit "fls", value: "1/24 floz", aliases: ["fluid scruple", "fluid scruples"]
+    unit "fir", value: "0.25 bbl", aliases: ["firkin", "firkins"]
 
     unit "dspn", value: "10 ml", aliases: ["dsp", "dstspn", "dessertspoon", "dessertspoons"]
     unit "tbsp", value: "3 tsp", aliases: ["tbs", "tablespoon", "tablespoons"]
@@ -50,11 +52,16 @@ UnitMeasurements::Volume = UnitMeasurements.build do
   system :us_customary do
     unit "cd", value: "128 ft³", aliases: ["cord", "cords"]
 
+    unit "pot", value: "2 qt", aliases: ["pottle", "pottles"]
     unit "bdft", value: "144 in³", aliases: ["bf", "fbm", "board-foot", "board-feet"]
 
     unit "ac⋅ft", value: "43560 ft³", aliases: ["acre-foot", "acre-feet"]
     unit "ac⋅in", value: "6272640 in³", aliases: ["acre-inch", "acre-inches"]
 
     unit "cd-ft", value: "1/8 cd", aliases: ["cord-foot", "cord-feet"]
+  end
+
+  system :planck_units do
+    unit "Vₚ", value: "4.2217e-105 m³", aliases: ["planck volume", "quantum volume"]
   end
 end

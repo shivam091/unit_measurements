@@ -10,14 +10,11 @@ UnitMeasurements::Energy = UnitMeasurements.build do
     si_unit "cal", value: "4.1868 J", aliases: ["calorie", "calories"]
 
     unit "eV", value: "1.602176634e-19 J", aliases: ["electronvolt", "electron volt", "electron-volt"]
+    unit "erg", value: "1e-7 J", aliases: ["ergs"]
 
     unit "W⋅s", value: "1 J", aliases: ["W*s", "watt-second"]
     unit "W⋅h", value: "3600 J", aliases: ["W*h", "watt-hour"]
     unit "kW⋅h", value: "3.6e+6 J", aliases: ["kW*h", "kilowatt-hour"]
-  end
-
-  system :centimetre_gram_second do
-    unit "erg", value: "1e-7 J", aliases: ["ergs"]
   end
 
   system :us_customary do
@@ -44,6 +41,10 @@ UnitMeasurements::Energy = UnitMeasurements.build do
 
   system :imperial do
     unit "hp⋅h", value: "2.685e+13 erg", aliases: ["hp*h", "horsepower-hour"]
+  end
+
+  system :planck_units do
+    unit "Eₚ", value: "1.9561e+9 J", aliases: ["planck energy", "quantum energy"]
   end
 
   unit "Ry", value: "2.179872e-18 J", aliases: ["rydberg"]

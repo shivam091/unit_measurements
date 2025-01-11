@@ -23,5 +23,9 @@ RSpec.describe UnitMeasurements::ElectricCharge do
     it "converts to statC" do
       expect(subject.convert_to("statC").quantity).to eq(1.49896226842157e+10)
     end
+
+    it "converts to qₚ" do
+      expect(subject.convert_to("qₚ").quantity).to eq(2.66589042193536e+18)
+    end
   end
 end

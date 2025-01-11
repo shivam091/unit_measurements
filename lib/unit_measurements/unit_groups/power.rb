@@ -13,6 +13,7 @@ UnitMeasurements::Power = UnitMeasurements.build do
     unit "hp (M)", value: "735.49875 W", aliases: ["PS", "metric horsepower"]
 
     unit "kgf⋅m", value: "9.80665 W", aliases: ["kgf*m", "kilogramme-force meter", "kilogram-force meter"]
+    unit "erg/s", value: "1e-7 W", aliases: ["erg per second", "ergs per second"]
 
     unit "cal/s", value: "4.1868 W", aliases: ["calorie per second", "calories per second"]
     unit "cal/min", value: "0.06978 W", aliases: ["calorie per minute", "calories per minute"]
@@ -45,8 +46,8 @@ UnitMeasurements::Power = UnitMeasurements.build do
     unit "BTU/h", value: "0.29307107017222 W", aliases: ["british thermal unit per hour", "british thermal units per hour"]
   end
 
-  system :centimetre_gram_second do
-    unit "erg/s", value: "1e-7 W", aliases: ["erg per second", "ergs per second"]
+  system :planck_units do
+    unit "Pₚ", value: "3.6283e+52 W", aliases: ["planck power", "quantum power"]
   end
 
   unit "lusec", value: "133.3224 μW", aliases: ["lusecs"]

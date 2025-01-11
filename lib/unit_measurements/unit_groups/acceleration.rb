@@ -6,6 +6,7 @@ UnitMeasurements::Acceleration = UnitMeasurements.build do
   primitive "m/s²"
 
   system :metric do
+    unit "Gal", value: "1e-2 m/s²", aliases: ["gal", "galileo"]
     unit "m/s²", aliases: ["m/s^2", "meter per second squared", "meters per second squared", "metre per second squared", "metres per second squared"]
   end
 
@@ -29,7 +30,7 @@ UnitMeasurements::Acceleration = UnitMeasurements.build do
     unit "Kn/s", value: "0.5144444 m/s²", aliases: ["knot per second", "knots per second"]
   end
 
-  system :centimetre_gram_second do
-    unit "Gal", value: "1e-2 m/s²", aliases: ["gal", "galileo"]
+  system :planck_units do
+    unit "aₚ", value: "5.5608e+51 m/s²", aliases: ["planck acceleration", "quantum acceleration"]
   end
 end

@@ -1,3 +1,53 @@
+## [5.18.0](https://github.com/shivam091/unit_measurements/compare/v5.17.0...v5.18.0) - 2023-12-16
+
+### What's new
+
+- Added unit group for `mass flow rate` units.
+- Added unit group for `volumetric flow rate` units.
+
+----------
+
+## [5.17.0](https://github.com/shivam091/unit_measurements/compare/v5.16.0...v5.17.0) - 2023-12-15
+
+### What's new
+
+- Added new units `qr`, `U`, and `z` in `length`.
+- Added new units `qr`, `fir`, and `us_qr` in `weight`.
+- Added new units `dun`, `sec`, and `twp` in `area`.
+- Added new units `st`, `fir`, and `pot` in `volume`.
+
+### What's changed
+
+- Changed implementation of `#units_for!` to raise error if the unit system is not defined
+  within the unit group.
+- Changed symbol of `barleycorn` length unit.
+
+----------
+
+## [5.16.0](https://github.com/shivam091/unit_measurements/compare/v5.15.0...v5.16.0) - 2023-12-13
+
+### What's new
+
+- Added planck units and their conversions.
+
+----------
+
+## [5.15.0](https://github.com/shivam091/unit_measurements/compare/v5.14.0...v5.15.0) - 2023-12-11
+
+### What's new
+
+- Added `.define_conversion_methods` method to define conversion helper methods for units.
+
+----------
+
+## [5.14.0](https://github.com/shivam091/unit_measurements/compare/v5.13.0...v5.14.0) - 2023-11-29
+
+### What's new
+
+- Added `.define_numeric_methods` method to define numeric extension methods for units.
+
+----------
+
 ## [5.13.0](https://github.com/shivam091/unit_measurements/compare/v5.12.0...v5.13.0) - 2023-11-27
 
 ### What's new

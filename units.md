@@ -45,10 +45,14 @@ These units are defined in `UnitMeasurements::Length`.
 | 26 | lnk | l, li, link, links |
 | 27 | lea | league, leagues |
 | 28 | sft | sfoot, sfeet, survey-foot, survey-feet |
-| 29 | b.c. | bc, barleycorn, barleycorns |
+| 29 | bc | b.c., barleycorn, barleycorns |
 | 30 | lmin | light-minute, light-minutes |
 | 31 | cb (M) | CBL. (M), cable length (M) |
 | 32 | cb (US) | CBL. (US), cable length (US) |
+| 33 | lₚ | planck length, quantum length |
+| 34 | qr | quarter, quarters |
+| 35 | U | RU, rack unit, rack units |
+| 36 | z | red-shift, redshift, redshifts |
 
 ## 2. Weight or mass
 
@@ -78,6 +82,10 @@ These units are defined in `UnitMeasurements::Weight`.
 | 20 | cwt | hundredweight, long hundredweight, imperial hundredweight |
 | 21 | slug | slugs |
 | 22 | cwt (US) | hundredweight (US), short hundredweight |
+| 23 | mₚ | planck mass, quantum mass |
+| 24 | qr | qtr, quarter, quarters |
+| 25 | fir | firkin, firkins |
+| 26 | us qr | us qtr, us quarter, us quarters |
 
 ## 3. Time or duration
 
@@ -96,6 +104,7 @@ These units are defined in `UnitMeasurements::Time`.
 | 9 | qtr | quarter, quarters |
 | 10 | dec | decade, decades |
 | 11 | cent | century, centuries |
+| 12 | tₚ | planck time, quantum time |
 
 ## 4. Amount of substance
 
@@ -116,6 +125,7 @@ These units are defined in `UnitMeasurements::ElectricCurrent`.
 | 2 | abA | abampere, abamperes |
 | 3 | Bi | biot, biots |
 | 4 | statA | statampere, statamperes |
+| 5 | Iₚ | planck current, quantum current |
 
 ## 6. Luminous intensity
 
@@ -134,6 +144,7 @@ These units are defined in `UnitMeasurements::Temperature`.
 |:--|:--|:--|
 | _1_ | _K*_ | _kelvin, kelvins_ |
 | 2 | °R | R, °Ra, Ra, rankine |
+| 3 | Tₚ | planck temperature, quantum temperature |
 
 ## 8. Area
 
@@ -161,6 +172,10 @@ These units are defined in `UnitMeasurements::Area`.
 | 18 | ft² (US) | ft^2 (US), sq ft (US), square foot (US), square feet (US) |
 | 19 | mi² (US) | mi^2 (US), sq mi (US), square mile (US), square miles (US) |
 | 20 | ch² (US) | ch^2 (US), sq ch (US), square chain (US), square chains (US) |
+| 21 | Aₚ | planck area, quantum area |
+| 22 | dun | ḍn, dunam, dunams |
+| 23 | sec | sect, section, sections |
+| 24 | twp | survey township, survey townships |
 
 ## 9. Volume & capacity
 
@@ -203,6 +218,10 @@ These units are defined in `UnitMeasurements::Volume`.
 | 33 | ac⋅ft | acre-foot, acre-feet |
 | 34 | ac⋅in | acre-inch, acre-inches |
 | 35 | cd-ft | cord-foot, cord-feet |
+| 36 | Vₚ | planck volume, quantum volume |
+| 37 | st | stère, stere, steres |
+| 38 | fir | firkin, firkins |
+| 39 | pot | pottle, pottles |
 
 ## 10. Density
 
@@ -223,20 +242,68 @@ These units are defined in `UnitMeasurements::Density`.
 | 11 | lb/gal | pound per gallon, pounds per gallon |
 | 12 | slug/ft³ | slug/ft^3, slug per cubic foot, slugs per cubic foot |
 | 13 | slug/in³ | slug/in^3, slug per cubic inch, slugs per cubic inch |
+| 14 | ρₚ | planck density, quantum density |
 
-## 11. Quantity
+## 11. Mass flow rate, mass flow, mass flux, or mass current
 
-These units are defined in `UnitMeasurements::Quantity`.
+These units are defined in `UnitMeasurements::MassFlowRate`.
 
 | # | Name | Aliases |
 |:--|:--|:--|
-| 1 | pc | pcs, piece, pieces |
-| 2 | pr | pair, pairs |
-| 3 | gr | gross, grosses |
-| 4 | dz | doz, dozen, dozens |
-| 5 | gg | great gross, great grosses, grand gross, grand grosses, dozen gross, dozen grosses |
+| _1_ | _kg/s_ | _kilogramme per second, kilogrammes per second, kilogram per second, kilograms per second_ |
+| 2 | kg/min | kilogramme per minute, kilogrammes per minute, kilogram per minute, kilograms per minute |
+| 3 | kg/h | kilogramme per hour, kilogrammes per hour, kilogram per hour, kilograms per hour |
+| 4 | g/s | gramme per second, grammes per second, gram per second, grams per second |
+| 5 | g/min | gramme per minute, grammes per minute, gram per minute, grams per minute |
+| 6 | g/h | gramme per hour, grammes per hour, gram per hour, grams per hour |
+| 7 | t/s | tonne per second, tonnes per second, metric tonne per second, metric tonnes per second |
+| 8 | t/min | tonne per minute, tonnes per minute, metric tonne per minute, metric tonnes per minute |
+| 9 | t/h | tonne per hour, tonnes per hour, metric tonne per hour, metric tonnes per hour |
+| 10 | lb/s | pound per second, pounds per second |
+| 11 | lb/min | pound per minute, pounds per minute |
+| 12 | lb/h | pound per hour, pounds per hour |
+| 13 | tn/s | ton per second, tons per second, short ton per second, short tons per second |
+| 14 | tn/min | ton per minute, tons per minute, short ton per minute, short tons per minute |
+| 15 | tn/h | ton per hour, tons per hour, short ton per hour, short tons per hour |
+| 16 | slug/s | slug per second, slugs per second |
+| 17 | slug/min | slug per minute, slugs per minute |
+| 18 | slug/h | slug per hour, slugs per hour |
+| 19 | oz/s | ounce per second, ounces per second |
+| 10 | oz/min | ounce per minute, ounces per minute |
+| 21 | oz/h | ounce per hour, ounces per hour |
+| 22 | gr/s | grain per second, grains per second |
+| 23 | gr/min | grain per minute, grains per minute |
+| 24 | gr/h | grain per hour, grains per hour |
+| 25 | LT/s | long ton per second, long tons per second |
+| 26 | LT/min | long ton per minute, long tons per minute |
+| 27 | LT/h | long ton per hour, long tons per hour |
 
-## 12. Sound level
+## 12. Volumetric flow rate, volume flow rate or volume velocity
+
+These units are defined in `UnitMeasurements::VolumetricFlowRate`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| _1_ | _m³/s_ | _m^3/s, cubic metre per second, cubic metres per second, cubic meter per second, cubic meters per second_ |
+| 2 | m³/min | m^3/min, cubic metre per minute, cubic metres per minute, cubic meter per minute, cubic meters per minute |
+| 3 | m³/h | m^3/h, cubic metre per hour, cubic metres per hour, cubic meter per hour, cubic meters per hour |
+| 4 | l/s | L/s, litre per second, litres per second, liter per second, liters per second |
+| 5 | l/min | L/min, litre per minute, litres per minute, liter per minute, liters per minute |
+| 6 | l/h | L/h, litre per hour, litres per hour, liter per hour, liters per hour |
+| 7 | ft³/s | ft^3/s, cubic foot per second, cubic feet per second |
+| 8 | ft³/min | ft^3/min, cubic foot per minute, cubic feet per minute |
+| 9 | ft³/h | ft^3/h, cubic foot per hour, cubic feet per hour |
+| 10 | in³/s | in^3/s, cubic inch per second, cubic inches per second |
+| 11 | in³/min | in^3/min, cubic inch per minute, cubic inches per minute |
+| 12 | in³/h | in^3/h, cubic inch per hour, cubic inches per hour |
+| 13 | yd³/s | yd^3/s, cubic yard per second, cubic yards per second |
+| 14 | yd³/min | yd^3/min, cubic yard per minute, cubic yards per minute |
+| 15 | yd³/h | yd^3/h, cubic yard per hour, cubic yards per hour |
+| 16 | gal/s | gallon per second, gallons per second |
+| 17 | gal/min | gallon per minute, gallons per minute |
+| 18 | gal/h | gallon per hour, gallons per hour |
+
+## 13. Sound level
 
 These units are defined in `UnitMeasurements::SoundLevel`.
 
@@ -246,7 +313,7 @@ These units are defined in `UnitMeasurements::SoundLevel`.
 | _2_ | _dB_ | _decibel, decibels_ |
 | 3 | Np | neper, nepers |
 
-## 13. Plane angle
+## 14. Plane angle
 
 These units are defined in `UnitMeasurements::PlaneAngle`.
 
@@ -268,7 +335,7 @@ These units are defined in `UnitMeasurements::PlaneAngle`.
 | 14 | sextant | sextants |
 | 15 | quadrant | quadrants |
 
-## 14. Solid angle or 3D angle
+## 15. Solid angle or 3D angle
 
 These units are defined in `UnitMeasurements::SolidAngle`.
 
@@ -280,7 +347,7 @@ These units are defined in `UnitMeasurements::SolidAngle`.
 | 4 | arcmin² | (′)², sq ′, square arcminute, square arcminutes |
 | 5 | arcsec² | (″)², sq ″, square arcsecond, square arcseconds |
 
-## 15. Force
+## 16. Force
 
 These units are defined in `UnitMeasurements::Force`.
 
@@ -302,9 +369,10 @@ These units are defined in `UnitMeasurements::Force`.
 | 14 | kipf | kip, klbf, kip-force |
 | 15 | (lb⋅m)/s² | (lb*m)/s^2, pound meter per second squared, pound metre per second squared |
 | 16 | (lb⋅ft)/s² | (lb*ft)/s^2, pound foot per second squared |
-| 17 | (lb⋅in)/s² | (lb*in)/s^2, pound inch per second squared |
+| 17 | (lb⋅in)/s² | (lb\*in)/s^2, pound inch per second squared |
+| 18 | Fₚ | planck force, quantum force |
 
-## 16. Velocity or speed
+## 17. Velocity or speed
 
 These units are defined in `UnitMeasurements::Velocity`.
 
@@ -325,7 +393,7 @@ These units are defined in `UnitMeasurements::Velocity`.
 | 13 | mi/h | mph, mile per hour, miles per hour |
 | 14 | fur/ftn | furlong per fortnight, furlongs per fortnight |
 
-## 17. Acceleration
+## 18. Acceleration
 
 These units are defined in `UnitMeasurements::Acceleration`.
 
@@ -343,8 +411,9 @@ These units are defined in `UnitMeasurements::Acceleration`.
 | 10 | mpm/s | mi/(min⋅s), mile per minute per second, miles per minute per second |
 | 11 | mph/s | mi/(h⋅s), mile per hour per second, miles per hour per second |
 | 12 | Kn/s | knot per second, knots per second |
+| 13 | aₚ | planck acceleration, quantum acceleration |
 
-## 18. Angular velocity or rotational speed
+## 19. Angular velocity or rotational speed
 
 These units are defined in `UnitMeasurements::AngularVelocity`.
 
@@ -363,7 +432,7 @@ These units are defined in `UnitMeasurements::AngularVelocity`.
 | 11 | gon/min | ᵍ/min, gradian per minute, gradians per minute |
 | 12 | gon/h | ᵍ/h, gradian per hour, gradians per hour |
 
-## 19. Angular acceleration
+## 20. Angular acceleration
 
 These units are defined in `UnitMeasurements::AngularAcceleration`.
 
@@ -373,7 +442,19 @@ These units are defined in `UnitMeasurements::AngularAcceleration`.
 | 2 | deg/s² | °/s², deg/s^2, degree per second squared, degrees per second squared |
 | 3 | gon/s² | ᵍ/s², gon/s^2, gradian per second squared, gradians per second squared |
 
-## 20. Electric potential or electromotive force
+## 21. Quantity
+
+These units are defined in `UnitMeasurements::Quantity`.
+
+| # | Name | Aliases |
+|:--|:--|:--|
+| 1 | pc | pcs, piece, pieces |
+| 2 | pr | pair, pairs |
+| 3 | gr | gross, grosses |
+| 4 | dz | doz, dozen, dozens |
+| 5 | gg | great gross, great grosses, grand gross, grand grosses, dozen gross, dozen grosses |
+
+## 22. Electric potential or electromotive force
 
 These units are defined in `UnitMeasurements::ElectricPotential`.
 
@@ -385,7 +466,7 @@ These units are defined in `UnitMeasurements::ElectricPotential`.
 | 4 | W/A | watt per ampere, watts per ampere |
 | 5 | J/C | joule per coulomb, joules per coulomb |
 
-## 21. Electric charge
+## 23. Electric charge
 
 These units are defined in `UnitMeasurements::ElectricCharge`.
 
@@ -396,8 +477,9 @@ These units are defined in `UnitMeasurements::ElectricCharge`.
 | 3 | statC | statcoulomb, statcoulombs |
 | 4 | Fr | franklin, franklins |
 | 5 | Fd | faraday, faradays |
+| 6 | qₚ | planck charge, quantum charge |
 
-## 22. Electrical capacitance
+## 24. Electrical capacitance
 
 These units are defined in `UnitMeasurements::ElectricalCapacitance`.
 
@@ -408,7 +490,7 @@ These units are defined in `UnitMeasurements::ElectricalCapacitance`.
 | 3 | statF | statfarad, statfarads |
 | 4 | C/V | coulomb/volt, coulombs/volt, coulomb per volt, coulombs per volt |
 
-## 23. Electrical elastance
+## 25. Electrical elastance
 
 These units are defined in `UnitMeasurements::ElectricalElastance`.
 
@@ -417,7 +499,7 @@ These units are defined in `UnitMeasurements::ElectricalElastance`.
 | _1_ | _D*_ | _F⁻¹, daraf, darafs, reciprocal farad, reciprocal farads_ |
 | 2 | V/C | volt/coulomb, volts/coulomb, volt per coulomb, volts per coulomb |
 
-## 24. Electrical resistance or impedance
+## 26. Electrical resistance or impedance
 
 These units are defined in `UnitMeasurements::ElectricalResistance`.
 
@@ -429,7 +511,7 @@ These units are defined in `UnitMeasurements::ElectricalResistance`.
 | 4 | S | siemens, mho, mhos |
 | 5 | V/A | volt/amp, volts/amp, volt/ampere, volts/ampere, volt per ampere, volts per ampere |
 
-## 25. Electric conductance
+## 27. Electric conductance
 
 These units are defined in `UnitMeasurements::ElectricConductance`.
 
@@ -440,7 +522,7 @@ These units are defined in `UnitMeasurements::ElectricConductance`.
 | 3 | statS | stat℧, statsiemens, statmho, statmhos |
 | 3 | A/V | amp/volt, amps/volt, ampere/volt, amperes/volt, ampere per volt, amperes per volt |
 
-## 26. Electrical inductance
+## 28. Electrical inductance
 
 These units are defined in `UnitMeasurements::ElectricalInductance`.
 
@@ -451,7 +533,7 @@ These units are defined in `UnitMeasurements::ElectricalInductance`.
 | 3 | statH | stathenry, stathenries |
 | 4 | Wb/A | weber per ampere, webers per ampere |
 
-## 27. Magnetic flux
+## 29. Magnetic flux
 
 These units are defined in `UnitMeasurements::MagneticFlux`.
 
@@ -462,7 +544,7 @@ These units are defined in `UnitMeasurements::MagneticFlux`.
 | 3 | T·m² | T*m^2, tesla-square meter, tesla-square metre |
 | 4 | G·cm² | G*cm^2, gauss-square centimeter, gauss-square centimetre |
 
-## 28. Magnetic induction
+## 30. Magnetic induction
 
 These units are defined in `UnitMeasurements::MagneticInduction`.
 
@@ -471,7 +553,7 @@ These units are defined in `UnitMeasurements::MagneticInduction`.
 | _1_ | _T*_ | _tesla, teslas_ |
 | 2 | G | Gs, gauss |
 
-## 29. Magnetic field
+## 31. Magnetic field
 
 These units are defined in `UnitMeasurements::MagneticField`.
 
@@ -480,7 +562,7 @@ These units are defined in `UnitMeasurements::MagneticField`.
 | _1_ | _Oe*_ | _oersted, oersteds_ |
 | 2 | A/m | ampere/meter, ampere/metre, amperes/meter, amperes/metre, ampere per meter, ampere per metre, amperes per meter, amperes per metre |
 
-## 30. Catalytic activity
+## 32. Catalytic activity
 
 These units are defined in `UnitMeasurements::CatalyticActivity`.
 
@@ -489,7 +571,7 @@ These units are defined in `UnitMeasurements::CatalyticActivity`.
 | _1_ | _kat*_ | _katal, katals_ |
 | 2 | U | unit, units, enzUnit |
 
-## 31. Electric dipole moment
+## 33. Electric dipole moment
 
 These units are defined in `UnitMeasurements::ElectricDipoleMoment`.
 
@@ -498,7 +580,7 @@ These units are defined in `UnitMeasurements::ElectricDipoleMoment`.
 | _1_ | _C⋅m*_ | _C*m, coulomb-meter, coulomb-metre_ |
 | 2 | D | debye, debyes |
 
-## 32. Electric quadrupole moment
+## 34. Electric quadrupole moment
 
 These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
 
@@ -508,7 +590,7 @@ These units are defined in `UnitMeasurements::ElectricQuadrupoleMoment`.
 | 2 | statC·cm² | statC*m^2, statcoulomb square meter, statcoulomb square metre |
 | 3 | B | buckingham, buckinghams |
 
-## 33. Pressure or mechanical stress
+## 35. Pressure or mechanical stress
 
 These units are defined in `UnitMeasurements::Pressure`.
 
@@ -541,8 +623,9 @@ These units are defined in `UnitMeasurements::Pressure`.
 | 25 | kgf/m² | kgf/m^2, kilogram-force per square metre, kilogramme-force per square metre |
 | 26 | kgf/mm² | kgf/mm^2, kilogram-force per square millimetre, kilogramme-force per square millimetre |
 | 27 | kgf/dm² | kgf/dm^2, kilogram-force per square decimetre, kilogramme-force per square decimetre |
+| 28 | Pₚ | planck pressure, quantum pressure |
 
-## 34. Torque or moment of force
+## 36. Torque or moment of force
 
 These units are defined in `UnitMeasurements::Torque`.
 
@@ -566,7 +649,7 @@ These units are defined in `UnitMeasurements::Torque`.
 | 16 | lbf⋅in | lb⋅in, lbf\*in, lb\*in, pound-force inch, pound-inch |
 | 17 | lbf⋅ft | lb⋅ft, lbf\*ft, lb\*ft, pound-force foot, pound-foot |
 
-## 35. Luminous flux
+## 37. Luminous flux
 
 These units are defined in `UnitMeasurements::LuminousFlux`.
 
@@ -574,7 +657,7 @@ These units are defined in `UnitMeasurements::LuminousFlux`.
 |:--|:--|:--|
 | _1_ | _lm*_ | _lumen, lumens_ |
 
-## 36. Illuminance
+## 38. Illuminance
 
 These units are defined in `UnitMeasurements::Illuminance`.
 
@@ -585,7 +668,7 @@ These units are defined in `UnitMeasurements::Illuminance`.
 | 3 | fc | footcandle, lm/ft², lm/ft^2, lumen per square foot |
 | 4 | nx | nox |
 
-## 37. Luminance
+## 39. Luminance
 
 These units are defined in `UnitMeasurements::Luminance`.
 
@@ -598,7 +681,7 @@ These units are defined in `UnitMeasurements::Luminance`.
 | 5 | L | lambert, lamberts |
 | 6 | sb | stlib |
 
-## 38. Frequency
+## 40. Frequency
 
 These units are defined in `UnitMeasurements::Frequency`.
 
@@ -609,7 +692,7 @@ These units are defined in `UnitMeasurements::Frequency`.
 | 3 | deg/s | °/s, degree per second, degrees per second |
 | 4 | rev/s | rps, revolution per second, revolutions per second |
 
-## 39. Power or heat flow rate
+## 41. Power or heat flow rate
 
 These units are defined in `UnitMeasurements::Power`.
 
@@ -639,9 +722,10 @@ These units are defined in `UnitMeasurements::Power`.
 | 22 | lusec | lusecs |
 | 23 | atm⋅ft³/s | atm*ft^3/s, atmosphere-cubic foot per second |
 | 24 | atm⋅ft³/min | atm*ft^3/min, atmosphere-cubic foot per minute |
-| 25 | atm⋅ft³/h | atm*ft^3/h, atmosphere-cubic foot per hour |
+| 25 | atm⋅ft³/h | atm\*ft^3/h, atmosphere-cubic foot per hour |
+| 26 | Pₚ | planck power, quantum power |
 
-## 40. Energy
+## 42. Energy
 
 These units are defined in `UnitMeasurements::Energy`.
 
@@ -671,8 +755,9 @@ These units are defined in `UnitMeasurements::Energy`.
 | 22 | in⋅lbf | in\*lbf, in⋅lb, in\*lb, inch-pound force |
 | 23 | ft⋅pdl | ft*pdl, foot-poundal |
 | 24 | gal⋅atm | gal*atm, gallon-atmosphere |
+| 25 | Eₚ | planck energy, quantum energy |
 
-## 41. Dynamic viscosity
+## 43. Dynamic viscosity
 
 These units are defined in `UnitMeasurements::DynamicViscosity`.
 
@@ -686,7 +771,7 @@ These units are defined in `UnitMeasurements::DynamicViscosity`.
 | 6 | (lbf⋅s)/in² | (lb⋅s)/in², (lbf\*s)/in^2, (lb\*s)/in^2, pound-force second per square inch |
 | 7 | Pl | poiseuille |
 
-## 42. Kinetic viscosity
+## 44. Kinetic viscosity
 
 These units are defined in `UnitMeasurements::KineticViscosity`.
 
@@ -697,7 +782,7 @@ These units are defined in `UnitMeasurements::KineticViscosity`.
 | 3 | ft²/s | ft^2/s, square foot per second, square feet per second |
 | 4 | in²/s | in^2/s, square inch per second, square inches per second |
 
-## 43. Magnetomotive force
+## 45. Magnetomotive force
 
 These units are defined in `UnitMeasurements::MagnetomotiveForce`.
 
@@ -706,7 +791,7 @@ These units are defined in `UnitMeasurements::MagnetomotiveForce`.
 | _1_ | _A⋅t_ | _A*t, ampere-turn_ |
 | 2 | Gb | Gi, gilbert, gilberts |
 
-## 44. Radioactivity
+## 46. Radioactivity
 
 These units are defined in `UnitMeasurements::Radioactivity`.
 
@@ -716,7 +801,7 @@ These units are defined in `UnitMeasurements::Radioactivity`.
 | 2 | Ci | curie, curies |
 | 3 | Rd | rutherford, rutherfords |
 
-## 45. Radiation exposure
+## 47. Radiation exposure
 
 These units are defined in `UnitMeasurements::RadiationExposure`.
 
@@ -725,7 +810,7 @@ These units are defined in `UnitMeasurements::RadiationExposure`.
 | _1_ | _C/kg*_ | _coulomb per kilogram, coulomb per kilogramme, coulombs per kilogram, coulombs per kilogramme_ |
 | 2 | R | röntgen, roentgen, roentgens |
 
-## 46. Radiation absorbed dose
+## 48. Radiation absorbed dose
 
 These units are defined in `UnitMeasurements::RadiationAbsorbedDose`.
 
@@ -735,7 +820,7 @@ These units are defined in `UnitMeasurements::RadiationAbsorbedDose`.
 | 2 | erg/g | erg per gram, erg per gramme, ergs per gram, ergs per gramme |
 | 3 | rad | radiation absorbed dose |
 
-## 47. Radiation equivalent dose
+## 49. Radiation equivalent dose
 
 These units are defined in `UnitMeasurements::RadiationEquivalentDose`.
 
@@ -744,7 +829,7 @@ These units are defined in `UnitMeasurements::RadiationEquivalentDose`.
 | _1_ | _Sv*_ | _sievert, sieverts_ |
 | 2 | rem | röntgen equivalent man, roentgen equivalent man |
 
-## 48. Information entropy
+## 50. Information entropy
 
 These units are defined in `UnitMeasurements::InformationEntropy`.
 

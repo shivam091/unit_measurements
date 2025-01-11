@@ -7,9 +7,6 @@ UnitMeasurements::Illuminance = UnitMeasurements.build do
 
   system :metric do
     si_unit "lx", aliases: ["lux", "lm/m²", "lm/m^2", "lumen per square metre", "lumen per square meter"]
-  end
-
-  system :centimetre_gram_second do
     unit "ph", value: "10000 lx", aliases: ["phot", "phots", "lm/cm²", "lm/cm^2", "lumen per square centimetre", "lumen per square centimeter"]
   end
 
