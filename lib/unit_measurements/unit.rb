@@ -202,6 +202,14 @@ module UnitMeasurements
       ["Q",  %w[quetta],    1e+30]
     ].map(&:freeze).freeze
 
+    # Prefixes for SI binary units and SI decimal units.
+    #
+    # @see SI_BINARY_PREFIXES
+    # @see SI_DECIMAL_PREFIXES
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 5.19.0
+    SI_PREFIXES = SI_BINARY_PREFIXES + SI_DECIMAL_PREFIXES
+
     # Parses tokens and returns a +conversion value+ and the +unit+.
     #
     # This method is used internally to parse the conversion value of the unit

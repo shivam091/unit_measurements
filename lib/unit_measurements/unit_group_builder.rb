@@ -165,7 +165,7 @@ module UnitMeasurements
     def build_si_units(name, value:, add_binary_prefixes:, aliases:)
       si_units = [build_unit(name, value: value, aliases: aliases)]
 
-      si_prefixes = add_binary_prefixes ? (Unit::SI_DECIMAL_PREFIXES + Unit::SI_BINARY_PREFIXES) : Unit::SI_DECIMAL_PREFIXES
+      si_prefixes = add_binary_prefixes ? Unit::SI_PREFIXES : Unit::SI_DECIMAL_PREFIXES
 
       si_prefixes.each do |short_prefix, long_prefix, multiplier|
         si_aliases = long_prefix.product(aliases.to_a).flat_map do |prefix, unit|
