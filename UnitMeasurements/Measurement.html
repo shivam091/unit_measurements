@@ -6,7 +6,7 @@
 <title>
   Class: UnitMeasurements::Measurement
   
-    &mdash; Documentation by YARD 0.9.34
+    &mdash; Documentation by YARD 0.9.37
   
 </title>
 
@@ -805,12 +805,12 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Initializing the measurement with scientific number and unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.new(BigDecimal(2), &quot;km&quot;)
 =&gt; 2.0 km
@@ -825,9 +825,9 @@ UnitMeasurements::Length.new(&quot;2e⁻²&quot;, &quot;km&quot;)
 =&gt; 0.02 km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Initializing the measurement with complex number and unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.new(Complex(2, 3), &quot;km&quot;)
 =&gt; 2+3i km
@@ -836,9 +836,9 @@ UnitMeasurements::Length.new(&quot;2+3i&quot;, &quot;km&quot;)
 =&gt; 2.0+3.0i km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Initializing the measurement with rational or mixed rational number and unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.new(Rational(2, 3), &quot;km&quot;)
 =&gt; 0.6666666666666666 km
@@ -856,9 +856,9 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
 =&gt; 2.5 km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Initializing the measurement with ratio and unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.new(&quot;1:2&quot;, &quot;km&quot;)
 =&gt; 0.5 km</code></pre>
@@ -1344,7 +1344,7 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>UnitMeasurements::Length.cached
@@ -1451,7 +1451,7 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UnitMeasurements.html" title="UnitMeasurements (module)">UnitMeasurements</a></span></span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_clear_cache'>clear_cache</span></code></pre>
@@ -1543,28 +1543,28 @@ UnitMeasurements::Length.new(&quot;2 ½&quot;, &quot;km&quot;)
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a complex number and source unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;2+3i km&quot;)
 =&gt; 2.0+3.0i km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a complex number, source, and target units:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;2+3i km in m&quot;)
 =&gt; 2000.0+3000.0i m</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a rational or mixed rational number and source unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;½ km&quot;)
 =&gt; 0.5 km
@@ -1579,9 +1579,9 @@ UnitMeasurements::Length.parse(&quot;2 1/2 km&quot;)
 =&gt; 2.5 km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a rational or mixed rational number, source, and target units:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;½ km to m&quot;)
 =&gt; 500.0 km
@@ -1596,9 +1596,9 @@ UnitMeasurements::Length.parse(&quot;2 1/2 km as m&quot;)
 =&gt; 2500.0 m</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a scientific number and source unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;2e² km&quot;)
 =&gt; 200.0 km
@@ -1610,9 +1610,9 @@ UnitMeasurements::Length.parse(&quot;2e⁻² km&quot;)
 =&gt; 0.02 km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a scientific number, source, and target units:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>
 UnitMeasurements::Length.parse(&quot;2e+2 km to m&quot;)
@@ -1622,17 +1622,17 @@ UnitMeasurements::Length.parse(&quot;2e⁻² km as m&quot;)
 =&gt; 20.0 m</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a ratio and source unit:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;1:2 km&quot;)
 =&gt; 0.5 km</code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parsing string representing a ratio, source, and target units:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.parse(&quot;1:2 km in m&quot;)
 =&gt; 500.0 m</code></pre>
@@ -1792,12 +1792,12 @@ UnitMeasurements::Length.parse(&quot;2e⁻² km as m&quot;)
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Calculating the ratio between ‘in’ and ‘ft’:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code>UnitMeasurements::Length.ratio(&quot;in&quot;, &quot;ft&quot;)
 =&gt; &quot;12.0 in/ft&quot;
@@ -2390,7 +2390,7 @@ UnitMeasurements::Length.ratio(UnitMeasurements::Length.unit_for(&quot;in&quot;)
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to(&quot;cm&quot;)
@@ -2545,7 +2545,7 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to(&quot;mm&quot;, use_ca
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;cm&quot;)
@@ -2818,7 +2818,7 @@ UnitMeasurements::Length.new(1, &quot;m&quot;).convert_to!(&quot;mm&quot;, use_c
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>UnitMeasurements::Length.new(1, &quot;m&quot;).to_primitive
@@ -3154,9 +3154,9 @@ UnitMeasurements::Length.new(1, &quot;cm&quot;).to_primitive
 </div>
 
       <div id="footer">
-  Generated on Fri Dec 22 02:58:52 2023 by
+  Generated on Sat Jan 11 16:33:50 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.34 (ruby-3.2.2).
+  0.9.37 (ruby-3.2.2).
 </div>
 
     </div>
