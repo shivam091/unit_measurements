@@ -32,7 +32,7 @@ These units are defined in `UnitMeasurements::Length`.
 | 13 | pc | parsec, parsecs |
 | 14 | nl | NL, nleague, nleagues, nautical league, nautical leagues |
 | 15 | rd | rod, rods, perch, pole, lug |
-| 16 | cb | CBL., cable length |
+| 16 | cb | cable length |
 | 17 | ls | light-second, light-seconds |
 | 18 | lh | light-hour, light-hours |
 | 19 | ld | light-day, light-days |
@@ -47,8 +47,8 @@ These units are defined in `UnitMeasurements::Length`.
 | 28 | sft | sfoot, sfeet, survey-foot, survey-feet |
 | 29 | bc | b.c., barleycorn, barleycorns |
 | 30 | lmin | light-minute, light-minutes |
-| 31 | cb (M) | CBL. (M), cable length (M) |
-| 32 | cb (US) | CBL. (US), cable length (US) |
+| 31 | metric_cb | metric cable length |
+| 32 | us_cb | us cable length |
 | 33 | lₚ | planck length, quantum length |
 | 34 | qr | quarter, quarters |
 | 35 | U | RU, rack unit, rack units |
@@ -81,11 +81,11 @@ These units are defined in `UnitMeasurements::Weight`.
 | 19 | hyl | mug, metric slug, metric slugs, hyls |
 | 20 | cwt | hundredweight, long hundredweight, imperial hundredweight |
 | 21 | slug | slugs |
-| 22 | cwt (US) | hundredweight (US), short hundredweight |
+| 22 | us_cwt | us hundredweight, short hundredweight |
 | 23 | mₚ | planck mass, quantum mass |
 | 24 | qr | qtr, quarter, quarters |
 | 25 | fir | firkin, firkins |
-| 26 | us qr | us qtr, us quarter, us quarters |
+| 26 | us_qr | us qtr, us quarter, us quarters |
 
 ## 3. Time or duration
 
@@ -168,7 +168,7 @@ These units are defined in `UnitMeasurements::Area`.
 | 14 | fur² | fur^2, sq fur, square furlong, square furlongs |
 | 15 | rd² | rd^2, sq rd, square rod, square rods |
 | 16 | lnk² | link^2, sq lnk, square link, square links |
-| 17 | ac (US) | acre (US), acres (US) |
+| 17 | us_ac | us acre, us acres |
 | 18 | ft² (US) | ft^2 (US), sq ft (US), square foot (US), square feet (US) |
 | 19 | mi² (US) | mi^2 (US), sq mi (US), square mile (US), square miles (US) |
 | 20 | ch² (US) | ch^2 (US), sq ch (US), square chain (US), square chains (US) |
@@ -176,6 +176,9 @@ These units are defined in `UnitMeasurements::Area`.
 | 22 | dun | ḍn, dunam, dunams |
 | 23 | sec | sect, section, sections |
 | 24 | twp | survey township, survey townships |
+| 25 | sq_ft | us square foot, us square feet |
+| 26 | sq_mi | us square mile, us square miles |
+| 27 | sq_ch | us square chain, us square chains |
 
 ## 9. Volume & capacity
 
@@ -700,7 +703,7 @@ These units are defined in `UnitMeasurements::Power`.
 |:--|:--|:--|
 | _1_ | _W*_ | _watt, watts_ |
 | 2 | p | poncelet, poncelets |
-| 3 | hp (M) | PS, metric horsepower |
+| 3 | metric_hp | PS, metric horsepower |
 | 4 | kgf⋅m | kgf*m, kilogramme-force meter, kilogram-force meter |
 | 5 | cal/s | calorie per second, calories per second |
 | 6 | cal/min | calorie per minute, calories per minute |
