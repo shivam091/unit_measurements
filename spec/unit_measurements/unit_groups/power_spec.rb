@@ -16,8 +16,8 @@ RSpec.describe UnitMeasurements::Power do
       expect(subject.convert_to("hp").quantity).to eq(0.00670511044797514)
     end
 
-    it "converts to hp (M)" do
-      expect(subject.convert_to("hp (M)").quantity).to eq(0.00679810808651952)
+    it "converts to metric_hp" do
+      expect(subject.convert_to("metric_hp").quantity).to eq(0.00679810808651952)
     end
 
     it "converts to kgf⋅m" do

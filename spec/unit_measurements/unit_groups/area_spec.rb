@@ -80,8 +80,8 @@ RSpec.describe UnitMeasurements::Area do
       expect(subject.convert_to("lnk²").quantity).to eq(123.552690733583)
     end
 
-    it "converts to ac (US)" do
-      expect(subject.convert_to("ac (US)").quantity).to eq(0.00123552184612663)
+    it "converts to us_ac" do
+      expect(subject.convert_to("us_ac").quantity).to eq(0.00123552184612663)
     end
 
     it "converts to ft² (US)" do
