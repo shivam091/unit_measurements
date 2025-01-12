@@ -52,6 +52,7 @@ UnitMeasurements::Volume = UnitMeasurements.build do
   system :us_customary do
     unit "cd", value: "128 ft³", aliases: ["cord", "cords"]
 
+    unit "usgal", value: "3.785411784 dm³", aliases: ["us-gallon", "us-gal"]
     unit "pot", value: "2 qt", aliases: ["pottle", "pottles"]
     unit "bdft", value: "144 in³", aliases: ["bf", "fbm", "board-foot", "board-feet"]
 
