@@ -10,7 +10,7 @@ UnitMeasurements::Power = UnitMeasurements.build do
 
     unit "p", value: "980.665 W", aliases: ["poncelet", "poncelets"]
 
-    unit "hp (M)", value: "735.49875 W", aliases: ["PS", "metric horsepower"]
+    unit "metric_hp", value: "735.49875 W", aliases: ["PS", "metric horsepower"]
 
     unit "kgf⋅m", value: "9.80665 W", aliases: ["kgf*m", "kilogramme-force meter", "kilogram-force meter"]
     unit "erg/s", value: "1e-7 W", aliases: ["erg per second", "ergs per second"]

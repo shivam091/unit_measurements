@@ -34,10 +34,14 @@ UnitMeasurements::Area = UnitMeasurements.build do
     unit "sec", value: "640 ac", aliases: ["sect", "section", "sections"]
     unit "twp", value: "36 sec", aliases: ["survey township", "survey townships"]
 
-    unit "ac (US)", value: "4046.873 m²", aliases: ["acre (US)", "acres (US)"]
+    unit "us_ac", value: "4046.873 m²", aliases: ["us acre", "us acres"]
     unit "ft² (US)", value: "0.09290341161327482 m²", aliases: ["ft^2 (US)", "sq ft (US)", "square foot (US)", "square feet (US)"]
     unit "mi² (US)", value: "2.58999847e+6 m²", aliases: ["mi^2 (US)", "sq mi (US)", "square mile (US)", "square miles (US)"]
     unit "ch² (US)", value: "404.6873 m²", aliases: ["ch^2 (US)", "sq ch (US)", "square chain (US)", "square chains (US)"]
+
+    unit "sq_ft", value: "0.09290341161327482 m²", aliases: ["us square foot", "us square feet"]
+    unit "sq_mi", value: "2.58999847e+6 m²", aliases: ["us square mile", "us square miles"]
+    unit "sq_ch", value: "404.6873 m²", aliases: ["us square chain", "us square chains"]
   end
 
   system :planck_units do

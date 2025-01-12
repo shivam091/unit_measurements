@@ -11,7 +11,7 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "Å", value: "1e-10 m", aliases: ["angstrom", "angstroms", "ångström"]
     unit "μ", value: "1 μm", aliases: ["micron", "microns"]
 
-    unit "cb (M)", value: "185.2 m", aliases: ["CBL. (M)", "cable length (M)"]
+    unit "metric_cb", value: "185.2 m", aliases: ["metric cable length"]
   end
 
   system :imperial do
@@ -25,7 +25,7 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "th", value: "1/1000 in", aliases: ["thou", "thousandth of an inch", "mil", "mils"]
     unit "nl", value: "3 nmi", aliases: ["NL", "nleague", "nleagues", "nautical league", "nautical leagues"]
     unit "rd", value: "16 1/2 ft", aliases: ["rod", "rods", "perch", "pole", "lug"]
-    unit "cb", value: "608 ft", aliases: ["CBL.", "cable length"]
+    unit "cb", value: "608 ft", aliases: ["cable length"]
     unit "qr", value: "1/4 yd", aliases: ["quarter", "quarters"]
     unit "bc", value: "1/3 in", aliases: ["b.c.", "barleycorn", "barleycorns"]
 
@@ -41,7 +41,7 @@ UnitMeasurements::Length = UnitMeasurements.build do
     unit "U", value: "1.75 in", aliases: ["RU", "rack unit", "rack units"]
     unit "sft", value: "1200/3937 m", aliases: ["sfoot", "sfeet", "survey-foot", "survey-feet"]
 
-    unit "cb (US)", value: "720 ft", aliases: ["CBL. (US)", "cable length (US)"]
+    unit "us_cb", value: "720 ft", aliases: ["us cable length"]
   end
 
   system :astronomical do

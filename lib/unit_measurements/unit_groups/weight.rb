@@ -37,8 +37,8 @@ UnitMeasurements::Weight = UnitMeasurements.build do
 
   system :us_customary do
     unit "tn", value: "2000 lb", aliases: ["ton", "tons", "short ton", "short tons"]
-    unit "us qr", value: "1/4 cwt (US)", aliases: ["us qtr", "us quarter", "us quarters"]
-    unit "cwt (US)", value: "100 lb", aliases: ["hundredweight (US)", "short hundredweight"]
+    unit "us_qr", value: "1/4 us_cwt", aliases: ["us qtr", "us quarter", "us quarters"]
+    unit "us_cwt", value: "100 lb", aliases: ["us hundredweight", "short hundredweight"]
   end
 
   system :gravitational_metric do

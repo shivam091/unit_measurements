@@ -92,16 +92,16 @@ RSpec.describe UnitMeasurements::Weight do
       expect(subject.convert_to("fir").quantity).to eq(0.196841305522212)
     end
 
-    it "converts to us qr" do
-      expect(subject.convert_to("us qr").quantity).to eq(0.440924524369755)
+    it "converts to us_qr" do
+      expect(subject.convert_to("us_qr").quantity).to eq(0.440924524369755)
     end
 
     it "converts to slug" do
       expect(subject.convert_to("slug").quantity).to eq(0.342608829245948)
     end
 
-    it "converts to cwt (US)" do
-      expect(subject.convert_to("cwt (US)").quantity).to eq(0.110231131092439)
+    it "converts to us_cwt" do
+      expect(subject.convert_to("us_cwt").quantity).to eq(0.110231131092439)
     end
 
     it "converts to mₚ" do

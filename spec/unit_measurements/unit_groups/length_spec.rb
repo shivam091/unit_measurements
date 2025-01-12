@@ -136,12 +136,12 @@ RSpec.describe UnitMeasurements::Length do
       expect(subject.convert_to("bc").quantity).to eq(590.551181102362)
     end
 
-    it "converts to cb (M)" do
-      expect(subject.convert_to("cb (M)").quantity).to eq(0.0269978401727862)
+    it "converts to metric_cb" do
+      expect(subject.convert_to("metric_cb").quantity).to eq(0.0269978401727862)
     end
 
-    it "converts to cb (US)" do
-      expect(subject.convert_to("cb (US)").quantity).to eq(0.0227836103820356)
+    it "converts to us_cb" do
+      expect(subject.convert_to("us_cb").quantity).to eq(0.0227836103820356)
     end
 
     it "converts to lₚ" do

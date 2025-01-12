@@ -1,3 +1,17 @@
+## [5.19.0](https://github.com/shivam091/unit_measurements/compare/v5.18.0...v5.19.0) - 2025-01-12
+
+### What's new
+
+- Added US Customary units for square foot (`sq_ft`), square mile (`sq_mi`), and square chain (`sq_ch`).
+
+### What's changed
+
+- Changed symbol of units `cb (M)` and `cb (US)` to `metric_cb` and `us_cb` in `length`.
+- Changed symbol of unit `hp (M)` to `metric_hp` in `power`.
+- Changed symbol of unit `cwt (US)` to `us_cwt` in `weight`.
+
+----------
+
 ## [5.18.0](https://github.com/shivam091/unit_measurements/compare/v5.17.0...v5.18.0) - 2023-12-16
 
 ### What's new
